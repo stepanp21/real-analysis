@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; The Least Upper Bound Axiom – Real Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../axioms-of-r/lub-props.html" rel="next">
+<link href="../axioms-of-r/field-and-order.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+</head><body class="nav-sidebar floating quarto-light">$$
+\def\R{\mathbb R}
+\def\N{\mathbb N}
+\def\Q{\mathbb Q}
+\def\Z{\mathbb Z}
+\newcommand{\st}{~:~}
+\newcommand{\cee}{\mathsf{C}}
+\newcommand{\bee}{\mathrm{B}}
+$$
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../axioms-of-r/intro-to-r.html">The Real Numbers</a></li><li class="breadcrumb-item"><a href="../axioms-of-r/lub.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Least Upper Bound Axiom</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Real Analysis</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../axioms-of-r/intro-to-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Real Numbers</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../axioms-of-r/field-and-order.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Field and Order Axioms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../axioms-of-r/lub.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Least Upper Bound Axiom</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../axioms-of-r/lub-props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Consequences of the Least Upper Bound Axiom</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Metric Spaces</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../metric-spaces/metric-space-axioms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Metric Spaces and Distance Functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../metric-spaces/r-as-a-metric-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="math inline">\(\mathbb{R}\)</span> as a Metric Space</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../metric-spaces/open-balls.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Open Sets</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../metric-spaces/open-set-props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Properties of Open Sets</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../metric-spaces/boundedness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Boundedness</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Sequences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sequences/sequence-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sequences/subsequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Subsequences</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../constructing-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../minmax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Proof-Writing Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/union-and-intersection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Collections of Sets</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/cardinality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/wop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#highlights" id="toc-highlights" class="nav-link active" data-scroll-target="#highlights"><span class="header-section-number">3.1</span> Highlights</a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">3.2</span> Preparation</a></li>
+  <li><a href="#least-upper-bounds" id="toc-least-upper-bounds" class="nav-link" data-scroll-target="#least-upper-bounds"><span class="header-section-number">3.3</span> Least Upper Bounds</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">3.4</span> Review Questions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../axioms-of-r/intro-to-r.html">The Real Numbers</a></li><li class="breadcrumb-item"><a href="../axioms-of-r/lub.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Least Upper Bound Axiom</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Least Upper Bound Axiom</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="highlights" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="highlights"><span class="header-section-number">3.1</span> Highlights</h2>
+<ul>
+<li>The definition of the supremum of a set and the Least Upper Bound axiom of <span class="math inline">\(\R\)</span></li>
+<li>The Archimedean Properties of <span class="math inline">\(\R\)</span></li>
+</ul>
+</section>
+<section id="preparation" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="preparation"><span class="header-section-number">3.2</span> Preparation</h2>
+<p>Leading up to the third and final axiom of <span class="math inline">\(\R\)</span>, we make a few definitions.</p>
+<div id="def-lub" class="grouped-theorem grouped-theorem-definition">
+<p><span class="theorem-title"><strong>Definition 3.1</strong></span> Let <span class="math inline">\(S\subseteq\R\)</span> be a subset of the real numbers.</p>
+<ol type="1">
+<li>We say <span class="math inline">\(b\in\R\)</span> is an <em>upper bound</em> of <span class="math inline">\(S\)</span> if for all <span class="math inline">\(x\in S\)</span>, <span class="math inline">\(b\geq x.\)</span> If <span class="math inline">\(S\)</span> has an upper bound, we say <span class="math inline">\(S\)</span> is <em>bounded above</em>.</li>
+<li>We say that <span class="math inline">\(u\in\R\)</span> the <em>least upper bound</em> or <em>supremum</em> of <span class="math inline">\(S\)</span> if for all upper bounds <span class="math inline">\(b\)</span> of <span class="math inline">\(S\)</span>, <span class="math inline">\(u\leq b\)</span>, and in this case we write <span class="math display">\[u=\sup S.\]</span></li>
+<li>If <span class="math inline">\(u\)</span> is the least upper bound <span class="math inline">\(S\)</span> and <span class="math inline">\(u\in S\)</span>, we say that <span class="math inline">\(u\)</span> is the <em>greatest element</em> of <span class="math inline">\(S.\)</span></li>
+</ol>
+</div>
+<div id="exr-lub-examples" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 3.2</strong></span> &nbsp;</p>
+<ol type="1">
+<li>Write down three upper bounds for the interval <span class="math inline">\(S=[0,3)\)</span>. Does <span class="math inline">\(S\)</span> have a least upper bound; if so what is it? Does <span class="math inline">\(S\)</span> have a greatest element; if so, what is it?</li>
+<li>For each set below, say what it’s supremum and greatest element are or say why it doesn’t have one.
+<ol type="a">
+<li><span class="math inline">\(\left\{\frac{n}{n+1}\st n\in\N\right\}\)</span></li>
+<li><span class="math inline">\((2,\infty)\)</span></li>
+<li><span class="math inline">\(\left\{\frac{1}{n}\st n\in\N\right\}\)</span></li>
+<li><span class="math inline">\((-\infty,3]\)</span></li>
+<li><span class="math inline">\(\{x\st x^2\leq 3\}\)</span></li>
+</ol></li>
+<li>Describe in your own words which subsets of <span class="math inline">\(\R\)</span> have upper bounds, which have least upper bounds, and which have greatest elements. This doesn’t have to be precise; just give me the vibe.</li>
+<li><strong>(Exploratory)</strong> How would you change your answers to the previous problems if our universe were <span class="math inline">\(\Q\)</span> instead of <span class="math inline">\(\R?\)</span></li>
+</ol>
+</div>
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+<p>The example of <span class="math inline">\(S=[0,3)\)</span> is illustrated below. You can play with the slider to help you think about what value(s) of <span class="math inline">\(b\)</span> might satisfy the definitions of upper bound, supremum, or greatest element.</p>
+<div id="calculator-sup03" class="calculator-container" style="width: 100%; height: 200px;">
+
+</div>
+<script>
+  var elt = document.getElementById('calculator-sup03');
+  var options = {
+    keypad: false,
+    expressions: false,
+    lockViewport: true
+  }
+  var calculator = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('sup03.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+</script>
+<div id="exr-bounded-above-logical-symbols" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 3.3</strong></span> Write “<span class="math inline">\(S\)</span> is bounded above” in logical symbolic notation; see if you can do so without using the term “upper bound”.</p>
+</div>
+<div id="exr-negate-lub" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 3.4</strong></span> Suppose <span class="math inline">\(b\)</span> is an upper bound on a set <span class="math inline">\(S\)</span>. What does it mean for <span class="math inline">\(b\)</span> to <em>not</em> be the <em>least</em> upper bound of <span class="math inline">\(S\)</span>?</p>
+</div>
+</section>
+<section id="least-upper-bounds" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="least-upper-bounds"><span class="header-section-number">3.3</span> Least Upper Bounds</h2>
+<p>Part 2e of <a href="axioms-of-r/lub.html#exr-lub-examples">Exercise 3.2</a> is meant to draw a contrast between how least upper bounds work in <span class="math inline">\(\R\)</span> versus how they work in <span class="math inline">\(\Q.\)</span> In particular, the problem asks, if <span class="math display">\[S=\{x\st x^2\leq 3\}?\]</span> does <span class="math inline">\(S\)</span> have a least upper bound?</p>
+<p>Whether our universe is <span class="math inline">\(\Q\)</span> or <span class="math inline">\(\R\)</span> or some other ordered field, <span class="math inline">\(S\)</span> certainly has <em>an</em> upper bound; <span class="math inline">\(b=2\)</span>, for example, is greater than any element of <span class="math inline">\(S\)</span> (that is, <span class="math inline">\(2\)</span> is greater than any number whose square is less than 3). But as you may have guessed, an ordered field has a number whose square is <span class="math inline">\(3\)</span> if and only if the set <span class="math inline">\(S\)</span> defined above has a <em>least</em> upper bound (in which case <span class="math inline">\(\sup S\)</span> is such a number).</p>
+<p>We have a sense that the since <span class="math inline">\(3\)</span> has no square root in <span class="math inline">\(\Q\)</span>, there is something missing—a “hole” in the rationals that we plug by instead thinking about <span class="math inline">\(\R\)</span>. And as this example shows, plugging such a hole can be related to the existence of a least upper bound on a set.</p>
+<p>This connection goes in the opposite direction as well. If we <em>assume</em> the supremum of <span class="math inline">\(S\)</span> exists, then we at least have a candidate for a number whose square is <span class="math inline">\(3\)</span> (actually proving this is more complicated than you might expect—see <a href="axioms-of-r/lub.html#thm-sqrts-exist">Theorem 3.16</a> below).</p>
+<p>This is all motivation for the final axiom we’ll assume about the real nubers: a guarantee of the existence of least upper bounds that will have the effect of ensuring that any <span class="math inline">\(\R\)</span> will not have any “holes” in this sense, the way that <span class="math inline">\(\Q\)</span> does.</p>
+<div id="thm-ax-lub" class="lub-thread grouped-theorem grouped-theorem-theorem">
+<p><span class="theorem-title"><strong>Theorem 3.5 (The Least Upper Bound Axiom)</strong></span> Every non-empty subset of <span class="math inline">\(\R\)</span> that is bounded above has a least upper bound in <span class="math inline">\(\R.\)</span></p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that using <a href="axioms-of-r/lub.html#thm-ax-lub">Theorem 3.5</a> to conclude that a subset <span class="math inline">\(S\subseteq\R\)</span> has a supremum requires <span class="math inline">\(S\)</span> to satisfy two hypotheses:</p>
+<ul>
+<li><span class="math inline">\(S\)</span> is nonempty, and</li>
+<li><span class="math inline">\(S\)</span> is bounded above.</li>
+</ul>
+</div>
+</div>
+<p>From now on, we’ll make a point of emphasizing which theorems that require the Least Upper Bound Axiom in their proofs and how. Theorems that rely on the Least Upper Bound Axiom will be highlighted with a <span class="lub-hl">maroon</span> bar.</p>
+<p>As a first step to understanding least upper bounds, we should justify the use of the word “the” in <a href="axioms-of-r/lub.html#def-lub">Definition 3.1</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Generally, when define a new quantity implicitly (i.e.&nbsp;without giving an <em>ex</em>plicit formula), we should ask ourselves whether a <em>unique</em> quantity satisfies the definition. For example, a subset of <span class="math inline">\(\R\)</span> may have more than one upper bound. That a subset has only one <em>least</em> upper bound (if it has one at all) is something we need to prove.</p>
+</div>
+</div>
+<div id="thm-lub-unique" class="grouped-theorem grouped-theorem-theorem">
+<p><span class="theorem-title"><strong>Theorem 3.6</strong></span> If a subset of <span class="math inline">\(\R\)</span> has a least upper bound, then it is unique.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Suppose <span class="math inline">\(u,v\)</span> are both least upper bounds for a subset <span class="math inline">\(S\subseteq\R.\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Then <span class="math inline">\(u\)</span> is an upper bound for <span class="math inline">\(S\)</span>, so since <span class="math inline">\(v\)</span> is a <em>least</em> upper bound, <span class="math inline">\(v\leq u\)</span>. Also, <span class="math inline">\(v\)</span> is an upper bound for <span class="math inline">\(S\)</span>, so since <span class="math inline">\(u\)</span> is the <em>least</em> upper bound, <span class="math inline">\(u\leq v\)</span>. Therefore <span class="math inline">\(u=v.\)</span></p>
+</div>
+<p>To prove a quantity is the least upper bound of a set, generally, one needs to show two things: prove that it’s an upper bound, and then prove that any other upper bound is less than or equal to it.</p>
+<div id="exm-sup-basic" class="grouped-theorem grouped-theorem-example">
+<p><span class="theorem-title"><strong>Example 3.7</strong></span> Here we’ll do a careful proof that <span class="math inline">\(3\)</span> is the supremum of <span class="math inline">\(S=(-\infty,3)\)</span>.</p>
+<p>First, note that by definition <span class="math inline">\(S\)</span> is all numbers less than 3, so for any <span class="math inline">\(x\in S\)</span>, <span class="math inline">\(3&gt;x.\)</span> Therefore <span class="math inline">\(3\)</span> is an upper bound on <span class="math inline">\(S\)</span>.</p>
+<p>By way of contradiction, suppose <span class="math inline">\(b&lt;3\)</span> and <span class="math inline">\(b\)</span> is also an upper bound on <span class="math inline">\(S\)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> But then consider <span class="math inline">\(x=\frac{b+3}{2}\)</span> so that <span class="math inline">\(b&lt;x&lt;3.\)</span> Since <span class="math inline">\(x&lt;3\)</span>, we know <span class="math inline">\(x\in S.\)</span> But <span class="math inline">\(b&lt;x\)</span> which contradicts <span class="math inline">\(b\)</span> being an upper bound on <span class="math inline">\(S\)</span>.</p>
+</div>
+<p>Note that doing a proof by contradiction above was not really necessary. Another option would be to say “suppose <span class="math inline">\(b&lt;3\)</span>” and then prove <span class="math inline">\(b\)</span> is not an upper bound.</p>
+<p>Next we have some basic consequences of <a href="axioms-of-r/lub.html#thm-ax-lub">Theorem 3.5</a>. The next theorem and its corollary are both often referred to as the “Archimedean Property” of <span class="math inline">\(\R\)</span>.</p>
+<div id="thm-arch-prop" class="grouped-theorem grouped-theorem-theorem">
+<p><span class="theorem-title"><strong>Theorem 3.8 (Archimedean Property - Version 1)</strong></span> For any <span class="math inline">\(x\in\R\)</span>, there exists <span class="math inline">\(n\in\N\)</span> such that <span class="math inline">\(n&gt;x\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By way of contradiction, suppose ___, which is the same as saying that <span class="math inline">\(x\)</span> is an upper bound on <span class="math inline">\(\N\)</span>. Then since <span class="math inline">\(\N\)</span> is ___ and bounded above, <span class="math inline">\(\N\)</span> has a least upper bound <span class="math inline">\(u.\)</span> But then <span class="math inline">\(u-\frac{1}{2}&lt;u\)</span>, so <span class="math inline">\(u-\frac{1}{2}\)</span> is not an upper bound. Therefore there exists <span class="math inline">\(n\in\N\)</span> such that ___. But then <span class="math display">\[n+1&gt;u-\frac{1}{2}+1=u+\frac{1}{2}&gt;u,\]</span> and since <span class="math inline">\(n+1\in\N\)</span>, we have contradicted ___.</p>
+</div>
+<div id="exr-arch-fill-in-blanks" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 3.9</strong></span> Fill in the blanks for the proof above. For the first blank, you’ll need to negate the original statement.</p>
+</div>
+<div id="cor-arch-prop" class="grouped-theorem grouped-theorem-corollary">
+<p><span class="theorem-title"><strong>Corollary 3.10 (Archimedean Property - Version 2)</strong></span> For any <span class="math inline">\(\epsilon&gt;0\)</span>, there exists <span class="math inline">\(n\in\N\)</span> such that <span class="math inline">\(\frac{1}{n}&lt;\epsilon\)</span>.</p>
+</div>
+<div id="exr-prove-arch-prop" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 3.11</strong></span> Prove <a href="axioms-of-r/lub.html#cor-arch-prop">Corollary 3.10</a>.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Remember that when we call a theorem a “Corollary”, it means that you should use the preceeding theorem to prove it, and the proof will generally end up being quite short.</p>
+</div>
+</div>
+</div>
+<div id="exr-careful-sup-proof" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 3.12</strong></span> Give a careful proof that <span class="math inline">\(1\)</span> is the supremum of <span class="math inline">\(S=\left\{\frac{n}{n+1}\st n\in\N\right\}\)</span>. Give a proof that is not a proof by contradiction.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The same trick of taking an average like in <a href="axioms-of-r/lub.html#exm-sup-basic">Example 3.7</a> won’t necessarily work since that average might not be in <span class="math inline">\(S.\)</span> <a href="axioms-of-r/lub.html#cor-arch-prop">Corollary 3.10</a> might be helpful here instead.</p>
+</div>
+</div>
+</div>
+<div id="exr-sup-of-scalar-multiple" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 3.13</strong></span> Suppose <span class="math inline">\(S\subseteq\R\)</span> is a nonempty set that is bounded above. Let <span class="math inline">\(c&gt;0\)</span>. We define the set <span class="math display">\[T=\{cx\st x\in S\}.\]</span> Prove that <span class="math inline">\(c\cdot\sup S\)</span> is a least upper bound for <span class="math inline">\(T\)</span>.</p>
+</div>
+<div id="exr-sup-union" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 3.14</strong></span> Suppose <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span> are nonempty subsets of <span class="math inline">\(\R\)</span> that are bounded above. What is <span class="math inline">\(\sup(S\cup T)?\)</span> Prove your answer.</p>
+</div>
+<div id="exr-arch-prop-no-lub" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 3.15</strong></span> Prove the Archimedean Property is true when the universe is <span class="math inline">\(\Q\)</span>. This means you’ll need to refrain from making any references to <span class="math inline">\(\R\)</span>, and you of course can’t use the Least Upper Bound Axiom.</p>
+</div>
+<p>In Part 2e of <a href="axioms-of-r/lub.html#exr-lub-examples">Exercise 3.2</a> and the follow-up discussion, we claimed that the existence of suprema would “plug holes” in the real numbers. In particular, the supremum of <span class="math inline">\(S=\{x\st x^2\leq 3\}\)</span>, which we are assuming exists because of the Least Upper Bound Axiom, seems like it ought to be a number whose square is 3. We’ll prove a more general version of this fact below.</p>
+<div id="thm-sqrts-exist" class="lub-thread grouped-theorem grouped-theorem-theorem">
+<p><span class="theorem-title"><strong>Theorem 3.16</strong></span> For any <span class="math inline">\(a\geq 0\)</span>, there exists a real number <span class="math inline">\(x\geq 0\)</span> such that <span class="math inline">\(x^2=a\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em> (Proof Outline). </span>Suppose <span class="math inline">\(a\geq 0\)</span>. Define <span class="math display">\[S=\{y\st y^2\leq a\}\]</span></p>
+<p>We will show that <span class="math inline">\(S\)</span> is nonempty and bounded above so that we can claim <span class="math inline">\(\sup S\)</span> exists.</p>
+<p>First, we note that <span class="math inline">\(0^2=0&lt;a\)</span>, so <span class="math inline">\(0\in S\)</span>, and thus <span class="math inline">\(S\)</span> is nonempty.</p>
+<p>Next, I claim that <span class="math inline">\(a+1\)</span> is an upper bound on <span class="math inline">\(S\)</span>. This is true because <span class="math display">\[(a+1)^2=a^2+2a+1&gt;a\]</span></p>
+<p>So if <span class="math inline">\(y\in S\)</span>, <span class="math display">\[y^2\leq a&lt; (a+1)^2\]</span></p>
+<p>so <span class="math inline">\(y&lt;a+1\)</span>. Thus <span class="math inline">\(a+1\)</span> is an upper bound on <span class="math inline">\(S\)</span>, so <span class="math inline">\(S\)</span> is bounded above, and <span class="math inline">\(x=\sup S\)</span> exists.</p>
+<p>Now we must show <span class="math inline">\(x^2=a\)</span>. This is the hard part, and it boils down to showing that if <span class="math inline">\(x^2\neq a\)</span>, there must be exist some <span class="math inline">\(z\)</span> so that <span class="math inline">\(z^2\)</span> is strictly between <span class="math inline">\(x^2\)</span> and <span class="math inline">\(a\)</span>, which we can use to lead to a contradiction. For example, if <span class="math inline">\(x^2&lt;z^2&lt;a\)</span>, then <span class="math inline">\(x&lt;z\)</span> and <span class="math inline">\(z\in S\)</span>, which contradicts <span class="math inline">\(x\)</span> being an upper bound on <span class="math inline">\(S\)</span>. And if <span class="math inline">\(a&lt;z^2&lt;x^2\)</span>, then <span class="math inline">\(z&lt;x\)</span>, and for any <span class="math inline">\(y\in S\)</span>, <span class="math inline">\(y^2&lt;a&lt;z^2\)</span>, so <span class="math inline">\(y&lt;z\)</span>; this would show that <span class="math inline">\(z\)</span> is an upper bound less than <span class="math inline">\(x\)</span>, contradicting <span class="math inline">\(x\)</span> being the <em>least</em> upper bound.</p>
+<p>All that remains is to show that such a <span class="math inline">\(z\)</span> exists, which we’ll do here, although the specifics get a bit technical.</p>
+<p>(Finish later)</p>
+</div>
+</section>
+<section id="review-questions" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">3.4</span> Review Questions</h2>
+<ol type="1">
+<li>Give definitions of upper bound, least upper bound, and greatest element.</li>
+<li>What does the Least Upper Bound Axiom say? What two things do we need to know about a set <span class="math inline">\(S\)</span> in order to apply the Least Upper Bound Axiom?</li>
+<li>For examples like those in Part 2 of <a href="axioms-of-r/lub.html#exr-lub-examples">Exercise 3.2</a>, can you quickly identify the least upper bound when there is one?</li>
+<li>What do the two versions of the Archimedean Property tell us?</li>
+</ol>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>I am using one of the standard proof skeleta for proving uniqueness. See <a href="../appendices/proof-writing.html#sec-proof-skeleta" class="quarto-xref"><span>Section A.2</span></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>In <a href="axioms-of-r/lub.html#exr-negate-lub">Exercise 3.4</a> you were to show that something like this is the negation of <span class="math inline">\(3\)</span> being the supremum. In logical symbols, saying 3 is the least upper bound is <span class="math inline">\((\forall \text{ upper bounds } b)(3\leq b)\)</span>. And thus its negation is <span class="math inline">\((\exists\text{ an upper bound } b)(b&lt;3)\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../axioms-of-r/field-and-order.html" class="pagination-link" aria-label="The Field and Order Axioms">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Field and Order Axioms</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../axioms-of-r/lub-props.html" class="pagination-link" aria-label="Consequences of the Least Upper Bound Axiom">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Consequences of the Least Upper Bound Axiom</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

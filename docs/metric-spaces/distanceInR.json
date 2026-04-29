@@ -1,0 +1,126 @@
+{
+    "hash": "yddudu87rz",
+    "title": "Distance on the Number Line",
+    "created": "2025-08-01T23:30:14.190Z",
+    "versionCreatedAt": "2026-03-19T18:57:45.430Z",
+    "stateUrl": "https://www.desmos.com/calc-states/production/version/yddudu87rz/83e8af30-23c5-11f1-9afd-b1d33ec50427",
+    "thumbUrl": "https://www.desmos.com/calc_thumbs/production/version/yddudu87rz/83e8af30-23c5-11f1-9afd-b1d33ec50427.png",
+    "currentVersion": "83e8af30-23c5-11f1-9afd-b1d33ec50427",
+    "type": "my-graph",
+    "access": "link",
+    "product": "graphing",
+    "state": {
+        "version": 11,
+        "randomSeed": "701e4d2c610f396130a7f65ad111d1c8",
+        "graph": {
+            "viewport": {
+                "xmin": -2.913316261203585,
+                "ymin": -2,
+                "xmax": 5.913316261203585,
+                "ymax": 5
+            },
+            "showGrid": false,
+            "showYAxis": false,
+            "xAxisStep": 1,
+            "userLockedViewport": true,
+            "__v12ViewportLatexStash": {
+                "xmin": "-2.913316261203585",
+                "xmax": "5.913316261203585",
+                "ymin": "-2",
+                "ymax": "2"
+            }
+        },
+        "expressions": {
+            "list": [
+                {
+                    "type": "expression",
+                    "id": "1",
+                    "color": "#c74440",
+                    "latex": "\\left(a,0\\right)",
+                    "showLabel": true,
+                    "label": "`a=${a}`"
+                },
+                {
+                    "type": "expression",
+                    "id": "3",
+                    "color": "#388c46",
+                    "latex": "a=0.42",
+                    "hidden": true,
+                    "slider": {
+                        "step": "0.01"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "2",
+                    "color": "#2d70b3",
+                    "latex": "\\left(b,0\\right)",
+                    "showLabel": true,
+                    "label": "`b=${b}`"
+                },
+                {
+                    "type": "expression",
+                    "id": "4",
+                    "color": "#6042a6",
+                    "latex": "b=2.82",
+                    "hidden": true,
+                    "slider": {
+                        "step": "0.01"
+                    }
+                },
+                {
+                    "type": "folder",
+                    "id": "5",
+                    "title": "Decorations"
+                },
+                {
+                    "type": "expression",
+                    "id": "6",
+                    "folderId": "5",
+                    "color": "#000000",
+                    "latex": "c=0.205",
+                    "slider": {
+                        "hardMin": true,
+                        "hardMax": true,
+                        "min": "0",
+                        "max": "1"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "7",
+                    "folderId": "5",
+                    "color": "#388c46",
+                    "latex": "y=-c\\left\\{a\\le x\\le b\\right\\}"
+                },
+                {
+                    "type": "expression",
+                    "id": "9",
+                    "folderId": "5",
+                    "color": "#388c46",
+                    "latex": "y=-c\\left\\{b\\le x\\le a\\right\\}"
+                },
+                {
+                    "type": "expression",
+                    "id": "11",
+                    "folderId": "5",
+                    "color": "#000000",
+                    "latex": "d=\\left|a-b\\right|"
+                },
+                {
+                    "type": "expression",
+                    "id": "10",
+                    "folderId": "5",
+                    "color": "#388c46",
+                    "latex": "\\left(\\frac{\\left(a+b\\right)}{2},-c\\right)",
+                    "showLabel": true,
+                    "label": "distance`= ${d}`",
+                    "hidden": true,
+                    "labelOrientation": "below"
+                }
+            ]
+        },
+        "includeFunctionParametersInRandomSeed": true,
+        "doNotMigrateMovablePointStyle": true
+    }
+}

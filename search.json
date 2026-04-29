@@ -1,0 +1,1063 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Real Analysis",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 Acknowledgements\nThis is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\nPlease look back to Theorem 1.1\nThe author acknowledges support of the Institut Henri Poincar'e (UAR 839 CNRS-Sorbonne Universit'e), and LabEx CARMIN (ANR-10-LABX-59-01).\nAlso thank: John Rock, Yuri Sulyman, Desmos",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#acknowledgements",
+    "href": "intro.html#acknowledgements",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/intro-to-r.html",
+    "href": "axioms-of-r/intro-to-r.html",
+    "title": "The Real Numbers",
+    "section": "",
+    "text": "Notes\nAs discussed in the introduction, our approach to real analysis will be to start by laying out a set of axioms that we assume are true about the real number system \\(\\R\\) and then prove everything else based upon this set of axioms.\nIn order to properly take this approach, we need a set of axioms that:\nThe purpose of the first bullet point is clear enough: if I don’t assume anything, I won’t be able to prove anything.\nThe second bullet point about distinguishing \\(\\R\\) from other number systems is related, but deserves some explanation. Consider the following proposition:\nThis is true if our universe is \\(\\R\\) but false our universe is \\(\\Q\\). If our axioms for \\(\\R\\) do not distinguish it from \\(\\Q\\), we will have no hope of proving such a propositon. In short, I want a set of axioms that is true for \\(\\R\\) but for no other number system.",
+    "crumbs": [
+      "The Real Numbers"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/intro-to-r.html#notes",
+    "href": "axioms-of-r/intro-to-r.html#notes",
+    "title": "The Real Numbers",
+    "section": "",
+    "text": "Should include an thought experiment about how do we know there is a number \\(x\\) such that \\(e^x+x=1\\) (with Desmos graphic).\nShould include something about how mathematics shifted from a search for absolute truth to a search for understanding of how consequences follow from hypotheses.",
+    "crumbs": [
+      "The Real Numbers"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/field-and-order.html",
+    "href": "axioms-of-r/field-and-order.html",
+    "title": "2  The Field and Order Axioms",
+    "section": "",
+    "text": "2.1 Highlights",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Field and Order Axioms</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/field-and-order.html#highlights",
+    "href": "axioms-of-r/field-and-order.html#highlights",
+    "title": "2  The Field and Order Axioms",
+    "section": "",
+    "text": "Two of the three axioms we will assume about the real number system: the field axiom which gives us the rules of arithmetic, and the order axiom which gives us the rules for inequalities.\nWe see examples of other number systems besides \\(\\R\\) that also satisfy one or both of these axioms. In particular \\(\\Q\\) also satisfies both.",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Field and Order Axioms</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/field-and-order.html#preparation",
+    "href": "axioms-of-r/field-and-order.html#preparation",
+    "title": "2  The Field and Order Axioms",
+    "section": "2.2 Preparation",
+    "text": "2.2 Preparation\nLook ahead to the definition of a field (Definition 2.2) and definition of an ordered field (Definition 2.7). See if you can convince yourself the real number system does indeed satisfy both of these definitions. For example, every real number \\(x\\) does in fact have an additive inverse (a number \\(-x\\) that be added to \\(x\\) to obtain \\(0\\)); it is true that when you multiply two positive real numbers you get another positive real number.\nTake another moment to scan some of the theorems that follow each of these axioms. None of these should be surprising—they are all well-known facts about how arithmetic and inequalities work in \\(\\R\\)—but what may be surprising is that extremely simple facts like \\(0x=0\\) (Theorem 2.4) and \\(1&gt;0\\) (Theorem 2.9) can be proven from even simpler assumptions.\nFor now, let’s focus on thinking about which other familiar number systems satisfy the field and order axioms.\n\nExercise 2.1 Think about some familiar number systems that aren’t the real numbers: \\(\\mathbb{N}\\), \\(\\mathbb{Z}\\), \\(\\mathbb{Q}\\), and \\(\\mathbb{C}\\). You may rely on prior knowledge for this problem—no need to show all of your work.\n\nWhich of these are fields? For those that are not, which properties do they fail to have?\nWhich of these are ordered fields? Which of these satisfy the two conditions of Definition 2.7 despite not actually being a field?\n(Exploratory) You should have found that one of the four number systems is a field and an ordered field. The Intermediate Value Theorem (for example) is true in \\(\\R\\), but it is not true in any of these other four number systems. With that information, do you think one would be able to prove the Intermediate Value Theorem in \\(\\R\\) if our only assumptions about \\(\\R\\) are the field and order axioms?",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Field and Order Axioms</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/field-and-order.html#fields",
+    "href": "axioms-of-r/field-and-order.html#fields",
+    "title": "2  The Field and Order Axioms",
+    "section": "2.3 Fields",
+    "text": "2.3 Fields\nFor our purposes, a number system \\(\\mathbb{S}\\) is a set with two binary operations \\(+\\) and \\(\\cdot\\). This is a nonstandard term, but we won’t use it much beyond this section.\n\nDefinition 2.2 A number system \\(\\mathbb{S}\\) is said to be a field if it satisfies the following properties.\n\nAddition is commutative (for all \\(a,b\\in\\mathbb{S}\\), \\(a+b=b+a\\)).\nAddition is associative (for all \\(a,b,c\\in\\mathbb{S}\\), \\((a+b)+c=a+(b+c)\\)).\nThere is an element \\(0\\in\\mathbb{S}\\), called the additive identity such that for all \\(a\\in\\mathbb{S}\\), \\(a+0=a\\).\nEvery \\(a\\in\\mathbb{S}\\) has an additive inverse \\(-a\\) with the property that \\(a+(-a)=0\\).\nMultiplication is commutative (for all \\(a,b\\in\\mathbb{S}\\), \\(a\\cdot b=b\\cdot a\\)).\nMultiplication is associative (for all \\(a,b,c\\in\\mathbb{S}\\), \\((a\\cdot b)\\cdot c=a\\cdot(b\\cdot c)\\)).\nThere is an element \\(1\\in\\mathbb{S}\\) different from 0, called the multiplicative identity such that for all \\(a\\in\\mathbb{S}\\), \\(a\\cdot 1=a\\).\nEvery \\(a\\in\\mathbb{S}\\setminus\\{0\\}\\) has an additive inverse \\(a^{-1}\\) with the property that \\(a+(a^{-1})=1\\).\nThe distributive rule holds (for all \\(a,b,c\\in\\mathbb{S}\\), \\(a(b+c)=a\\cdot b+a\\cdot c\\)).\n\n\nCollectively, these properties tell us how arithmetic works for fields. And the first axiom we make aobut the real number system is that it is indeed a field.\n\nTheorem 2.3 \\(\\R\\) is a field.\n\nNote that there is no reference to the operations of subtraction and division in the definition of a field, but these can be defined in terms of the established properties: \\(a-b\\) is defined to be \\(a+(-b)\\) (after all, \\(-b\\) is defined above), and if \\(b\\neq0\\), we define \\(\\frac{a}{b}\\) to be \\(a\\cdot b^{-1}\\) (after all, \\(b^{-1}\\) is defined above).\nWhat is somewhat remarkable is that all of the other rules of arithmetic for the real numbers can be derived from the field axiom. For example, you may have supposed that the following theorem would be an assumption, but one can prove it from the even more basic assumptions in the definition of a field.\n\nTheorem 2.4 For any \\(x\\in\\R\\), \\(0x=0\\).\n\n\nExercise 2.5 Prove Theorem 2.4.\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nNote that Theorem 2.4 involves both multiplication and, implicitly, addition (since it involves the additive identity). Thus its proof must involve the one part of the field axiom that combines addition and multiplication: the distributive property.\n\n\n\n(More theorems with the caveat that we won’t keep doing this for long.)\nAny facts that we can prove about \\(\\R\\) that use only the assumption that \\(\\R\\) is a field, will in fact be true for any field. And there are some weird fields.\n\nExercise 2.6 Consider the number system \\(\\mathbb{F}_2=\\{\\alpha,\\beta\\}\\) consisting of just two elements, where the addition and multiplication operations are defined by \\[\\alpha+\\alpha=\\beta \\qquad \\alpha+\\beta=\\alpha \\qquad \\beta+\\alpha=\\alpha \\qquad \\beta+\\beta=\\beta\\] and \\[\\alpha\\cdot\\alpha=\\alpha \\qquad \\alpha\\cdot\\beta=\\beta \\qquad \\beta\\cdot\\alpha=\\beta \\qquad \\beta\\cdot\\beta=\\beta.\\]\nIt turns out that \\(\\mathbb{F}_2\\) is a field. Which element of \\(\\mathbb{F}_2\\) is \\(0?\\) Which is \\(1?\\) Which is \\(-1?\\)\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nAsking which element is \\(0\\) means asking which element is the additive identity—the thing that can be added to any element and get that same element back. Similarly for the multiplicative identity \\(1\\). And asking which element is \\(-1\\) means asking which element is the additive inverse of \\(1\\) (the thing you add to \\(1\\) and get back \\(0\\)).\n\n\n\nSo the field axiom alone fails miserably at the goal of distinguishing \\(\\R\\) from other number systems—it cannot even distinguish \\(\\R\\) from a number system with just two elements! So we need more axioms capturing more of the structure of \\(\\R\\).",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Field and Order Axioms</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/field-and-order.html#order-and-inequalities",
+    "href": "axioms-of-r/field-and-order.html#order-and-inequalities",
+    "title": "2  The Field and Order Axioms",
+    "section": "2.4 Order and Inequalities",
+    "text": "2.4 Order and Inequalities\nAnother important feature of the real number system is the behavior of inequalities and how they interact with arithmetic. This is captured by the next axiom.\n\nDefinition 2.7 A field \\(\\mathbb{F}\\) is called an ordered field if it has a relation \\(&gt;\\) with the following properties.\n\nFor all \\(a\\in\\mathbb{F}\\), exactly one of the following is true:\n\n\\(a&gt;0\\),\n\\(a=0\\), or\n\\(-a&gt;0\\).\n\nIf \\(a&gt;0\\) and \\(b&gt;0\\), then \\(a+b&gt;0\\) and \\(a\\cdot b&gt;0\\).\n\\(b&gt;a\\) if and only if \\(b-a&gt;0\\).\n\n\nWe can then define relations \\(&lt;,\\leq,\\geq\\) in the usual way based on the relation \\(&gt;\\)1.\n\nTheorem 2.8 \\(\\R\\) is an ordered field.\n\nAgain, the properties listed in Definition 2.7 are not surprising; we already knew they were true for \\(\\R\\). But more surprising is the fact the everything else we know about how inequalities behave and interact with arithmetic can be prove from Theorem 2.3 and Theorem 2.8.\n\nTheorem 2.9 \\(1&gt;0\\).\n\nYou are probably familiar with the basics of how inequalities and arithmetic interact, and henceforth, we can use them at will without citation. In this class, being fluent with the rules for inequalities will be essential, though, so we collect a list of “inequality rules” (all of which could in principle be proven from Theorem 2.3 and Theorem 2.8) in Section 2.5.\nWorth reflecting on now is where we stand on our stated goals in creating the axioms. The Theorem 2.8 was successful in distinguishing \\(\\R\\) from \\(\\mathbb{F}_2\\) because there is no ordering on \\(\\mathbb{F}_2\\) satisfying Definition 2.7 (you will prove this in Exercise 2.11 below).\nHowever, we can note that \\(\\mathbb{Q}\\) is also an ordered field since it satisfies Theorem 2.8. This means that anything we can prove directly from Theorem 2.3 and Theorem 2.8 will apply just as well if our universe were \\(\\mathbb{Q}\\) as it would if our universe were \\(\\mathbb{R}\\). In particular, we would have no hope of proving, say, the Intermediate Value Theorem, which is true in \\(\\mathbb{R}\\) but not in \\(\\mathbb{Q}\\).\nThis all means that we need another assumption—an axiom that will distinguish the real number system from the rationals in a way that will allow us to prove everything else we’ll need in order to do calculus.\n\nExercise 2.10 Prove Theorem 2.9 using only the Field and Order Axioms.\n\n\nExercise 2.11 Prove that the following fields are not ordered.\n\n\\(\\mathbb{F}_2\\) (defined in Exercise 2.6)\nThe complex numbers \\(\\mathbb{C}\\)\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nThis is a good opportunity to use a proof by contradiction. What contradiction can you create by assuming there is an ordering on \\(\\mathbb{F}_2\\) satisfying the conditions of Definition 2.7? What about in \\(\\mathbb{C}\\)?\n\n\n\nThe following exercise says something very simple, but ends up being very useful in practice.\n\nExercise 2.12 Suppose \\(r\\geq0\\) and that for all \\(\\epsilon&gt;0\\), \\(r\\leq \\epsilon\\). Prove that \\(r=0\\).\n\n\n2.4.1 Review Questions\n\nGive some examples of number systems that are fields. Give some examples of number systems that are not fields.\nGive some examples of fields that are ordered fields. Give some examples of fields that are not ordered fields.\nSummarize for yourself how we can be certain that it is impossible to prove a statement like “every positive number in \\(\\R\\) has a square root” building off of only the field and order axioms.",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Field and Order Axioms</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/field-and-order.html#sec-inequality-rules",
+    "href": "axioms-of-r/field-and-order.html#sec-inequality-rules",
+    "title": "2  The Field and Order Axioms",
+    "section": "2.5 Inequality Rules",
+    "text": "2.5 Inequality Rules\n\n\\(a\\) is positive \\(\\Leftrightarrow\\) \\(-a\\) is negative\n\\(1&gt;0\\)\n\\(x\\leq y\\) and \\(y\\leq z\\) \\(\\Rightarrow\\) \\(x\\leq z\\)\n\\(a&gt;b\\) and \\(c\\geq d\\) \\(\\Rightarrow\\) \\(a+c&gt;b+d\\)\n\\(a&gt;b&gt;0\\) and \\(c\\geq d&gt;0\\) \\(\\Rightarrow\\) \\(ac&gt;bd\\)\n\\(a&gt;b\\) and \\(c&lt;0\\) \\(\\Rightarrow\\) \\(ac&lt;bc\\)\n\\(a&lt;0\\) and \\(b&lt;0\\) \\(\\Rightarrow\\) \\(a+b&lt;0\\)\n\\(a&lt;0\\) and \\(b&lt;0\\) \\(\\Rightarrow\\) \\(ab&gt;0\\)\n\\(a&gt;0\\) and \\(b&lt;0\\) \\(\\Rightarrow\\) \\(ab&lt;0\\)\n\\(a&gt;0\\) \\(\\Leftrightarrow\\) \\(\\frac{1}{a}&gt;0\\)\n\\(a&gt;1\\) \\(\\Rightarrow\\) \\(a^2&gt;a\\)\n\\(0&lt;a&lt;1\\) \\(\\Rightarrow\\) \\(a^2&lt;a\\)\n\\(a&gt;b&gt;0\\) \\(\\Rightarrow\\) \\(a^2&gt;b^2\\)",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Field and Order Axioms</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/field-and-order.html#footnotes",
+    "href": "axioms-of-r/field-and-order.html#footnotes",
+    "title": "2  The Field and Order Axioms",
+    "section": "",
+    "text": "That is, we define \\(a&lt;b\\) to mean \\(b&gt;a\\), \\(a\\leq b\\) to mean \\(a&lt;b\\) or \\(a=b\\), and \\(a\\geq b\\) to mean \\(a&gt;b\\) or \\(a=b\\).↩︎",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Field and Order Axioms</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub.html",
+    "href": "axioms-of-r/lub.html",
+    "title": "3  The Least Upper Bound Axiom",
+    "section": "",
+    "text": "3.1 Highlights",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>The Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub.html#highlights",
+    "href": "axioms-of-r/lub.html#highlights",
+    "title": "3  The Least Upper Bound Axiom",
+    "section": "",
+    "text": "The definition of the supremum of a set and the Least Upper Bound axiom of \\(\\R\\)\nThe Archimedean Properties of \\(\\R\\)",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>The Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub.html#preparation",
+    "href": "axioms-of-r/lub.html#preparation",
+    "title": "3  The Least Upper Bound Axiom",
+    "section": "3.2 Preparation",
+    "text": "3.2 Preparation\nLeading up to the third and final axiom of \\(\\R\\), we make a few definitions.\n\nDefinition 3.1 Let \\(S\\subseteq\\R\\) be a subset of the real numbers.\n\nWe say \\(b\\in\\R\\) is an upper bound of \\(S\\) if for all \\(x\\in S\\), \\(b\\geq x.\\) If \\(S\\) has an upper bound, we say \\(S\\) is bounded above.\nWe say that \\(u\\in\\R\\) the least upper bound or supremum of \\(S\\) if for all upper bounds \\(b\\) of \\(S\\), \\(u\\leq b\\), and in this case we write \\[u=\\sup S.\\]\nIf \\(u\\) is the least upper bound \\(S\\) and \\(u\\in S\\), we say that \\(u\\) is the greatest element of \\(S.\\)\n\n\n\nExercise 3.2  \n\nWrite down three upper bounds for the interval \\(S=[0,3)\\). Does \\(S\\) have a least upper bound; if so what is it? Does \\(S\\) have a greatest element; if so, what is it?\nFor each set below, say what it’s supremum and greatest element are or say why it doesn’t have one.\n\n\\(\\left\\{\\frac{n}{n+1}\\st n\\in\\N\\right\\}\\)\n\\((2,\\infty)\\)\n\\(\\left\\{\\frac{1}{n}\\st n\\in\\N\\right\\}\\)\n\\((-\\infty,3]\\)\n\\(\\{x\\st x^2\\leq 3\\}\\)\n\nDescribe in your own words which subsets of \\(\\R\\) have upper bounds, which have least upper bounds, and which have greatest elements. This doesn’t have to be precise; just give me the vibe.\n(Exploratory) How would you change your answers to the previous problems if our universe were \\(\\Q\\) instead of \\(\\R?\\)\n\n\n\nThe example of \\(S=[0,3)\\) is illustrated below. You can play with the slider to help you think about what value(s) of \\(b\\) might satisfy the definitions of upper bound, supremum, or greatest element.\n\n\n\n\n\nExercise 3.3 Write “\\(S\\) is bounded above” in logical symbolic notation; see if you can do so without using the term “upper bound”.\n\n\nExercise 3.4 Suppose \\(b\\) is an upper bound on a set \\(S\\). What does it mean for \\(b\\) to not be the least upper bound of \\(S\\)?",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>The Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub.html#least-upper-bounds",
+    "href": "axioms-of-r/lub.html#least-upper-bounds",
+    "title": "3  The Least Upper Bound Axiom",
+    "section": "3.3 Least Upper Bounds",
+    "text": "3.3 Least Upper Bounds\nPart 2e of Exercise 3.2 is meant to draw a contrast between how least upper bounds work in \\(\\R\\) versus how they work in \\(\\Q.\\) In particular, the problem asks, if \\[S=\\{x\\st x^2\\leq 3\\}?\\] does \\(S\\) have a least upper bound?\nWhether our universe is \\(\\Q\\) or \\(\\R\\) or some other ordered field, \\(S\\) certainly has an upper bound; \\(b=2\\), for example, is greater than any element of \\(S\\) (that is, \\(2\\) is greater than any number whose square is less than 3). But as you may have guessed, an ordered field has a number whose square is \\(3\\) if and only if the set \\(S\\) defined above has a least upper bound (in which case \\(\\sup S\\) is such a number).\nWe have a sense that the since \\(3\\) has no square root in \\(\\Q\\), there is something missing—a “hole” in the rationals that we plug by instead thinking about \\(\\R\\). And as this example shows, plugging such a hole can be related to the existence of a least upper bound on a set.\nThis connection goes in the opposite direction as well. If we assume the supremum of \\(S\\) exists, then we at least have a candidate for a number whose square is \\(3\\) (actually proving this is more complicated than you might expect—see Theorem 3.16 below).\nThis is all motivation for the final axiom we’ll assume about the real nubers: a guarantee of the existence of least upper bounds that will have the effect of ensuring that any \\(\\R\\) will not have any “holes” in this sense, the way that \\(\\Q\\) does.\n\nTheorem 3.5 (The Least Upper Bound Axiom) Every non-empty subset of \\(\\R\\) that is bounded above has a least upper bound in \\(\\R.\\)\n\n\n\n\n\n\n\nTip\n\n\n\nNote that using Theorem 3.5 to conclude that a subset \\(S\\subseteq\\R\\) has a supremum requires \\(S\\) to satisfy two hypotheses:\n\n\\(S\\) is nonempty, and\n\\(S\\) is bounded above.\n\n\n\nFrom now on, we’ll make a point of emphasizing which theorems that require the Least Upper Bound Axiom in their proofs and how. Theorems that rely on the Least Upper Bound Axiom will be highlighted with a maroon bar.\nAs a first step to understanding least upper bounds, we should justify the use of the word “the” in Definition 3.1.\n\n\n\n\n\n\nTip\n\n\n\nGenerally, when define a new quantity implicitly (i.e. without giving an explicit formula), we should ask ourselves whether a unique quantity satisfies the definition. For example, a subset of \\(\\R\\) may have more than one upper bound. That a subset has only one least upper bound (if it has one at all) is something we need to prove.\n\n\n\nTheorem 3.6 If a subset of \\(\\R\\) has a least upper bound, then it is unique.\n\n\nProof. Suppose \\(u,v\\) are both least upper bounds for a subset \\(S\\subseteq\\R.\\)1 Then \\(u\\) is an upper bound for \\(S\\), so since \\(v\\) is a least upper bound, \\(v\\leq u\\). Also, \\(v\\) is an upper bound for \\(S\\), so since \\(u\\) is the least upper bound, \\(u\\leq v\\). Therefore \\(u=v.\\)\n\nTo prove a quantity is the least upper bound of a set, generally, one needs to show two things: prove that it’s an upper bound, and then prove that any other upper bound is less than or equal to it.\n\nExample 3.7 Here we’ll do a careful proof that \\(3\\) is the supremum of \\(S=(-\\infty,3)\\).\nFirst, note that by definition \\(S\\) is all numbers less than 3, so for any \\(x\\in S\\), \\(3&gt;x.\\) Therefore \\(3\\) is an upper bound on \\(S\\).\nBy way of contradiction, suppose \\(b&lt;3\\) and \\(b\\) is also an upper bound on \\(S\\).2 But then consider \\(x=\\frac{b+3}{2}\\) so that \\(b&lt;x&lt;3.\\) Since \\(x&lt;3\\), we know \\(x\\in S.\\) But \\(b&lt;x\\) which contradicts \\(b\\) being an upper bound on \\(S\\).\n\nNote that doing a proof by contradiction above was not really necessary. Another option would be to say “suppose \\(b&lt;3\\)” and then prove \\(b\\) is not an upper bound.\nNext we have some basic consequences of Theorem 3.5. The next theorem and its corollary are both often referred to as the “Archimedean Property” of \\(\\R\\).\n\nTheorem 3.8 (Archimedean Property - Version 1) For any \\(x\\in\\R\\), there exists \\(n\\in\\N\\) such that \\(n&gt;x\\).\n\n\nProof. By way of contradiction, suppose ___, which is the same as saying that \\(x\\) is an upper bound on \\(\\N\\). Then since \\(\\N\\) is ___ and bounded above, \\(\\N\\) has a least upper bound \\(u.\\) But then \\(u-\\frac{1}{2}&lt;u\\), so \\(u-\\frac{1}{2}\\) is not an upper bound. Therefore there exists \\(n\\in\\N\\) such that ___. But then \\[n+1&gt;u-\\frac{1}{2}+1=u+\\frac{1}{2}&gt;u,\\] and since \\(n+1\\in\\N\\), we have contradicted ___.\n\n\nExercise 3.9 Fill in the blanks for the proof above. For the first blank, you’ll need to negate the original statement.\n\n\nCorollary 3.10 (Archimedean Property - Version 2) For any \\(\\epsilon&gt;0\\), there exists \\(n\\in\\N\\) such that \\(\\frac{1}{n}&lt;\\epsilon\\).\n\n\nExercise 3.11 Prove Corollary 3.10.\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nRemember that when we call a theorem a “Corollary”, it means that you should use the preceeding theorem to prove it, and the proof will generally end up being quite short.\n\n\n\n\nExercise 3.12 Give a careful proof that \\(1\\) is the supremum of \\(S=\\left\\{\\frac{n}{n+1}\\st n\\in\\N\\right\\}\\). Give a proof that is not a proof by contradiction.\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nThe same trick of taking an average like in Example 3.7 won’t necessarily work since that average might not be in \\(S.\\) Corollary 3.10 might be helpful here instead.\n\n\n\n\nExercise 3.13 Suppose \\(S\\subseteq\\R\\) is a nonempty set that is bounded above. Let \\(c&gt;0\\). We define the set \\[T=\\{cx\\st x\\in S\\}.\\] Prove that \\(c\\cdot\\sup S\\) is a least upper bound for \\(T\\).\n\n\nExercise 3.14 Suppose \\(S\\) and \\(T\\) are nonempty subsets of \\(\\R\\) that are bounded above. What is \\(\\sup(S\\cup T)?\\) Prove your answer.\n\n\nExercise 3.15 Prove the Archimedean Property is true when the universe is \\(\\Q\\). This means you’ll need to refrain from making any references to \\(\\R\\), and you of course can’t use the Least Upper Bound Axiom.\n\nIn Part 2e of Exercise 3.2 and the follow-up discussion, we claimed that the existence of suprema would “plug holes” in the real numbers. In particular, the supremum of \\(S=\\{x\\st x^2\\leq 3\\}\\), which we are assuming exists because of the Least Upper Bound Axiom, seems like it ought to be a number whose square is 3. We’ll prove a more general version of this fact below.\n\nTheorem 3.16 For any \\(a\\geq 0\\), there exists a real number \\(x\\geq 0\\) such that \\(x^2=a\\).\n\n\nProof (Proof Outline). Suppose \\(a\\geq 0\\). Define \\[S=\\{y\\st y^2\\leq a\\}\\]\nWe will show that \\(S\\) is nonempty and bounded above so that we can claim \\(\\sup S\\) exists.\nFirst, we note that \\(0^2=0&lt;a\\), so \\(0\\in S\\), and thus \\(S\\) is nonempty.\nNext, I claim that \\(a+1\\) is an upper bound on \\(S\\). This is true because \\[(a+1)^2=a^2+2a+1&gt;a\\]\nSo if \\(y\\in S\\), \\[y^2\\leq a&lt; (a+1)^2\\]\nso \\(y&lt;a+1\\). Thus \\(a+1\\) is an upper bound on \\(S\\), so \\(S\\) is bounded above, and \\(x=\\sup S\\) exists.\nNow we must show \\(x^2=a\\). This is the hard part, and it boils down to showing that if \\(x^2\\neq a\\), there must be exist some \\(z\\) so that \\(z^2\\) is strictly between \\(x^2\\) and \\(a\\), which we can use to lead to a contradiction. For example, if \\(x^2&lt;z^2&lt;a\\), then \\(x&lt;z\\) and \\(z\\in S\\), which contradicts \\(x\\) being an upper bound on \\(S\\). And if \\(a&lt;z^2&lt;x^2\\), then \\(z&lt;x\\), and for any \\(y\\in S\\), \\(y^2&lt;a&lt;z^2\\), so \\(y&lt;z\\); this would show that \\(z\\) is an upper bound less than \\(x\\), contradicting \\(x\\) being the least upper bound.\nAll that remains is to show that such a \\(z\\) exists, which we’ll do here, although the specifics get a bit technical.\n(Finish later)",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>The Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub.html#review-questions",
+    "href": "axioms-of-r/lub.html#review-questions",
+    "title": "3  The Least Upper Bound Axiom",
+    "section": "3.4 Review Questions",
+    "text": "3.4 Review Questions\n\nGive definitions of upper bound, least upper bound, and greatest element.\nWhat does the Least Upper Bound Axiom say? What two things do we need to know about a set \\(S\\) in order to apply the Least Upper Bound Axiom?\nFor examples like those in Part 2 of Exercise 3.2, can you quickly identify the least upper bound when there is one?\nWhat do the two versions of the Archimedean Property tell us?",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>The Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub.html#footnotes",
+    "href": "axioms-of-r/lub.html#footnotes",
+    "title": "3  The Least Upper Bound Axiom",
+    "section": "",
+    "text": "I am using one of the standard proof skeleta for proving uniqueness. See Section A.2.↩︎\nIn Exercise 3.4 you were to show that something like this is the negation of \\(3\\) being the supremum. In logical symbols, saying 3 is the least upper bound is \\((\\forall \\text{ upper bounds } b)(3\\leq b)\\). And thus its negation is \\((\\exists\\text{ an upper bound } b)(b&lt;3)\\).↩︎",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>The Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub-props.html",
+    "href": "axioms-of-r/lub-props.html",
+    "title": "4  Consequences of the Least Upper Bound Axiom",
+    "section": "",
+    "text": "Highlights",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Consequences of the Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub-props.html#highlights",
+    "href": "axioms-of-r/lub-props.html#highlights",
+    "title": "4  Consequences of the Least Upper Bound Axiom",
+    "section": "",
+    "text": "We define the greatest lower bound (also called the infimum) of a set and prove that these exist in \\(\\R\\) whenever a nonempty subset is bounded below.\nWe prove the Nested Interval Theorem, which shows that the intersection of a nested sequence of closed intervals is nonempty.\nWe show how the Nested Interval Theorem can be used to prove that \\(\\R\\) is uncountable.",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Consequences of the Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub-props.html#preparation",
+    "href": "axioms-of-r/lub-props.html#preparation",
+    "title": "4  Consequences of the Least Upper Bound Axiom",
+    "section": "Preparation",
+    "text": "Preparation\nWe start with a definition that should seem very natural given what we did in the last section.\n\nDefinition 4.1 Let \\(S\\subseteq\\R\\) be a subset of the real numbers.\n\nWe say \\(b\\in\\R\\) is a lower bound of \\(S\\) if for all \\(x\\in S\\), \\(b\\leq x.\\) If \\(S\\) has a lower bound, we say \\(S\\) is bounded below.\nWe say that \\(l\\in\\R\\) the greatest lower bound or infimum of \\(S\\) if for all lower bounds \\(b\\) of \\(S\\), \\(l\\geq b\\), and in this case we write \\[l=\\inf S.\\]\nIf \\(l\\) is the greatest lower bound \\(S\\) and \\(l\\in S\\), we say that \\(l\\) is the least element of \\(S.\\)\n\n\n\nExercise 4.2 Find the infimum and least element of each set below or say why it doesn’t have one.\n\n\\([0,\\infty)\\)\n\\((-\\infty,0]\\)\n\\((0,3]\\)\nThe set of upper bounds on \\([0,3]\\).\nThe set of upper bounds on \\([0,3)\\).\n\n\nParts 4 and 5 of Exercise 4.2 are meant to demonstrate another way of thinking about the Least Upper Bound Axiom: it tells us that sets of upper bounds always have a least element when they are non-empty.\nRather than make an assumption about infima existing, as we did with suprema, we can prove this as a theorem from the Least Upper Bound Axiom using this idea.\n\nTheorem 4.3 If a nonempty subset \\(S\\subseteq\\R\\) has a lower bound, then \\(S\\) has a greatest lower bound in \\(\\R\\).\n\n\nProof. Suppose \\(S\\subseteq\\R\\) is nonempty and bounded below. Then let \\(T\\) be the set of lower bounds of \\(S\\). Note that \\(T\\) is nonempty (since \\(S\\) was bounded above) and bounded above (by any element of \\(S\\)). Thus \\(T\\) has a least upper bound \\(l=\\sup T\\).\nI claim that \\(l=\\inf(S)\\). First, we note that \\(l\\) is in fact greater than any other lower bound of \\(S\\), since \\(l\\) is an upper bound on \\(T\\). Also, since every element of \\(S\\) is an upper bound on \\(T\\), we have \\(l\\leq s\\) for all \\(s\\in S\\) since \\(l\\) is the least upper bound of \\(T\\).\n\n\nExercise 4.4 Try proving Theorem 4.3 another way. Consider the set \\(U=\\{x\\st -x\\in S\\}\\), and show that \\(-\\sup U=\\inf S\\).1\n\nOne more concept we’ll need in order to get started on this section is the idea of taking an infinite union or intersection, which will be important for understanding the Nested Interval Theorem.\n\nExercise 4.5 For each example below, (i) draw the sequence of intervals on a number line, (ii) decide whether the sequence of intervals satisfies the conditions of Theorem 4.6 below, and (iii) identify the intersection \\(\\displaystyle \\bigcap_{i=1}^\\infty [a_i,b_i]\\).2\n\n\\([a_i,b_i]=\\left[-\\frac{1}{i},\\frac{1}{i}\\right]\\) for \\(i\\in\\N\\)\n\\([a_i,b_i]=[-i,i]\\) for \\(i\\in\\N\\)\n\\([a_i,b_i]=\\left[0,1+\\frac{1}{i}\\right]\\) for \\(i\\in\\N\\)",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Consequences of the Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub-props.html#nested-interval-theorem",
+    "href": "axioms-of-r/lub-props.html#nested-interval-theorem",
+    "title": "4  Consequences of the Least Upper Bound Axiom",
+    "section": "4.1 Nested Interval Theorem",
+    "text": "4.1 Nested Interval Theorem\nOne distinguishing feature of the real numbers is, intuitively, if you keep zooming in on the number line, you are always zooming in to a number.\nAs a thought experiment, consider the following collection of intervals:\n\\[\\begin{aligned}\n  U_1&=&[3,4]\\\\\n  U_2&=&[3.1,3.2]\\\\\n  U_3&=&[3.14,3.15]\\\\\n  U_4&=&[3.141,3.142]\\\\\n  U_5&=&[3.1415,3.1416]\\\\\n  U_6&=&[3.14159,3.14160]\\\\\n  &\\vdots&\n\\end{aligned}\\]\nSpecifically, \\(U_i\\) is the closed interval between \\(\\pi\\) rounded up and down to \\(i\\) significant figures.\nIf the universe is \\(\\R\\), there is a number that will be in \\(U_i\\) for all \\(i\\): \\(\\pi\\). By contrast, in \\(\\Q\\), there is no number inside all of these sets—we’d be zooming in onto something that isn’t there. The Nested Interval Theorem below generalizes this idea.\n\nTheorem 4.6 (Nested Interval Theorem) Suppose \\(a_i\\) and \\(b_i\\) are real numbers with \\(a_i\\leq b_i\\) for all \\(i\\in\\N\\) such that if we set \\(U_i=[a_i,b_i]\\), we have \\(U_{i+1}\\subseteq U_i\\) for all \\(i\\in\\N.\\) In this case\n\\[\\bigcap_{i=1}^\\infty U_i \\neq \\varnothing.\\]\n\n\n\n\n\n\n\n\n\n\nDesmos Applet 4.1: A sequence of nested closed intervals.\n\n\n\nProof (Setup Only). Assuming the hypotheses of the theorem, we note that since \\(U_{i+1}\\subseteq U_i\\), we have for all \\(i\\in\\N\\) \\[a_i\\leq a_{i+1} \\qquad b_{i+1}\\leq b_i.\\]\nIn fact, from this, one can prove3 that \\(a_i\\leq b_j\\) for any \\(i,j\\in\\N\\).\n…\n\n\nExercise 4.7 Finish the proof of the Nested Interval Theorem.\nThe big hint here is that Nested Interval Theorem is true for \\(\\R\\) but not for \\(\\Q\\), so it must use the Least Upper Bound Axiom in some essential way.\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nTo prove a set is nonempty, you should exhibit an element that lives in the set, and then prove that element lives in the set.",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Consequences of the Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub-props.html#uncountability-of-r",
+    "href": "axioms-of-r/lub-props.html#uncountability-of-r",
+    "title": "4  Consequences of the Least Upper Bound Axiom",
+    "section": "4.2 Uncountability of \\(\\R\\)",
+    "text": "4.2 Uncountability of \\(\\R\\)\nRecall that a set \\(S\\) is called countable if there exists a surjective function \\(\\N\\rightarrow S\\). Intuitively, it means that there is some way of listing the elements of \\(S\\) (possibly with repetition) so that every element of \\(S\\) eventually appears on the list.\nIt is clear that \\(\\N\\) is countable, but somewhat less obvious are the facts that \\(\\Z\\) and \\(\\Q\\) are countable4. However, \\(\\R\\) is uncountable; it has a strictly larger cardinality than \\(\\N\\), \\(\\Z\\), and \\(\\Q\\). Intuitively, the number of real numbers is a “higher level of infinity” than the number of natural/integer/rational numbers.\nThere are a few ways to prove that \\(\\R\\) is uncountable, but as we should now expect, all of them rely on the Least Upper Bound Axiom since uncountability is a property \\(\\R\\) has but \\(\\Q\\) does not. We will take the approach of using the Nested Interval Theorem, which in turn relies on the Least Upper Bound Axiom.\n\nTheorem 4.8 \\(\\R\\) is uncountable.\n\n\nProof. By way of contradiction, suppose \\(\\R\\) is countable. Then there exists a surjective function \\(f:\\N\\rightarrow\\R\\). We will use this function to construct a sequence of nonempty nested closed intervals \\(\\{U_i\\}\\) and apply the Nested Interval Theorem to arrive at a contradiction. The idea will be to construct \\(U_{i+1}\\) so that it excludes \\(f(i)\\), and that way no value of \\(f\\) will lie in all of the intervals.\nLet \\(a_1=0\\) and \\(b_1=1.\\) For each \\(i\\geq 1,\\) we recursively contruct \\(a_{i+1}\\) and \\(b_{i+1}\\) using the following procedure:\n\nIf \\(f(i)\\notin [a_i,b_i]\\), we let \\(a_{i+1}=a_i\\) and \\(b_{i+1}=b_i\\) (i.e. the interval remains unchanged).\nIf \\(f(i)\\in\\left[a_i,\\frac{b_i+a_i}{2}\\right]\\) (that is, \\(f(i)\\) is in the left half of the interval), let \\(a_{i+1}=\\frac{2b_i+a_i}{3}\\) and \\(b_{i+1}=b_i\\) (so that \\([a_{i+1},b_{i+1}]\\) is the right third of the interval).\nIf \\(f(i)\\in\\left(\\frac{b_i+a_i}{2}, b_i\\right]\\) (that is, \\(f(i)\\) is in the right half of the interval), let \\(a_{i+1}=a_i\\) and \\(b_{i+1}=\\frac{b_i+2a_i}{3}\\) (so that \\([a_{i+1},b_{i+1}]\\) is the left third of the interval).\n\n\n\n\n\n\n\n\n\n\nDesmos Applet 4.2: A visualization of how the intervals \\(U_i=[a_i,b_i]\\) are defined. If \\(f(i)\\) lands inside \\(U_i\\), then the next interval \\(U_{i+1}\\) shrinks to exclude it. Try to predict what will happen in the next step and click “Advance” to check if you were right.\n\n\nNote that in each of the three cases \\(f(i)\\notin [a_{i+1},b_{i+1}]\\). Letting \\(U_i=[a_i,b_i]\\) for \\(i\\geq1\\), this means that \\(f(i)\\notin U_{i+1}\\), and therefore no value \\(f(n)\\) is in all of the closed intervals. That is, for all \\(n\\in\\N\\), \\[f(n)\\notin\\bigcap_{i=1}^\\infty U_i\\]\nHowever, by our assumption, every real number is equal to \\(f(n)\\) for some \\(n\\in\\N\\), so no real numbers are in the intersection, contradicting the Nested Interval Theorem.\n\nWe mention here that the proof above actually shows that \\([0,1]\\) is uncountable, and can be adapted to prove the following.\n\nTheorem 4.9 Any interval \\([a,b]\\subseteq\\R\\) with \\(a&lt;b\\) is uncountable.",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Consequences of the Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub-props.html#review-questions",
+    "href": "axioms-of-r/lub-props.html#review-questions",
+    "title": "4  Consequences of the Least Upper Bound Axiom",
+    "section": "Review Questions",
+    "text": "Review Questions\n\nGive the definitions of lower bound, bounded below, infimum, and least element.\nWhat does the Nested Interval Theorem say? Give an example that shows how it distinguishes \\(\\R\\) from \\(\\Q\\).\nWhat does it mean when we say \\(\\R\\) is uncountable?\nHow did we know we would need to use the Least Upper Bound Axiom or one of its consequences when proving \\(\\R\\) is uncountable?",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Consequences of the Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "axioms-of-r/lub-props.html#footnotes",
+    "href": "axioms-of-r/lub-props.html#footnotes",
+    "title": "4  Consequences of the Least Upper Bound Axiom",
+    "section": "",
+    "text": "We will use this kind of technqiue frequently to obtain the second two cases of a theorem we want to prove (e.g. one for increasing functions and one for decreasing function, or one for sups and one for infs).↩︎\nIf you are rusty on unions and intersections, see Section B.2.↩︎\nThis is mathspeak for “I don’t feel like writing down all the details.” In this case, the claim is hopefully very believable, but the simple version of the proof requires some theorems about sequences we’ll prove later on in Chapter 10.↩︎\nSee Appendix C for a quick overview of why this is true.↩︎",
+    "crumbs": [
+      "The Real Numbers",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Consequences of the Least Upper Bound Axiom</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/metric-space-axioms.html",
+    "href": "metric-spaces/metric-space-axioms.html",
+    "title": "5  Metric Spaces and Distance Functions",
+    "section": "",
+    "text": "Highlights",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Metric Spaces and Distance Functions</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/metric-space-axioms.html#highlights",
+    "href": "metric-spaces/metric-space-axioms.html#highlights",
+    "title": "5  Metric Spaces and Distance Functions",
+    "section": "",
+    "text": "The definitions of “metric space” and “distance function”\nThe usual distance functions on \\(\\R^n\\), including \\(\\R=\\R^1\\).\nProperties of absolute values",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Metric Spaces and Distance Functions</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/metric-space-axioms.html#preparation",
+    "href": "metric-spaces/metric-space-axioms.html#preparation",
+    "title": "5  Metric Spaces and Distance Functions",
+    "section": "5.1 Preparation",
+    "text": "5.1 Preparation\nThe limits that you learn about in calculus are often described in terms of a variable getting “closer and closer” or “arbitrarily close” to some quantity. In order to say more precisely what it means to be “close”, though, we need to be precise about what we mean by “distance” in the first place.\nIn this chapter we’ll talk about a fundamental construction in the theory of real analysis, which is the concept of a metric space. Basically, a metric space will be any set with a reasonable (and we’ll make precise what we mean by “reasonable”) notion of distance.\nYou are likely familiar with the distance formulas in \\(\\R^2\\) and \\(\\R^3\\), and we will use these two spaces as our mental model for how to think about metric spaces. We’ll see that distance can reasonably be defined in other contexts as well, including in the real number system.\nFor the moment, play around with the applet below to see if you can think about what formula would give us the distance between the real numbers \\(a\\) and \\(b\\).\n\n\n\n\n\n\n\n\n\nDesmos Applet 5.1: Start by writing down a formula that will measure the distance from \\(a\\) to \\(b\\) on the number line. Then move the points around and see if your formula works as expected (try both \\(a&lt;b\\) and \\(a&gt;b\\)).\n\n\nOur philosophy will be that we will:\n\nGain intuition from \\(\\R^2\\) and \\(\\R^3,\\)\nWrite our proofs for any metric space, and\nApply what we learn to \\(\\R.\\)\n\nFor whatever reason, it’s easy for our brains to think about geometry in two and three dimensions than it is in one dimension. And proving theorems about general metric spaces is sometimes easier than proving the corresponding theorems in \\(\\R\\) since there are fewer tools to keep track of1.\nAs a side benefit to this approach, the theory of metric spaces is useful more broadly in pure and applied math since we often want to think about how to define the “distance” between objects in a reasonable way. As a teaser of this concept, what is a reasonable way to define the distance between two functions?\n\n\nTry and answer this for yourself in your mind, and then see if you can adjust the sliders for \\(a\\) and \\(b\\) to make the blue function as “close” as possible to the red one (whatever that means to you).\n\n\n\n\n\n\n\nDesmos Applet 5.2: Try to make the blue function as close as possible to the red one. Some possible measures of “closeness” are given on the right; see if you can find parameters that minimize each.2\n\n\nAs we said earlier, we will define a metric space to be any set in which we can reasonably define distance. We begin by making the idea of “reasonableness” precise here.\n\nDefinition 5.1 A metric space is a nonempty set \\(X\\) equipped with a function \\(d:X\\times X\\rightarrow\\R\\) called a distance function with the following properties.\n\n(Positivity) For any \\(a,b\\in X\\), \\(d(a,b)\\geq 0\\).\n(Positive Definiteness) For any \\(a,b\\in X\\), \\(d(a,b)=0\\) if and only if \\(a=b\\).\n(Symmetry) For any \\(a,b\\in X\\), \\(d(a,b)=d(b,a)\\).\n(Triangle Inequality) For any \\(a,b,c\\in X\\), \\(d(a,b)+d(b,c)\\geq d(a,c)\\).\n\n\n\nExercise 5.2 Explain why the usual distance formula in \\(\\R^2\\),\n\\[d((x_1,y_1),(x_2,y_2))=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2},\\]\nsatisfies the properties in Definition 5.1. Give a proof for Positivity, Positive-Definiteness, and Symmetry, and provide a picture with an intuitive explanation for the triangle inequality.\n\nWhile we are used to measuring distances in two and three dimensions, we can define distances in other contexts as well.\n\nExercise 5.3 Let \\(S\\) be any set. Prove that \\(d:S\\times S\\rightarrow\\R\\) defined for any \\(x,y\\in S\\) by\n\\[d(x,y)=\\begin{cases} 0 & x=y \\\\ 1 x\\neq y \\end{cases}\\]\nis a distance function for \\(S\\) (i.e. that it satisfies the four properties). We call this the trivial metric for \\(S\\).\n\nTo talk about a metric space, we really ought to specify both the set \\(X\\) and the distance funciton \\(d\\). For example, it’s technically possible to equip \\(\\R^2\\) with the trivial metric from Exercise 5.3 (although I’m hard-pressed to think of why this would be useful). A somewhat more practical alternative metric on \\(\\R^2\\) is the subject of Exercise 5.11, but we’ll refer to the distance function from Exercise 5.2 as the “standard” distance function for \\(\\R^2\\).\nBefore reading further, take just a moment to reflect on the question raised in Desmos Applet 5.1.\n\nExercise 5.4 Make a guess about how we will define the “standard” distance function that will turn \\(\\R\\) into a metric space.",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Metric Spaces and Distance Functions</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/metric-space-axioms.html#distances-in-rn",
+    "href": "metric-spaces/metric-space-axioms.html#distances-in-rn",
+    "title": "5  Metric Spaces and Distance Functions",
+    "section": "5.2 Distances in \\(\\R^n\\)",
+    "text": "5.2 Distances in \\(\\R^n\\)\nYou are likely familiar with the distance formulas in \\(\\R^2\\) and \\(\\R^3\\). Generalizing those formulas, the standard distance function in \\(\\R^n\\) is given by\n\\[d((a_1,\\ldots,a_n),(b_1,\\ldots,b_n))=\\sqrt{(b_1-a_1)^2+\\cdots+(b_n-a_n)^2}. \\tag{5.1}\\]\nThe proofs that this distance function satisfies Positivity, Positive-Definiteness, and Symmetry are straightforward generalizations of what you did in Exercise 5.2. The proof that the standard distance function satisfies the Triangle Inequality is much more involved, and we defer it to Theorem 4.1 in Appendix D.\nMore important to us at the moment, though, is how to define distances in \\(\\R\\). If we apply the formula (5.1) to the case where \\(n=1\\) we get3 \\(d(a,b)=\\sqrt{(b-a)^2}\\). This ends up simplifying to \\(|b-a|\\), which hopefully matches your guess in Exercise 5.4.\nThus we define the standard distance function on \\(\\R\\) to be \\[d(a,b)=|b-a|.\\]\n\nFrom now until the end of your days, whenever you see an absolute value—especially the absolute value of a difference—you should think “distance”.\n\nNow that we see absolute values will be our main tool for talking about distances in the real numbers, it will be worthwhile to review some key properties of absolute values.",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Metric Spaces and Distance Functions</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/metric-space-axioms.html#absolute-values",
+    "href": "metric-spaces/metric-space-axioms.html#absolute-values",
+    "title": "5  Metric Spaces and Distance Functions",
+    "section": "5.3 Absolute Values",
+    "text": "5.3 Absolute Values\nWe can define the absolute value function for any \\(x\\in\\R\\) via \\[|x|=\\begin{cases} x & x\\geq 0 \\\\ -x & x&lt;0 \\end{cases}\\] Make sure you understand how the second case matches what you know about absolute values before moving on!\n\nTheorem 5.5 Suppose \\(a,b\\in\\R\\).\n\n\\(|a|\\geq0\\).\n\\(|-a|=|a|\\).\n\\(|a|=\\max\\{a,-a\\}\\).\n\\(|a|\\geq a\\).\n\\(|ab|=|a||b|\\).\n\\(|a+b|\\leq|a|+|b|\\).\n\\(|a-b|\\geq\\big||a|-|b|\\big|\\).\n\n\n\nExercise 5.6 Prove Theorem 5.5. Note that since the definition of absolute value is piecewise, you may need to do case-by-case proofs here.\n\n\nExercise 5.7 Prove that the standard distance function \\(d(x,y)=|y-x|\\) for \\(\\R\\) satisfies the Triangle Inequality.\n\n\nExercise 5.8 Let \\(X\\) be a metric space with distance function \\(d\\) and let \\(x,y\\in X\\). Suppose that for all \\(\\epsilon&gt;0\\), \\(d(x,y)\\leq \\epsilon\\). Prove that \\(x=y\\).\n\n\n\n\n\n\n\nTip\n\n\n\nIn this section, you should cite Positivity, Positive-Definiteness, and the Triangle Inequalities whenever you use them (don’t bother with Symmetry). After this section, you need only cite the Triangle Inequality.\n\n\n\nExercise 5.9 Let \\(X\\) be a metric space with distance function \\(d\\). Prove that for any \\(a,b,c\\in X\\), \\[|d(a,b)-d(b,c)|\\leq d(a,c)\\]\n\n\nExercise 5.10 Prove the “polygon inequality”, which says that for any \\(x_1,\\ldots,x_n\\) with \\(n\\geq 3\\) in a metric space \\(X\\) with distance function \\(d\\), \\[d(x_1,x_2)+d(x_2,x_3)+\\cdots+d(x_{n-1},x_n)\\geq d(x_1,x_n)\\] Hint: this is a good candidate for mathematical induction. It’s also a good example of how drawing a picture in two dimensions can help give you intuition about what happens in any metric space.\n\n\nExercise 5.11 Here we will consider \\(\\R^2\\) with a different distance function. Define \\[d_1((x_1,y_1),(x_2,y_2))=|y_1-x_1|+|y_2-x_2|\\] Prove that \\(d_1\\) does in fact satisfy the four conditions of being a metric space.\n\n\nExercise 5.12 Here we will consider \\(\\R\\) with a different purported distance function. Define \\[d_{\\mathrm{inv}}(a,b)=\\begin{cases} \\frac{1}{|a-b|} & a\\neq b \\\\ 0 & a=b \\end{cases}\\] Show that \\(d_{\\mathrm{inv}}\\) is not a distance function.\n\n\nExercise 5.13 If \\(X\\) is a metric space with distance function \\(d\\), and \\(S\\subseteq X\\), then we can think of \\(S\\) itself as a metric space using the same distance function restricted to \\(S\\). In this case we say \\(S\\) is a subspace of \\(X\\).\n\nIf we treat \\(\\Q\\) as a subspace of \\(\\R\\), prove that the distance between any two points in \\(\\Q\\) is a rational number.\nIf we treat \\(\\Z^2\\) (the set of points in \\(\\R^2\\) both of whose entries are integers), as a subspace of \\(\\R^2\\), is the distance between two points in \\(\\Z^2\\) always an integer? Explain.",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Metric Spaces and Distance Functions</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/metric-space-axioms.html#review-questions",
+    "href": "metric-spaces/metric-space-axioms.html#review-questions",
+    "title": "5  Metric Spaces and Distance Functions",
+    "section": "Review Questions",
+    "text": "Review Questions\n\nState the four conditions a distance function on a metric space must satisfy.\nWhat is the standard distance function in \\(\\R^n\\)? What about in \\(\\R\\)?\nWhich properties of absolute value from Theorem 5.5 did you already know? Which were new to you?",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Metric Spaces and Distance Functions</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/metric-space-axioms.html#footnotes",
+    "href": "metric-spaces/metric-space-axioms.html#footnotes",
+    "title": "5  Metric Spaces and Distance Functions",
+    "section": "",
+    "text": "For instance, most metric spaces don’t have arithmetic or inequalities, so we won’t be distracted by these features of \\(\\R\\) in contexts where they aren’t relevant.↩︎\nThe \\(L^2\\) norm is one that you may see in a differential equations or functional analysis course, but if you haven’t heard of it, it won’t be important for this course.↩︎\nHere we set \\(a=(a_1)\\), and \\(b=(b_1)\\) to simplify the notation.↩︎",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Metric Spaces and Distance Functions</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/r-as-a-metric-space.html",
+    "href": "metric-spaces/r-as-a-metric-space.html",
+    "title": "6  \\(\\mathbb{R}\\) as a Metric Space",
+    "section": "",
+    "text": "Highlights",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>$\\mathbb{R}$ as a Metric Space</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/r-as-a-metric-space.html#highlights",
+    "href": "metric-spaces/r-as-a-metric-space.html#highlights",
+    "title": "6  \\(\\mathbb{R}\\) as a Metric Space",
+    "section": "",
+    "text": "See how distance interacts with previously established properties of \\(\\R\\) (arithmetic, inequalities, and least upper bounds).\nEquivalent conditions to being a least upper bound.\nUse distance to investigate the relationships among the integers, rationals, irrationals, and reals.",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>$\\mathbb{R}$ as a Metric Space</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/r-as-a-metric-space.html#preparation",
+    "href": "metric-spaces/r-as-a-metric-space.html#preparation",
+    "title": "6  \\(\\mathbb{R}\\) as a Metric Space",
+    "section": "6.1 Preparation",
+    "text": "6.1 Preparation\nIn this section, we will focus on thinking about the real number system as a metric space. We start with what will end up being one of the most-cited theorems in the course.\n\nTheorem 6.1 Let \\(r&gt;0\\) and \\(a\\in\\R\\). Then \\(|a-x|&lt;r\\) if and only if \\(x\\in(a-r,a+r)\\).\n\n\nExercise 6.2  \n\nDraw a picture of what this Theorem 6.1 is saying on the number line.\nProve Theorem 6.1.\nRewrite \\(|a-x|&lt;r\\) as a statement about distance in \\(\\R\\).\nRewrite \\(x\\in(a-r,a+r)\\) as an inequality.\n\n\nTheorem 6.1 is foundational because it connects a statement about analysis (distances and closeness) to a statement about geometry (subsets of \\(\\R\\)). In general, mathematicians love “if and only if” statements because they often let you translate a statement in one context to a statement in another, where you may have a whole new set of tools you can apply. Together with Parts 3 and 4 from Exercise 6.2, you now have four toolbags you can use to analyze the statement: absolute values, intervals, distances, and inequalities.\nIndeed, the connections furnished by Theorem 6.1 can be used to help us prove other theorems relating the concepts we’ve encountered so far.\n\nTheorem 6.3 Suppose \\(b\\) is an upper bound on a nonempty subset \\(S\\subseteq\\R\\). Then the following are equivalent.\n\n\\(b=\\sup S\\)\nFor all \\(\\epsilon&gt;0\\) there exists \\(x\\in S\\) such that \\(x\\in(b-\\epsilon,b]\\).\nFor all \\(\\epsilon&gt;0\\) there exists \\(x\\in S\\) such that \\(|b-x|&lt;\\epsilon\\).\n\n\n\n\n\n\n\n\n\n\\(\\varepsilon\\)\n\n    \n\n\n\n\n\nDesmos Applet 6.1: A demonstration of Theorem 6.3. In blue is the set \\(S=\\left\\{\\frac{0}{1},\\frac{1}{2},\\frac{2}{3},\\ldots\\right\\}\\). When \\(b=1\\), note that for whatever \\(\\epsilon&gt;0\\) is chosen, there is at least one element of \\(S\\) in both the green and orange intervals. When \\(b&gt;1\\), you could choose a small \\(\\epsilon&gt;0\\) and have no points of \\(S\\) in the orange and green intervals.\n\n\n\nProof. (Inclue link to my video proof?)\n\n\n\n\n\n\n\nNote\n\n\n\nWhen we encounter a new concept, we will often have a TFAE (“the following are equivalent”) theorem that follows giving us alternative ways of understanding the new concept. Since these theorems are so useful, I will color-code them with a lightseagreen vertical bar.\n\n\n\nExercise 6.4 Carefully prove that \\(5\\) is the supremum of \\([0,5)\\) using Part 2 or 3 of Theorem 6.3.\n\n\nExercise 6.5 Write down a “the following are equivalent” theorem about infima analogous to Theorem 6.3 and prove it.",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>$\\mathbb{R}$ as a Metric Space</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/r-as-a-metric-space.html#the-max-and-min-of-a-finite-set",
+    "href": "metric-spaces/r-as-a-metric-space.html#the-max-and-min-of-a-finite-set",
+    "title": "6  \\(\\mathbb{R}\\) as a Metric Space",
+    "section": "6.2 The \\(\\max\\) and \\(\\min\\) of a Finite Set",
+    "text": "6.2 The \\(\\max\\) and \\(\\min\\) of a Finite Set\nIn Theorem 5.5, I used the notation \\(\\max\\{a,-a\\}\\) to mean whichever of these two numbers is greater. Here we will make that notation precise with some words of caution about when you can use it.\n\nTheorem 6.6 Suppose \\(F\\subseteq\\R\\) is a nonempty finite set. Prove that \\(\\sup F\\) exists and \\(\\sup F\\in F\\) (i.e. that \\(F\\) has a greatest element). In this case we write \\(\\max F\\) for the greatest element of \\(F\\).\n\nFor example, \\(\\max\\{3,7,5\\}=7\\).\n\nProof. Let \\(n\\) be the number of elements of \\(F\\). We will prove that \\(F\\) has a greatest element by induction on \\(n\\).\nAs a base case, suppose \\(n=1\\). Then \\(F=\\{x_1\\}\\). In this case \\(x_1\\geq x_1\\), so \\(x_1\\) is an upper bound on \\(F\\). And any upper bound \\(b\\) on \\(F\\) must have \\(b\\geq x_1\\), so \\(x_1\\) is the least upper bound. And of course \\(x_1\\in F\\).\nNow suppose that \\(k\\in\\N\\) and any set with \\(k\\) elements has a greatest element. Now suppose \\(F=\\{x_1,\\ldots,x_k,x_{k+1}\\}\\) has \\(k+1\\) elements. Define \\(E=\\{x_1,\\ldots,x_k\\}\\) so that \\(E\\) has \\(k\\) elements and therefore a greatest element \\(g\\). If \\(x_{k+1}\\geq g\\), then let \\(b=x_{k+1}\\), and otherwise, let \\(b=g\\). Either way, \\(b\\geq x_{k+1}\\) and \\(b\\geq g\\geq x_i\\) for all \\(i=1,\\ldots,n\\) (so \\(b\\) is an upper bound), and either way \\(b\\in F\\). And if \\(u\\) is any upper bound on \\(F\\), then \\(u\\geq b\\) and \\(u\\geq x_{k+1}\\), so \\(u\\geq b\\). Thus, \\(b\\) is the least upper bound of \\(F\\), and since \\(b\\in F\\), \\(b\\) is the greatest element.\n\n\n\n\n\n\n\nCaution\n\n\n\nWe cannot write \\(\\max S\\) when \\(S\\) is not known to be a nonempty finite set. Indeed, we have seen examples where \\(S\\) has no greatest element.\n\n\n\nExercise 6.7 Prove that if \\(F\\) is a finite nonempty subset of \\(\\R\\), then \\(F\\) has a least element, which we call the \\(\\min\\).\nHint: You can try replicating the proof of Theorem 6.6, but it may be easier to apply that theorem to \\(F\\) somehow instead!",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>$\\mathbb{R}$ as a Metric Space</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/r-as-a-metric-space.html#integers-rationals-and-irrationals-in-r",
+    "href": "metric-spaces/r-as-a-metric-space.html#integers-rationals-and-irrationals-in-r",
+    "title": "6  \\(\\mathbb{R}\\) as a Metric Space",
+    "section": "6.3 Integers, Rationals, and Irrationals in \\(\\R\\)",
+    "text": "6.3 Integers, Rationals, and Irrationals in \\(\\R\\)\nBy now we may have an intuitive sense that even though the rationals have “holes” where we would expect suprema to be, they are still “everywhere” along the number line. This somewhat bizarre discrepancy is made precise by the next few exercises.\n\nExercise 6.8 Let \\(a\\in\\R\\). Prove that there exists a unique \\(n\\in\\Z\\) such that \\(n\\leq a&lt;n+1\\).\nNote that you will need the Well-Ordered Property of \\(\\Z\\) in order to prove this (see Appendix E).\n\nExercise 6.8 now allows us to use the “floor function”; for any \\(x\\in \\R\\) we can define \\(\\lfloor x\\rfloor\\) to be the greatest integer that is less than or equal to \\(x\\); similarly, \\(\\lceil x\\rceil\\), the “ceiling”, is the least integer that is greater than or equal to \\(x\\). In practice, students tend to overuse the floor function in real analysis proofs—most of the time you just need an integer that is greater \\(x\\), which is furnished by the Archimedian Property (Theorem 3.8).\n\nExercise 6.9 Let \\(b\\in\\R\\) and \\(q\\in\\N\\). Prove that there exists a unique \\(p\\in\\Z\\) such that \\[\\frac{p}{q}\\leq b&lt; \\frac{p+1}{q}\\]\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nDon’t start from scratch. How can you apply the previous exercise to help you prove the result of this one? Here we need to prove something about all \\(b\\in\\R\\) and all \\(q\\in\\N\\), so we must start with something like “Suppose \\(b\\in\\R\\) and \\(q\\in\\N\\)”. To what value of \\(a\\) should we apply the result of Exercise 6.8?\n\n\n\n\nExercise 6.10 Let \\(b\\in\\R\\) and \\(\\epsilon&gt;0\\). Prove that there exists \\(r\\in\\Q\\) such that \\(d(b,r)&lt;\\epsilon\\).\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nOnce again, don’t start from scratch. First note that the inequality you are trying to prove appears in Theorem 6.1 although the variable names have changed. How can you apply Exercise 6.9 to get what you want?\nIf you get stuck, draw this a picture on the number line.\nIf you are still stuck, use the following concrete example to help you wrap your head around the problem. If \\(b=\\pi\\) and \\(\\epsilon=0.1\\), how would you choose the rational number \\(r\\)? Can you frame your technique in terms of the notation Exercise 6.9? Given \\(\\epsilon\\), to what value of \\(q\\) would you apply the result?\n\n\n\n\nExercise 6.11 Let \\(c,d\\in\\R\\). Prove that there exists a rational number \\(x\\) with \\(c&lt;x&lt;d\\).\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nOnce again, don’t start from scratch. In both this exercise and Exercise 6.10, you need to show that a rational number exists in a particular interval but the intervals are described differently. Given \\(c,d\\), can you figure out what \\(b,\\epsilon\\) to use so you can apply Exercise 6.10?\n\n\n\n\nExercise 6.12 Let \\(c,d\\in\\R\\). Prove that there exists an irrational number \\(x\\) with \\(c&lt;x&lt;d\\).\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nThink about using Theorem 4.9 and a cardinality argument here!",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>$\\mathbb{R}$ as a Metric Space</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/r-as-a-metric-space.html#review-questions",
+    "href": "metric-spaces/r-as-a-metric-space.html#review-questions",
+    "title": "6  \\(\\mathbb{R}\\) as a Metric Space",
+    "section": "Review Questions",
+    "text": "Review Questions\n\nA good study strategy for this course is to keep a catalog of all the major concepts in the course, and then quiz yourself by picking two at random and asking yourself to think of how they are connected.1 Give this a try for the major concepts we’ve encountered so far\n\n\n\n\n\n\n\n\nG\n\n\n\narithmetic\n\narithmetic\n\n\n\ninequalities\n\ninequalities\n\n\n\narithmetic--inequalities\n\n\n\n\nleast upper bounds\n\nleast upper bounds\n\n\n\narithmetic--least upper bounds\n\n\n\n\ndistance\n\ndistance\n\n\n\narithmetic--distance\n\n\n\n\ninequalities--least upper bounds\n\n\n\n\ninequalities--distance\n\n\n\n\nleast upper bounds--distance\n\n\n\n\n\n\n\n\n\n\nWhat do we mean when we write \\(\\max S\\)? When are we “allowed” to use this notation?\nIn what sense are the rationals “all over” the real number line?",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>$\\mathbb{R}$ as a Metric Space</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/r-as-a-metric-space.html#footnotes",
+    "href": "metric-spaces/r-as-a-metric-space.html#footnotes",
+    "title": "6  \\(\\mathbb{R}\\) as a Metric Space",
+    "section": "",
+    "text": "I heard one study skills expert suggest writing the concepts on index cards, shuffling, and drawing the cards two at a time.↩︎",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>$\\mathbb{R}$ as a Metric Space</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/open-balls.html",
+    "href": "metric-spaces/open-balls.html",
+    "title": "7  Open Sets",
+    "section": "",
+    "text": "Highlights",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Open Sets</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/open-balls.html#highlights",
+    "href": "metric-spaces/open-balls.html#highlights",
+    "title": "7  Open Sets",
+    "section": "",
+    "text": "Definition of an open ball and open set\nImportant equivalent condition to being an open set\nExamples of proving and applying openness",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Open Sets</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/open-balls.html#preparation",
+    "href": "metric-spaces/open-balls.html#preparation",
+    "title": "7  Open Sets",
+    "section": "7.1 Preparation",
+    "text": "7.1 Preparation\nAn important tool for describing “closeness” precisely in calculus is the open ball.\n\nDefinition 7.1 Suppose \\(X\\) is a metric space with distance function \\(d\\). Let \\(a\\in X\\) and \\(r&gt;0\\). Then the open ball centered at1 \\(a\\) of radius \\(r\\) is defined to be \\[\\bee_r(a)=\\{x\\in X\\st d(a,x)&lt;r\\}.\\]\n\nOther textbooks sometimes call \\(\\bee_r(a)\\) an “\\(r\\)-neighborhood” of \\(a\\).\n\nExercise 7.2 Describe and draw pictures of open balls in \\(\\R^3\\), \\(\\R^2\\), and \\(\\R\\).\n\n\nExercise 7.3 Answer the following questions about open balls in \\(\\R\\).\n\nWrite \\(\\bee_r(c)\\) in interval notation.\nIf \\(a,b\\in\\R\\) with \\(a&lt;b\\), is \\((a,b)\\) an open ball? If so, what is its center and radius?\nIs \\((0,\\infty)\\) an open ball? If so, what is its center and radius?\n\n\nThe following exercise is meant to prepare you for the definition of an open set.\n\nExercise 7.4 Say whether each statement below is true or false and give a brief justification.\n\n“If $S=(1,), for each point \\(a\\in S\\) there is an open ball centered at \\(a\\) that lies entirely inside of \\(S\\).”\n“If $S=[1,), for each point \\(a\\in S\\) there is an open ball centered at \\(a\\) that lies entirely inside of \\(S\\).”",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Open Sets</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/open-balls.html#open-balls",
+    "href": "metric-spaces/open-balls.html#open-balls",
+    "title": "7  Open Sets",
+    "section": "7.2 Open Balls",
+    "text": "7.2 Open Balls\nWhen we apply the definition of an open ball to \\(\\R\\), we realize that it’s an object we’ve dealt with before; in particular Theorem 6.1 was really a statement about open balls on the real number line.\nPutting Theorem 6.1 together with the language of open balls, we now have many equivalent ways of saying the same thing:\n[TO DO: turn this into a circular diagram with “In \\(\\R\\)” in the center. Then make a smaller one for “for any metric space”]\n\nIn \\(\\R\\): \\[ d(a,x)&lt;r \\Longleftrightarrow |a-x|&lt;r \\Longleftrightarrow x\\in(a-r,a+r) \\Longleftrightarrow a-r&lt;x&lt;a+r \\Longleftrightarrow x\\in\\bee_r(a) \\tag{7.1}\\]\n\nThe equivalent conditions of (7.1) in \\(\\R\\) will show up every day for the rest of the course. The more seamlessly you can translate among these different ways of saying the same thing, the easier the course will be.\n\nBecoming fluent in (7.1) is the cheat code for reading analysis proofs.\n\nWhile using the word “ball” makes intuitive sense in \\(\\R^3\\) and to a lesser extent in \\(\\R^2\\), it may feel a little weird in \\(\\R\\); we’ll just need to get used to that. And it gets even stranger when we think about other metric spaces.\n\nExercise 7.6 Let \\(X\\) be a set with the trivial metric (defined in Exercise 5.3). Let \\(a\\in X\\), and describe the following.\n\n\\(\\bee_2(a)\\)\n\\(\\bee_1(a)\\)\n\\(\\bee_{1/2}(a)\\)\n\n\n\nExercise 7.6 Consider \\(\\R^2\\) with the “taxicab metric” \\(d_1\\) defined in Exercise 5.11. Sketch the open ball of radius 2 centered at the origin.\n\n\nExercise 7.7 Consider \\(X=\\{(x,y)\\st y\\geq0\\}\\) as a subspace of \\(\\R^2\\). Sketch \\(\\bee_2(0,1)\\) in the metric space \\(S\\).\n\nAn advantage to\n\nExercise 7.8 Suppose \\(X\\) is a metric space with distance function \\(d\\). Let \\(a,b\\) be distinct points in \\(X\\). Prove that there exists \\(\\epsilon&gt;0\\) such that \\(\\bee_\\epsilon(x)\\) and \\(\\bee_\\epsilon(y)\\) are disjoint.",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Open Sets</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/open-balls.html#open-sets",
+    "href": "metric-spaces/open-balls.html#open-sets",
+    "title": "7  Open Sets",
+    "section": "7.3 Open Sets",
+    "text": "7.3 Open Sets\nIntuitively we should think of “open” sets as ones that do not include their own boundary\n\nDefinition 7.9 Let \\(X\\) be a metric space with distance function \\(d\\). A subset \\(S\\subseteq X\\) is called open if every point \\(a\\in S\\) has an open ball around it that lies entirely within \\(S\\). That is, for all \\(a\\in S\\), there exists \\(r&gt;0\\) such that \\(\\bee_r(a)\\subseteq S\\).\n\n\n\n\n\n\n\n\n\n\nDesmos Applet 7.1: Wherever you move the point \\(a\\) inside \\(S\\), it is possible to draw an open ball around \\(a\\) that stays entirely within \\(S\\) (although the radius will need to change). This means \\(S\\) is open.\n\n\n\nExercise 7.10 Let \\(X\\) be a metric space with distance function \\(d\\). Prove that \\(X\\) and \\(\\varnothing\\) are open subsets of \\(X\\).\n\n\nExercise 7.11 Prove that open balls are open.\n\n\nExercise 7.12  \n\nWrite down what it means for a subset of a metric space to not be open.\nWrite down a careful proof that \\((-\\infty,2]\\) is not an open subset of \\(\\R\\).\n\n\n\n\n\n\n\n\nCaution\n\n\n\nWe are not going to call non-open sets “closed”. The term “closed” will have a different definition that we’ll get to later.\n\n\n\nExercise 7.13 Suppose \\(X\\) is a metric space and let \\(a\\in X\\). Prove that \\(\\{a\\}^\\cee\\) is open.",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Open Sets</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/open-balls.html#review-questions",
+    "href": "metric-spaces/open-balls.html#review-questions",
+    "title": "7  Open Sets",
+    "section": "Review Questions",
+    "text": "Review Questions\n\nWhat is the definition of an open ball in a metric space?\nWhat is the definition of an open set? Can you draw a picture representing this definition?\nWhat are the open balls in \\(\\R\\)?",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Open Sets</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/open-balls.html#footnotes",
+    "href": "metric-spaces/open-balls.html#footnotes",
+    "title": "7  Open Sets",
+    "section": "",
+    "text": "Sometimes we also say “around \\(a\\)”.↩︎",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Open Sets</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/open-set-props.html",
+    "href": "metric-spaces/open-set-props.html",
+    "title": "8  Properties of Open Sets",
+    "section": "",
+    "text": "Highlights",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Properties of Open Sets</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/open-set-props.html#highlights",
+    "href": "metric-spaces/open-set-props.html#highlights",
+    "title": "8  Properties of Open Sets",
+    "section": "",
+    "text": "Characterization of open sets as unions of open balls\nUnions and intersections of open sets",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Properties of Open Sets</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/open-set-props.html#preparation",
+    "href": "metric-spaces/open-set-props.html#preparation",
+    "title": "8  Properties of Open Sets",
+    "section": "8.1 Preparation",
+    "text": "8.1 Preparation\n\nTheorem 8.1 Let \\(X\\) be a metric space and \\(U\\subseteq X\\). The following are equivalent.\n\n\\(U\\) is open.\n\\(U\\) is a union of open balls.\n\n\n\nExercise 8.2 Prove Theorem 8.1\n\nTheorem 8.1 is another “the following are equivalent” theorem. We love these because anytime there is a proof involving an open set, we get to pick which condition to use.\n\nTheorem 8.3  \n\nThe union of any collection of open sets is open.\nThe intersection of any finite collection of open sets is open.\n\n\n\nExercise 8.4 Prove Part 1 of Theorem 8.3.\nHint: Will it be easier to work with the definition of openness, or Condition 2 of Theorem 8.1 for this proof?\n\n\nProof (Setup of proof of Part 2 of Theorem 8.3). Suppose \\(U_1,\\ldots,U_n\\) are open and let \\(U=\\bigcap_{i=1}^n U_i\\). We will prove \\(U\\) is open using the definition of openness, so we start by supposing that \\(x\\in U\\). This means \\(x\\in U_i\\) for all \\(i=1,\\ldots,n\\). Therefore, applying the definition of openness to each \\(U_i\\), there exists \\(r_i\\) such that \\(\\bee_{r_i}(x)\\subseteq U_i\\subseteq U\\).\n\n\n\n\n\n\n\n\n\nShow \\(B_{r_1}\\)\n\n\nShow \\(B_{r_2}\\)\n\n\n\n\n\nDesmos Applet 8.1: Here is an illustration of what’s going on in the proof so far with just \\(n=2\\) open sets. Here, \\(x\\) is in \\(U_1\\), so there is an open ball around \\(x\\) which lies entirely within \\(U_1\\). Similarly, \\(x\\) is in \\(U_2\\), so there is an open ball around \\(x\\) which lies entirely within \\(U_2\\). What of these two open balls could you use to finish proving that the intersection is open? How would you generalize this to the case where there are \\(n\\) open sets?\n\n\n\nExercise 8.5 Finish the proof of Part 2 of Theorem 8.3.\n\n\nExercise 8.6  \n\nAt what point in the proof of Part 2 of Theorem 8.3 did you use the fact that we were only dealing with finitely many open sets?\nGive an example of a(n infinite) collection of open sets whose intersection is not open. (Remember, \\(\\varnothing\\) is open!)\n\n\nIt is worth mentioning that some open sets are easier to witness as unions of open balls than others. Compare the two examples below.\n[Two images? Desmos interactives?]",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Properties of Open Sets</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/open-set-props.html#review-questions",
+    "href": "metric-spaces/open-set-props.html#review-questions",
+    "title": "8  Properties of Open Sets",
+    "section": "Review Questions",
+    "text": "Review Questions",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Properties of Open Sets</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/open-set-props.html#to-include",
+    "href": "metric-spaces/open-set-props.html#to-include",
+    "title": "8  Properties of Open Sets",
+    "section": "8.2 To include",
+    "text": "8.2 To include\n\nDesmos app with C&C Fig 3.1 and fading-in/out open balls\nVisual proof that the open square is open (and that the closed square is not)\nNegate “open”",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Properties of Open Sets</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/boundedness.html",
+    "href": "metric-spaces/boundedness.html",
+    "title": "9  Boundedness",
+    "section": "",
+    "text": "Highlights",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Boundedness</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/boundedness.html#highlights",
+    "href": "metric-spaces/boundedness.html#highlights",
+    "title": "9  Boundedness",
+    "section": "",
+    "text": "Definition of a bounded subset of a metric space\nEquivalent conditions to boundedness\nBoundedness in \\(\\R\\) is equivalent to “bounded above and below”",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Boundedness</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/boundedness.html#preparation",
+    "href": "metric-spaces/boundedness.html#preparation",
+    "title": "9  Boundedness",
+    "section": "9.1 Preparation",
+    "text": "9.1 Preparation\n\nTheorem 9.1 Let \\(X\\) be a metric space and let \\(S\\subseteq X\\). Then the following are equivalent.\n\nFor any \\(a\\in X\\), there exists \\(r&gt;0\\) such that \\(S\\subseteq B_r(a)\\).\nThere exists \\(a\\in X\\) and \\(r&gt;0\\) such that \\(S\\subseteq B_r(a).\\)\n\nIn this case, we say \\(S\\) is bounded.\n\n\n\n\n\n\n\n\n\n\nDesmos Applet 9.1: An illustration of Part 2 of the boundedness condition. Wherever the point \\(a\\) is moved, there is a large enough \\(r\\) so that the set \\(S\\) lives inside the open ball.\n\n\nYou will prove Theorem 9.1 in Exercise 9.4 below.\n\n\n\n\n\n\nNote\n\n\n\nTheorem 9.1 is both a theorem and a definition. Once we prove the conditions are equivalent, we can refer to any one of them as “the” definition of bounded.\n\n\n\nExercise 9.2  \n\nIf a problem asks you to prove that a set is bounded, which of the two conditions from Theorem 9.1 would you choose to work with, and why?\nIf a problem tells you to assume that a set is bounded and you need to apply boundedness in order to prove something else, which of the two conditions from Theorem 9.1 would you choose to work with, and why?\n\n\n\nExercise 9.3 Negate each of the two equivalent characterizations of boundedness.\n\nA subset of a metric space that is not bounded is called unbounded.",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Boundedness</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/boundedness.html#properties-of-boundedness",
+    "href": "metric-spaces/boundedness.html#properties-of-boundedness",
+    "title": "9  Boundedness",
+    "section": "9.2 Properties of Boundedness",
+    "text": "9.2 Properties of Boundedness\nWe start with proving that the two definitions of boundedness are in fact equivalent.\n\nExercise 9.4 Prove Theorem 9.1.\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nOne of the two implications should be very quick to prove!\nNote that \\(a\\) might lie outside of \\(S\\) for either of the two conditions.\n\n\n\n\n\nExercise 9.5 Let \\(S=\\{(n,n)\\in\\R^2\\st n\\in\\N\\}\\). Draw a picture of \\(S\\) and give a careful proof that \\(S\\) is unbounded.\n\n\nExercise 9.6 Suppose \\(S_1\\) and \\(S_2\\) are bounded subsets of a metric space \\(X\\). Prove that \\(S_1\\cup S_2\\) is bounded.",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Boundedness</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/boundedness.html#boundedness-in-r",
+    "href": "metric-spaces/boundedness.html#boundedness-in-r",
+    "title": "9  Boundedness",
+    "section": "9.3 Boundedness in \\(\\R\\)",
+    "text": "9.3 Boundedness in \\(\\R\\)\nAs ever, what we really care about is how this concept applies to \\(\\R\\) and how the concepts defined thus far interact. We’ve already defined “bounded above” and “bounded below”. The next theorem will connect these definitions to our new more general defintion of “bounded” for metric spaces.\n\nTheorem 9.7 Suppose \\(S\\subseteq\\R\\).Then the following are equivalent.\n\n\\(S\\) is bounded.\n\\(S\\) has an upper bound and a lower bound.\nThere exists \\(K&gt;0\\) such that for all \\(x\\in X\\), \\(|x|&lt;K\\).\n\n\n\nExercise 9.8 Prove Theorem 9.7.\n\n\n\n\n\n\n\n\n\n\nDesmos Applet 9.2: An illustration of the three equivalent conditions for the boundedness of \\(S\\) in \\(\\R\\): an open ball \\(B_r(a)\\), the set of \\(x\\) with \\(|x|&lt;K\\), and an upper and lower bound, \\(u\\) and \\(l\\), on \\(S\\). A hint for Exercise 9.8 is to think about how to construct the variables for one construction from another.\n\n\n\nExercise 9.9 Prove that the complement of an unbounded subset of \\(\\R\\) is bounded.",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Boundedness</span>"
+    ]
+  },
+  {
+    "objectID": "metric-spaces/boundedness.html#review-questions",
+    "href": "metric-spaces/boundedness.html#review-questions",
+    "title": "9  Boundedness",
+    "section": "Review Questions",
+    "text": "Review Questions\n\nWhat does it mean for a subset of a metric space to be bounded? Unbounded?\nWith Theorem 9.1 and Theorem 9.7, we have four equivalent ways of describing boundedness in \\(\\R\\); what are they?",
+    "crumbs": [
+      "Metric Spaces",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Boundedness</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/sequence-basics.html",
+    "href": "sequences/sequence-basics.html",
+    "title": "10  Talking About Sequences",
+    "section": "",
+    "text": "Highlights",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Talking About Sequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/sequence-basics.html#highlights",
+    "href": "sequences/sequence-basics.html#highlights",
+    "title": "10  Talking About Sequences",
+    "section": "",
+    "text": "Definition of a sequence as a function with domain \\(\\N\\)\nSequence notation and vocabulary\nProperties that a sequence may or may not have",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Talking About Sequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/sequence-basics.html#preparation",
+    "href": "sequences/sequence-basics.html#preparation",
+    "title": "10  Talking About Sequences",
+    "section": "10.1 Preparation",
+    "text": "10.1 Preparation\nSequences are one of the fundamental objects of study in real analysis. They form the theoretical basis for blah blah blah.\n\nDefinition 10.1 A sequence in \\(X\\) is a function \\(s:\\N\\rightarrow X\\).\n\nIn this context, instead of using standard function notation \\(s(1),s(2),\\ldots,s(n),\\ldots\\), we instead use subscripts and write \\(s_1,s_2,\\ldots,s_n,\\ldots\\). We refer to a particular \\(s_n\\) as a term of the sequence and to the input/subscript \\(n\\) as its index or position in the sequence.\n\n\n\n\n\n\nCaution\n\n\n\nUnder this definition, by “sequence” we always mean “infinite sequence” since the domain is \\(\\N\\).\n\n\n\n\n\n\n\n\nNote\n\n\n\nFor now, as we get comfortable with the idea of a sequence, we will insist that our sequences start at \\(s_1\\). Later on, especially when dealing with infinite sums (known as series), we will relax this constraint since it is often convenient to start at \\(0\\) or some other integer.\n\n\nThe range of \\((a_n)\\) is \\(\\{a_n\\st n\\in\\N\\}\\).\n\nExercise 10.2 Can a sequence have a range that is finite? Explain.",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Talking About Sequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/sequence-basics.html#sequence-properties",
+    "href": "sequences/sequence-basics.html#sequence-properties",
+    "title": "10  Talking About Sequences",
+    "section": "10.2 Sequence Properties",
+    "text": "10.2 Sequence Properties\nBelow are several properties of sequences that we will need moving forward.\n\nDefinition 10.4 Let \\((a_n)\\) be a sequence in a metric space. Then \\((a_n)\\) is said to\\(\\ldots\\)\n\nbe constant if \\(a_i=a_j\\) for all \\(i,j\\in\\N\\).\nhave distinct terms if \\(a_i\\neq a_j\\) whenever \\(i\\neq j\\).\nbe bounded if its range is.\n\n\nFor sequences in \\(\\R\\), we can make some further definitions.\n\nDefinition 10.4 Let \\((a_n)\\) be a sequence in \\(\\R\\). Then \\((a_n)\\) is said to be\\(\\ldots\\)\n\nincreasing if \\(i\\leq j\\) implies \\(a_i\\leq a_j\\).\ndecreasing if \\(i\\leq j\\) implies \\(a_i\\geq a_j\\).\nstrictly increasing (repsectively strictly decreasing) if \\(i&lt; j\\) implies \\(a_i&lt; a_j\\) (respectively \\(a_i&gt;a_j\\)).\nmonotonic if it is either only increasing or only decreasing, and strictly monotonic if it is either only strictly increasing or only strictly decreasing.\nbounded above (respectively, bounded below) if its range is.\n\n\n\nExercise 10.5 Give an example of a sequence in \\(\\R\\) with the properties below, or prove that no such example exists.\n\nA sequence which is both increasing and decreasing.\nA sequence which is strictly increasing and bounded above.\nA bounded sequence of distinct terms.\nA sequence of distinct terms that is increasing but not strictly increasing.\nAn unbounded sequence which is not monotonic.\nA sequence with a finite range that is unbounded.\n\n\n\nTheorem 10.6 (The Amazingly Useful Theorem) Suppose \\((i_n)\\) is a strictly increasing sequence in \\(\\N\\). Then \\(i_n\\geq n\\).\n\n\nExercise 10.7 Prove Theorem 10.6 by induction.",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Talking About Sequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/sequence-basics.html#visualizing-sequences",
+    "href": "sequences/sequence-basics.html#visualizing-sequences",
+    "title": "10  Talking About Sequences",
+    "section": "10.3 Visualizing Sequences",
+    "text": "10.3 Visualizing Sequences\nWe often visualize a sequence \\((a_n)\\) by showing either its range in the codomain or, for sequences in \\(\\R\\), its graph in the cartesian plane.\n\n\n\n\n\n\n\n\n\n\n\n(a) The sequence \\(\\left(\\frac{1}{n}\\right)\\) in \\(\\R\\).\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) A sequence in \\(\\R^2\\)\n\n\n\n\n\n\n\nFigure 10.1: Here we show the ranges of two sequences. When plotting the range of a sequence, we usually number at least the first several terms.\n\n\n\nWhen plotting the graph of a sequence, we use the horizontal axis for the indices (in \\(\\N\\)) and the vertical axis for the terms (in \\(\\R\\)).\n\n\n\n\n\n\n\n\n\n\n\n(a) The sequence \\((\\sin(n))\\).\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) The sequence \\((\\sqrt n)\\).\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) The sequence \\(((-1)^n)\\).\n\n\n\n\n\n\n\nFigure 10.2: The graphs of three sequences in \\(\\R\\).\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nA collapsed hint.",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Talking About Sequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/sequence-basics.html#review-questions",
+    "href": "sequences/sequence-basics.html#review-questions",
+    "title": "10  Talking About Sequences",
+    "section": "Review Questions",
+    "text": "Review Questions\n\nQuestion 1\nQuestion 2",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Talking About Sequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/sequence-basics.html#to-include",
+    "href": "sequences/sequence-basics.html#to-include",
+    "title": "10  Talking About Sequences",
+    "section": "10.4 To include",
+    "text": "10.4 To include\n\nQuick teaser about convergence\nLots of examples of sequences\nConstructing sequences by induction?",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Talking About Sequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/subsequences.html",
+    "href": "sequences/subsequences.html",
+    "title": "11  Subsequences",
+    "section": "",
+    "text": "Highlights",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Subsequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/subsequences.html#highlights",
+    "href": "sequences/subsequences.html#highlights",
+    "title": "11  Subsequences",
+    "section": "",
+    "text": "highlight 1\nhighlight 2",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Subsequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/subsequences.html#preparation",
+    "href": "sequences/subsequences.html#preparation",
+    "title": "11  Subsequences",
+    "section": "11.1 Preparation",
+    "text": "11.1 Preparation\n(Pre-class reading and exercises)",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Subsequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/subsequences.html#body",
+    "href": "sequences/subsequences.html#body",
+    "title": "11  Subsequences",
+    "section": "11.2 Body",
+    "text": "11.2 Body\nWhat will be covered in class plus exercises\n\n\n\n\n\n\nHint\n\n\n\n\n\nA collapsed hint.",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Subsequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/subsequences.html#more-sections",
+    "href": "sequences/subsequences.html#more-sections",
+    "title": "11  Subsequences",
+    "section": "11.3 More sections",
+    "text": "11.3 More sections\nMore content",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Subsequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/subsequences.html#review-questions",
+    "href": "sequences/subsequences.html#review-questions",
+    "title": "11  Subsequences",
+    "section": "Review Questions",
+    "text": "Review Questions\n\nQuestion 1\nQuestion 2",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Subsequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/subsequences.html#to-include",
+    "href": "sequences/subsequences.html#to-include",
+    "title": "11  Subsequences",
+    "section": "11.4 To include",
+    "text": "11.4 To include\n\nSubsequence index theorem\n“Nth tail” and “eventually”\nExercises of the form “which properties pass to subsequences?”\nExamples of proofs that are made easier by considering subsequences",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Subsequences</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/series.html",
+    "href": "sequences/series.html",
+    "title": "12  Series Basics",
+    "section": "",
+    "text": "12.1 Series and Partial Sums\nIn this section, we build on what we learned about sequences to talk about one of their most important use cases: series. Loosely speaking, we think of a series as an “infinite sum”, and one of the primary questions we seek to address is when a series converges to a finite number and when it doesn’t. Consider for example, the four infinite sums below:\n\\[\\begin{array}{l}\n1+2+3+4+\\cdots \\\\~\\\\\n1+(-1)+1+(-1)+\\cdots \\\\~\\\\\n1+\\frac{1}{2}+\\frac{1}{3}+\\frac{1}{4}+\\cdots \\\\~\\\\\n%1+\\left(-\\frac{1}{2}\\right)+\\frac{1}{4}+\\left(-\\frac{1}{8}\\right)+\\cdots\n1+\\frac{1}{2}+\\frac{1}{4}+\\frac{1}{8}+\\frac{1}{16}+\\cdots\n\\end{array} \\tag{12.1}\\]\nSome of these might strike you as obviously undefined or obviously convergent, but others may not. In what follows below, we’ll make a precise definition of what we mean by convergent so that we can prove theorems and talk coherently about examples.1\nSuppose \\((a_n)\\) is a sequence in \\(\\mathbb{R}\\). Then the series with terms \\((a_n)\\) is the formal expression\n\\[\\sum_{i=1}^\\infty a_i=a_1+a_2+\\cdots\\]\nBy “formal expression” I mean that we are not considering this expression to represent a number; it’s just notation meant to express the idea of an infinite sum. Sometimes we abbreviate the notation as \\(\\sum a_i\\).\nThis means that \\[\\begin{array}{ccl}\ns_1&=&a_1\\\\\ns_2&=&a_1+a_2\\\\\ns_3&=&a_1+a+2+a_3\\\\\n&\\vdots&\n\\end{array}\\]\nWe now define convergence of series in terms of the partial sums.\nIn the case that \\(\\displaystyle\\sum_{i=1}^\\infty a_i\\) has sum \\(S\\), we sometimes abuse notation slightly and use the expression \\(\\displaystyle\\sum_{i=1}^\\infty a_i\\) to represent the number \\(S\\).\nAs an example of the vocabulary in the action, the series \\(\\displaystyle \\sum_{i=1}^\\infty \\frac{2}{3^i}\\)",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Series Basics</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/series.html#series-and-partial-sums",
+    "href": "sequences/series.html#series-and-partial-sums",
+    "title": "12  Series Basics",
+    "section": "",
+    "text": "Definition 12.1 (Partial Sums) The sequence of partial sums of the series \\(\\displaystyle\\sum_{i=1}^\\infty a_i\\) is the sequence \\((s_n)\\) defined by \\[ s_n=\\sum_{i=1}^n a_i = a_1+\\cdots+a_n \\]\n\n\n\n\nDefinition 12.2 (Series Convergence) The series \\(\\displaystyle\\sum_{i=1}^\\infty a_i\\) is said to converge or diverge when its sequence of partial sums \\((s_n)\\) does. If \\(s_n\\rightarrow S\\), we call \\(S\\) the sum of the series.\n\n\n\n\nhas terms given by the sequence \\(\\left(\\frac{2}{3^i}\\right)\\) or \\(\\frac{2}{3},\\frac{2}{9},\\frac{2}{27},\\frac{2}{81},\\cdots\\)\nhas partial sums \\(\\frac{2}{3},\\frac{2}{3}+\\frac{2}{9},\\frac{2}{3}+\\frac{2}{9}+\\frac{2}{27},\\ldots\\). These simplifies to \\(\\frac{2}{3},\\frac{8}{9},\\frac{26}{27},\\ldots\\) or \\(\\left(\\frac{3^i-1}{3^i}\\right)\\).\nconverges with a sum of \\(1\\).\n\n\nExercise 12.3 Write each of the four infinite sums in Equation 12.1 using series notation. Then write out the first 6 partial sums for each. Are there any you can tell right away converge or diverge?",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Series Basics</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/series.html#working-with-partial-sums",
+    "href": "sequences/series.html#working-with-partial-sums",
+    "title": "12  Series Basics",
+    "section": "12.2 Working with Partial Sums",
+    "text": "12.2 Working with Partial Sums\nWe start with an important class of series called geometric series.\n\nExample 12.4 (Geometric Series) For \\(a\\neq 0\\) and any \\(r\\in\\mathbb{R}\\), a series of the form \\[\\sum_{i=0}^\\infty ar^n\\] is called a geometric series. This series converges to \\(\\frac{a}{1-r}\\) when \\(|r|&lt;1\\) and diverges otherwise.\n\n\nProof. To determine whether the series converges, we analyze its partial sums in cases.\nIf \\(|r|\\neq1\\), we can use some algebraic tricks to simplify the expression for the partial sum \\(s_n\\): \\[\\begin{array}{rcl}\n  s_n&=&a+ar+ar^2+cdots+ar^n\\\\\n  &=&a(1+r+r^2+\\cdots+r^n)\\\\\n  &=&\\displaystyle\\frac{a(1-r^{n+1})}{1-r}\n\\end{array}\\] If \\(|r|&lt;1\\), then \\(r^{n+1}\\rightarrow0\\), so using what we know about sequences and arithmetic, we can say \\(s_n\\rightarrow\\frac{a}{1-r}\\).\nIf \\(|r|&gt;1\\), then \\((r^{n+1})\\) diverges. So if, by way of contradiction, we assume the partial sums \\((s_n)\\) did converge to some value \\(S\\), then we could say that the sequence \\(\\left(1-s_n\\frac{1-r}{a}\\right)\\) converges to \\(1-L\\frac{1-r}{a}\\). However \\(1-s_n\\frac{1-r}{a}=r^{n+1}\\), which we already said diverges.2\nWe leave the cases where \\(r=\\pm1\\) to the reader in Exercise 12.5 below.\n\n\nExercise 12.5 Finish the proof of Example 12.4 by proving that the geometric series diverges when \\(r=1\\) and when \\(r=-1\\). (Hint: what are the partial sums in each of these cases?)\n\n\n\n\n\n\n\nNote\n\n\n\nIn the section on sequences, we insisted that the first term in our sequence corresponded to an index of 1. For series, it is often convenient to start with an index 0 (as in Example 12.4) or something else. And now that we are more comfortable with the concept of a sequence, there is less risk of confusion.\n\n\n\nExercise 12.6 (A “Telescoping” Series) Show that the series \\(\\displaystyle\\sum_{i=1}^\\infty \\frac{1}{n(n+1)}\\) converges. It will be helfpul to note that \\[\\frac{1}{n(n+1)}=\\frac{1}{n}-\\frac{1}{n+1}\\] and to write out the first several partial sums.\n\nBoth Example 12.4 and Exercise 12.6 are somewhat unusual in that in both cases we can write down an explicit formula for the partial sum sequence. More often an explicit formula is unavailable and we need to rely on other means for determining and proving the con/divergence of a series.\n\nTheorem 12.7 (Divergence Test) If a series converges, then its terms converge to \\(0\\).\n\n\nExercise 12.8  \n\nState the contrapositive of the Divergence Test.\nWhat (if anything) does the Divergence Test say about the con/divergence of the series \\(\\displaystyle \\sum_{i=1}^\\infty \\frac{n}{n+1}\\)?.\nWhat (if anything) does the Divergence Test say about the con/divergence series \\(\\displaystyle \\sum_{i=1}^\\infty \\frac{1}{n^2}\\)?\nProve the Divergence Test.\n\n\n\n\n\n\n\n\nHint for part 4 of Exercise 12.8\n\n\n\n\n\nNote that \\(a_{n+1}=s_{n+1}-s_n\\).\n\n\n\n\nTheorem 12.9 Suppose \\(\\sum a_n=S\\) and \\(\\sum b_n=T\\) are convergent series and that \\(k\\in\\mathbb{R}\\). Then\n\n\\(\\sum (a_n+b_n) = S+T\\)\n\\(\\sum (ka_n)=kS\\)\nIf \\(a_n\\leq b_n\\) for all \\(n\\), then \\(S\\leq T\\).\n\n\nPart of what parts 1 and 2 in Theorem 12.9 is claiming is that these two series do in fact converge.\n\n\n\n\n\n\nNote\n\n\n\nWhen an equation or proposition does not depend on the starting index of a series, we sometimes just write \\(\\sum a_n\\) as shorthand for \\(\\sum_{i=k}^\\infty a_n\\) for some \\(k\\).",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Series Basics</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/series.html#series-with-non-negative-terms",
+    "href": "sequences/series.html#series-with-non-negative-terms",
+    "title": "12  Series Basics",
+    "section": "12.3 Series With Non-Negative Terms",
+    "text": "12.3 Series With Non-Negative Terms\nSeries with all non-negative terms have some special properties that we can quickly prove using what we know about sequences.\n\nExercise 12.10 Suppose \\(\\displaystyle \\sum_{i=1}^\\infty a_i\\) is a series all of whose terms are non-negative. Prove the following.\n\nThe sequence of partial sums is increasing.\nThe series converges if and only if the sequence of partial sums is bounded.\nIf the series diverges, then the sequence of partial sums limits to \\(+\\infty\\).\n\n\nThe upshot of Exercise 12.10 is that we can determine the con/divergence of a series just by knowing whether its sequence of partial sums is bounded or not. This can be very helpful for proving\n\nExample 12.11 The series \\(\\displaystyle\\sum_{i=1}^\\infty \\frac{1}{n^2}\\) converges.\n\n\nProof. Let \\((s_n)\\) be the sequence of partials sums for \\(\\displaystyle\\sum_{i=1}^\\infty \\frac{1}{n^2}\\).\nAs we say in Exercise 12.6, the series \\(\\displaystyle\\sum_{i=1}^\\infty \\frac{1}{n(n+1)}\\) converges. Let \\((t_n)\\) be the sequence of partial sums for this series.\nComparing the partials sums for these two series, we have \\[\\begin{array}{ccccccc}\ns_n&=&1+&\\frac{1}{2\\cdot2}+&\\frac{1}{3\\cdot3}+&\\cdots&+\\frac{1}{n^2}\\\\\nt_n&=&&\\frac{1}{1\\cdot2}+&\\frac{1}{2\\cdot3}+&\\cdots&+\\frac{1}{n(n+1)}\n\\end{array}\\]\nComparing term by term, we can see that \\(1+t_n\\geq s_n\\) for all \\(n\\). Since \\((t_n)\\) has all positive terms and converges to some number \\(T\\), we can use part 2 of Exercise 12.10 to say that that \\((t_n)\\) and therefore \\((s_n)\\) is bounded above. Thus, applying part 2 of Exercise 12.10 again, we can say that \\(\\displaystyle\\sum_{i=1}^\\infty \\frac{1}{n^2}\\) converges.\n\nNote that the above proof does not tell us what the series \\(\\displaystyle\\sum_{i=1}^\\infty \\frac{1}{n^2}\\) converges to. This is often the case for such proofs.\nThe following theorem extends generalizes the logic of the proof of Example 12.11.\n\nTheorem 12.12 (Comparison Test) Suppose \\(\\sum a_n\\) and \\(\\sum b_n\\) are series with all non-negative terms such that \\(a_n\\leq b_n\\) for all \\(n\\).\n\nIf \\(\\sum b_n\\) converges, then \\(\\sum a_n\\) converges.\nIf \\(\\sum a_n\\) diverges, then \\(\\sum b_n\\) diverges.\n\n\n\nExample 12.13 (Harmonic Series) The harmonic series \\(\\displaystyle \\sum_{i=1}^\\infty \\frac{1}{n}\\) diverges.\n\n\nProof. Call the terms of this series \\(c_n=\\frac{1}{n}\\) and the partial sums \\(s_n\\). Note that \\(c_n\\rightarrow0\\), so the Divergence Test cannot be used to prove divergence.\nConsider another series \\(\\displaystyle \\sum_{i=1}^\\infty b_n\\) where the terms \\(b_n\\) are defined by \\[\\begin{array}{rcl}\n  b_1&=&1\\\\\n  b_2&=&\\frac{1}{2}\\\\\n  b_3=b_4&=&\\frac{1}{4}\\\\\n  b_5=\\cdots=b_8&=&\\frac{1}{8}\\\\\n  &\\vdots&\\\\\n  b_{2^{n-1}+1}=\\cdots=b_{2^n} & = & \\frac{1}{2^n}\\\\\n  &\\vdots&\n\\end{array}\\]\nNote consider the series \\(\\displaystyle \\sum_{i=1}^\\infty b_n\\). Calling the partial sums \\(t_n\\), we can consider the subsequence \\(t_{2^n}\\): \\[\\begin{array}{rcll}\n  t_{2^1} &=& 1+\\frac{1}{2}&=\\frac{3}{2}\\\\\n  t_{2^2-1} &=& 1+\\frac{1}{2}+2\\cdot\\frac{1}{4}&=\\frac{4}{2}\\\\\n  t_{2^2-1} &=& 1+\\frac{1}{2}+2\\cdot\\frac{1}{4}+4\\cdot\\frac{1}{8}&=\\frac{5}{2}\\\\\n  &\\vdots&\n\\end{array}\\] Thus \\(t_{2^n}=\\frac{n+2}{2}\\), so \\((t_n)\\) has a divergent subsequence and hence \\(\\displaystyle \\sum_{i=1}^\\infty b_n\\) diverges. Therefore since \\(c_n\\geq b_n\\) for all \\(n\\) (and both series have all non-negative terms) \\(\\displaystyle \\sum_{i=1}^\\infty \\frac{1}{n}\\) diverges as well by the Comparison Test.\n\n\nExercise 12.14 Prove Theorem 12.12.",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Series Basics</span>"
+    ]
+  },
+  {
+    "objectID": "sequences/series.html#footnotes",
+    "href": "sequences/series.html#footnotes",
+    "title": "12  Series Basics",
+    "section": "",
+    "text": "There are actually several theories of convergent series which are useful in different contexts. We’ll present the most standard version here.↩︎\nI am bending over backwards here to make precise the intuition that “Since \\((r^{n+1})\\) diverges, so must an sequence involving it”. Unfortunately, that reasoning doesn’t always work–think about \\((\\sqrt{n+1} - \\sqrt{n})\\) which converges despite being the sum of two divergent sequences–so a proof of the style shown here is appropriate.↩︎",
+    "crumbs": [
+      "Sequences",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Series Basics</span>"
+    ]
+  },
+  {
+    "objectID": "constructing-r.html",
+    "href": "constructing-r.html",
+    "title": "13  Constructing the Reals",
+    "section": "",
+    "text": "13.1 Constructing the rationals\nAt the beginning of the course, we made a decision that we would assume certain axioms about \\(\\R\\), and then prove all of the important properties of \\(\\R\\) from those. Another approach to real analysis is to construct the real number system from a simpler one and then prove even the most basic facts about \\(\\R\\) (note that we still need to make some fundamental assumptions about the simpler number system). This addendum will go through one way to construct \\(\\R\\) from \\(\\Q\\).\nAs a starting point for this process, though, we’ll see how to construct \\(\\Q\\) from \\(\\Z\\). While I’m sure you’re familiar with all of the important properties of the rational numbers, it will be instructive to think about what it means to “construct” a new number system out of a simpler one in the context of \\(\\Z\\) and \\(\\Q\\) first. The idea is that once you see what the construction process of \\(\\Q\\) entails, you’ll be able to follow a parallel process for constructing \\(\\R\\).\nPretend that you and I know everything we want to know about the integers \\(\\Z\\), but that I’ve never heard of rational numbers before. How would you explain them to me? How could you rigorously construct them? Ultimately, you’d want to define rational numbers as things that look like \\(\\frac{p}{q}\\) where \\(p,q\\in\\Z\\) and \\(q\\neq0\\), but there are lots of important rules that go along with this (when is it true that \\(\\frac{p_1}{q_2}=\\frac{p_2}{q_2}\\)? how do we add, subtract, and multiply rational numbers? when is one rational number greater than another? can we witness \\(\\Z\\) as a subset of \\(\\Q\\)?). A complete construction should answer all of these questions. So here’s a way to get started.\nStart by letting \\[\\mathcal Q=\\{(p,q)\\in\\Z\\times\\Z ~:~ q\\neq0\\}\\] We’ll think of an element \\((p,q)\\in\\mathcal Q\\) as “representing” the rational number \\(\\frac{p}{q}\\), but \\(\\mathcal Q\\) is a different set from the rationals. For example, \\((1,3)\\) and \\((2,6)\\) are different elements of \\(\\mathcal Q\\) (even though \\(\\frac{1}{3}\\) and \\(\\frac{2}{6}\\) are the same element of \\(\\Q\\)).\nNow we define a relation \\(\\sim\\) on \\(\\mathcal Q\\) by saying \\((p_1,q_1)\\sim(p_2,q_2)\\) when \\(p_1q_2=p_2q_1\\). For example, \\((1,3)\\sim(2,6)\\). Note that I’m avoiding using division in this definition because we’re starting in \\(\\Z\\) where division isn’t always well-defined. Note that \\(\\sim\\) is an equivalence relation:\nSince \\(\\sim\\) is an equivalence relation, we can define \\(\\Q\\) to be the set of equivalence classes \\(\\mathcal Q/\\sim\\). For the equivalence class of \\((p,q)\\), we write \\(\\frac{p}{q}\\). The key here is to remember that \\(\\frac{p}{q}\\) (an element of \\(\\Q\\)) is a whole collection of ordered pairs in \\(\\mathcal Q\\). For example, \\(\\frac{9}{6}\\) is the collection \\(\\{\\ldots,(-6,-4),(-3,-2),(3,2),(6,4),(9,6),\\ldots\\}\\) of all numerator-denominator pairs that equal \\(\\frac{9}{6}\\) in \\(\\Q\\).\nThis defines \\(\\Q\\) as a set, but we still have more work to do. First, we can define the basic operations of \\(+,-,\\cdot,\\div\\) on this set. It may seem straightforward to define, for example, \\(\\frac{p}{q}\\cdot\\frac{r}{s}=\\frac{pr}{qs}\\), but we need to prove that this operation is well-defined. That is, if \\((p,q),(p',q')\\) are elements of the same equivalence class, and \\((r,s),(r',s')\\) are elements of the same equivalence class, then \\((pr,qs)\\) and \\((p'r',q's')\\) are elements of the same equivalence class. That is, for example, you should end up in the same equivalence class if you multiply \\(\\frac{3}{6}\\cdot\\frac{2}{7}\\) or \\(\\frac{1}{2}\\cdot\\frac{10}{35}\\). To confirm this fact, we can assume \\((p,q)\\sim(p',q')\\) and \\((r,s)\\sim(r',s')\\) so that \\(pq'=p'q\\) and \\(rs'=r's\\). Then \\(prq's'=p'qr's\\), so \\((pr,qs)\\sim(p'r',q's')\\) as desired. One can confirm the usual definitions of the other operations are similarly well defined.\nOne thing that’s useful is to note that we can give a “standard” representative from \\(\\mathcal Q\\) of any element of \\(\\Q\\). In particular, every equivalence class \\(\\frac{p}{q}\\) contains a pair \\((p',q')\\) with \\(q'&gt;0\\) and \\(p',q'\\) coprime. I won’t prove this fact, but it should be familiar that any rational can be written in “reduced form” with positive denominator.\nWe can define an ordering on equivalence classes in \\(\\Q\\) by saying that when \\(\\frac{p}{q}\\) and \\(\\frac{r}{s}\\) have positive denominators (i.e. \\(q&gt;0\\) and \\(s&gt;0\\)), then we say \\(\\frac{p}{q}\\geq\\frac{r}{s}\\) when \\(ps\\geq qr\\). Once again, to be complete, we would need to show this relation is well-defined.\nThe final essential piece is to show how \\(\\Z\\) fits inside of \\(\\Q\\). We start by saying an integer \\(n\\) corresponds to the rational \\(\\frac{n}{1}\\), but in a sense, this isn’t enough. We should also confirm that the arithmetic operations \\(+,-,\\cdot\\) and ordering work the same for the copy of the integers living inside \\(\\Q\\) as they do in \\(\\Z\\). That is, for example, if \\(a,b,c\\) are integers with \\(a+b=c\\), is it true that \\(\\frac{a}{1}+\\frac{b}{1}=\\frac{c}{1}\\)? It’s tedious to confirm all such facts, but certainly doable.\nFrom there, we can set about proving other properties of \\(\\Q\\) that go beyond what we know about \\(\\Z\\) (e.g. facts about division), but our job of constructing \\(\\Q\\) is done.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Constructing the Reals</span>"
+    ]
+  },
+  {
+    "objectID": "constructing-r.html#constructing-the-rationals",
+    "href": "constructing-r.html#constructing-the-rationals",
+    "title": "13  Constructing the Reals",
+    "section": "",
+    "text": "Reflexive: For any \\((p,q)\\), we have \\(pq=qp\\).\nSymmetric: If \\((p_1,q_1)\\sim(p_2,q_2)\\), then \\(p_1q_2=p_2q_1\\), so \\((p_2,q_2)\\sim(p_1,q_1)\\).\nTransitive: Suppose \\((p_1,q_1)\\sim(p_2,q_2)\\) and \\((p_2,q_2)\\sim(p_3,q_3)\\) so that \\(p_1q_2=p_2q_1\\) and \\(p_2q_3=p_3q_2\\). Here we need to break into two cases.\n\nIf \\(p_1=0\\), then \\(p_2q_1=0\\) and since \\(q_1\\neq0\\), \\(p_2=0\\). Similarly, we can conclude \\(p_3=0\\). So it follows that \\(p_1q_3=0=p_3q_1\\).\nIf \\(p_1\\neq0\\), it follows that \\(p_2\\neq0\\). In this case, we can multiply our two equations to get \\(p_1q_2p_2q_3=p_2q_1p_3q_2\\), and since \\(p_2q_2\\neq0\\), we can use cancellation to say \\(p_1q_3=p_3q_1\\), so \\((p_1,q_1)\\sim(p_3,q_3)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Constructing the Reals</span>"
+    ]
+  },
+  {
+    "objectID": "constructing-r.html#construction-the-reals",
+    "href": "constructing-r.html#construction-the-reals",
+    "title": "13  Constructing the Reals",
+    "section": "13.2 Construction the reals",
+    "text": "13.2 Construction the reals\nThere are several ways to construct the reals from the rationals, but one approach is to use Cauchy sequences. The basic idea is to let \\(\\mathcal R\\) be the set of Cauchy sequences in \\(\\Q\\). The intuition behind this is that every Cauchy sequence in \\(\\Q\\) is a representative of the real number it converges to. A few examples to keep in mind:\n\n\\((3,3.1,3.14,3.141,3.1415,\\ldots)\\) is an element of \\(\\mathcal R\\); it will end up being a representative of an equivalence class corresponding to \\(\\pi\\).\n\\((4,3.2,3.15,3.142,3.1416,\\ldots)\\) is an element of \\(\\mathcal R\\); it will end also up being a representative of an equivalence class corresponding to \\(\\pi\\).\n\\((\\frac{1}{2},\\frac{3}{4},\\frac{7}{8},\\frac{15}{16},\\ldots)\\) is an element of \\(\\mathcal R\\); it will end up being a representative of an equivalence class corresponding to \\(1\\).\n\\((1,1,1,1,\\ldots)\\) is an element of \\(\\mathcal R\\); it will end also up being a representative of an equivalence class corresponding to \\(1\\).\n\nThe rest is up to you. The problems below will guide you in constructing \\(\\R\\) as a set of equivalence classes, defining the basic operations and ordering, witnessing \\(\\Q\\) as a subset of \\(\\R\\), and what we might consider a “standard” representative of an equivalence class might be.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Constructing the Reals</span>"
+    ]
+  },
+  {
+    "objectID": "constructing-r.html#problems",
+    "href": "constructing-r.html#problems",
+    "title": "13  Constructing the Reals",
+    "section": "13.3 Problems",
+    "text": "13.3 Problems\n\nHow should we define an equivalence relation on \\(\\mathcal R\\) so that each equivalence class will correspond to exactly one real number? How could we tell that two Cauchy sequences in \\(\\Q\\) represent the same real number? Think about the examples above, but remember, we can’t necessarily speak of the limit of Cauchy sequence in \\(\\Q\\) since many (e.g. the first two examples above) are not convergent in \\(\\Q\\). Can you prove that the relation you define is in fact an equivalence relation?\nOnce you have established the set \\(\\R\\) as \\(\\mathcal R/\\sim\\) for an appropriate equivalence relation \\(\\sim\\), how can we define the of two elements of \\(\\R\\)? Can you show that this operation is well-defined?\nOnce you have established the set \\(\\R\\) as \\(\\mathcal R/\\sim\\), how should we define order (what does it mean for one equivalence class in \\(\\mathcal R/\\sim\\) to be greater than another)? Can you show that this operation is well-defined?\nHow can we witness \\(\\Q\\) as a subset of \\(\\R\\)? That is, for a given rational number \\(x\\), what equivalence class in \\(\\R\\) corresponds to \\(x\\)? Can you confirm that if \\(x,y,z\\in\\Q\\) with \\(x+y=z\\), then the same is true for the corresponding elements of \\(\\R\\)?\nThis is an open-ended question: what is a logical way of defining a “standard” representative of \\(\\mathcal R\\) for a given element of \\(\\R\\)? There is no one right answer here.\nCan you prove that every non-empty subset of \\(\\R\\) that is bounded above has a least upper bound?\n\nA hint on #1: What can you say about the difference between two Cauchy sequences in \\(\\Q\\) that should represent the same real number? What would that difference converge to?",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Constructing the Reals</span>"
+    ]
+  },
+  {
+    "objectID": "minmax.html",
+    "href": "minmax.html",
+    "title": "14  The Min-Max Theorem",
+    "section": "",
+    "text": "14.1 Highlights",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>The Min-Max Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "minmax.html#highlights",
+    "href": "minmax.html#highlights",
+    "title": "14  The Min-Max Theorem",
+    "section": "",
+    "text": "Special properties of how continuous functions interact with closed and bounded subsets of \\(\\R\\)\nSee Bolzano-Weierstrass in action\nIf \\(f\\) is a continuous real-valued function on a subset \\(C\\subseteq\\R\\), then \\(f\\) achieves a global max and global min on \\(C\\).",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>The Min-Max Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "minmax.html#preparation",
+    "href": "minmax.html#preparation",
+    "title": "14  The Min-Max Theorem",
+    "section": "14.2 Preparation",
+    "text": "14.2 Preparation\nThe goal of this section is to prove the Min-Max Theorem, which says that for any closed and bounded subset \\(C\\subseteq\\mathbb R\\) and any continuous function \\(f:C\\rightarrow\\mathbb R\\), \\(f\\) achieves a global max and a global min on \\(C\\). That is, there are points \\(a,b\\in C\\), called the global max and global min respectively, such that for all \\(x\\in C\\), \\[f(a)\\leq f(x)\\leq f(b)\\]\n\nExercise 14.1 Show by example that both closedness and boundedness are necessary conditions for having a global max and global min. That is:\n\nFind a closed subset \\(C\\) of \\(\\mathbb R\\) (which is not bounded) and a continuous function \\(f:C\\rightarrow\\mathbb R\\) so that \\(f\\) has no global max and/or no global min on \\(C\\).\nFind a bounded set \\(C\\) of \\(\\mathbb R\\) (which is not closed) and a continuous function \\(f:C\\rightarrow\\mathbb R\\) so that \\(f\\) has no global max and/or no global min on \\(C\\).\n\n\nAs we’ll see, closed and bounded subsets of \\(\\mathbb R\\) play an important role, so here are a couple more theorems about such subsets.\n\nTheorem 14.2 Let \\(C\\) be a closed and bounded subset of \\(\\mathbb R\\), and let \\((a_n)\\) be a sequence in \\(C\\). Then \\((a_n)\\) has a subsequence that converges to a point in \\(C\\).\n\n\nProve Theorem 14.2 using Bolzano-Weierstrass. Note that you not only need to showw that \\((a_n)\\) has a convergent subsequence but also that the limit of that convergent subsequence is in \\(C\\).\n\nThe main theoretical result of this section will be Theorem 14.3, which tells us that if \\(C\\subseteq\\R\\) is closed and bounded and \\(f:C\\rightarrow\\R\\) is continuous, then the image \\(f(C)\\) is also closed and bounded.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>The Min-Max Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "minmax.html#closed-and-bounded-subsets-of-r",
+    "href": "minmax.html#closed-and-bounded-subsets-of-r",
+    "title": "14  The Min-Max Theorem",
+    "section": "14.3 Closed and Bounded Subsets of \\(\\R\\)",
+    "text": "14.3 Closed and Bounded Subsets of \\(\\R\\)\nThis document covers the Min-Max Theorem and a few concepts that lead up to it. Our textbook proves the Min-Max Theorem using a concept called compactness for general metric spaces in Chapter 7. However, this is a bit more theory than we really need, so we’ll restrict our attention to functions from subsets of \\(\\mathbb R\\) to \\(\\mathbb R\\), and pick up a few additional important theorems along the way. As we’ll see, the key to all of this will be the Bolzano-Weierstrass Theorem.\n\nTheorem 14.3 Let \\(C\\) be a closed and bounded subset of \\(\\mathbb R\\), and suppose \\(f:C\\rightarrow\\mathbb R\\) is continuous. Then the image \\(f(C)\\) is also closed and bounded.\n\nBefore we see the proof, it’s worth noting that closed and bounded work together here. It’s not true that the continuous image of any closed set is closed, nor that the continuous image of any bounded set is bounded, as the exercise below shows.\n\nExercise 14.4 The following examples show that Theorem 14.3 fails if either condition on \\(C\\) (closed or bounded) is violated.\n\nLet \\(C=[1,\\infty)\\) and \\(f:C\\rightarrow\\mathbb R\\) be defined by \\(f(x)=\\arctan(x)\\). What is \\(f(C)\\)? Explain how this example shows that the image of a closed subset of \\(\\mathbb R\\) need not be closed.\nLet \\(C=(0,1]\\) and \\(f:C\\rightarrow\\mathbb R\\) be defined by \\(f(x)=\\frac{1}{x}\\). What is \\(f(C)\\)? Explain how this example shows that the image of a bounded subset of \\(\\mathbb R\\) need not be bounded.\n\n\n\nProof. Proof of Theorem 14.3.\nSuppose \\(C\\) is closed and bounded and that \\(f:C\\rightarrow \\R\\) is continuous. First we will prove that \\(f(C)\\) is closed by showing that the limit of every convergent sequence in \\(f(C)\\) is in \\(C\\). So suppose \\((y_n)\\) is a convergent sequence in \\(f(C)\\). Let’s call its limit \\(b\\). Since \\(y_n\\in f(C)\\), there exists \\(x_n\\in C\\) such that \\(f(x_n)=y_n\\) for every \\(n\\in\\N\\).1 Then by Theorem 14.2, \\((x_n)\\) has a subsequence \\((x_{i_n})\\) that converges to a point in \\(C\\); we’ll call that point \\(a\\). By Theorem 4.3.3, since \\(f\\) is continuous and \\(x_{i_n}\\rightarrow a\\), we have \\(f(x_{i_n})\\rightarrow f(a)\\); that is, \\(y_{i_n}\\rightarrow f(a)\\). But since \\(y_n\\rightarrow b\\), we know \\(y_{i_n}\\rightarrow b\\), so by the uniqueness of sequence limits, we have \\(b=f(a)\\). Since \\(a\\in C\\), this proves \\(b\\in f(C)\\) as desired.\nNow by way of contradiction, suppose \\(f(C)\\) is not bounded. Then by Problem 3.2 #4, there exists a sequence \\((y_n)\\) in \\(f(C)\\) with no convergent subsequence. As before, since \\(y_n\\in f(C)\\), there exists \\(x_n\\in C\\) such that \\(f(x_n)=y_n\\) for all \\(n\\in\\N\\). Again by Theorem 14.2, \\((x_n)\\) has a subsequence \\((x_{i_n})\\) that converges to some point \\(a\\) in \\(C\\). Since \\(f\\) is continuous and \\(x_{i_n}\\rightarrow a\\), we have \\(y_{i_n}\\rightarrow f(a)\\), contradicting the assumption that \\((y_n)\\) has no convergent subsequence.\n\n\nExercise 14.5 This exercise is meant to help you see what’s going on in the first part of the proof of Theorem 14.3.\nLet \\(C=[-2,2]\\) and define \\(f:C\\rightarrow\\R\\) be defined by \\(f(x)=x^2\\). Let \\((y_n)\\) be the sequence \\(3,3.9,3.99,3.999\\ldots\\).\n\nWhat is \\(f(C)\\) in this case? Is \\((y_n)\\) in \\(f(C)\\)?\nFind a sequence \\((x_n)\\) in \\(C\\) so that (a) \\(f(x_n)=y_n\\), and (b) \\((x_n)\\) does not converge. (Hint: you’ll need to take advantage of the fact that \\(f\\) is not injective.)\nDoes the sequence \\((x_n)\\) you chose have a convergent subsequence? If so, what does it converge to?\n\n\n\nLemma 14.6 Let \\(C\\subseteq\\R\\) be non-empty, closed, and bounded. Then \\(\\sup C\\in C\\) and \\(\\inf C\\in C\\).\n\nThe proof is part of Exercise 14.8 below.\n\nTheorem 14.7 (Min-Max Theorem) Let \\(C\\) be a non-empty, closed, and bounded subset of \\(\\R\\) and suppose \\(f:C\\rightarrow \\R\\) is continuous. Then there exist points \\(a,b\\in C\\), which we call the global min and global max respectively, such that for all \\(x\\in C\\) \\[f(a)\\leq f(x)\\leq f(b)\\]\n\n\nExercise 14.8  \n\nProve Lemma 14.6.\nUse Lemma 14.6 to help you prove Theorem 14.7.\n\n\nWe conclude with another consequence of Theorem 14.2 that we’ll need for later on in the course.\n\nTheorem 14.9 Let \\(C\\subseteq\\R\\) be non-empty, closed, and bounded and let \\(f:C\\rightarrow\\R\\) be a function. Then \\(f\\) is uniformly continuous if and only if \\(f\\) is continuous.\n\n\nProof. We already know that uniform continuity implies continuity, so we just need to prove the backwards implication.\nBy way of contradiction, suppose \\(f:C\\rightarrow\\R\\) is continuous but not uniformly continuous. Then by Problem 4.4#3b, there exists \\(\\epsilon&gt;0\\) and sequences \\((x_n)\\) and \\((y_n)\\) in \\(C\\) such that \\(|x_n-y_n|\\rightarrow0\\) and yet for all \\(n\\in\\N\\),\n\\[\n|f(x_n)-f(y_n)|\\geq\\epsilon\n\\tag{14.1}\\]\nThen by Theorem 14.2, the sequence \\((x_n)\\) has a subsequence \\((x_{i_n})\\) that converges to some point \\(a\\in C\\). Now consider the corresponding subsequence \\((y_{i_n})\\) of \\((y_n)\\). Since \\(|x_n-y_n|\\rightarrow0\\), the subsequence \\(|x_{i_n}-y_{i_n}|\\rightarrow0\\) and therefore \\(x_{i_n}-y_{i_n}\\rightarrow0\\). Then \\(y_{i_n}=x_{i_n}-(x_{i_n}-y_{i_n})\\), so \\(y_{i_n}\\rightarrow a-0=a\\).\nSo since \\(f\\) is continuous and \\(x_{i_n}\\rightarrow a\\), by 4.3.3, \\(f(x_{i_n})\\rightarrow f(a)\\). Similarly, since \\(y_{i_n}\\rightarrow a\\), by 4.3.3, \\(f(y_{i_n})\\rightarrow f(a)\\). Therefore \\(f(x_{i_n})-f(y_{i_n})\\rightarrow0\\), so there exists \\(M\\in\\N\\) such that for all \\(m&gt;M\\), \\(|f(x_{i_m})-f(y_{i_m})|&lt;\\epsilon\\), contradicting Equation 14.1.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>The Min-Max Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "minmax.html#review-questions",
+    "href": "minmax.html#review-questions",
+    "title": "14  The Min-Max Theorem",
+    "section": "14.4 Review Questions",
+    "text": "14.4 Review Questions\n\nGive examples to show that the conditions of boundedness and closedness “work together” in Theorem 14.3 and Theorem 14.7 by showing that neither property on its own is sufficient to imply the conclusions of the theorems. Include pictures.\nWhy would this theorem be false if our universe were \\(\\Q\\) instead of \\(\\R\\)?\nDefine a subset \\(U=\\{1,\\frac{1}{2},\\frac{1}{3},\\ldots\\}\\cup\\{0\\}\\). Suppose \\(f:U\\rightarrow\\R\\) is continuous. Prove that there exists \\(c\\in U\\) such that \\(f(c)\\geq f(x)\\) for all \\(x\\in U\\).\nSince we are seeing the previous problem in this section, it’s clear what tools to use. But out of context, it would be harder. Write another example of a problem that tests this content that would be tricky if you saw it out of context.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>The Min-Max Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "minmax.html#footnotes",
+    "href": "minmax.html#footnotes",
+    "title": "14  The Min-Max Theorem",
+    "section": "",
+    "text": "We aren’t assuming \\(f\\) is one-to-one, so \\(x_n\\) need not be unique.↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>The Min-Max Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "15  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "appendices/proof-writing.html",
+    "href": "appendices/proof-writing.html",
+    "title": "Appendix A — Proof-Writing Resources",
+    "section": "",
+    "text": "A.1 Negating Statements\nBelow are some proof-writing resources you may find helpful. These are also available as printable cheat sheets: negation.pdf, proof-skeleta.pdf.\nOften we need to negate logical statements. For example, a problem may ask you prove that a sequence does not converge to \\(a\\), or you may need to set up the contrapositive of an if-then statement.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Proof-Writing Resources</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/proof-writing.html#negating-statements",
+    "href": "appendices/proof-writing.html#negating-statements",
+    "title": "Appendix A — Proof-Writing Resources",
+    "section": "",
+    "text": "“For all” statements\n\n\n\n\\[\\neg\\big[(\\forall x\\in A)P(x)\\big]~\\Longleftrightarrow~(\\exists x\\in A)\\big[\\neg P(x)\\big]\\]\nExample:\nOriginal: “For all integers \\(x\\), \\(x^2&gt;0\\).”\nNegation: “There exists an integer \\(x\\) such that \\(x^2\\leq0\\).”\n\n\n\n\n\n\n\n\n“There exists… such that” statements\n\n\n\n\\[\\neg\\big[(\\exists x\\in A)P(x)\\big]~\\Longleftrightarrow~(\\forall x\\in A)\\big[\\neg P(x)\\big]\\]\nExample:\nOriginal: “There exists \\(x\\geq0\\) such that \\(\\sqrt x\\notin\\mathbb Q\\).”\nNegation: “For all \\(x\\geq0\\), \\(\\sqrt x\\in\\mathbb Q\\).”\n\n\n\n\n\n\n\n\nConditionals\n\n\n\n\\[\\neg\\big( P \\Rightarrow Q \\big)~\\Longleftrightarrow~ P \\wedge (\\neg Q)\\]\nRemember that many conditionals are often preceded by a hidden ``for all’’ quantifier.\nExample:\nOriginal: “(For all \\(x\\)) if \\(x\\) is even, then \\(x^2\\) is even.”\nNegation: “There exists \\(x\\) such that \\(x\\) is even and \\(x^2\\) is odd.”\n\n\n\n\n\n\n\n\n“And” statements\n\n\n\n\\[\\neg\\big(P\\wedge Q\\big)~\\Longleftrightarrow~ (\\neg P)\\vee(\\neg Q)\\]\nRemember that many conditionals are often preceded by a hidden ``for all’’ quantifier.\nExample:\nOriginal: “There exists \\(n\\in\\mathbb N\\) such that \\(n\\) divides 15 and 2 divides \\(n\\).”\nNegation: “For all \\(n\\in\\mathbb{N}\\), either \\(n\\) does not divide 15 or 2 does not divide \\(n\\).”\n\n\n\n\n\n\n\n\n“Or” statements\n\n\n\n\\[\\neg\\big(P\\vee Q\\big)~\\Longleftrightarrow~ (\\neg P)\\wedge(\\neg Q)\\]\nRemember that many conditionals are often preceded by a hidden ``for all’’ quantifier.\nExample:\nOriginal: “For all \\(n\\in\\mathbb Z\\), \\(n\\) is even or \\(n\\) is odd.”\nNegation: “There exists \\(n\\in\\mathbb Z\\) such that, \\(n\\) is not even and \\(n\\) is not odd.”",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Proof-Writing Resources</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/proof-writing.html#sec-proof-skeleta",
+    "href": "appendices/proof-writing.html#sec-proof-skeleta",
+    "title": "Appendix A — Proof-Writing Resources",
+    "section": "A.2 Proof skeleta",
+    "text": "A.2 Proof skeleta\nBelow are what I call “proof skeleta”—basic structures you can use when implementing standard proof techniques.\n\n\n\n\n\n\nConditional Statements (Direct)\n\n\n\nGoal: For propositions \\(P,Q\\), proving \\(P\\Rightarrow Q\\).\nProof. [State any upfront assumptions.] Assume \\(P\\). [Use definitions and known results to derive \\(Q\\).] Therefore \\(Q\\).\n\n\n\n\n\n\n\n\nConditional Statements (Contrapositive)\n\n\n\nGoal: For propositions \\(P,Q\\), proving \\(P\\Rightarrow Q\\).\nProof. [State any upfront assumptions.] Assume \\(\\neg Q\\). [Use definitions and known results to derive \\(\\neg P\\).] Therefore \\(\\neg P\\).\n\n\n\n\n\n\n\n\nBiconditionals\n\n\n\nGoal: For propositions \\(P,Q\\), proving \\(P\\Leftrightarrow Q\\).\nProof. [State any upfront assumptions.] We will prove implication both ways.\n\n(\\(\\Rightarrow\\)) [Prove \\(P\\Rightarrow Q\\).]\n(\\(\\Leftarrow\\)) [Prove \\(Q\\Rightarrow P\\).]\n\nTherefore \\(P\\) if and only if \\(Q\\).\n\n\n\n\n\n\n\n\n“The following are equivalent”\n\n\n\nGoal: Proving propositions \\(P\\), \\(Q\\), and \\(R\\) are logically equivalent.\nProof. [State any upfront assumptions.] We will prove \\(P\\Rightarrow Q\\), \\(Q\\Rightarrow R\\), and \\(R\\Rightarrow P\\).\n\n(\\(P\\Rightarrow Q\\)) [Prove \\(P\\Rightarrow Q\\).]\n(\\(Q\\Rightarrow R\\)) [Prove \\(Q\\Rightarrow R\\).]\n(\\(R\\Rightarrow P\\)) [Prove \\(R\\Rightarrow P\\).]\n\nTherefore \\(P\\), \\(Q\\), and \\(R\\) are logically equivalent.\n\nThe order of \\(P,Q,R\\) is unimportant, and the same idea can be applied to more than three propositions.\n\n\n\n\n\n\n\n\n\nSubsets\n\n\n\nGoal: For sets \\(A,B\\), proving \\(A\\subseteq B\\).\nProof. [State any upfront assumptions.] Let \\(a\\in A\\). [Use definitions and known results to deduce \\(a\\in B\\).] Therefore \\(a\\in B\\).\n\n\n\n\n\n\n\n\nSet Equality\n\n\n\nGoal: For sets \\(A,B\\), proving \\(A=B\\).\nProof. [State any upfront assumptions.] We will prove inclusion both ways.\n\n(\\(\\subseteq\\)) [Prove \\(A\\subseteq B\\).]\n(\\(\\supseteq\\)) [Prove \\(B\\subseteq A\\).]\n\nTherefore \\(A=B\\).\n\n\n\n\n\n\n\n\n“For all” statements\n\n\n\nGoal: Proving \\((\\forall x\\in A)P(x)\\).\nProof. [State any upfront assumptions.] Suppose \\(x\\in A\\). [Use definitions and known results to deduce \\(P(x)\\).] Therefore for all \\(x\\in A\\), \\(P(x)\\).\n\n\n\n\n\n\n\n\n“There exists… such that” statements\n\n\n\nGoal: Proving \\((\\exists x\\in A)P(x)\\).\nProof. [State any upfront assumptions.]\n\n[Exhibit a candidate \\(x\\in A\\).]\n[Use definitions and known results to deduce \\(P(x)\\).]\n\nTherefore there exists \\(x\\in A\\) such that \\(P(x)\\).\n\n\n\n\n\n\n\n\nUniqueness\n\n\n\nGoal: Proving \\((\\exists !x\\in A)P(x)\\).\nProof. [State any upfront assumptions.]\n\n[Prove \\((\\exists x\\in A)P(x)\\).]\nSuppose \\(x_1,x_2\\in A\\) and \\(P(x_1)\\) and \\(P(x_2)\\) are true. [Use definitions and known results to deduce \\(x_1=x_2\\).] Therefore \\(x_1=x_2\\).\n\nTherefore there exists a unique \\(x\\in A\\) such that \\(P(x)\\).\n\n\n\n\n\n\n\n\nProof by Contradiction\n\n\n\nGoal: Proving a proposition \\(P\\).\nProof. [State any upfront assumptions.] By way of contradiction, assume \\(\\neg P\\). [Use definitions and known results to arrive at a contradiction.] Therefore \\(P\\).\n\n\\(P\\) may be a conditional statement, but it doesn’t have to be.\nThe contradiction you arrive at may be \\((\\neg P)\\wedge P\\), or it may be something else.\n\n\n\n\n\n\n\n\n\nProof by Induction\n\n\n\nGoal: Proving \\((\\forall n\\in\\mathbb N)P(n)\\).\nProof. [State any upfront assumptions.] We will utilize a proof by induction.\n\nBase case. [Verify \\(P(1)\\) is true.] Therefore \\(P(1)\\).\nInductive step. Let \\(k\\in\\mathbb{N}\\). Assume \\(P(k)\\). [Use definitions and known results to deduce \\(P(k+1)\\).]\n\nTherefore \\(P(n)\\) is true for all \\(n\\in\\mathbb{N}\\).\n\n\n\n\n\n\n\n\nFunction Equality\n\n\n\nGoal: For two functions \\(f,g:A\\rightarrow B\\), prove \\(f=g\\).\nProof. [State any upfront assumptions.] Let \\(x\\in A\\). [Use definitions and known results to deduce \\(f(x)=g(x)\\).] Therefore \\(f(x)=g(x)\\) for all \\(x\\in A\\), so \\(f=g\\).\n\n\n\n\n\n\n\n\nInjectivity\n\n\n\nGoal: Prove that \\(f:A\\rightarrow B\\) is injective.\nProof. [State any upfront assumptions.] Let \\(x_1,x_2\\in A\\) and assume \\(f(x_1)=f(x_2)\\). [Use definitions and known results to deduce \\(x_1=x_2\\).] Therefore \\(x_1=x_2\\) whenever \\(f(x_1)=f(x_2)\\), so \\(f\\) is injective.\n\n\n\n\n\n\n\n\nSurjectivity\n\n\n\nGoal: Prove that \\(f:A\\rightarrow B\\) is surjective.\nProof. [State any upfront assumptions.] Let \\(y\\in B\\). [Use definitions and known results to prove \\((\\exists x\\in A)\\big(f(x)=y\\big)\\).] Therefore, for all \\(y\\in B\\), there exists \\(x\\in A\\) such that \\(f(x)=y\\), so \\(f\\) is surjective.\n\n\n\n\n\n\n\n\nBijectivity\n\n\n\nGoal: Prove that \\(f:A\\rightarrow B\\) is bijective.\nProof. [State any upfront assumptions.]\n\n[Prove \\(f\\) is injective.]\n[Prove \\(f\\) is surjective.]\n\nTherefore \\(f\\) is both injective and surjective, so \\(f\\) is bijective.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Proof-Writing Resources</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/union-and-intersection.html",
+    "href": "appendices/union-and-intersection.html",
+    "title": "Appendix B — Collections of Sets",
+    "section": "",
+    "text": "B.1 Indexing Sets\nIn set theory, we often need to think about not just one set, but a whole collection1 of sets.\nSome examples that appear in the text are below.\n(Try to make these feel motivated.)\nThe examples above show some of the operations we might consider performing when we have a collection of sets—unions, intersections, and complements. We collect some basic facts and notation below.\nTypically when we have a collection of sets, we want to put those sets in one-to-one correspondence with some set called the indexing set. For example, if we want one set in our collection for each integer, our indexing set would be \\(\\Z\\), and we might write \\(U_k\\) for the sets in our collection where \\(k\\in\\Z\\); so there would be a \\(U_7\\) and a \\(U_0\\) and a \\(U_{-3}\\), for instance. For the entire collection, we would write \\(\\left\\{U_k\\right\\}_{k\\in\\Z}\\).\nMore generally, if our sets are indexed by \\(\\Delta\\), we would write \\(U_\\alpha\\) for a set in our collection with \\(\\alpha\\in\\Delta\\), and we would write \\(\\left\\{U_\\alpha\\right\\}_{\\alpha\\in\\Delta}\\) for the collection.\nWhen we have finitely many sets, it is typical to call them something like \\(U_1,U_2,\\ldots,U_n\\); the collection would then be the set of sets \\(\\{U_1,U_2,\\ldots,U_n\\}\\). In this case \\(\\Delta=\\{1,2,\\ldots,n\\}\\) is the indexing set since there is one set in our collection for each element of \\(\\Delta\\).\nOften, we want one set for each natural number. In this case, we can use an indexing set of \\(\\Delta=\\N\\) and we once again call our sets \\(U_1,U_2,\\ldots\\). To indicate the collection of sets, we can write \\(\\left\\{U_i\\right\\}_{i\\in\\N}\\) or more commonly \\(\\left\\{U_i\\right\\}_{i=0}^\\infty\\).\nOccassionally we want to put our sets in correspondence with some other set \\(\\Delta\\). In Example 2.2, for example, we wanted one set (one open ball) for each point of \\(S\\). In this case we would make \\(\\Delta=S\\). Then for each point \\(x\\in S\\), there is a corresponding open ball \\(B_x\\) centered around \\(x\\). In this case, we would write \\(\\left\\{B_x\\right\\}_{x\\in S}\\) for the collection.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Collections of Sets</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/union-and-intersection.html#sec-union-intersection",
+    "href": "appendices/union-and-intersection.html#sec-union-intersection",
+    "title": "Appendix B — Collections of Sets",
+    "section": "B.2 Unions and Intersections",
+    "text": "B.2 Unions and Intersections\nFor two sets \\(U\\) and \\(V\\), we are familiar with the idea that\n\nThe union \\(U\\cup V\\) consists of all elements that are in at least one of \\(U\\) or \\(V\\).\nThe intersection \\(U\\cap V\\) consists of all elements are in both \\(U\\) and \\(V\\).\n\nExtending this to arbitrary collections of sets, if \\(\\left\\{U_\\alpha\\right\\}_{\\alpha\\in\\Delta}\\) is a collection of sets, we write\n\\[\\begin{aligned}\n  \\bigcup_{\\alpha\\in\\Delta} U_\\alpha &= \\left\\{x\\st \\text{$x\\in U_\\alpha$ for at least one $\\alpha\\in\\Delta$}\\right\\}\\\\\n  \\bigcap_{\\alpha\\in\\Delta} U_\\alpha &= \\left\\{x\\st \\text{$x\\in U_\\alpha$ for all $\\alpha\\in\\Delta$}\\right\\}\n\\end{aligned}\\]\nIn the common special case of where \\(\\Delta=\\N,\\) we instead write \\(\\displaystyle \\bigcup_{i=1}^\\infty U_i\\) and \\(\\displaystyle \\bigcap_{i=1}^\\infty U_i.\\)\nRelating this back to our examples, in Example 2.1, we are claiming that in the real numbers, \\(\\displaystyle \\bigcap_{i=1}^\\infty U_i\\) would be \\(\\{\\pi\\}\\) since \\(\\pi\\) and no other number is in all of these intervals, but if our universe were \\(\\Q\\), this intersection would be \\(\\varnothing\\) since no rational number lives in all of these intervals.\nIn Example 2.2, we are saying that \\(S\\) is an open set if there exists a collection of open balls \\(\\left\\{B_\\alpha\\right\\}\\) such that \\(\\bigcup B_\\alpha=S.\\)2 And similarly, if \\(S\\) is open, for each \\(x\\in S\\), there exists an open ball \\(B_x\\) centered at \\(x\\) such that \\(\\displaystyle \\bigcup_{x\\in S} B_x =S\\). If you can wrap your head around that, you are in good shape!",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Collections of Sets</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/union-and-intersection.html#demorgans-laws",
+    "href": "appendices/union-and-intersection.html#demorgans-laws",
+    "title": "Appendix B — Collections of Sets",
+    "section": "B.3 DeMorgan’s Laws",
+    "text": "B.3 DeMorgan’s Laws\nRecall that the complement of a set \\(S\\), for which we’ll write \\(S^\\cee\\), is all of the elements of our understood universe that are not in \\(S\\).\nDeMorgan’s Laws tell us how complementation interacts with unions and intersections. For two sets, DeMorgan’s Laws tell us\n\\[\\begin{aligned}\n  (U\\cup V)^\\cee&=U^\\cee \\cap V^\\cee \\\\\n  (U\\cap V)^\\cee&=U^\\cee \\cup V^\\cee\n\\end{aligned}\\]\nBut these same basic rules apply to arbitrary collections of sets as well.\n\nTheorem 2.4 For any collection of sets \\(\\left\\{U_\\alpha\\right\\}_{\\alpha\\in\\Delta}\\), we have\n\\[\\begin{aligned}\n  \\left(\\bigcup_{\\alpha\\in\\Delta} U_\\alpha\\right)^\\cee &= \\bigcap_{\\alpha\\in\\Delta} U_\\alpha^\\cee, \\text{and} \\\\\n  \\left(\\bigcap_{\\alpha\\in\\Delta} U_\\alpha\\right)^\\cee &= \\bigcup_{\\alpha\\in\\Delta} U_\\alpha^\\cee.\n\\end{aligned}\\]\n\n\nProof. For the first equation, note that \\(x\\in\\left(\\bigcup_{\\alpha\\in\\Delta} U_\\alpha\\right)^\\cee\\) means that \\(x\\) is not in \\(\\bigcup_{\\alpha\\in\\Delta} U_\\alpha\\), which is equivalent to saying \\(x\\) is not in any of the \\(U_\\alpha\\). This is in turn equivalent to saying \\(x\\in U_\\alpha^\\cee\\) for all \\(\\alpha\\in\\Delta\\), meaning \\(x\\in\\bigcap_{\\alpha\\in\\Delta} U_\\alpha^\\cee\\).\n\n\nExercise 2.5 Prove that second equation from DeMorgan’s Laws is true.\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nThere are at least two ways to do this. First is to give an argument similar to the proof of the first equation. The other is to apply the first equation, which is already proven to see that the second one is true.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Collections of Sets</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/union-and-intersection.html#footnotes",
+    "href": "appendices/union-and-intersection.html#footnotes",
+    "title": "Appendix B — Collections of Sets",
+    "section": "",
+    "text": "Really this is the same as a set of sets, but we use the word “collection” to help distinguish between the two levels of the heirarchy.↩︎\nNote that I am using shorthand here by omitting the indexing set since it isn’t important in this case.↩︎",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Collections of Sets</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/cardinality.html#footnotes",
+    "href": "appendices/cardinality.html#footnotes",
+    "title": "Appendix C — Cardinality",
+    "section": "",
+    "text": "I am using the Axiom of Choice here.↩︎",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Cardinality</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/cauchy-schwartz.html",
+    "href": "appendices/cauchy-schwartz.html",
+    "title": "Appendix D — The Cauchy-Schwartz Inequality",
+    "section": "",
+    "text": "Hello\n\nTheorem 4.1 CS",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>The Cauchy-Schwartz Inequality</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/wop.html",
+    "href": "appendices/wop.html",
+    "title": "Appendix E — The Well-Ordering Property",
+    "section": "",
+    "text": "One of the basic assumptions we make about the number system \\(\\N\\) that underwrites our ability to use mathematical induction is what’s known as the Well-Ordered Axiom.\n\nTheorem 5.1 Let \\(S\\) be any nonempty subset of \\(\\N\\). Then \\(S\\) has a least element.\n\nWe treat this as an axiom, which means we assume it without proof. While not true as written for \\(\\Z\\), we can adapt it to integers with an additional assumption.\n\nTheorem 5.2 Let \\(S\\) be any nonempty subset of \\(\\Z\\) that is bounded below by an element of \\(\\Z\\). Then \\(S\\) has a least element.\n\n\nProof. Suppose \\(n\\in\\Z\\) is a lower bound on \\(S\\). Then define \\[T=\\{1-n+s\\st s\\in S\\}\\]\nThen if \\(t\\in T\\), \\(t=1-n+s\\) for some \\(s\\in S\\), \\[t=1-n+s\\geq 1-n+n=1.\\]\nThus all elements of \\(T\\) are positive integers, so \\(T\\subseteq\\N\\). So by Theorem 5.1, \\(T\\) has a least element \\(m\\); that is \\(m\\in T\\) and \\(m\\leq t\\) for all \\(t\\in T\\). Thus \\(m=1-n+k\\) for some \\(k\\in S\\), so \\(m+n-1=k\\in S\\). And if \\(s\\in S\\), then \\(1-n+s\\in T\\), so \\(1-n+s\\leq m\\) and therefore \\(s\\leq m+n-1=k\\). Thus \\(k\\) is the least element of \\(S\\).\n\n\nExercise 5.3 Would Theorem 5.2 be true if we replaced \\(\\Z\\) with \\(\\Q\\)? or \\(\\R\\)? Give a proof or counterexample for each.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>The Well-Ordering Property</span>"
+    ]
+  }
+]
