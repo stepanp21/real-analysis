@@ -1,0 +1,5 @@
+# Sandbox Book
+
+This is a clean Quarto book sandbox using standard theorem environments and standard `@id` cross-references.
+
+See @thm-main and @lem-support in Chapter 1.

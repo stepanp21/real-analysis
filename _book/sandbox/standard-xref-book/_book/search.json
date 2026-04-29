@@ -1,0 +1,32 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Standard Crossref Sandbox",
+    "section": "",
+    "text": "1 Sandbox Book\nThis is a clean Quarto book sandbox using standard theorem environments and standard @id cross-references.\nSee Theorem 2.1 and Lemma 2.2 in Chapter 1.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Sandbox Book</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-one.html",
+    "href": "chapter-one.html",
+    "title": "2  Chapter One",
+    "section": "",
+    "text": "We can reference a theorem before stating it: Theorem 2.1.\n\nTheorem 2.1 (A Main Theorem) For every real number \\(x\\), if \\(x &gt; 1\\) then \\(x^2 &gt; 1\\).\n\n\nLemma 2.2 If \\(x &gt; 1\\), then \\(x^2 &gt; x\\).\n\n\nTheorem 2.3 If \\(x &gt; 2\\), then \\(x^2 &gt; 4\\).\n\n\nProof. See the pudding.\n\nThe proof idea for Theorem 2.1 uses Lemma 2.2, and Theorem 2.3 is another theorem in the same shared counter.\n\nExercise 2.1 Prove Theorem 2.1 directly from the definition of order on \\(\\mathbb{R}\\).\n\nNow refer back to the exercise: Exercise 2.1.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Chapter One</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-two.html",
+    "href": "chapter-two.html",
+    "title": "3  Chapter Two",
+    "section": "",
+    "text": "This chapter references Chapter 1 results: Theorem 2.1, Lemma 2.2, Theorem 2.3, and Exercise 2.1.\n\nProposition 3.1 A proposition in Chapter Two that references Lemma 2.2.\n\nCross-reference check: Proposition 3.1.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Chapter Two</span>"
+    ]
+  }
+]

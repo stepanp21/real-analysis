@@ -1,0 +1,56 @@
+# Cardinality {#sec-cardinality}
+
+
+
+:::{.proof}
+
+#### Alternate Proof of the Uncountability of $\R$
+
+We will use the fact that $\mathcal P(\N)$ has a greater cardinality than $\N$ along with the Nested Interval Theorem to show that $\R$ is uncountable.
+
+For each $S\in\mathcal P(\N)$ (that is, each subset $S\subseteq\N$), define a sequence of nested closed intervals as follows.
+
+First, let $U_0=[0,1]$. Then for each $i\in\N$, if $i\in S$, let $U_i$ be the second quintile of $U_{i-1}$, and if $i\notin S$, let $U_i$ be the fourth quintile of $U_{i-1}$. That is, if $U_{i-1}=[a,b]$, we define
+$$U_i=\begin{cases} \left[\frac{4a+b}{5},\frac{3a+2b}{5}\right] & i\in S \\ \left[\frac{2a+3b}{5},\frac{a+4b}{5}\right] & i\notin S \end{cases}$$
+
+:::{#des-quintile-proof .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-quintile" class="calculator-container" style="width: 100%; height: 300px;"></div>
+
+<script>
+  var elt = document.getElementById('calculator-quintile');
+  var options = {
+    expressions: false,
+    keypad: false
+  }
+  var calculator = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('quintile.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+</script>
+
+A visual showing all possibilities for the nested sequences that can be constructed.
+:::
+
+Note that the second and fourth quintiles are always disjoint.
+
+For each such $S\in\mathcal P(\N)$, pick^[I am using the Axiom of Choice here.] a real number $x_S$ in the intersection $\bigcap_{i=1}^\infty U_i$, which is nonempty by Nested Interval Theorem.
+
+Suppose $\{U_0,U_1,U_2,\ldots,\}$ is the nested sequence for $S\subseteq\N$ and $\{V_0,V_1,V_2,\ldots,\}$ is the nested sequence for $T\subseteq\N$. Then if $S\neq T$, by the Well-Ordering Principle, there exists a least $i\in\N$ such that $i\in S$ but $i\notin T$, so that $U_{i-1}=V_{i-1}$ but $U_i\cap V_i=\varnothing$. Thus if $S\neq T$, the intersections $\bigcap_{i=1}^\infty U_i$ and $\bigcap_{i=1}^\infty V_i$ are disjoint, so $x_S\neq x_T$.
+
+Thus the function $\mathcal P(\N)\rightarrow\R$ defined by $S\mapsto x_S$ is injective, so $\R$ has cardinality at least that of $\mathcal P(\N)$, and is therefore uncountable.
+:::

@@ -1,0 +1,173 @@
+# The Field and Order Axioms
+
+## Highlights
+
+- Two of the three axioms we will assume about the real number system: the field axiom which gives us the rules of arithmetic, and the order axiom which gives us the rules for inequalities.
+- We see examples of other number systems besides $\R$ that also satisfy one or both of these axioms. In particular $\Q$ also satisfies both.
+
+## Preparation
+
+Look ahead to the definition of a field (@def-field) and definition of an ordered field (@def-ordered-field). See if you can convince yourself the real number system does indeed satisfy both of these definitions. For example, every real number $x$ *does* in fact have an additive inverse (a number $-x$ that be added to $x$ to obtain $0$); it *is* true that when you multiply two positive real numbers you get another positive real number.
+
+Take another moment to scan some of the *theorems* that follow each of these axioms. None of these should be surprising---they are all well-known facts about how arithmetic and inequalities work in $\R$---but what may be surprising is that extremely simple facts like $0x=0$ (@thm-zero-times-x) and $1>0$ (@thm-one-greater-than-zero) can be *proven* from even simpler assumptions.
+
+For now, let's focus on thinking about which other familiar number systems satisfy the field and order axioms.
+
+:::{.exercise #exr-number-system-properties}
+Think about some familiar number systems that *aren't* the real numbers: $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, and $\mathbb{C}$. You may rely on prior knowledge for this problem---no need to show all of your work.
+
+1. Which of these are fields? For those that are not, which properties do they fail to have? 
+2. Which of these are ordered fields? Which of these satisfy the two conditions of @def-ordered-field despite not actually being a field?
+3. **(Exploratory)** You should have found that one of the four number systems is a field and an ordered field. The Intermediate Value Theorem (for example) *is* true in $\R$, but it is *not* true in any of these other four number systems. With that information, do you think one would be able to prove the Intermediate Value Theorem in $\R$ if our *only* assumptions about $\R$ are the field and order axioms?
+
+:::
+
+## Fields
+
+For our purposes, a *number system* $\mathbb{S}$ is a set with two binary operations $+$ and $\cdot$. This is a nonstandard term, but we won't use it much beyond this section.
+
+:::{.definition #def-field}
+A number system $\mathbb{S}$ is said to be a *field* if it satisfies the following properties.
+
+1. Addition is commutative (for all $a,b\in\mathbb{S}$, $a+b=b+a$).
+2. Addition is associative (for all $a,b,c\in\mathbb{S}$, $(a+b)+c=a+(b+c)$).
+3. There is an element $0\in\mathbb{S}$, called the *additive identity* such that for all $a\in\mathbb{S}$, $a+0=a$.
+4. Every $a\in\mathbb{S}$ has an *additive inverse* $-a$ with the property that $a+(-a)=0$.
+5. Multiplication is commutative (for all $a,b\in\mathbb{S}$, $a\cdot b=b\cdot a$).
+6. Multiplication is associative (for all $a,b,c\in\mathbb{S}$, $(a\cdot b)\cdot c=a\cdot(b\cdot c)$).
+7. There is an element $1\in\mathbb{S}$ different from 0, called the *multiplicative identity* such that for all $a\in\mathbb{S}$, $a\cdot 1=a$.
+8. Every $a\in\mathbb{S}\setminus\{0\}$ has an *additive inverse* $a^{-1}$ with the property that $a+(a^{-1})=1$.
+9. The *distributive rule* holds (for all $a,b,c\in\mathbb{S}$, $a(b+c)=a\cdot b+a\cdot c$).
+
+:::
+
+Collectively, these properties tell us how **arithmetic** works for fields. And the first axiom we make aobut the real number system is that it is indeed a field.
+
+:::{.theorem #thm-ax-field}
+$\R$ is a field.
+:::
+
+Note that there is no reference to the operations of subtraction and division in the definition of a field, but these can be *defined* in terms of the established properties: $a-b$ is defined to be $a+(-b)$ (after all, $-b$ is defined above), and if $b\neq0$, we define $\frac{a}{b}$ to be $a\cdot b^{-1}$ (after all, $b^{-1}$ is defined above).
+
+What is somewhat remarkable is that *all* of the other rules of arithmetic for the real numbers can be derived from the field axiom. For example, you may have supposed that the following theorem would be an assumption, but one can prove it from the even more basic assumptions in the definition of a field.
+
+:::{.theorem #thm-zero-times-x}
+For any $x\in\R$, $0x=0$.
+:::
+
+:::{.exercise #exr-zero-times-x}
+Prove @thm-zero-times-x.
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+Note that @thm-zero-times-x involves both multiplication and, implicitly, addition (since it involves the *additive* identity). Thus its proof must involve the one part of the field axiom that combines addition and multiplication: the distributive property.
+:::
+
+(More theorems with the caveat that we won't keep doing this for long.)
+
+Any facts that we can prove about $\R$ that use *only* the assumption that $\R$ is a field, will in fact be true for *any* field. And there are some weird fields.
+
+:::{.exercise #exr-z2-is-a-field}
+Consider the number system $\mathbb{F}_2=\{\alpha,\beta\}$ consisting of just two elements, where the addition and multiplication operations are defined by
+$$\alpha+\alpha=\beta \qquad \alpha+\beta=\alpha \qquad \beta+\alpha=\alpha \qquad \beta+\beta=\beta$$
+and
+$$\alpha\cdot\alpha=\alpha \qquad \alpha\cdot\beta=\beta \qquad \beta\cdot\alpha=\beta \qquad \beta\cdot\beta=\beta.$$
+
+It turns out that $\mathbb{F}_2$ is a field. Which element of $\mathbb{F}_2$ is $0?$ Which is $1?$ Which is $-1?$
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+Asking which element is $0$ means asking which element is the additive identity---the thing that can be added to any element and get that same element back. Similarly for the multiplicative identity $1$. And asking which element is $-1$ means asking which element is *the additive inverse of $1$* (the thing you add to $1$ and get back $0$).
+:::
+
+So the field axiom alone fails miserably at the goal of distinguishing $\R$ from other number systems---it cannot even distinguish $\R$ from a number system with just two elements! So we need more axioms capturing more of the structure of $\R$.
+
+## Order and Inequalities
+
+Another important feature of the real number system is the behavior of inequalities and how they interact with arithmetic. This is captured by the next axiom.
+
+:::{.definition #def-ordered-field}
+A field $\mathbb{F}$ is called an *ordered field* if it has a relation $>$ with the following properties.
+
+1. For all $a\in\mathbb{F}$, exactly one of the following is true:
+
+    - $a>0$,
+    - $a=0$, or
+    - $-a>0$.
+
+2. If $a>0$ and $b>0$, then $a+b>0$ and $a\cdot b>0$.
+
+3. $b>a$ if and only if $b-a>0$.
+:::
+
+We can then *define* relations $<,\leq,\geq$ in the usual way based on the relation $>$^[That is, we define $a<b$ to mean $b>a$, $a\leq b$ to mean $a<b$ or $a=b$, and $a\geq b$ to mean $a>b$ or $a=b$.].
+
+:::{.theorem #thm-ax-ordered-field}
+$\R$ is an ordered field.
+:::
+
+Again, the properties listed in @def-ordered-field are not surprising; we already knew they were true for $\R$. But more surprising is the fact the everything else we know about how inequalities behave and interact with arithmetic can be prove from @thm-ax-field and @thm-ax-ordered-field.
+
+:::{.theorem #thm-one-greater-than-zero}
+$1>0$.
+:::
+
+You are probably familiar with the basics of how inequalities and arithmetic interact, and henceforth, we can use them at will without citation. In this class, being fluent with the rules for inequalities will be essential, though, so we collect a list of "inequality rules" (all of which could in principle be proven from @thm-ax-field and @thm-ax-ordered-field) in @sec-inequality-rules.
+
+Worth reflecting on now is where we stand on our stated goals in creating the axioms. The @thm-ax-ordered-field was successful in distinguishing $\R$ from $\mathbb{F}_2$ because there is no ordering on $\mathbb{F}_2$ satisfying @def-ordered-field (you will prove this in @exr-z2-not-ordered below).
+
+However, we can note that $\mathbb{Q}$ is also an ordered field since it satisfies @thm-ax-ordered-field. This means that anything we can prove directly from @thm-ax-field and @thm-ax-ordered-field will apply just as well if our universe were $\mathbb{Q}$ as it would if our universe were $\mathbb{R}$. In particular, we would have no hope of proving, say, the Intermediate Value Theorem, which is true in $\mathbb{R}$ but not in $\mathbb{Q}$.
+
+This all means that we need another assumption---an axiom that will distinguish the real number system from the rationals in a way that will allow us to prove everything else we'll need in order to do calculus.
+
+:::{.exercise #exr-one-greater-than-zero}
+Prove @thm-one-greater-than-zero using only the Field and Order Axioms.
+:::
+
+:::{.exercise #exr-z2-not-ordered}
+Prove that the following fields are *not* ordered. 
+
+1. $\mathbb{F}_2$ (defined in @exr-z2-is-a-field)
+2. The complex numbers $\mathbb{C}$
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+This is a good opportunity to use a proof by contradiction. What contradiction can you create by assuming there *is* an ordering on $\mathbb{F}_2$ satisfying the conditions of @def-ordered-field? What about in $\mathbb{C}$?
+:::
+
+The following exercise says something very simple, but ends up being very useful in practice.
+
+:::{.exercise #exr-nonnegative-less-than-all-epsilon}
+Suppose $r\geq0$ and that for all $\epsilon>0$, $r\leq \epsilon$. Prove that $r=0$.
+:::
+
+### Review Questions
+
+1. Give some examples of number systems that are fields. Give some examples of number systems that are not fields.
+2. Give some examples of fields that are ordered fields. Give some examples of fields that are not ordered fields.
+3. Summarize for yourself how we can be certain that it is impossible to prove a statement like "every positive number in $\R$ has a square root" building off of only the field and order axioms.
+
+## Inequality Rules {#sec-inequality-rules}
+
+- $a$ is positive $\Leftrightarrow$ $-a$ is negative
+- $1>0$ 
+- $x\leq y$ and $y\leq z$ $\Rightarrow$ $x\leq z$
+- $a>b$ and $c\geq d$ $\Rightarrow$ $a+c>b+d$ 
+- $a>b>0$ and $c\geq d>0$ $\Rightarrow$ $ac>bd$
+- $a>b$ and $c<0$ $\Rightarrow$ $ac<bc$
+- $a<0$ and $b<0$ $\Rightarrow$ $a+b<0$
+- $a<0$ and $b<0$ $\Rightarrow$ $ab>0$
+- $a>0$ and $b<0$ $\Rightarrow$ $ab<0$
+- $a>0$ $\Leftrightarrow$ $\frac{1}{a}>0$
+- $a>1$ $\Rightarrow$ $a^2>a$
+- $0<a<1$ $\Rightarrow$ $a^2<a$
+- $a>b>0$ $\Rightarrow$ $a^2>b^2$

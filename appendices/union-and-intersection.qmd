@@ -1,0 +1,112 @@
+# Collections of Sets
+
+In set theory, we often need to think about not just one set, but a whole *collection*^[Really this is the same as a *set of sets*, but we use the word "collection" to help distinguish between the two levels of the heirarchy.] of sets.
+
+Some examples that appear in the text are below.
+
+(Try to make these feel motivated.)
+
+:::{.example #exm-nit-collection}
+One distinguishing feature of the real numbers is, intuitively, if you keep zooming in on the number line, you are always zooming in *to a number*.  For example, consider the following collection of intervals:
+
+$$\begin{aligned}
+  U_1&=&[3,4]\\ 
+  U_2&=&[3.1,3.2]\\ 
+  U_3&=&[3.14,3.15]\\ 
+  U_4&=&[3.141,3.142]\\ 
+  U_5&=&[3.1415,3.1416]\\
+  U_6&=&[3.14159,3.14160]\\
+  &\vdots&
+\end{aligned}$$
+
+If the universe is $\R$, there is a number that will be in $U_i$ for all $i$: $\pi$. By contrast, in $\Q$, there is no number inside all of these sets---we'd be zooming in onto something that isn't there.
+:::
+
+:::{.example #exm-open-set-union}
+In a metric space, an open set $S$ is a union of *a collection of* open balls.
+
+(Desmos image of a union of finitely many open balls)
+
+Often we think about putting an open ball around every point of $S$, each with a radius small enough so that the ball is a subset of $S$.
+
+(Desmos interactive: points appear at random inside an open square with balls around each; slider to include more and more points.)
+:::
+
+:::{.example #exm-bounded}
+To say that a subset of a metric space is *unbounded* means that it does not fit in any open ball. One technique for proving that a set $V$ is unbounded is to pick any point and consider the collection of balls of radii 1,2,3,... around that point and show that $V$ contains a point in the complement of each ball.
+:::
+
+The examples above show some of the operations we might consider performing when we have a collection of sets---unions, intersections, and complements. We collect some basic facts and notation below.
+
+## Indexing Sets
+
+Typically when we have a collection of sets, we want to put those sets in one-to-one correspondence with some set called the *indexing set*. For example, if we want one set in our collection for each integer, our indexing set would be $\Z$, and we might write $U_k$ for the sets in our collection where $k\in\Z$; so there would be a $U_7$ and a $U_0$ and a $U_{-3}$, for instance. For the entire collection, we would write $\left\{U_k\right\}_{k\in\Z}$.
+
+More generally, if our sets are indexed by $\Delta$, we would write $U_\alpha$ for a set in our collection with $\alpha\in\Delta$, and we would write $\left\{U_\alpha\right\}_{\alpha\in\Delta}$ for the collection.
+
+When we have finitely many sets, it is typical to call them something like $U_1,U_2,\ldots,U_n$; the collection would then be the set of sets $\{U_1,U_2,\ldots,U_n\}$. In this case $\Delta=\{1,2,\ldots,n\}$ is the indexing set since there is one set in our collection for each element of $\Delta$.
+
+Often, we want one set for each natural number. In this case, we can use an indexing set of $\Delta=\N$ and we once again call our sets $U_1,U_2,\ldots$. To indicate the collection of sets, we can write $\left\{U_i\right\}_{i\in\N}$ or more commonly $\left\{U_i\right\}_{i=0}^\infty$.
+
+Occassionally we want to put our sets in correspondence with some other set $\Delta$. In @exm-open-set-union, for example, we wanted one set (one open ball) for each point of $S$. In this case we would make $\Delta=S$. Then for each point $x\in S$, there is a corresponding open ball $B_x$ centered around $x$. In this case, we would write $\left\{B_x\right\}_{x\in S}$ for the collection.
+
+## Unions and Intersections {#sec-union-intersection}
+
+For two sets $U$ and $V$, we are familiar with the idea that
+
+- The *union* $U\cup V$ consists of all elements that are in *at least one of* $U$ or $V$.
+- The *intersection* $U\cap V$ consists of all elements are in *both* $U$ and $V$.
+
+Extending this to arbitrary collections of sets, if $\left\{U_\alpha\right\}_{\alpha\in\Delta}$ is a collection of sets, we write
+
+$$\begin{aligned}
+  \bigcup_{\alpha\in\Delta} U_\alpha &= \left\{x\st \text{$x\in U_\alpha$ for at least one $\alpha\in\Delta$}\right\}\\
+  \bigcap_{\alpha\in\Delta} U_\alpha &= \left\{x\st \text{$x\in U_\alpha$ for all $\alpha\in\Delta$}\right\}
+\end{aligned}$$
+
+In the common special case of where $\Delta=\N,$ we instead write $\displaystyle \bigcup_{i=1}^\infty U_i$ and $\displaystyle \bigcap_{i=1}^\infty U_i.$
+
+Relating this back to our examples, in @exm-nit-collection, we are claiming that in the real numbers, $\displaystyle \bigcap_{i=1}^\infty U_i$ would be $\{\pi\}$ since $\pi$ and no other number is in *all* of these intervals, but if our universe were $\Q$, this intersection would be $\varnothing$ since *no* rational number lives in all of these intervals.
+
+In @exm-open-set-union, we are saying that $S$ is an open set if there exists a collection of open balls $\left\{B_\alpha\right\}$ such that $\bigcup B_\alpha=S.$^[Note that I am using shorthand here by omitting the indexing set since it isn't important in this case.] And similarly, if $S$ is open, for each $x\in S$, there exists an open ball $B_x$ centered at $x$ such that $\displaystyle \bigcup_{x\in S} B_x =S$. If you can wrap your head around that, you are in good shape!
+
+## DeMorgan's Laws
+
+Recall that the **complement** of a set $S$, for which we'll write $S^\cee$, is all of the elements of our understood universe that are not in $S$.
+
+DeMorgan's Laws tell us how complementation interacts with unions and intersections. For two sets, DeMorgan's Laws tell us
+
+$$\begin{aligned}
+  (U\cup V)^\cee&=U^\cee \cap V^\cee \\
+  (U\cap V)^\cee&=U^\cee \cup V^\cee
+\end{aligned}$$
+
+But these same basic rules apply to arbitrary collections of sets as well.
+
+:::{.theorem #thm-demorgan}
+
+#### DeMorgan's Laws
+
+For any collection of sets $\left\{U_\alpha\right\}_{\alpha\in\Delta}$, we have
+
+$$\begin{aligned}
+  \left(\bigcup_{\alpha\in\Delta} U_\alpha\right)^\cee &= \bigcap_{\alpha\in\Delta} U_\alpha^\cee, \text{and} \\
+  \left(\bigcap_{\alpha\in\Delta} U_\alpha\right)^\cee &= \bigcup_{\alpha\in\Delta} U_\alpha^\cee. 
+\end{aligned}$$
+
+:::
+
+:::{.proof}
+For the first equation, note that $x\in\left(\bigcup_{\alpha\in\Delta} U_\alpha\right)^\cee$ means that $x$ is not in $\bigcup_{\alpha\in\Delta} U_\alpha$, which is equivalent to saying $x$ is not in any of the $U_\alpha$. This is in turn equivalent to saying $x\in U_\alpha^\cee$ for all $\alpha\in\Delta$, meaning $x\in\bigcap_{\alpha\in\Delta} U_\alpha^\cee$.
+:::
+
+:::{.exercise #exr-other-demorgan}
+Prove that second equation from DeMorgan's Laws is true.
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+There are at least two ways to do this. First is to give an argument similar to the proof of the first equation. The other is to *apply* the first equation, which is already proven to see that the second one is true.
+:::

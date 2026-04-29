@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; Series Basics – Real Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../constructing-r.html" rel="next">
+<link href="../sequences/sequence-basics.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+</head><body class="nav-sidebar floating quarto-light">$$
+\def\R{\mathbb R}
+\def\N{\mathbb N}
+\def\Q{\mathbb Q}
+\def\Z{\mathbb Z}
+\newcommand{\st}{~:~}
+\newcommand{\cee}{\mathsf{C}}
+$$
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sequences/sequence-intro.html">Sequences</a></li><li class="breadcrumb-item"><a href="../sequences/series.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series Basics</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Real Analysis</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../axioms-of-r/intro-to-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Real Numbers</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../axioms-of-r/field-and-order.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Field and Order Axioms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../axioms-of-r/lub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Least Upper Bound Axiom</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../axioms-of-r/lub-props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Consequences of the Least Upper Bound Axiom</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Metric Spaces</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../metric-spaces/metric-space-axioms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Metric Spaces and Distance Functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../metric-spaces/r-as-a-metric-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="math inline">\(\mathbb{R}\)</span> as a Metric Space</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../sequences/sequence-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sequences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sequences/sequence-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../constructing-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../minmax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Proof-Writing Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/union-and-intersection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Collections of Sets</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/cardinality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#series-and-partial-sums" id="toc-series-and-partial-sums" class="nav-link active" data-scroll-target="#series-and-partial-sums"><span class="header-section-number">8.1</span> Series and Partial Sums</a></li>
+  <li><a href="#working-with-partial-sums" id="toc-working-with-partial-sums" class="nav-link" data-scroll-target="#working-with-partial-sums"><span class="header-section-number">8.2</span> Working with Partial Sums</a></li>
+  <li><a href="#series-with-non-negative-terms" id="toc-series-with-non-negative-terms" class="nav-link" data-scroll-target="#series-with-non-negative-terms"><span class="header-section-number">8.3</span> Series With Non-Negative Terms</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sequences/sequence-intro.html">Sequences</a></li><li class="breadcrumb-item"><a href="../sequences/series.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series Basics</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series Basics</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this section, we build on what we learned about sequences to talk about one of their most important use cases: series. Loosely speaking, we think of a series as an “infinite sum”, and one of the primary questions we seek to address is when a series converges to a finite number and when it doesn’t. Consider for example, the four infinite sums below:</p>
+<p><span id="eq-first-examples"><span class="math display">\[\begin{array}{l}
+1+2+3+4+\cdots \\~\\
+1+(-1)+1+(-1)+\cdots \\~\\
+1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\cdots \\~\\
+%1+\left(-\frac{1}{2}\right)+\frac{1}{4}+\left(-\frac{1}{8}\right)+\cdots
+1+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\cdots
+\end{array} \tag{8.1}\]</span></span></p>
+<p>Some of these might strike you as obviously undefined or obviously convergent, but others may not. In what follows below, we’ll make a precise definition of what we mean by convergent so that we can prove theorems and talk coherently about examples.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<section id="series-and-partial-sums" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="series-and-partial-sums"><span class="header-section-number">8.1</span> Series and Partial Sums</h2>
+<p>Suppose <span class="math inline">\((a_n)\)</span> is a sequence in <span class="math inline">\(\mathbb{R}\)</span>. Then the <em>series</em> with terms <span class="math inline">\((a_n)\)</span> is the formal expression</p>
+<p><span class="math display">\[\sum_{i=1}^\infty a_i=a_1+a_2+\cdots\]</span></p>
+<p>By “formal expression” I mean that we are not considering this expression to represent a number; it’s just notation meant to express the <em>idea</em> of an infinite sum. Sometimes we abbreviate the notation as <span class="math inline">\(\sum a_i\)</span>.</p>
+<div id="def-partial-sum" class="grouped-theorem grouped-theorem-definition">
+<p><span class="theorem-title"><strong>Definition 8.1 (Partial Sums)</strong></span> The <em>sequence of partial sums</em> of the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> is the sequence <span class="math inline">\((s_n)\)</span> defined by <span class="math display">\[ s_n=\sum_{i=1}^n a_i = a_1+\cdots+a_n \]</span></p>
+</div>
+<p>This means that <span class="math display">\[\begin{array}{ccl}
+s_1&amp;=&amp;a_1\\
+s_2&amp;=&amp;a_1+a_2\\
+s_3&amp;=&amp;a_1+a+2+a_3\\
+&amp;\vdots&amp;
+\end{array}\]</span></p>
+<p>We now define convergence of series in terms of the partial sums.</p>
+<div id="def-series-convergence" class="grouped-theorem grouped-theorem-definition">
+<p><span class="theorem-title"><strong>Definition 8.2 (Series Convergence)</strong></span> The series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> is said to <em>converge</em> or <em>diverge</em> when its sequence of partial sums <span class="math inline">\((s_n)\)</span> does. If <span class="math inline">\(s_n\rightarrow S\)</span>, we call <span class="math inline">\(S\)</span> the <em>sum</em> of the series.</p>
+</div>
+<p>In the case that <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> has sum <span class="math inline">\(S\)</span>, we sometimes abuse notation slightly and use the expression <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> to represent the number <span class="math inline">\(S\)</span>.</p>
+<p>As an example of the vocabulary in the action, the series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{2}{3^i}\)</span></p>
+<ul>
+<li>has <em>terms</em> given by the sequence <span class="math inline">\(\left(\frac{2}{3^i}\right)\)</span> or <span class="math inline">\(\frac{2}{3},\frac{2}{9},\frac{2}{27},\frac{2}{81},\cdots\)</span></li>
+<li>has <em>partial sums</em> <span class="math inline">\(\frac{2}{3},\frac{2}{3}+\frac{2}{9},\frac{2}{3}+\frac{2}{9}+\frac{2}{27},\ldots\)</span>. These simplifies to <span class="math inline">\(\frac{2}{3},\frac{8}{9},\frac{26}{27},\ldots\)</span> or <span class="math inline">\(\left(\frac{3^i-1}{3^i}\right)\)</span>.</li>
+<li><em>converges</em> with a <em>sum</em> of <span class="math inline">\(1\)</span>.</li>
+</ul>
+<div id="exr-partial-sum-practice" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 8.3</strong></span> Write each of the four infinite sums in <a href="#eq-first-examples" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> using series notation. Then write out the first 6 partial sums for each. Are there any you can tell right away converge or diverge?</p>
+</div>
+</section>
+<section id="working-with-partial-sums" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="working-with-partial-sums"><span class="header-section-number">8.2</span> Working with Partial Sums</h2>
+<p>We start with an important class of series called <em>geometric series</em>.</p>
+<div id="exm-geometric" class="grouped-theorem grouped-theorem-example">
+<p><span class="theorem-title"><strong>Example 8.4 (Geometric Series)</strong></span> For <span class="math inline">\(a\neq 0\)</span> and any <span class="math inline">\(r\in\mathbb{R}\)</span>, a series of the form <span class="math display">\[\sum_{i=0}^\infty ar^n\]</span> is called a <em>geometric series</em>. This series converges to <span class="math inline">\(\frac{a}{1-r}\)</span> when <span class="math inline">\(|r|&lt;1\)</span> and diverges otherwise.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>To determine whether the series converges, we analyze its partial sums in cases.</p>
+<p>If <span class="math inline">\(|r|\neq1\)</span>, we can use some algebraic tricks to simplify the expression for the partial sum <span class="math inline">\(s_n\)</span>: <span class="math display">\[\begin{array}{rcl}
+  s_n&amp;=&amp;a+ar+ar^2+cdots+ar^n\\
+  &amp;=&amp;a(1+r+r^2+\cdots+r^n)\\
+  &amp;=&amp;\displaystyle\frac{a(1-r^{n+1})}{1-r}
+\end{array}\]</span> If <span class="math inline">\(|r|&lt;1\)</span>, then <span class="math inline">\(r^{n+1}\rightarrow0\)</span>, so using what we know about sequences and arithmetic, we can say <span class="math inline">\(s_n\rightarrow\frac{a}{1-r}\)</span>.</p>
+<p>If <span class="math inline">\(|r|&gt;1\)</span>, then <span class="math inline">\((r^{n+1})\)</span> diverges. So if, by way of contradiction, we assume the partial sums <span class="math inline">\((s_n)\)</span> did converge to some value <span class="math inline">\(S\)</span>, then we could say that the sequence <span class="math inline">\(\left(1-s_n\frac{1-r}{a}\right)\)</span> converges to <span class="math inline">\(1-L\frac{1-r}{a}\)</span>. However <span class="math inline">\(1-s_n\frac{1-r}{a}=r^{n+1}\)</span>, which we already said diverges.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>We leave the cases where <span class="math inline">\(r=\pm1\)</span> to the reader in <a href="sequences/series.html#exr-geometric-with-r-pm1">Exercise 8.5</a> below.</p>
+</div>
+<div id="exr-geometric-with-r-pm1" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 8.5</strong></span> Finish the proof of <a href="sequences/series.html#exm-geometric">Example 8.4</a> by proving that the geometric series diverges when <span class="math inline">\(r=1\)</span> and when <span class="math inline">\(r=-1\)</span>. (Hint: what are the partial sums in each of these cases?)</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the section on sequences, we insisted that the first term in our sequence corresponded to an index of 1. For series, it is often convenient to start with an index 0 (as in <a href="sequences/series.html#exm-geometric">Example 8.4</a>) or something else. And now that we are more comfortable with the concept of a sequence, there is less risk of confusion.</p>
+</div>
+</div>
+<div id="exr-telescoping-example" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 8.6 (A “Telescoping” Series)</strong></span> Show that the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{n(n+1)}\)</span> converges. It will be helfpul to note that <span class="math display">\[\frac{1}{n(n+1)}=\frac{1}{n}-\frac{1}{n+1}\]</span> and to write out the first several partial sums.</p>
+</div>
+<p>Both <a href="sequences/series.html#exm-geometric">Example 8.4</a> and <a href="sequences/series.html#exr-telescoping-example">Exercise 8.6</a> are somewhat unusual in that in both cases we can write down an explicit formula for the partial sum sequence. More often an explicit formula is unavailable and we need to rely on other means for determining and proving the con/divergence of a series.</p>
+<div id="thm-divergence-test" class="grouped-theorem grouped-theorem-theorem">
+<p><span class="theorem-title"><strong>Theorem 8.7 (Divergence Test)</strong></span> If a series converges, then its terms converge to <span class="math inline">\(0\)</span>.</p>
+</div>
+<div id="exr-divergence-test-proof" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 8.8</strong></span> &nbsp;</p>
+<ol type="1">
+<li>State the contrapositive of the Divergence Test.</li>
+<li>What (if anything) does the Divergence Test say about the con/divergence of the series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{n}{n+1}\)</span>?.</li>
+<li>What (if anything) does the Divergence Test say about the con/divergence series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{1}{n^2}\)</span>?</li>
+<li>Prove the Divergence Test.</li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint for part 4 of <a href="sequences/series.html#exr-divergence-test-proof">Exercise 8.8</a>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Note that <span class="math inline">\(a_{n+1}=s_{n+1}-s_n\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="thm-series-order-arithmetic" class="grouped-theorem grouped-theorem-theorem">
+<p><span class="theorem-title"><strong>Theorem 8.9</strong></span> Suppose <span class="math inline">\(\sum a_n=S\)</span> and <span class="math inline">\(\sum b_n=T\)</span> are convergent series and that <span class="math inline">\(k\in\mathbb{R}\)</span>. Then</p>
+<ol type="1">
+<li><span class="math inline">\(\sum (a_n+b_n) = S+T\)</span></li>
+<li><span class="math inline">\(\sum (ka_n)=kS\)</span></li>
+<li>If <span class="math inline">\(a_n\leq b_n\)</span> for all <span class="math inline">\(n\)</span>, then <span class="math inline">\(S\leq T\)</span>.</li>
+</ol>
+</div>
+<p>Part of what parts 1 and 2 in <a href="sequences/series.html#thm-series-order-arithmetic">Theorem 8.9</a> is claiming is that these two series do in fact converge.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When an equation or proposition does not depend on the starting index of a series, we sometimes just write <span class="math inline">\(\sum a_n\)</span> as shorthand for <span class="math inline">\(\sum_{i=k}^\infty a_n\)</span> for some <span class="math inline">\(k\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="series-with-non-negative-terms" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="series-with-non-negative-terms"><span class="header-section-number">8.3</span> Series With Non-Negative Terms</h2>
+<p>Series with all non-negative terms have some special properties that we can quickly prove using what we know about sequences.</p>
+<div id="exr-positive-terms" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 8.10</strong></span> Suppose <span class="math inline">\(\displaystyle \sum_{i=1}^\infty a_i\)</span> is a series all of whose terms are non-negative. Prove the following.</p>
+<ol type="1">
+<li>The sequence of partial sums is increasing.</li>
+<li>The series converges if and only if the sequence of partial sums is bounded.</li>
+<li>If the series diverges, then the sequence of partial sums limits to <span class="math inline">\(+\infty\)</span>.</li>
+</ol>
+</div>
+<p>The upshot of <a href="sequences/series.html#exr-positive-terms">Exercise 8.10</a> is that we can determine the con/divergence of a series just by knowing whether its sequence of partial sums is bounded or not. This can be very helpful for proving</p>
+<div id="exm-basel-series" class="grouped-theorem grouped-theorem-example">
+<p><span class="theorem-title"><strong>Example 8.11</strong></span> The series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{n^2}\)</span> converges.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\((s_n)\)</span> be the sequence of partials sums for <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{n^2}\)</span>.</p>
+<p>As we say in <a href="sequences/series.html#exr-telescoping-example">Exercise 8.6</a>, the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{n(n+1)}\)</span> converges. Let <span class="math inline">\((t_n)\)</span> be the sequence of partial sums for this series.</p>
+<p>Comparing the partials sums for these two series, we have <span class="math display">\[\begin{array}{ccccccc}
+s_n&amp;=&amp;1+&amp;\frac{1}{2\cdot2}+&amp;\frac{1}{3\cdot3}+&amp;\cdots&amp;+\frac{1}{n^2}\\
+t_n&amp;=&amp;&amp;\frac{1}{1\cdot2}+&amp;\frac{1}{2\cdot3}+&amp;\cdots&amp;+\frac{1}{n(n+1)}
+\end{array}\]</span></p>
+<p>Comparing term by term, we can see that <span class="math inline">\(1+t_n\geq s_n\)</span> for all <span class="math inline">\(n\)</span>. Since <span class="math inline">\((t_n)\)</span> has all positive terms and converges to some number <span class="math inline">\(T\)</span>, we can use part 2 of <a href="sequences/series.html#exr-positive-terms">Exercise 8.10</a> to say that that <span class="math inline">\((t_n)\)</span> and therefore <span class="math inline">\((s_n)\)</span> is bounded above. Thus, applying part 2 of <a href="sequences/series.html#exr-positive-terms">Exercise 8.10</a> again, we can say that <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{n^2}\)</span> converges.</p>
+</div>
+<p>Note that the above proof does not tell us what the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{n^2}\)</span> converges <em>to</em>. This is often the case for such proofs.</p>
+<p>The following theorem extends generalizes the logic of the proof of <a href="sequences/series.html#exm-basel-series">Example 8.11</a>.</p>
+<div id="thm-comparison-test" class="grouped-theorem grouped-theorem-theorem">
+<p><span class="theorem-title"><strong>Theorem 8.12 (Comparison Test)</strong></span> Suppose <span class="math inline">\(\sum a_n\)</span> and <span class="math inline">\(\sum b_n\)</span> are series with all non-negative terms such that <span class="math inline">\(a_n\leq b_n\)</span> for all <span class="math inline">\(n\)</span>.</p>
+<ol type="1">
+<li>If <span class="math inline">\(\sum b_n\)</span> converges, then <span class="math inline">\(\sum a_n\)</span> converges.</li>
+<li>If <span class="math inline">\(\sum a_n\)</span> diverges, then <span class="math inline">\(\sum b_n\)</span> diverges.</li>
+</ol>
+</div>
+<div id="exm-harmonic-series" class="grouped-theorem grouped-theorem-example">
+<p><span class="theorem-title"><strong>Example 8.13 (Harmonic Series)</strong></span> The <em>harmonic series</em> <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{1}{n}\)</span> diverges.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Call the terms of this series <span class="math inline">\(c_n=\frac{1}{n}\)</span> and the partial sums <span class="math inline">\(s_n\)</span>. Note that <span class="math inline">\(c_n\rightarrow0\)</span>, so the Divergence Test cannot be used to prove divergence.</p>
+<p>Consider another series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty b_n\)</span> where the terms <span class="math inline">\(b_n\)</span> are defined by <span class="math display">\[\begin{array}{rcl}
+  b_1&amp;=&amp;1\\
+  b_2&amp;=&amp;\frac{1}{2}\\
+  b_3=b_4&amp;=&amp;\frac{1}{4}\\
+  b_5=\cdots=b_8&amp;=&amp;\frac{1}{8}\\
+  &amp;\vdots&amp;\\
+  b_{2^{n-1}+1}=\cdots=b_{2^n} &amp; = &amp; \frac{1}{2^n}\\
+  &amp;\vdots&amp;
+\end{array}\]</span></p>
+<p>Note consider the series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty b_n\)</span>. Calling the partial sums <span class="math inline">\(t_n\)</span>, we can consider the subsequence <span class="math inline">\(t_{2^n}\)</span>: <span class="math display">\[\begin{array}{rcll}
+  t_{2^1} &amp;=&amp; 1+\frac{1}{2}&amp;=\frac{3}{2}\\
+  t_{2^2-1} &amp;=&amp; 1+\frac{1}{2}+2\cdot\frac{1}{4}&amp;=\frac{4}{2}\\
+  t_{2^2-1} &amp;=&amp; 1+\frac{1}{2}+2\cdot\frac{1}{4}+4\cdot\frac{1}{8}&amp;=\frac{5}{2}\\
+  &amp;\vdots&amp;
+\end{array}\]</span> Thus <span class="math inline">\(t_{2^n}=\frac{n+2}{2}\)</span>, so <span class="math inline">\((t_n)\)</span> has a divergent subsequence and hence <span class="math inline">\(\displaystyle \sum_{i=1}^\infty b_n\)</span> diverges. Therefore since <span class="math inline">\(c_n\geq b_n\)</span> for all <span class="math inline">\(n\)</span> (and both series have all non-negative terms) <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{1}{n}\)</span> diverges as well by the Comparison Test.</p>
+</div>
+<div id="exr-comp-test-apply" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 8.14</strong></span> Prove <a href="sequences/series.html#thm-comparison-test">Theorem 8.12</a>.</p>
+</div>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>There are actually several theories of convergent series which are useful in different contexts. We’ll present the most standard version here.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>I am bending over backwards here to make precise the intuition that “Since <span class="math inline">\((r^{n+1})\)</span> diverges, so must an sequence involving it”. Unfortunately, that reasoning doesn’t always work–think about <span class="math inline">\((\sqrt{n+1} - \sqrt{n})\)</span> which converges despite being the sum of two divergent sequences–so a proof of the style shown here is appropriate.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../sequences/sequence-basics.html" class="pagination-link" aria-label="Talking About Sequences">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../constructing-r.html" class="pagination-link" aria-label="Constructing the Reals">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

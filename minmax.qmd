@@ -1,0 +1,124 @@
+# The Min-Max Theorem
+
+## Highlights
+
+- Special properties of how continuous functions interact with closed and bounded subsets of $\R$
+- See Bolzano-Weierstrass in action
+- If $f$ is a continuous real-valued function on a subset $C\subseteq\R$, then $f$ achieves a global max and global min on $C$.
+
+## Preparation
+
+The goal of this section is to prove the Min-Max Theorem, which says that for any closed and bounded subset $C\subseteq\mathbb R$ and any continuous function $f:C\rightarrow\mathbb R$, $f$ achieves a global max and a global min on $C$. That is, there are points $a,b\in C$, called the *global max* and *global min* respectively, such that for all $x\in C$,
+$$f(a)\leq f(x)\leq f(b)$$
+
+::: {.exercise #exr-necessity-of-compactness}
+Show by example that both closedness and boundedness are necessary conditions for having a global max and global min. That is:
+
+1. Find a closed subset $C$ of $\mathbb R$ (which is not bounded) and a continuous function $f:C\rightarrow\mathbb R$ so that $f$ has no global max and/or no global min on $C$.
+2. Find a bounded set $C$ of $\mathbb R$ (which is not closed) and a continuous function $f:C\rightarrow\mathbb R$ so that $f$ has no global max and/or no global min on $C$.
+:::
+
+As we'll see, closed and bounded subsets of $\mathbb R$ play an important role, so here are a couple more theorems about such subsets.
+
+::: {.theorem #thm-sequential-compactness}
+Let $C$ be a closed and bounded subset of $\mathbb R$, and let $(a_n)$ be a sequence in $C$. Then $(a_n)$ has a subsequence that converges to a point in $C$.
+:::
+
+::: {.proof .content-hidden}
+Since $C$ is bounded, Bolzano-Weierstrass tells us that $(a_n)$ has a convergent subsequence $(a_{i_n})$. And since $C$ is closed, $C$ contains the limits of its convergent sequences. Thus $(a_{i_n})$ is a subsequence of $(a_n)$ that converges to a point of $C$.
+:::
+
+::: {.exercise}
+Prove @thm-sequential-compactness using Bolzano-Weierstrass. Note that you not only need to showw that $(a_n)$ has a convergent subsequence but also that the limit of that convergent subsequence *is in $C$*.
+:::
+
+The main theoretical result of this section will be @thm-image-of-compact-is-compact, which tells us that if $C\subseteq\R$ is closed and bounded and $f:C\rightarrow\R$ is continuous, then the image $f(C)$ is also closed and bounded.
+
+## Closed and Bounded Subsets of $\R$
+
+This document covers the Min-Max Theorem and a few concepts that lead up to it. Our textbook proves the Min-Max Theorem using a concept called *compactness* for general metric spaces in Chapter 7. However, this is a bit more theory than we really need, so we'll restrict our attention to functions from subsets of $\mathbb R$ to $\mathbb R$, and pick up a few additional important theorems along the way. As we'll see, the key to all of this will be the Bolzano-Weierstrass Theorem.
+
+
+
+
+
+::: {.theorem #thm-image-of-compact-is-compact}
+Let $C$ be a closed and bounded subset of $\mathbb R$, and suppose $f:C\rightarrow\mathbb R$ is continuous. Then the image $f(C)$ is also closed and bounded.
+:::
+
+Before we see the proof, it's worth noting that closed and bounded work together here. It's not true that the continuous image of any closed set is closed, nor that the continuous image of any bounded set is bounded, as the exercise below shows.
+
+::: {.exercise #exr-noncompact-examples}
+The following examples show that @thm-image-of-compact-is-compact fails if either condition on $C$ (closed or bounded) is violated.
+
+1. Let $C=[1,\infty)$ and $f:C\rightarrow\mathbb R$ be defined by $f(x)=\arctan(x)$. What is $f(C)$? Explain how this example shows that the image of a closed subset of $\mathbb R$ need not be closed.
+2. Let $C=(0,1]$ and $f:C\rightarrow\mathbb R$ be defined by $f(x)=\frac{1}{x}$. What is $f(C)$? Explain how this example shows that the image of a bounded subset of $\mathbb R$ need not be bounded.
+:::
+
+::: {.proof}
+Proof of @thm-image-of-compact-is-compact.
+
+Suppose $C$ is closed and bounded and that $f:C\rightarrow \R$ is continuous. First we will prove that $f(C)$ is closed by showing that the limit of every convergent sequence in $f(C)$ is in $C$. So suppose $(y_n)$ is a convergent sequence in $f(C)$. Let's call its limit $b$. Since $y_n\in f(C)$, there exists $x_n\in C$ such that $f(x_n)=y_n$ for every $n\in\N$.^[We aren't assuming $f$ is one-to-one, so $x_n$ need not be unique.] Then by @thm-sequential-compactness, $(x_n)$ has a subsequence $(x_{i_n})$ that converges to a point in $C$; we'll call that point $a$. By Theorem 4.3.3, since $f$ is continuous and $x_{i_n}\rightarrow a$, we have $f(x_{i_n})\rightarrow f(a)$; that is, $y_{i_n}\rightarrow f(a)$. But since $y_n\rightarrow b$, we know $y_{i_n}\rightarrow b$, so by the uniqueness of sequence limits, we have $b=f(a)$. Since $a\in C$, this proves $b\in f(C)$ as desired.
+  
+Now by way of contradiction, suppose $f(C)$ is not bounded. Then by Problem 3.2 \#4, there exists a sequence $(y_n)$ in $f(C)$ with no convergent subsequence. As before, since $y_n\in f(C)$, there exists $x_n\in C$ such that $f(x_n)=y_n$ for all $n\in\N$. Again by @thm-sequential-compactness, $(x_n)$ has a subsequence $(x_{i_n})$ that converges to some point $a$ in $C$. Since $f$ is continuous and $x_{i_n}\rightarrow a$, we have $y_{i_n}\rightarrow f(a)$, contradicting the assumption that $(y_n)$ has no convergent subsequence.
+:::
+
+::: {.exercise #exr-non-unique-preimage}
+This exercise is meant to help you see what's going on in the first part of the proof of @thm-image-of-compact-is-compact.
+
+Let $C=[-2,2]$ and define $f:C\rightarrow\R$ be defined by $f(x)=x^2$. Let $(y_n)$ be the sequence $3,3.9,3.99,3.999\ldots$. 
+
+1. What is $f(C)$ in this case? Is $(y_n)$ in $f(C)$?
+2. Find a sequence $(x_n)$ in $C$ so that (a) $f(x_n)=y_n$, and (b) $(x_n)$ does not converge. (Hint: you'll need to take advantage of the fact that $f$ is not injective.)
+3. Does the sequence $(x_n)$ you chose have a convergent subsequence? If so, what does it converge to?
+:::
+
+::: {.lemma #lem-compact-contains-sup}
+Let $C\subseteq\R$ be non-empty, closed, and bounded. Then $\sup C\in C$ and $\inf C\in C$.
+:::
+
+The proof is part of @exr-prove-min-max below.
+
+::: {.theorem #thm-min-max}
+
+## Min-Max Theorem
+
+Let $C$ be a non-empty, closed, and bounded subset of $\R$ and suppose $f:C\rightarrow \R$ is continuous. Then there exist points $a,b\in C$, which we call the *global min* and *global max* respectively, such that for all $x\in C$
+$$f(a)\leq f(x)\leq f(b)$$
+:::
+
+::: {.exercise #exr-prove-min-max}
+1. Prove @lem-compact-contains-sup.
+2. Use @lem-compact-contains-sup to help you prove @thm-min-max.
+:::
+
+We conclude with another consequence of @thm-sequential-compactness that we'll need for later on in the course.
+
+::: {.theorem #thm-cont-on-compact-implies-unif-cont}
+Let $C\subseteq\R$ be non-empty, closed, and bounded and let $f:C\rightarrow\R$ be a function. Then $f$ is uniformly continuous if and only if $f$ is continuous.
+:::
+
+::: {.proof}
+We already know that uniform continuity implies continuity, so we just need to prove the backwards implication.
+  
+By way of contradiction, suppose $f:C\rightarrow\R$ is continuous but not uniformly continuous. Then by Problem 4.4\#3b, there exists $\epsilon>0$ and sequences $(x_n)$ and $(y_n)$ in $C$ such that $|x_n-y_n|\rightarrow0$ and yet for all $n\in\N$, 
+
+$$
+|f(x_n)-f(y_n)|\geq\epsilon 
+$$ {#eq-sequence-contradiction}
+
+Then by @thm-sequential-compactness, the sequence $(x_n)$ has a subsequence $(x_{i_n})$ that converges to some point $a\in C$. Now consider the corresponding subsequence $(y_{i_n})$ of $(y_n)$. Since $|x_n-y_n|\rightarrow0$, the subsequence $|x_{i_n}-y_{i_n}|\rightarrow0$ and therefore $x_{i_n}-y_{i_n}\rightarrow0$. Then $y_{i_n}=x_{i_n}-(x_{i_n}-y_{i_n})$, so $y_{i_n}\rightarrow a-0=a$.
+  
+So since $f$ is continuous and $x_{i_n}\rightarrow a$, by 4.3.3, $f(x_{i_n})\rightarrow f(a)$. Similarly, since $y_{i_n}\rightarrow a$, by 4.3.3, $f(y_{i_n})\rightarrow f(a)$. Therefore $f(x_{i_n})-f(y_{i_n})\rightarrow0$, so there exists $M\in\N$ such that for all $m>M$, $|f(x_{i_m})-f(y_{i_m})|<\epsilon$, contradicting [@eq-sequence-contradiction].
+:::
+
+::: {.exercise #exr-conv-seq-image .content-hidden}
+Suppose $(x_n)$ is a sequence in $\R$ that converges to $a$. Let $U=Rng(x_n)\cup\{a\}$. Prove that if $f:U\rightarrow\R$, then $f$ is bounded.
+:::
+
+## Review Questions
+
+1. Give examples to show that the conditions of *boundedness* and *closedness* "work together" in @thm-image-of-compact-is-compact and @thm-min-max by showing that neither property on its own is sufficient to imply the conclusions of the theorems. Include pictures.
+2. Why would this theorem be false if our universe were $\Q$ instead of $\R$?
+3. Define a subset $U=\{1,\frac{1}{2},\frac{1}{3},\ldots\}\cup\{0\}$. Suppose $f:U\rightarrow\R$ is continuous. Prove that there exists $c\in U$ such that $f(c)\geq f(x)$ for all $x\in U$. 
+4. Since we are seeing the previous problem in this section, it's clear what tools to use. But out of context, it would be harder. Write another example of a problem that tests this content that would be tricky if you saw it out of context.

@@ -1,0 +1,121 @@
+# Properties of Open Sets
+
+## Highlights {.unnumbered}
+
+- Characterization of open sets as unions of open balls
+- Unions and intersections of open sets
+
+## Preparation
+
+:::{.theorem #thm-open-set-tfae .tfae}
+Let $X$ be a metric space and $U\subseteq X$. The following are equivalent.
+
+1. $U$ is open.
+2. $U$ is a union of open balls.
+:::
+
+:::{.exercise #exr-prove-open-set-tfae}
+Prove @thm-open-set-tfae
+:::
+
+@thm-open-set-tfae is another "the following are equivalent" theorem. We love these because anytime there is a proof involving an open set, we get to pick which condition to use.
+
+:::{.theorem #thm-unions-and-intersections-of-open-sets}
+
+1. The union of any collection of open sets is open.
+2. The intersection of any finite collection of open sets is open.
+:::
+
+:::{.exercise #exr-unions-of-open-sets}
+Prove Part 1 of @thm-unions-and-intersections-of-open-sets.
+
+Hint: Will it be easier to work with the *definition* of openness, or Condition 2 of @thm-open-set-tfae for this proof?
+:::
+
+:::{.proof}
+
+#### Setup of proof of Part 2 of @thm-unions-and-intersections-of-open-sets
+
+Suppose $U_1,\ldots,U_n$ are open and let $U=\bigcap_{i=1}^n U_i$. We will prove $U$ is open using the definition of openness, so we start by supposing that $x\in U$. This means $x\in U_i$ for all $i=1,\ldots,n$. Therefore, applying the definition of openness to each $U_i$, there exists $r_i$ such that $\bee_{r_i}(x)\subseteq U_i\subseteq U$.
+:::
+
+:::{#des-open-set-int .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-open-set-int" class="calculator-container" style="width: 100%; height: 600px;"></div>
+
+<div id="ball-checks" class="desmos-checkbox-container">
+<div class="checkbox">
+<input type="checkbox" id="b1" name="b1"/><label for="b1" class="cb-label">Show $B_{r_1}$</label>
+</div>
+<div class="checkbox">
+<input type="checkbox" id="b2" name="b2"/><label for="b2" class="cb-label">Show $B_{r_2}$</label>
+</div>
+</div>
+
+<script>
+    var b1Checkbox = document.getElementById('b1');
+    var showB1 = b1Checkbox.checked;
+    var b2Checkbox = document.getElementById('b2');
+    var showB2 = b2Checkbox.checked;
+
+     b1Checkbox.addEventListener('change', function() {
+        showB1 = this.checked;
+        calculator.setExpression({ id: 'B1-folder', hidden: !showB1 });
+      });
+
+      b2Checkbox.addEventListener('change', function() {
+        showB2 = this.checked;
+        calculator.setExpression({ id: 'B2-folder', hidden: !showB2 });
+      });
+  var elt = document.getElementById('calculator-open-set-int');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('open-set-int.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+</script>
+
+Here is an illustration of what's going on in the proof so far with just $n=2$ open sets. Here, $x$ is in $U_1$, so there is an open ball around $x$ which lies entirely within $U_1$. Similarly, $x$ is in $U_2$, so there is an open ball around $x$ which lies entirely within $U_2$. What of these two open balls could you use to finish proving that the *intersection* is open? How would you generalize this to the case where there are $n$ open sets?
+:::
+
+:::{.exercise #exr-intersections-of-open-sets}
+Finish the proof of Part 2 of @thm-unions-and-intersections-of-open-sets.
+:::
+
+:::{.exercise #exr-infinite-intersection-of-open-sets}
+1. At what point in the proof of Part 2 of @thm-unions-and-intersections-of-open-sets did you use the fact that we were only dealing with *finitely many* open sets?
+2. Give an example of a(n infinite) collection of open sets whose intersection is *not* open. (Remember, $\varnothing$ is open!)
+:::
+
+:::{.content-visible when-format="html"}
+It is worth mentioning that some open sets are easier to witness as unions of open balls than others. Compare the two examples below.
+:::
+
+[Two images? Desmos interactives?]
+
+
+## Review Questions {.unnumbered}
+
+## To include
+
+5. Desmos app with C&C Fig 3.1 and fading-in/out open balls
+6. Visual proof that the open square is open (and that the closed square is not)
+7. Negate "open"

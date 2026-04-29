@@ -1,0 +1,222 @@
+---
+callout-icon: false
+---
+
+# Proof-Writing Resources {#sec-proof-writing}
+
+Below are some proof-writing resources you may find helpful. These are also available as printable cheat sheets: [negation.pdf](assets/negation.pdf), [proof-skeleta.pdf](assets/proof-skeleta.pdf).
+
+## Negating Statements
+
+Often we need to negate logical statements. For example, a problem may ask you prove that a sequence does *not* converge to $a$, or you may need to set up the contrapositive of an if-then statement.
+
+:::{.callout-note}
+### "For all" statements
+$$\neg\big[(\forall x\in A)P(x)\big]~\Longleftrightarrow~(\exists x\in A)\big[\neg P(x)\big]$$
+
+**Example:**
+
+*Original:* "For all integers $x$, $x^2>0$."
+
+*Negation:* "There exists an integer $x$ such that $x^2\leq0$."
+:::
+
+:::{.callout-note}
+### "There exists... such that" statements
+$$\neg\big[(\exists x\in A)P(x)\big]~\Longleftrightarrow~(\forall x\in A)\big[\neg P(x)\big]$$
+
+**Example:**
+
+*Original:* "There exists $x\geq0$ such that $\sqrt x\notin\mathbb Q$."
+
+*Negation:* "For all $x\geq0$, $\sqrt x\in\mathbb Q$."
+:::
+
+:::{.callout-note}
+### Conditionals
+$$\neg\big( P \Rightarrow Q \big)~\Longleftrightarrow~ P \wedge (\neg Q)$$
+
+*Remember that many conditionals are often preceded by a hidden ``for all'' quantifier.*
+
+**Example:**
+
+*Original:* "(For all $x$) if $x$ is even, then $x^2$ is even."
+
+*Negation:* "There exists $x$ such that $x$ is even and $x^2$ is odd."
+:::
+
+:::{.callout-note}
+### "And" statements
+$$\neg\big(P\wedge Q\big)~\Longleftrightarrow~ (\neg P)\vee(\neg Q)$$
+
+*Remember that many conditionals are often preceded by a hidden ``for all'' quantifier.*
+
+**Example:**
+
+*Original:* "There exists $n\in\mathbb N$ such that $n$ divides 15 and 2 divides $n$."
+
+*Negation:* "For all $n\in\mathbb{N}$, either $n$ does not divide 15 or 2 does not divide $n$."
+:::
+
+:::{.callout-note}
+### "Or" statements
+$$\neg\big(P\vee Q\big)~\Longleftrightarrow~ (\neg P)\wedge(\neg Q)$$
+
+*Remember that many conditionals are often preceded by a hidden ``for all'' quantifier.*
+
+**Example:**
+
+*Original:* "For all $n\in\mathbb Z$, $n$ is even or $n$ is odd."
+
+*Negation:* "There exists $n\in\mathbb Z$ such that, $n$ is not even and $n$ is not odd."
+:::
+
+## Proof skeleta {#sec-proof-skeleta}
+
+Below are what I call "proof skeleta"---basic structures you can use when implementing standard proof techniques.
+
+:::{.callout-note}
+### Conditional Statements (Direct)
+**Goal:** For propositions $P,Q$, proving $P\Rightarrow Q$.
+
+*Proof.* *[State any upfront assumptions.]* Assume $P$. *[Use definitions and known results to derive $Q$.]* Therefore $Q$.
+:::
+
+:::{.callout-note}
+### Conditional Statements (Contrapositive)
+**Goal:** For propositions $P,Q$, proving $P\Rightarrow Q$.
+
+*Proof.* *[State any upfront assumptions.]* Assume $\neg Q$. *[Use definitions and known results to derive $\neg P$.]* Therefore $\neg P$.
+:::
+
+:::{.callout-note}
+### Biconditionals
+**Goal:** For propositions $P,Q$, proving $P\Leftrightarrow Q$.
+
+*Proof.* *[State any upfront assumptions.]* We will prove implication both ways.
+
+- ($\Rightarrow$) *[Prove $P\Rightarrow Q$.]*
+- ($\Leftarrow$) *[Prove $Q\Rightarrow P$.]*
+
+Therefore $P$ if and only if $Q$.
+:::
+
+:::{.callout-note}
+### "The following are equivalent"
+**Goal:** Proving propositions $P$, $Q$, and $R$ are logically equivalent.
+
+*Proof.* *[State any upfront assumptions.]* We will prove $P\Rightarrow Q$, $Q\Rightarrow R$, and $R\Rightarrow P$.
+
+- ($P\Rightarrow Q$) *[Prove $P\Rightarrow Q$.]*
+- ($Q\Rightarrow R$) *[Prove $Q\Rightarrow R$.]*
+- ($R\Rightarrow P$) *[Prove $R\Rightarrow P$.]*
+
+Therefore $P$, $Q$, and $R$ are logically equivalent.
+
+- The order of $P,Q,R$ is unimportant, and the same idea can be applied to more than three propositions.
+:::
+
+:::{.callout-note}
+### Subsets
+**Goal:** For sets $A,B$, proving $A\subseteq B$.
+
+*Proof.* *[State any upfront assumptions.]* Let $a\in A$. *[Use definitions and known results to deduce $a\in B$.]* Therefore $a\in B$.
+:::
+
+:::{.callout-note}
+### Set Equality
+**Goal:** For sets $A,B$, proving $A=B$.
+
+*Proof.* *[State any upfront assumptions.]* We will prove inclusion both ways.
+
+- ($\subseteq$) *[Prove $A\subseteq B$.]*
+- ($\supseteq$) *[Prove $B\subseteq A$.]*
+
+Therefore $A=B$.
+:::
+
+:::{.callout-note}
+### "For all" statements
+**Goal:** Proving $(\forall x\in A)P(x)$.
+
+*Proof.* *[State any upfront assumptions.]* Suppose $x\in A$. *[Use definitions and known results to deduce $P(x)$.]* Therefore for all $x\in A$, $P(x)$.
+:::
+
+:::{.callout-note}
+### "There exists... such that" statements
+**Goal:** Proving $(\exists x\in A)P(x)$.
+
+*Proof.* *[State any upfront assumptions.]*
+
+- *[Exhibit a candidate $x\in A$.]*
+- *[Use definitions and known results to deduce $P(x)$.]*
+
+Therefore there exists $x\in A$ such that $P(x)$.
+:::
+
+:::{.callout-note}
+### Uniqueness
+**Goal:** Proving $(\exists !x\in A)P(x)$.
+
+*Proof.* *[State any upfront assumptions.]*
+
+- *[Prove $(\exists x\in A)P(x)$.]*
+- Suppose $x_1,x_2\in A$ and $P(x_1)$ and $P(x_2)$ are true. *[Use definitions and known results to deduce $x_1=x_2$.]* Therefore $x_1=x_2$.
+
+Therefore there exists a unique $x\in A$ such that $P(x)$.
+:::
+
+:::{.callout-note}
+### Proof by Contradiction
+**Goal:** Proving a proposition $P$.
+
+*Proof.* *[State any upfront assumptions.]* By way of contradiction, assume $\neg P$. *[Use definitions and known results to arrive at a contradiction.]* Therefore $P$.
+
+- $P$ may be a conditional statement, but it doesn't have to be.
+- The contradiction you arrive at may be $(\neg P)\wedge P$, or it may be something else.
+:::
+
+:::{.callout-note}
+### Proof by Induction
+**Goal:** Proving $(\forall n\in\mathbb N)P(n)$.
+
+*Proof.* *[State any upfront assumptions.]* We will utilize a proof by induction.
+
+- **Base case.** *[Verify $P(1)$ is true.]* Therefore $P(1)$.
+- **Inductive step.** Let $k\in\mathbb{N}$. Assume $P(k)$. *[Use definitions and known results to deduce $P(k+1)$.]*
+
+Therefore $P(n)$ is true for all $n\in\mathbb{N}$.
+:::
+
+:::{.callout-note}
+### Function Equality
+**Goal:** For two functions $f,g:A\rightarrow B$, prove $f=g$.
+
+*Proof.* *[State any upfront assumptions.]* Let $x\in A$. *[Use definitions and known results to deduce $f(x)=g(x)$.]* Therefore $f(x)=g(x)$ for all $x\in A$, so $f=g$.
+:::
+
+:::{.callout-note}
+### Injectivity
+**Goal:** Prove that $f:A\rightarrow B$ is injective.
+
+*Proof.* *[State any upfront assumptions.]* Let $x_1,x_2\in A$ and assume $f(x_1)=f(x_2)$. *[Use definitions and known results to deduce $x_1=x_2$.]* Therefore $x_1=x_2$ whenever $f(x_1)=f(x_2)$, so $f$ is injective.
+:::
+
+:::{.callout-note}
+### Surjectivity
+**Goal:** Prove that $f:A\rightarrow B$ is surjective.
+
+*Proof.* *[State any upfront assumptions.]* Let $y\in B$. *[Use definitions and known results to prove $(\exists x\in A)\big(f(x)=y\big)$.]* Therefore, for all $y\in B$, there exists $x\in A$ such that $f(x)=y$, so $f$ is surjective.
+:::
+
+:::{.callout-note}
+### Bijectivity
+**Goal:** Prove that $f:A\rightarrow B$ is bijective.
+
+*Proof.* *[State any upfront assumptions.]*
+
+- *[Prove $f$ is injective.]*
+- *[Prove $f$ is surjective.]*
+
+Therefore $f$ is both injective and surjective, so $f$ is bijective.
+:::

@@ -1,0 +1,28 @@
+# Chapter One
+
+We can reference a theorem before stating it: @thm-main.
+
+::: {.theorem #thm-main}
+## A Main Theorem
+For every real number $x$, if $x > 1$ then $x^2 > 1$.
+:::
+
+::: {.lemma #lem-support}
+If $x > 1$, then $x^2 > x$.
+:::
+
+::: {.theorem #thm-second}
+If $x > 2$, then $x^2 > 4$.
+:::
+
+::: {.proof}
+See the pudding.
+:::
+
+The proof idea for @thm-main uses @lem-support, and @thm-second is another theorem in the same shared counter.
+
+::: {.exercise #exr-try}
+Prove @thm-main directly from the definition of order on $\mathbb{R}$.
+:::
+
+Now refer back to the exercise: @exr-try.

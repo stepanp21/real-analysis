@@ -1,0 +1,55 @@
+# Constructing the Reals
+
+
+At the beginning of the course, we made a decision that we would *assume* certain axioms about $\R$, and then prove all of the important properties of $\R$ from those. Another approach to real analysis is to *construct* the real number system from a simpler one and then *prove* even the most basic facts about $\R$ (note that we still need to make some fundamental assumptions about the simpler number system). This addendum will go through one way to construct $\R$ from $\Q$.
+ 
+As a starting point for this process, though, we'll see how to construct $\Q$ from $\Z$. While I'm sure you're familiar with all of the important properties of the rational numbers, it will be instructive to think about what it means to "construct" a new number system out of a simpler one in the context of $\Z$ and $\Q$ first. The idea is that once you see what the construction process of $\Q$ entails, you'll be able to follow a parallel process for constructing $\R$.
+ 
+## Constructing the rationals
+ 
+Pretend that you and I know everything we want to know about the integers $\Z$, but that I've never heard of rational numbers before. How would you explain them to me? How could you rigorously construct them? Ultimately, you'd want to define rational numbers as things that look like $\frac{p}{q}$ where $p,q\in\Z$ and $q\neq0$, but there are lots of important rules that go along with this (when is it true that $\frac{p_1}{q_2}=\frac{p_2}{q_2}$? how do we add, subtract, and multiply rational numbers? when is one rational number greater than another? can we witness $\Z$ as a subset of $\Q$?). A complete construction should answer all of these questions. So here's a way to get started.
+ 
+Start by letting 
+$$\mathcal Q=\{(p,q)\in\Z\times\Z ~:~ q\neq0\}$$
+We'll think of an element $(p,q)\in\mathcal Q$ as "representing" the rational number $\frac{p}{q}$, but $\mathcal Q$ is a different set from the rationals. For example, $(1,3)$ and $(2,6)$ are different elements of $\mathcal Q$ (even though $\frac{1}{3}$ and $\frac{2}{6}$ are the same element of $\Q$).
+ 
+Now we define a relation $\sim$ on $\mathcal Q$ by saying $(p_1,q_1)\sim(p_2,q_2)$ when $p_1q_2=p_2q_1$. For example, $(1,3)\sim(2,6)$. Note that I'm avoiding using division in this definition because we're starting in $\Z$ where division isn't always well-defined. Note that $\sim$ is an equivalence relation:
+
+- Reflexive: For any $(p,q)$, we have $pq=qp$.
+- Symmetric: If $(p_1,q_1)\sim(p_2,q_2)$, then $p_1q_2=p_2q_1$, so $(p_2,q_2)\sim(p_1,q_1)$.
+- Transitive: Suppose $(p_1,q_1)\sim(p_2,q_2)$ and $(p_2,q_2)\sim(p_3,q_3)$ so that $p_1q_2=p_2q_1$ and $p_2q_3=p_3q_2$. Here we need to break into two cases.
+  - If $p_1=0$, then $p_2q_1=0$ and since $q_1\neq0$, $p_2=0$. Similarly, we can conclude $p_3=0$. So it follows that $p_1q_3=0=p_3q_1$. 
+  - If $p_1\neq0$, it follows that $p_2\neq0$. In this case, we can multiply our two equations to get $p_1q_2p_2q_3=p_2q_1p_3q_2$, and since $p_2q_2\neq0$, we can use cancellation to say $p_1q_3=p_3q_1$, so $(p_1,q_1)\sim(p_3,q_3)$.
+ 
+Since $\sim$ is an equivalence relation, we can define $\Q$ to be the set of equivalence classes $\mathcal Q/\sim$. For the equivalence class of $(p,q)$, we write $\frac{p}{q}$. The key here is to remember that $\frac{p}{q}$ (an element of $\Q$) is a whole collection of ordered pairs in $\mathcal Q$. For example, $\frac{9}{6}$ is the collection $\{\ldots,(-6,-4),(-3,-2),(3,2),(6,4),(9,6),\ldots\}$ of all numerator-denominator pairs that equal $\frac{9}{6}$ in $\Q$.
+ 
+This defines $\Q$ as a set, but we still have more work to do. First, we can define the basic operations of $+,-,\cdot,\div$ on this set. It may seem straightforward to define, for example, $\frac{p}{q}\cdot\frac{r}{s}=\frac{pr}{qs}$, but we need to prove that this operation is well-defined. That is, if $(p,q),(p',q')$ are elements of the same equivalence class, and $(r,s),(r',s')$ are elements of the same equivalence class, then $(pr,qs)$ and $(p'r',q's')$ are elements of the same equivalence class. That is, for example, you should end up in the same equivalence class if you multiply $\frac{3}{6}\cdot\frac{2}{7}$ or $\frac{1}{2}\cdot\frac{10}{35}$. To confirm this fact, we can assume $(p,q)\sim(p',q')$ and $(r,s)\sim(r',s')$ so that $pq'=p'q$ and $rs'=r's$. Then $prq's'=p'qr's$, so $(pr,qs)\sim(p'r',q's')$ as desired. One can confirm the usual definitions of the other operations are similarly well defined.
+ 
+One thing that's useful is to note that we can give a "standard" representative from $\mathcal Q$ of any element of $\Q$. In particular, every equivalence class $\frac{p}{q}$ contains a pair $(p',q')$ with $q'>0$ and $p',q'$ coprime. I won't prove this fact, but it should be familiar that any rational can be written in "reduced form" with positive denominator.
+ 
+We can define an ordering on equivalence classes in $\Q$ by saying that when $\frac{p}{q}$ and $\frac{r}{s}$ have positive denominators (i.e. $q>0$ and $s>0$), then we say $\frac{p}{q}\geq\frac{r}{s}$ when $ps\geq qr$. Once again, to be complete, we would need to show this relation is well-defined.
+ 
+The final essential piece is to show how $\Z$ fits inside of $\Q$. We start by saying an integer $n$ corresponds to the rational $\frac{n}{1}$, but in a sense, this isn't enough. We should also confirm that the arithmetic operations $+,-,\cdot$ and ordering work the same for the copy of the integers living inside $\Q$ as they do in $\Z$. That is, for example, if $a,b,c$ are integers with $a+b=c$, is it true that $\frac{a}{1}+\frac{b}{1}=\frac{c}{1}$? It's tedious to confirm all such facts, but certainly doable.
+ 
+From there, we can set about proving other properties of $\Q$ that go beyond what we know about $\Z$ (e.g. facts about division), but our job of constructing $\Q$ is done.
+ 
+## Construction the reals
+There are several ways to construct the reals from the rationals, but one approach is to use Cauchy sequences. The basic idea is to let $\mathcal R$ be the *set of Cauchy sequences in $\Q$*. The intuition behind this is that every Cauchy sequence in $\Q$ is a representative of the real number it converges to. A few examples to keep in mind:
+
+- $(3,3.1,3.14,3.141,3.1415,\ldots)$ is an element of $\mathcal R$; it will end up being a representative of an equivalence class corresponding to $\pi$.
+- $(4,3.2,3.15,3.142,3.1416,\ldots)$ is an element of $\mathcal R$; it will end also up being a representative of an equivalence class corresponding to $\pi$.
+- $(\frac{1}{2},\frac{3}{4},\frac{7}{8},\frac{15}{16},\ldots)$ is an element of $\mathcal R$; it will end up being a representative of an equivalence class corresponding to $1$.
+- $(1,1,1,1,\ldots)$ is an element of $\mathcal R$; it will end also up being a representative of an equivalence class corresponding to $1$.
+ 
+The rest is up to you. The problems below will guide you in constructing $\R$ as a set of equivalence classes, defining the basic operations and ordering, witnessing $\Q$ as a subset of $\R$, and what we might consider a "standard" representative of an equivalence class might be.
+ 
+## Problems
+ 
+1. How should we define an equivalence relation on $\mathcal R$ so that each equivalence class will correspond to exactly one real number? How could we tell that two Cauchy sequences in $\Q$ represent the same real number? Think about the examples above, but remember, we can't necessarily speak of the limit of Cauchy sequence in $\Q$ since many (e.g. the first two examples above) are not convergent in $\Q$. Can you prove that the relation you define is in fact an equivalence relation?
+2. Once you have established the set $\R$ as $\mathcal R/\sim$ for an appropriate equivalence relation $\sim$, how can we define the \emph{sum} of two elements of $\R$? Can you show that this operation is well-defined?
+3. Once you have established the set $\R$ as $\mathcal R/\sim$, how should we define order (what does it mean for one equivalence class in $\mathcal R/\sim$ to be greater than another)? Can you show that this operation is well-defined?
+4. How can we witness $\Q$ as a subset of $\R$? That is, for a given rational number $x$, what equivalence class in $\R$ corresponds to $x$? Can you confirm that if $x,y,z\in\Q$ with $x+y=z$, then the same is true for the corresponding elements of $\R$?
+5. This is an open-ended question: what is a logical way of defining a "standard" representative of $\mathcal R$ for a given element of $\R$? There is no one right answer here.
+6. Can you prove that every non-empty subset of $\R$ that is bounded above has a least upper bound?
+
+A hint on #1: What can you say about the *difference* between two Cauchy sequences in $\Q$ that should represent the same real number? What would that difference converge to?

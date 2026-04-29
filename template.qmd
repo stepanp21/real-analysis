@@ -1,0 +1,30 @@
+# Title
+
+## Highlights {.unnumbered}
+
+- highlight 1
+- highlight 2
+
+## Preparation
+
+(Pre-class reading and exercises)
+
+## Body
+
+What will be covered in class plus exercises
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+A collapsed hint.
+:::
+
+## More sections
+
+More content
+
+## Review Questions {.unnumbered}
+
+1. Question 1
+2. Question 2

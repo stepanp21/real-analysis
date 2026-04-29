@@ -1,0 +1,86 @@
+{
+  "index.qmd": {
+    "index.html": "2e41208c"
+  },
+  "intro.qmd": {
+    "intro.html": "ac284365"
+  },
+  "summary.qmd": {
+    "summary.html": "36e52d0a"
+  },
+  "references.qmd": {
+    "references.html": "278ed338"
+  },
+  "series.qmd": {
+    "series.html": "804fdd8f"
+  },
+  "minmax.qmd": {
+    "minmax.html": "41189dd3"
+  },
+  "constructing-r.qmd": {
+    "constructing-r.html": "c86a4359"
+  },
+  "proof-writing.qmd": {
+    "proof-writing.html": "ff36a882"
+  },
+  "axioms-of-r.qmd": {
+    "axioms-of-r.html": "1f728419"
+  },
+  "axioms-of-r/intro-to-r.qmd": {
+    "intro-to-r.html": "79aa5317"
+  },
+  "axioms-of-r/field-and-order.qmd": {
+    "field-and-order.html": "ef34aa93"
+  },
+  "axioms-of-r/lub.qmd": {
+    "lub.html": "8645c4f4"
+  },
+  "axioms-of-r/lub-props.qmd": {
+    "lub-props.html": "39c69bbb"
+  },
+  "metric-spaces/metric-spaces-intro.qmd": {
+    "metric-spaces-intro.html": "76f02c76"
+  },
+  "metric-spaces/metric-space-axioms.qmd": {
+    "metric-space-axioms.html": "73b2e74b"
+  },
+  "metric-spaces/r-as-a-metric-space.qmd": {
+    "r-as-a-metric-space.html": "a7a69f91"
+  },
+  "appendices/proof-writing.qmd": {
+    "proof-writing.html": "8ac1bc3b"
+  },
+  "appendices/union-and-intersection.qmd": {
+    "union-and-intersection.html": "8e042a08"
+  },
+  "appendices/cardinality.qmd": {
+    "cardinality.html": "ce740a9f"
+  },
+  "sequences/sequence-intro.qmd": {
+    "sequence-intro.html": "8b3dc1fe"
+  },
+  "sequences/sequence-basics.qmd": {
+    "sequence-basics.html": "6f7d0e77"
+  },
+  "sequences/series.qmd": {
+    "series.html": "59f42232"
+  },
+  "appendices/cauchy-schwartz.qmd": {
+    "cauchy-schwartz.html": "558f1067"
+  },
+  "appendices/wop.qmd": {
+    "wop.html": "b8026086"
+  },
+  "metric-spaces/open-balls.qmd": {
+    "open-balls.html": "646193a9"
+  },
+  "metric-spaces/open-set-props.qmd": {
+    "open-set-props.html": "becc093b"
+  },
+  "metric-spaces/boundedness.qmd": {
+    "boundedness.html": "379ebd66"
+  },
+  "sequences/subsequences.qmd": {
+    "subsequences.html": "a32ed79e"
+  }
+}

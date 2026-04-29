@@ -1,0 +1,32 @@
+# Introduction
+
+This is a book created from markdown and executable code.
+
+See @knuth84 for additional discussion of literate programming.
+
+::: {.theorem #thm-hi}
+
+## Fermat's First Theorem
+
+This extension has been written by a teacher who hopes that students read the course notes...
+:::
+
+Please look back to @thm-hi
+
+::: {.lemma #lem-bye}
+This extension has been written by a teacher who hopes that students read the course notes...
+:::
+
+::: {.exercise #exr-next}
+This extension has been written by a teacher who hopes that students read the course notes...
+:::
+
+::: {.example #exm-the}
+This extension has been written by a teacher who hopes that students read the course notes...
+:::
+
+## Acknowledgements
+
+The author acknowledges support of the Institut Henri Poincar\'e (UAR 839 CNRS-Sorbonne Universit\'e), and LabEx CARMIN (ANR-10-LABX-59-01).
+
+Also thank: John Rock, Yuri Sulyman, Desmos

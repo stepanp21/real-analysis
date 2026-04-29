@@ -1,0 +1,80 @@
+.lub-thread {
+    position: relative; /* Required for absolute positioning of the pseudo-element */
+    padding-left: 20px; /* Make room for the vertical bar */
+}
+
+.lub-thread::before {
+  content: "";            /* Required for pseudo-elements */
+  position: absolute;     /* Position the bar relative to the container */
+  left: 0;                /* Place it at the far left */
+  top: 0;                 /* Start from the top */
+  bottom: 0;              /* Extend to the bottom, matching container height */
+  width: 5px;             /* Sets the thickness of the vertical bar */
+  background-color: maroon;/* Sets the color of the vertical bar */
+}
+
+.lub-hl {
+  background-color: maroon;
+  color: white;
+}
+
+.tfae {
+    position: relative; /* Required for absolute positioning of the pseudo-element */
+    padding-left: 20px; /* Make room for the vertical bar */
+}
+
+.tfae::before {
+  content: "";            /* Required for pseudo-elements */
+  position: absolute;     /* Position the bar relative to the container */
+  left: 0;                /* Place it at the far left */
+  top: 0;                 /* Start from the top */
+  bottom: 0;              /* Extend to the bottom, matching container height */
+  width: 5px;             /* Sets the thickness of the vertical bar */
+  background-color:lightseagreen;/* Sets the color of the vertical bar */
+}
+
+.tfae-hl {
+  background-color: lightseagreen;
+  color:white;
+}
+
+.slider-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left-label {
+  margin-right: 10px;
+}
+
+input[type="range"] {
+  width: 200px;
+  margin: 0;
+}
+
+datalist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  writing-mode: horizontal-tb;
+  width: 200px;
+}
+
+option {
+  padding: 0;
+}
+
+
+
+.desmos-checkbox-container {
+  display: flex;
+  text-align: center;
+  gap: 2rem;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+

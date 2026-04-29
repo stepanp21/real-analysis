@@ -1,0 +1,9 @@
+# Chapter Two
+
+This chapter references Chapter 1 results: @thm-main, @lem-support, @thm-second, and @exr-try.
+
+::: {.proposition #prp-variant}
+A proposition in Chapter Two that references @lem-support.
+:::
+
+Cross-reference check: @prp-variant.

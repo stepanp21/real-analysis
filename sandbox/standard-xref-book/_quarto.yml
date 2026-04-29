@@ -1,0 +1,30 @@
+project:
+  type: book
+
+book:
+  title: "Standard Crossref Sandbox"
+  chapters:
+    - index.qmd
+    - chapter-one.qmd
+    - chapter-two.qmd
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+filters:
+  - path: _extensions/local/grouped-theorem-counters/grouped-theorem-counters.lua
+    at: post-render
+
+grouped-theorem-counters:
+  groups:
+    theorem_like:
+      classes:
+        - theorem
+        - lemma
+        - proposition
+
+crossref:
+  chapters: true

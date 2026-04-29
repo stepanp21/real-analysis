@@ -1,0 +1,153 @@
+# Boundedness
+
+## Highlights {.unnumbered}
+
+- Definition of a bounded subset of a metric space
+- Equivalent conditions to boundedness
+- Boundedness in $\R$ is equivalent to "bounded above and below"
+
+## Preparation
+
+:::{.theorem #thm-bounded .tfae}
+Let $X$ be a metric space and let $S\subseteq X$. Then the following are equivalent.
+
+1. For any $a\in X$, there exists $r>0$ such that $S\subseteq B_r(a)$.
+2. There exists $a\in X$ and $r>0$ such that $S\subseteq B_r(a).$
+
+In this case, we say $S$ is **bounded**.
+:::
+
+:::{#des-bounded-def .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-bounded-def" class="calculator-container" style="width: 100%; height: 600px;"></div>
+
+<script>
+  var elt = document.getElementById('calculator-bounded-def');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('bounded-def.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+</script>
+
+An illustration of Part 2 of the boundedness condition. Wherever the point $a$ is moved, there is a large enough $r$ so that the set $S$ lives inside the open ball.
+:::
+
+You will prove @thm-bounded in @exr-bounded-tfae-proof below.
+
+:::{.callout-note}
+@thm-bounded is both a theorem and a definition. Once we prove the conditions are equivalent, we can refer to any one of them as "the" definition of bounded.
+:::
+
+:::{.exercise #exr-boundedness-tfae-reflection}
+
+1. If a problem asks you to *prove* that a set is bounded, which of the two conditions from @thm-bounded would you choose to work with, and why?
+2. If a problem tells you to assume that a set is bounded and you need to *apply* boundedness in order to prove something else, which of the two conditions from @thm-bounded would you choose to work with, and why?
+:::
+
+:::{.exercise #exr-unbounded}
+Negate each of the two equivalent characterizations of boundedness. 
+:::
+
+A subset of a metric space that is not bounded is called **unbounded**.
+
+## Properties of Boundedness
+
+We start with proving that the two definitions of boundedness are in fact equivalent.
+
+:::{.exercise #exr-bounded-tfae-proof}
+Prove @thm-bounded.
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+1. One of the two implications should be very quick to prove!
+2. Note that $a$ might lie outside of $S$ for either of the two conditions.
+:::
+
+:::{.exercise #exr-unbounded-subset-of-r2}
+Let $S=\{(n,n)\in\R^2\st n\in\N\}$. Draw a picture of $S$ and give a careful proof that $S$ is unbounded.
+:::
+
+:::{.exercise #exr-union-of-two-bounded-is-bounded}
+Suppose $S_1$ and $S_2$ are bounded subsets of a metric space $X$. Prove that $S_1\cup S_2$ is bounded.
+:::
+
+## Boundedness in $\R$
+
+As ever, what we really care about is how this concept applies to $\R$ and how the concepts defined thus far interact. We've already defined "bounded above" and "bounded below". The next theorem will connect these definitions to our new more general defintion of "bounded" for metric spaces.
+
+:::{.theorem #thm-boundedness-in-r .tfae}
+Suppose $S\subseteq\R$.Then the following are equivalent.
+
+1. $S$ is bounded.
+2. $S$ has an upper bound and a lower bound.
+3. There exists $K>0$ such that for all $x\in X$, $|x|<K$.
+:::
+
+:::{.exercise #exr-boundedness-in-r}
+Prove @thm-boundedness-in-r.
+:::
+
+:::{#des-boundedness-in-r .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-boundedness-in-r" class="calculator-container" style="width: 100%; height: 250px;"></div>
+
+<script>
+  var elt2 = document.getElementById('calculator-boundedness-in-r');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator2 = Desmos.GraphingCalculator(elt2,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('boundedness-in-r.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator2.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+</script>
+
+An illustration of the three equivalent conditions for the boundedness of $S$ in $\R$: an open ball $B_r(a)$, the set of $x$ with $|x|<K$, and an upper and lower bound, $u$ and $l$, on $S$. A hint for @exr-boundedness-in-r is to think about how to construct the variables for one construction from another.
+:::
+
+:::{.exercise #exr-unbounded-subset-of-r}
+Prove that the complement of an unbounded subset of $\R$ is bounded.
+:::
+
+## Review Questions {.unnumbered}
+
+1. What does it mean for a subset of a metric space to be bounded? Unbounded?
+2. With @thm-bounded and @thm-boundedness-in-r, we have four equivalent ways of describing boundedness in $\R$; what are they?

@@ -1,0 +1,112 @@
+{
+    "hash": "bllmkkknsx",
+    "title": "Quintile Uncountability Proof",
+    "created": "2026-03-20T02:17:55.657Z",
+    "versionCreatedAt": "2026-03-20T12:21:26.393Z",
+    "stateUrl": "https://www.desmos.com/calc-states/production/version/bllmkkknsx/50e29fa0-2457-11f1-8f07-fffd7256c994",
+    "thumbUrl": "https://www.desmos.com/calc_thumbs/production/version/bllmkkknsx/50e29fa0-2457-11f1-8f07-fffd7256c994.png",
+    "currentVersion": "50e29fa0-2457-11f1-8f07-fffd7256c994",
+    "type": "my-graph",
+    "access": "link",
+    "product": "graphing",
+    "state": {
+        "version": 11,
+        "randomSeed": "cc642ceb6e62c869aa7472c7adafff0a",
+        "graph": {
+            "viewport": {
+                "xmin": -0.05412646785078956,
+                "ymin": -0.3,
+                "xmax": 1.0354079074652283,
+                "ymax": 0.6
+            },
+            "showGrid": false,
+            "showYAxis": false,
+            "xAxisStep": 1,
+            "__v12ViewportLatexStash": {
+                "xmin": "-0.05412646785078956",
+                "xmax": "1.0354079074652283",
+                "ymin": "-0.3",
+                "ymax": "0.6"
+            }
+        },
+        "expressions": {
+            "list": [
+                {
+                    "type": "folder",
+                    "id": "2",
+                    "title": "Hidden"
+                },
+                {
+                    "type": "expression",
+                    "id": "4",
+                    "folderId": "2",
+                    "color": "#388c46",
+                    "latex": "h=0.03",
+                    "slider": {
+                        "hardMin": true,
+                        "hardMax": true,
+                        "min": "0",
+                        "max": "0.5"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "5",
+                    "folderId": "2",
+                    "color": "#6042a6",
+                    "latex": "n=7",
+                    "slider": {
+                        "hardMin": true,
+                        "hardMax": true,
+                        "min": "1",
+                        "max": "20",
+                        "step": "1"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "6",
+                    "folderId": "2",
+                    "color": "#000000",
+                    "latex": "k=\\left[1,...,n\\right]"
+                },
+                {
+                    "type": "expression",
+                    "id": "9",
+                    "folderId": "2",
+                    "color": "#388c46",
+                    "latex": "y=h\\left(k+1\\right)\\left\\{0<x<1\\right\\}\\left\\{\\sum_{i=1}^{k}\\operatorname{mod}\\left(\\operatorname{floor}\\left(5^{i}\\left(x+\\frac{1}{2}\\left(1-\\left(-1\\right)^{i}\\right)\\right)\\right),2\\right)=0\\right\\}"
+                },
+                {
+                    "type": "expression",
+                    "id": "3",
+                    "folderId": "2",
+                    "color": "#388c46",
+                    "latex": "y=h\\left\\{0\\le x\\le1\\right\\}"
+                },
+                {
+                    "type": "expression",
+                    "id": "11",
+                    "folderId": "2",
+                    "color": "#000000",
+                    "latex": "i=1",
+                    "hidden": true,
+                    "slider": {
+                        "hardMin": true,
+                        "hardMax": true,
+                        "min": "1",
+                        "max": "n",
+                        "step": "1"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "12",
+                    "color": "#c74440"
+                }
+            ]
+        },
+        "includeFunctionParametersInRandomSeed": true,
+        "doNotMigrateMovablePointStyle": true
+    }
+}

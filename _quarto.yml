@@ -1,0 +1,85 @@
+project:
+  type: book
+  resources:
+    - assets/*
+    - "*.json"
+    - "**/*.json"
+    - "metric-spaces/*.json"
+
+book:
+  title: "Real Analysis"
+  author: "Stepan Paul"
+  date: "3/5/2026"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - part: axioms-of-r/intro-to-r.qmd
+      chapters:
+        - axioms-of-r/field-and-order.qmd
+        - axioms-of-r/lub.qmd
+        - axioms-of-r/lub-props.qmd
+    - part: "Metric Spaces"
+      chapters: 
+        - metric-spaces/metric-space-axioms.qmd
+        - metric-spaces/r-as-a-metric-space.qmd
+        - metric-spaces/open-balls.qmd
+        - metric-spaces/open-set-props.qmd
+        - metric-spaces/boundedness.qmd
+    - part: "Sequences"
+      chapters:
+        - sequences/sequence-basics.qmd
+        - sequences/subsequences.qmd
+        - sequences/series.qmd
+    - constructing-r.qmd
+    - minmax.qmd
+    - summary.qmd
+    - references.qmd
+  appendices:
+    - appendices/proof-writing.qmd
+    - appendices/union-and-intersection.qmd
+    - appendices/cardinality.qmd
+    - appendices/cauchy-schwartz.qmd
+    - appendices/wop.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    include-in-header:
+      - tex-macros/_dollar.tex
+      - tex-macros/_macros.tex
+      - tex-macros/_dollar.tex
+    css: styles.css
+    
+  pdf:
+    documentclass: scrreprt
+    include-in-header:
+          - tex-macros/_macros.tex
+
+filters:
+  - path: _extensions/local/grouped-theorem-counters/grouped-theorem-counters.lua
+    at: post-render
+
+grouped-theorem-counters:
+  groups:
+    theorem_like:
+      classes:
+        - theorem
+        - proposition
+        - lemma
+        - definition
+        - example
+        - exercise
+        - problem
+        - corollary
+
+crossref:
+  chapters: true
+  custom:
+    - kind: float
+      reference-prefix: Desmos Applet
+      key: des
+      latex-env: desmos

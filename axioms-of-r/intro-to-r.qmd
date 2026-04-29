@@ -1,0 +1,26 @@
+# The Real Numbers
+
+As discussed in the introduction, our approach to real analysis will be to start by laying out a set of axioms that we *assume* are true about the real number system $\R$ and then *prove* everything else based upon this set of axioms.
+
+In order to properly take this approach, we need a set of axioms that:
+
+ - contains enough information to let us prove everything there is to know about $\R$ (all of calculus, for example),
+ - is specific enough so that it distinguishes $\R$ from other number systems, and
+ - is as simple as possible
+
+The purpose of the first bullet point is clear enough: if I don't assume anything, I won't be able to prove anything.
+
+The second bullet point about distinguishing $\R$ from other number systems is related, but deserves some explanation. Consider the following proposition: 
+
+> For every $x>0$, there exists $y$ such that $y^2=x$.
+
+This is true if our universe is $\R$ but false our universe is $\Q$. If our axioms for $\R$ do not distinguish it from $\Q$, we will have no hope of proving such a propositon. In short, I want a set of axioms that is true for $\R$ *but for no other number system*.
+
+:::{.callout-note}
+I am using the term *number system* a bit loosely. For our purposes, though, it's fine to think of any set with binary operations corresponding to addition and multiplication---think $\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R},\mathbb{C}$.
+:::
+
+## Notes
+
+- Should include an thought experiment about how do we know there is a number $x$ such that $e^x+x=1$ (with Desmos graphic).
+- Should include something about how mathematics shifted from a search for absolute truth to a search for understanding of how consequences follow from hypotheses.
