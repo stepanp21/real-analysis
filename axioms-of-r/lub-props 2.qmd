@@ -1,0 +1,223 @@
+# Consequences of the Least Upper Bound Axiom {#sec-lub-props}
+
+## Highlights {.unnumbered}
+
+- We define the greatest lower bound (also called the infimum) of a set and prove that these exist in $\R$ whenever a nonempty subset is bounded below.
+- We prove the Nested Interval Theorem, which shows that the intersection of a nested sequence of closed intervals is nonempty.
+- We show how the Nested Interval Theorem can be used to prove that $\R$ is uncountable.
+
+## Preparation {.unnumbered}
+
+We start with a definition that should seem very natural given what we did in the last section.
+
+:::{.definition #def-inf}
+Let $S\subseteq\R$ be a subset of the real numbers.
+
+1. We say $b\in\R$ is a *lower bound* of $S$ if for all $x\in S$, $b\leq x.$ If $S$ has a lower bound, we say $S$ is *bounded below*.
+2. We say that $l\in\R$ the *greatest lower bound* or *infimum* of $S$ if for all lower bounds $b$ of $S$, $l\geq b$, and in this case we write 
+$$l=\inf S.$$
+
+3. If $l$ is the greatest lower bound $S$ and $l\in S$, we say that $l$ is the *least element* of $S.$
+:::
+
+:::{.exercise #exr-inf-examples}
+Find the infimum and least element of each set below or say why it doesn't have one.
+
+1. $[0,\infty)$
+2. $(-\infty,0]$
+3. $(0,3]$
+4. The set of upper bounds on $[0,3]$.
+5. The set of upper bounds on $[0,3)$.
+:::
+
+Parts 4 and 5 of @exr-inf-examples are meant to demonstrate another way of thinking about the Least Upper Bound Axiom: it tells us that sets of upper bounds *always* have a least element when they are non-empty.
+
+Rather than make an assumption about infima existing, as we did with suprema, we can prove this as a theorem from the Least Upper Bound Axiom using this idea.
+
+:::{.theorem #thm-infs-exist .lub-thread}
+If a nonempty subset $S\subseteq\R$ has a lower bound, then $S$ has a greatest lower bound in $\R$.
+:::
+
+:::{.proof}
+Suppose $S\subseteq\R$ is nonempty and bounded below. Then let $T$ be the *set of lower bounds* of $S$. Note that $T$ is nonempty (since $S$ was bounded above) and bounded above (by any element of $S$). Thus $T$ has a least upper bound $l=\sup T$.
+
+I claim that $l=\inf(S)$. First, we note that $l$ is in fact greater than any other lower bound of $S$, since $l$ is an upper bound on $T$. Also, since every element of $S$ is an upper bound on $T$, we have $l\leq s$ for all $s\in S$ since $l$ is the *least* upper bound of $T$.
+:::
+
+:::{.exercise #exr-infs-exist-2}
+Try proving @thm-infs-exist another way. Consider the set $U=\{x\st -x\in S\}$, and show that $-\sup U=\inf S$.^[We will use this kind of technqiue frequently to obtain the second two cases of a theorem we want to prove (e.g. one for increasing functions and one for decreasing function, or one for sups and one for infs).]
+:::
+
+One more concept we'll need in order to get started on this section is the idea of taking an infinite union or intersection, which will be important for understanding the Nested Interval Theorem. 
+
+:::{.exercise #exr-intersection-practice}
+For each example below, (i) draw the sequence of intervals on a number line, (ii) decide whether the sequence of intervals satisfies the conditions of @thm-NIT below, and (iii) identify the intersection $\displaystyle \bigcap_{i=1}^\infty [a_i,b_i]$.^[If you are rusty on unions and intersections, see @sec-union-intersection.]
+
+1. $[a_i,b_i]=\left[-\frac{1}{i},\frac{1}{i}\right]$ for $i\in\N$
+2. $[a_i,b_i]=[-i,i]$ for $i\in\N$
+3. $[a_i,b_i]=\left[0,1+\frac{1}{i}\right]$ for $i\in\N$
+
+:::
+
+## Nested Interval Theorem
+
+One distinguishing feature of the real numbers is, intuitively, if you keep zooming in on the number line, you are always zooming in *to a number*.  
+
+As a thought experiment, consider the following collection of intervals:
+
+$$\begin{aligned}
+  U_1&=&[3,4]\\ 
+  U_2&=&[3.1,3.2]\\ 
+  U_3&=&[3.14,3.15]\\ 
+  U_4&=&[3.141,3.142]\\ 
+  U_5&=&[3.1415,3.1416]\\
+  U_6&=&[3.14159,3.14160]\\
+  &\vdots&
+\end{aligned}$$
+
+Specifically, $U_i$ is the closed interval between $\pi$ rounded up and down to $i$ significant figures.
+
+If the universe is $\R$, there is a number that will be in $U_i$ for all $i$: $\pi$. By contrast, in $\Q$, there is no number inside all of these sets---we'd be zooming in onto something that isn't there. The Nested Interval Theorem below generalizes this idea.
+
+:::{.theorem #thm-NIT .lub-thread}
+
+#### Nested Interval Theorem
+
+Suppose $a_i$ and $b_i$ are real numbers with $a_i\leq b_i$ for all $i\in\N$ such that if we set $U_i=[a_i,b_i]$, we have $U_{i+1}\subseteq U_i$ for all $i\in\N.$ In this case
+
+$$\bigcap_{i=1}^\infty U_i \neq \varnothing.$$
+:::
+
+:::{#des-nit .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-nit" class="calculator-container" style="width: 100%; height: 300px;"></div>
+
+<script>
+
+  var eltNIT = document.getElementById('calculator-nit');
+  var options = {
+    lockViewport: true,
+    expressionsCollapsed: true
+  }
+  var calculatorNIT = Desmos.GraphingCalculator(eltNIT,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('nit.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculatorNIT.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+</script>
+
+A sequence of nested closed intervals.
+:::
+
+:::{.proof}
+
+#### Setup Only
+
+Assuming the hypotheses of the theorem, we note that since $U_{i+1}\subseteq U_i$, we have for all $i\in\N$
+$$a_i\leq a_{i+1} \qquad b_{i+1}\leq b_i.$$
+
+In fact, from this, one can prove^[This is mathspeak for "I don't feel like writing down all the details." In this case, the claim is hopefully very believable, but the simple version of the proof requires some theorems about sequences we'll prove later on in @sec-sequences.] that $a_i\leq b_j$ for any $i,j\in\N$.
+
+...
+:::
+
+:::{.exercise #exr-finish-nit-proof}
+Finish the proof of the Nested Interval Theorem.
+
+The big hint here is that Nested Interval Theorem is true for $\R$ but not for $\Q$, so it must use the Least Upper Bound Axiom in some essential way.
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+To prove a set is nonempty, you should exhibit an element that lives in the set, *and then prove that element lives in the set*.
+:::
+
+## Uncountability of $\R$
+
+Recall that a set $S$ is called *countable* if there exists a surjective function $\N\rightarrow S$. Intuitively, it means that there is some way of listing the elements of $S$ (possibly with repetition) so that every element of $S$ eventually appears on the list.
+
+It is clear that $\N$ is countable, but somewhat less obvious are the facts that $\Z$ and $\Q$ are countable^[See @sec-cardinality for a quick overview of why this is true.]. However, $\R$ is uncountable; it has a strictly larger cardinality than $\N$, $\Z$, and $\Q$. Intuitively, the number of real numbers is a "higher level of infinity" than the number of natural/integer/rational numbers.
+
+There are a few ways to prove that $\R$ is uncountable, but as we should now expect, all of them rely on the Least Upper Bound Axiom since uncountability is a property $\R$ has but $\Q$ does not. We will take the approach of using the Nested Interval Theorem, which in turn relies on the Least Upper Bound Axiom.
+
+:::{.theorem #thm-r-uncountable .lub-thread}
+
+$\R$ is uncountable.
+:::
+
+:::{.proof}
+By way of contradiction, suppose $\R$ is countable. Then there exists a surjective function $f:\N\rightarrow\R$. We will use this function to construct a sequence of nonempty nested closed intervals $\{U_i\}$ and apply the Nested Interval Theorem to arrive at a contradiction. The idea will be to construct $U_{i+1}$ so that it excludes $f(i)$, and that way no value of $f$ will lie in all of the intervals.
+
+Let $a_1=0$ and $b_1=1.$ For each $i\geq 1,$ we recursively contruct $a_{i+1}$ and $b_{i+1}$ using the following procedure:
+
+- If $f(i)\notin [a_i,b_i]$, we let $a_{i+1}=a_i$ and $b_{i+1}=b_i$ (i.e. the interval remains unchanged).
+- If $f(i)\in\left[a_i,\frac{b_i+a_i}{2}\right]$ (that is, $f(i)$ is in the left half of the interval), let $a_{i+1}=\frac{2b_i+a_i}{3}$ and $b_{i+1}=b_i$ (so that $[a_{i+1},b_{i+1}]$ is the right third of the interval).
+- If $f(i)\in\left(\frac{b_i+a_i}{2}, b_i\right]$ (that is, $f(i)$ is in the right half of the interval), let $a_{i+1}=a_i$ and $b_{i+1}=\frac{b_i+2a_i}{3}$ (so that $[a_{i+1},b_{i+1}]$ is the left third of the interval).
+
+:::{#des-uncountability .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-uncountability" class="calculator-container" style="width: 100%; height: 300px;"></div>
+
+<script>
+  var elt = document.getElementById('calculator-uncountability');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('uncountability.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+</script>
+
+A visualization of how the intervals $U_i=[a_i,b_i]$ are defined. If $f(i)$ lands inside $U_i$, then the next interval $U_{i+1}$ shrinks to exclude it. Try to predict what will happen in the next step and click "Advance" to check if you were right.
+:::
+
+Note that in each of the three cases $f(i)\notin [a_{i+1},b_{i+1}]$. Letting $U_i=[a_i,b_i]$ for $i\geq1$, this means that $f(i)\notin U_{i+1}$, and therefore no value $f(n)$ is in *all* of the closed intervals. That is, for all $n\in\N$,
+$$f(n)\notin\bigcap_{i=1}^\infty U_i$$
+
+However, by our assumption, every real number is equal to $f(n)$ for some $n\in\N$, so no real numbers are in the intersection, contradicting the Nested Interval Theorem.
+:::
+
+We mention here that the proof above actually shows that $[0,1]$ is uncountable, and can be adapted to prove the following.
+
+:::{.theorem #thm-intervals-uncountable}
+Any interval $[a,b]\subseteq\R$ with $a<b$ is uncountable.
+:::
+
+## Review Questions {.unnumbered}
+
+1. Give the definitions of lower bound, bounded below, infimum, and least element.
+2. What does the Nested Interval Theorem say? Give an example that shows how it distinguishes $\R$ from $\Q$.
+3. What does it mean when we say $\R$ is uncountable?
+4. How did we know we would need to use the Least Upper Bound Axiom or one of its consequences when proving $\R$ is uncountable?

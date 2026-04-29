@@ -1,0 +1,219 @@
+{
+    "hash": "nucjetwdho",
+    "title": "Intersection of Open Sets Proof",
+    "created": "2026-03-24T17:52:00.770Z",
+    "versionCreatedAt": "2026-03-24T17:52:00.770Z",
+    "stateUrl": "https://www.desmos.com/calc-states/production/version/nucjetwdho/28c41a20-27aa-11f1-97c3-31fb61c91f16",
+    "thumbUrl": "https://www.desmos.com/calc_thumbs/production/version/nucjetwdho/28c41a20-27aa-11f1-97c3-31fb61c91f16.png",
+    "currentVersion": "28c41a20-27aa-11f1-97c3-31fb61c91f16",
+    "type": "my-graph",
+    "access": "link",
+    "product": "graphing",
+    "state": {
+        "version": 11,
+        "randomSeed": "2f48b4cf53fe8d4ad66c67288b411456",
+        "graph": {
+            "viewport": {
+                "xmin": -2.2353495704203104,
+                "ymin": -1.2607709550705617,
+                "xmax": 2.7244531794561473,
+                "ymax": 2.5670320857186715
+            },
+            "showGrid": false,
+            "showXAxis": false,
+            "showYAxis": false,
+            "xAxisStep": 1,
+            "yAxisStep": 1,
+            "__v12ViewportLatexStash": {
+                "xmin": "-2.2353495704203104",
+                "xmax": "2.7244531794561473",
+                "ymin": "-1.2607709550705617",
+                "ymax": "2.5670320857186715"
+            }
+        },
+        "expressions": {
+            "list": [
+                {
+                    "type": "expression",
+                    "id": "1",
+                    "color": "#c74440",
+                    "latex": "x^{2}+3y^{2}<3",
+                    "fillOpacity": "0.2"
+                },
+                {
+                    "type": "expression",
+                    "id": "2",
+                    "color": "#2d70b3",
+                    "latex": "4\\left(x-1\\right)^{2}+\\left(y-1\\right)^{2}<2",
+                    "fillOpacity": "0.2"
+                },
+                {
+                    "type": "expression",
+                    "id": "3",
+                    "color": "#000000",
+                    "latex": "a=1",
+                    "showLabel": true,
+                    "label": "`x`",
+                    "labelOrientation": "below_right"
+                },
+                {
+                    "type": "expression",
+                    "id": "6",
+                    "color": "#c74440",
+                    "latex": "b=0.6"
+                },
+                {
+                    "type": "expression",
+                    "id": "4",
+                    "color": "#2d70b3",
+                    "latex": "\\left(1.9,1\\right)",
+                    "showLabel": true,
+                    "label": "`U_1`",
+                    "hidden": true
+                },
+                {
+                    "type": "expression",
+                    "id": "5",
+                    "color": "#c74440",
+                    "latex": "\\left(1.8,-0.6\\right)",
+                    "showLabel": true,
+                    "label": "`U_2`",
+                    "hidden": true
+                },
+                {
+                    "type": "expression",
+                    "id": "7",
+                    "color": "#000000",
+                    "latex": "\\left(a,b\\right)",
+                    "showLabel": true,
+                    "label": "`x`",
+                    "dragMode": "NONE",
+                    "labelOrientation": "below_right"
+                },
+                {
+                    "type": "folder",
+                    "id": "B1-folder",
+                    "title": "B1",
+                    "hidden": true,
+                    "collapsed": true
+                },
+                {
+                    "type": "expression",
+                    "id": "8",
+                    "folderId": "B1-folder",
+                    "color": "#6042a6",
+                    "latex": "\\left(x-a\\right)^{2}+\\left(y-b\\right)^{2}<r_{1}^{2}"
+                },
+                {
+                    "type": "expression",
+                    "id": "9",
+                    "folderId": "B1-folder",
+                    "color": "#6042a6",
+                    "latex": "r_{1}=0.6",
+                    "hidden": true
+                },
+                {
+                    "type": "expression",
+                    "id": "12",
+                    "folderId": "B1-folder",
+                    "color": "#6042a6",
+                    "latex": "\\left(a,b\\right)+t\\left(\\cos s_{1},\\sin s_{1}\\right)",
+                    "lineStyle": "DOTTED",
+                    "parametricDomain": {
+                        "min": "",
+                        "max": "r_{1}"
+                    },
+                    "lineWidth": "1",
+                    "domain": {
+                        "min": "0",
+                        "max": "r_{1}"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "13",
+                    "folderId": "B1-folder",
+                    "color": "#388c46",
+                    "latex": "s_{1}=1",
+                    "hidden": true
+                },
+                {
+                    "type": "expression",
+                    "id": "15",
+                    "folderId": "B1-folder",
+                    "color": "#6042a6",
+                    "latex": "\\left(a,b\\right)+\\frac{r_{1}\\left(\\cos s_{1},\\sin s_{1}\\right)}{2}",
+                    "showLabel": true,
+                    "label": "`r_1`",
+                    "hidden": true,
+                    "labelOrientation": "above_left"
+                },
+                {
+                    "type": "folder",
+                    "id": "B2-folder",
+                    "title": "B2",
+                    "hidden": true,
+                    "collapsed": true
+                },
+                {
+                    "type": "expression",
+                    "id": "18",
+                    "folderId": "B2-folder",
+                    "color": "#fa7e19",
+                    "latex": "\\left(x-a\\right)^{2}+\\left(y-b\\right)^{2}<r_{2}^{2}"
+                },
+                {
+                    "type": "expression",
+                    "id": "19",
+                    "folderId": "B2-folder",
+                    "color": "#6042a6",
+                    "latex": "r_{2}=0.15",
+                    "hidden": true
+                },
+                {
+                    "type": "expression",
+                    "id": "20",
+                    "folderId": "B2-folder",
+                    "color": "#fa7e19",
+                    "latex": "\\left(a,b\\right)+t\\left(\\cos s_{2},\\sin s_{2}\\right)",
+                    "lineStyle": "DOTTED",
+                    "parametricDomain": {
+                        "min": "",
+                        "max": "r_{2}"
+                    },
+                    "lineWidth": "1",
+                    "domain": {
+                        "min": "0",
+                        "max": "r_{2}"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "21",
+                    "folderId": "B2-folder",
+                    "color": "#388c46",
+                    "latex": "s_{2}=4",
+                    "hidden": true
+                },
+                {
+                    "type": "expression",
+                    "id": "22",
+                    "folderId": "B2-folder",
+                    "color": "#fa7e19",
+                    "latex": "\\left(a,b\\right)+\\frac{r_{2}\\left(\\cos s_{2},\\sin s_{2}\\right)}{2}",
+                    "showLabel": true,
+                    "label": "`r_2`",
+                    "hidden": true,
+                    "labelOrientation": "above_left"
+                },
+                {
+                    "type": "expression",
+                    "id": "16",
+                    "color": "#000000"
+                }
+            ]
+        },
+        "includeFunctionParametersInRandomSeed": true,
+        "doNotMigrateMovablePointStyle": true
+    }
+}

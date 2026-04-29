@@ -1,0 +1,7 @@
+# The Cauchy-Schwartz Inequality {#sec-cauchy-schwartz}
+
+Hello
+
+:::{.theorem #thm-cauchy-schwartz}
+CS
+:::

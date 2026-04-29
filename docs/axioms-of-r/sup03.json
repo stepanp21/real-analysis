@@ -1,0 +1,126 @@
+{
+    "hash": "iadi8m2mjg",
+    "parent_hash": "yddudu87rz",
+    "title": "Supremum of [0,3)",
+    "created": "2026-03-14T18:17:35.919Z",
+    "versionCreatedAt": "2026-03-14T18:21:06.301Z",
+    "stateUrl": "https://www.desmos.com/calc-states/production/version/iadi8m2mjg/910f7aa0-1fd2-11f1-8063-5335a13275d7",
+    "thumbUrl": "https://www.desmos.com/calc_thumbs/production/version/iadi8m2mjg/910f7aa0-1fd2-11f1-8063-5335a13275d7.png",
+    "currentVersion": "910f7aa0-1fd2-11f1-8063-5335a13275d7",
+    "type": "my-graph",
+    "access": "link",
+    "product": "graphing",
+    "state": {
+        "version": 11,
+        "randomSeed": "701e4d2c610f396130a7f65ad111d1c8",
+        "graph": {
+            "viewport": {
+                "xmin": -1.4316949365799663,
+                "ymin": -2.0259337151770813,
+                "xmax": 5.704028958345891,
+                "ymax": 2.9988622616960923
+            },
+            "showGrid": false,
+            "showYAxis": false,
+            "xAxisStep": 1,
+            "__v12ViewportLatexStash": {
+                "xmin": "-1.4316949365799663",
+                "xmax": "5.704028958345891",
+                "ymin": "-2.0259337151770813",
+                "ymax": "2.9988622616960923"
+            },
+            "xAxisArrowMode":"NONE",
+            "yAxisArrowMode":"NONE"
+        },
+        "expressions": {
+            "list": [
+                {
+                    "type": "expression",
+                    "id": "1",
+                    "color": "#c74440",
+                    "latex": "\\left(u,0\\right)",
+                    "showLabel": true,
+                    "label": "`u=`${u}"
+                },
+                {
+                    "type": "expression",
+                    "id": "3",
+                    "color": "#388c46",
+                    "latex": "u=3.45",
+                    "hidden": true,
+                    "slider": {
+                        "hardMin": true,
+                        "hardMax": true,
+                        "min": "-3",
+                        "max": "8"
+                    }
+                },
+                {
+                    "type": "folder",
+                    "id": "5",
+                    "title": "Decorations"
+                },
+                {
+                    "type": "expression",
+                    "id": "6",
+                    "folderId": "5",
+                    "color": "#000000",
+                    "latex": "c=0",
+                    "slider": {
+                        "hardMin": true,
+                        "hardMax": true,
+                        "min": "0",
+                        "max": "1"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "7",
+                    "folderId": "5",
+                    "color": "#388c46",
+                    "latex": "y=c\\left\\{0\\le x\\le3\\right\\}",
+                    "lineWidth": "5"
+                },
+                {
+                    "type": "expression",
+                    "id": "13",
+                    "folderId": "5",
+                    "color": "#388c46",
+                    "latex": "\\left(1.5,c\\right)",
+                    "showLabel": true,
+                    "label": "S",
+                    "hidden": true,
+                    "labelOrientation": "above"
+                },
+                {
+                    "type": "expression",
+                    "id": "14",
+                    "folderId": "5",
+                    "color": "#388c46",
+                    "latex": "\\left(0,c\\right)",
+                    "dragMode": "NONE",
+                    "pointSize": "12",
+                    "movablePointSize": "12"
+                },
+                {
+                    "type": "expression",
+                    "id": "16",
+                    "folderId": "5",
+                    "color": "#388c46",
+                    "latex": "\\left(3,c\\right)",
+                    "pointStyle": "OPEN",
+                    "dragMode": "NONE",
+                    "pointSize": "12",
+                    "movablePointSize": "12"
+                },
+                {
+                    "type": "expression",
+                    "id": "15",
+                    "color": "#6042a6"
+                }
+            ]
+        },
+        "includeFunctionParametersInRandomSeed": true,
+        "doNotMigrateMovablePointStyle": true
+    }
+}

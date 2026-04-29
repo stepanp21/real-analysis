@@ -1,0 +1,33 @@
+# The Well-Ordering Property {#sec-wop}
+
+One of the basic assumptions we make about the number system $\N$ that underwrites our ability to use mathematical induction is what's known as the Well-Ordered Axiom.
+
+:::{.theorem #thm-ax-wop-n}
+
+#### The Well-Ordering Axiom of $\N$
+
+Let $S$ be any nonempty subset of $\N$. Then $S$ has a least element.
+:::
+
+We treat this as an axiom, which means we assume it without proof. While not true as written for $\Z$, we can adapt it to integers with an additional assumption.
+
+:::{.theorem #thm-wop-z}
+
+#### The Well-Ordering Property of $\Z$
+
+Let $S$ be any nonempty subset of $\Z$ that is bounded below by an element of $\Z$. Then $S$ has a least element.
+:::
+
+:::{.proof}
+Suppose $n\in\Z$ is a lower bound on $S$. Then define
+$$T=\{1-n+s\st s\in S\}$$
+
+Then if $t\in T$, $t=1-n+s$ for some $s\in S$,
+$$t=1-n+s\geq 1-n+n=1.$$
+
+Thus all elements of $T$ are positive integers, so $T\subseteq\N$. So by @thm-ax-wop-n, $T$ has a least element $m$; that is $m\in T$ and $m\leq t$ for all $t\in T$. Thus $m=1-n+k$ for some $k\in S$, so $m+n-1=k\in S$. And if $s\in S$, then $1-n+s\in T$, so $1-n+s\leq m$ and therefore $s\leq m+n-1=k$. Thus $k$ is the least element of $S$.
+:::
+
+:::{.exercise #exr-wop-for-other-number-systems}
+Would @thm-wop-z be true if we replaced $\Z$ with $\Q$? or $\R$? Give a proof or counterexample for each.
+:::

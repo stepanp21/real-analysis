@@ -1,0 +1,216 @@
+# $\mathbb{R}$ as a Metric Space
+
+## Highlights {.unnumbered}
+
+- See how distance interacts with previously established properties of $\R$ (arithmetic, inequalities, and least upper bounds).
+- Equivalent conditions to being a least upper bound.
+- Use distance to investigate the relationships among the integers, rationals, irrationals, and reals.
+
+## Preparation
+
+In this section, we will focus on thinking about the real number system as a metric space. We start with what will end up being one of the most-cited theorems in the course.
+
+:::{.theorem #thm-open-ball-in-r}
+Let $r>0$ and $a\in\R$. Then $|a-x|<r$ if and only if $x\in(a-r,a+r)$.
+:::
+
+:::{.exercise #exr-open-ball-in-r}
+1. Draw a picture of what this @thm-open-ball-in-r is saying on the number line.
+2. Prove @thm-open-ball-in-r.
+2. Rewrite $|a-x|<r$ as a statement about distance in $\R$.
+4. Rewrite $x\in(a-r,a+r)$ as an inequality.
+:::
+
+@thm-open-ball-in-r is foundational because it connects a statement about analysis (distances and closeness) to a statement about geometry (subsets of $\R$). In general, mathematicians love "if and only if" statements because they often let you translate a statement in one context to a statement in another, where you may have a whole new set of tools you can apply. Together with Parts 3 and 4 from @exr-open-ball-in-r, you now have four toolbags you can use to analyze the statement: absolute values, intervals, distances, and inequalities.
+
+Indeed, the connections furnished by @thm-open-ball-in-r can be used to help us prove other theorems relating the concepts we've encountered so far.
+
+:::{.theorem .tfae #thm-lub-tfae}
+Suppose $b$ is an upper bound on a nonempty subset $S\subseteq\R$. Then the following are equivalent.
+
+1. $b=\sup S$
+2. For all $\epsilon>0$ there exists $x\in S$ such that $x\in(b-\epsilon,b]$.
+3. For all $\epsilon>0$ there exists $x\in S$ such that $|b-x|<\epsilon$.
+:::
+
+:::{#des-sup-tfae .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-sup-tfae" class="calculator-container" style="width: 100%; height: 300px;"></div>
+
+
+  
+
+<div class="slider-container">
+  <label for="e-slider" class="left-label">$\varepsilon$</label>
+  <div class="centered-slider">
+  <input id="e-slider" class="desmos-slider" type="range" min="0" max="0.5" step="0.01" value="0.2" list="values">
+  <datalist id="values">
+    <option value="0" label="0"></option>
+    <option value="0.5" label="0.5"></option>
+  </datalist>
+  </div>
+</div>
+
+
+<script>
+  var eSlider = document.getElementById('e-slider');
+  var e = parseFloat(eSlider.value);
+  
+  var elt = document.getElementById('calculator-sup-tfae');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('sup-tfae.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  eSlider.addEventListener('input', function() {
+    e = parseFloat(this.value);
+    calculator.setExpression({id:'epsilon-slider', latex:`\\varepsilon=${e}`});
+  });
+</script>
+
+A demonstration of @thm-lub-tfae. In blue is the set $S=\left\{\frac{0}{1},\frac{1}{2},\frac{2}{3},\ldots\right\}$. When $b=1$, note that for whatever $\epsilon>0$ is chosen, there is at least one element of $S$ in both the green and orange intervals. When $b>1$, you could choose a small $\epsilon>0$ and have *no* points of $S$ in the orange and green intervals.
+:::
+
+:::{.proof}
+(Inclue link to my video proof?)
+:::
+
+:::{.callout-note}
+When we encounter a new concept, we will often have a TFAE ("the following are equivalent") theorem that follows giving us alternative ways of understanding the new concept. Since these theorems are so useful, I will color-code them with a [lightseagreen]{.tfae-hl} vertical bar.
+:::
+
+:::{.exercise #exr-reproof-of-sup-basic}
+Carefully prove that $5$ is the supremum of $[0,5)$ using Part 2 or 3 of @thm-lub-tfae.
+:::
+
+:::{.exercise #exr-inf-tfae .tfae}
+Write down a "the following are equivalent" theorem about infima analogous to @thm-lub-tfae and prove it.
+:::
+
+## The $\max$ and $\min$ of a Finite Set
+
+In @thm-absolute-value-props, I used the notation $\max\{a,-a\}$ to mean whichever of these two numbers is greater. Here we will make that notation precise with some words of caution about when you can use it.
+
+:::{.theorem #thm-max-of-finite-set}
+Suppose $F\subseteq\R$ is a nonempty finite set. Prove that $\sup F$ exists and $\sup F\in F$ (i.e. that $F$ has a greatest element). In this case we write $\max F$ for the greatest element of $F$.
+:::
+
+For example, $\max\{3,7,5\}=7$.
+
+:::{.proof}
+Let $n$ be the number of elements of $F$. We will prove that $F$ has a greatest element by induction on $n$.
+
+As a base case, suppose $n=1$. Then $F=\{x_1\}$. In this case $x_1\geq x_1$, so $x_1$ is an upper bound on $F$. And any upper bound $b$ on $F$ must have $b\geq x_1$, so $x_1$ is the least upper bound. And of course $x_1\in F$.
+
+Now suppose that $k\in\N$ and any set with $k$ elements has a greatest element. Now suppose $F=\{x_1,\ldots,x_k,x_{k+1}\}$ has $k+1$ elements. Define $E=\{x_1,\ldots,x_k\}$ so that $E$ has $k$ elements and therefore a greatest element $g$. If $x_{k+1}\geq g$, then let $b=x_{k+1}$, and otherwise, let $b=g$. Either way, $b\geq x_{k+1}$ and $b\geq g\geq x_i$ for all $i=1,\ldots,n$ (so $b$ is an upper bound), and either way $b\in F$. And if $u$ is any upper bound on $F$, then $u\geq b$ and $u\geq x_{k+1}$, so $u\geq b$. Thus, $b$ is the *least* upper bound of $F$, and since $b\in F$, $b$ is the greatest element.
+:::
+
+:::{.callout-caution}
+We *cannot* write $\max S$ when $S$ is not known to be a nonempty finite set. Indeed, we have seen examples where $S$ has no greatest element.
+:::
+
+:::{.exercise #exr-min}
+Prove that if $F$ is a finite nonempty subset of $\R$, then $F$ has a least element, which we call the $\min$.
+
+Hint: You can try replicating the proof of @thm-max-of-finite-set, but it may be easier to *apply* that theorem to $F$ somehow instead!
+:::
+
+
+## Integers, Rationals, and Irrationals in $\R$
+
+By now we may have an intuitive sense that even though the rationals have "holes" where we would expect suprema to be, they are still "everywhere" along the number line. This somewhat bizarre discrepancy is made precise by the next few exercises.
+
+:::{.exercise #exr-floors}
+Let $a\in\R$. Prove that there exists a unique $n\in\Z$ such that $n\leq a<n+1$.
+
+Note that you will need the Well-Ordered Property of $\Z$ in order to prove this (see @sec-wop).
+:::
+
+@exr-floors now allows us to use the "floor function"; for any $x\in \R$ we can define $\lfloor x\rfloor$ to be the greatest integer that is less than or equal to $x$; similarly, $\lceil x\rceil$, the "ceiling", is the least integer that is greater than or equal to $x$. In practice, students tend to overuse the floor function in real analysis proofs---most of the time you just need *an* integer that is greater $x$, which is furnished by the Archimedian Property (@thm-arch-prop).
+
+:::{.exercise #exr-rational-floor}
+Let $b\in\R$ and $q\in\N$. Prove that there exists a unique $p\in\Z$ such that
+$$\frac{p}{q}\leq b< \frac{p+1}{q}$$
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+Don't start from scratch. How can you *apply* the previous exercise to help you prove the result of this one? Here we need to prove something about *all $b\in\R$* and *all q\in\N*, so we must start with something like "Suppose $b\in\R$ and $q\in\N$". To what value of $a$ should we apply the result of @exr-floors?
+:::
+
+:::{.exercise #exr-rational-in-neighborhood}
+Let $b\in\R$ and $\epsilon>0$. Prove that there exists $r\in\Q$ such that $d(b,r)<\epsilon$.
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+Once again, don't start from scratch. First note that the inequality you are trying to prove appears in @thm-open-ball-in-r although the variable names have changed. How can you apply @exr-rational-floor to get what you want?
+
+If you get stuck, draw this a picture on the number line.
+
+If you are still stuck, use the following concrete example to help you wrap your head around the problem. If $b=\pi$ and $\epsilon=0.1$, how would you choose the rational number $r$? Can you frame your technique in terms of the notation @exr-rational-floor? Given $\epsilon$, to what value of $q$ would you apply the result?
+:::
+
+:::{.exercise #exr-rational-between-any-two-reals}
+Let $c,d\in\R$. Prove that there exists a rational number $x$ with $c<x<d$.
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+Once again, don't start from scratch. In both this exercise and @exr-rational-in-neighborhood, you need to show that a rational number exists in a particular interval but the intervals are described differently. Given $c,d$, can you figure out what $b,\epsilon$ to use so you can apply @exr-rational-in-neighborhood?
+:::
+
+:::{.exercise #exr-irrational-between-any-two-reals}
+Let $c,d\in\R$. Prove that there exists an irrational number $x$ with $c<x<d$.
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+Think about using @thm-intervals-uncountable and a cardinality argument here!
+:::
+
+## Review Questions {.unnumbered}
+
+1. A good study strategy for this course is to keep a catalog of all the major concepts in the course, and then quiz yourself by picking two at random and asking yourself to think of how they are connected.^[I heard one study skills expert suggest writing the concepts on index cards, shuffling, and drawing the cards two at a time.] Give this a try for the major concepts we've encountered so far
+
+```{dot}
+graph G {
+    layout=circo
+    arithmetic -- inequalities;
+    arithmetic -- "least upper bounds";
+    arithmetic -- distance;
+    inequalities -- "least upper bounds";
+    inequalities -- distance;
+    "least upper bounds" -- distance;
+}
+```
+
+2. What do we mean when we write $\max S$? When are we "allowed" to use this notation?
+3. In what sense are the rationals "all over" the real number line?
