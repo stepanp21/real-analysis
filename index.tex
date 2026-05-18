@@ -208,18 +208,18 @@
 \floatname{codelisting}{Listing}
 \newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
 \usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
 \theoremstyle{definition}
-\newtheorem{example}{Example}[chapter]
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{plain}
+\newtheorem{corollary}{Corollary}[chapter]
 \theoremstyle{plain}
 \newtheorem{lemma}{Lemma}[chapter]
 \theoremstyle{definition}
-\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{example}{Example}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[chapter]
-\theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[chapter]
-\theoremstyle{plain}
-\newtheorem{corollary}{Corollary}[chapter]
 \theoremstyle{remark}
 \AtBeginDocument{\renewcommand*{\proofname}{Proof}}
 \newtheorem*{remark}{Remark}
@@ -366,7 +366,7 @@ If our axioms for \(\R\) do not distinguish it from \(\Q\), we will have
 no hope of proving such a propositon. In short, I want a set of axioms
 that is true for \(\R\) \emph{but for no other number system}.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, toprule=.15mm]
 
 I am using the term \emph{number system} a bit loosely. For our
 purposes, though, it's fine to think of any set with binary operations
@@ -537,7 +537,7 @@ Prove Theorem~\ref{thm-zero-times-x}.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 Note that Theorem~\ref{thm-zero-times-x} involves both multiplication
 and, implicitly, addition (since it involves the \emph{additive}
@@ -566,7 +566,7 @@ It turns out that \(\mathbb{F}_2\) is a field. Which element of
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 Asking which element is \(0\) means asking which element is the additive
 identity---the thing that can be added to any element and get that same
@@ -688,7 +688,7 @@ Prove that the following fields are \emph{not} ordered.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 This is a good opportunity to use a proof by contradiction. What
 contradiction can you create by assuming there \emph{is} an ordering on
@@ -889,7 +889,7 @@ bound in \(\R.\)
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, coltitle=black, toprule=.15mm]
 
 Note that using Theorem~\ref{thm-ax-lub} to conclude that a subset
 \(S\subseteq\R\) has a supremum requires \(S\) to satisfy two
@@ -913,7 +913,7 @@ that rely on the Least Upper Bound Axiom will be highlighted with a
 As a first step to understanding least upper bounds, we should justify
 the use of the word ``the'' in Definition~\ref{def-lub}.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, coltitle=black, toprule=.15mm]
 
 Generally, when define a new quantity implicitly (i.e.~without giving an
 \emph{ex}plicit formula), we should ask ourselves whether a
@@ -1010,7 +1010,7 @@ Prove Corollary~\ref{cor-arch-prop}.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 Remember that when we call a theorem a ``Corollary'', it means that you
 should use the preceeding theorem to prove it, and the proof will
@@ -1026,7 +1026,7 @@ proof by contradiction.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 The same trick of taking an average like in Example~\ref{exm-sup-basic}
 won't necessarily work since that average might not be in \(S.\)
@@ -1323,7 +1323,7 @@ essential way.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 To prove a set is nonempty, you should exhibit an element that lives in
 the set, \emph{and then prove that element lives in the set}.
@@ -1657,7 +1657,7 @@ Let \(X\) be a metric space with distance function \(d\) and let
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, coltitle=black, toprule=.15mm]
 
 In this section, you should cite Positivity, Positive-Definiteness, and
 the Triangle Inequalities whenever you use them (don't bother with
@@ -1835,7 +1835,7 @@ Then the following are equivalent.
 (Inclue link to my video proof?)
 \end{proof}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, toprule=.15mm]
 
 When we encounter a new concept, we will often have a TFAE (``the
 following are equivalent'') theorem that follows giving us alternative
@@ -1898,7 +1898,7 @@ upper bound of \(F\), and since \(b\in F\), \(b\) is the greatest
 element.
 \end{proof}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-caution-color-frame, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-caution-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, coltitle=black, toprule=.15mm]
 
 We \emph{cannot} write \(\max S\) when \(S\) is not known to be a
 nonempty finite set. Indeed, we have seen examples where \(S\) has no
@@ -1951,7 +1951,7 @@ Let \(b\in\R\) and \(q\in\N\). Prove that there exists a unique
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 Don't start from scratch. How can you \emph{apply} the previous exercise
 to help you prove the result of this one? Here we need to prove
@@ -1968,7 +1968,7 @@ such that \(d(b,r)<\epsilon\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 Once again, don't start from scratch. First note that the inequality you
 are trying to prove appears in Theorem~\ref{thm-open-ball-in-r} although
@@ -1992,7 +1992,7 @@ Let \(c,d\in\R\). Prove that there exists a rational number \(x\) with
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 Once again, don't start from scratch. In both this exercise and
 Exercise~\ref{exr-rational-in-neighborhood}, you need to show that a
@@ -2010,7 +2010,7 @@ with \(c<x<d\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 Think about using Theorem~\ref{thm-intervals-uncountable} and a
 cardinality argument here!
@@ -2248,7 +2248,7 @@ Prove that open balls are open.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-caution-color-frame, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-caution-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, coltitle=black, toprule=.15mm]
 
 We are \emph{not} going to call non-open sets ``closed''. The term
 ``closed'' will have a different definition that we'll get to later.
@@ -2445,7 +2445,7 @@ In this case, we say \(S\) is \textbf{bounded}.
 You will prove Theorem~\ref{thm-bounded} in
 Exercise~\ref{exr-bounded-tfae-proof} below.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, toprule=.15mm]
 
 Theorem~\ref{thm-bounded} is both a theorem and a definition. Once we
 prove the conditions are equivalent, we can refer to any one of them as
@@ -2493,7 +2493,7 @@ Prove Theorem~\ref{thm-bounded}.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2612,14 +2612,14 @@ In this context, instead of using standard function notation
 \textbf{term} of the sequence and to the input/subscript \(n\) as its
 \textbf{index} or \textbf{position} in the sequence.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-caution-color-frame, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-caution-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, coltitle=black, toprule=.15mm]
 
 Under this definition, by ``sequence'' we always mean ``infinite
 sequence'' since the domain is \(\N\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, toprule=.15mm]
 
 For now, as we get comfortable with the idea of a sequence, we will
 insist that our sequences start at \(s_1\). Later on, especially when
@@ -2813,7 +2813,7 @@ the indices (in \(\N\)) and the vertical axis for the terms (in \(\R\)).
 
 \end{figure}%
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 A collapsed hint.
 
@@ -2868,7 +2868,7 @@ A collapsed hint.
 
 What will be covered in class plus exercises
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 A collapsed hint.
 
@@ -3051,7 +3051,7 @@ are the partial sums in each of these cases?)
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, toprule=.15mm]
 
 In the section on sequences, we insisted that the first term in our
 sequence corresponded to an index of 1. For series, it is often
@@ -3108,7 +3108,7 @@ If a series converges, then its terms converge to \(0\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint for part 4 of Exercise~\ref{exr-divergence-test-proof}}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint for part 4 of Exercise~\ref{exr-divergence-test-proof}}, coltitle=black, toprule=.15mm]
 
 Note that \(a_{n+1}=s_{n+1}-s_n\).
 
@@ -3135,7 +3135,7 @@ Suppose \(\sum a_n=S\) and \(\sum b_n=T\) are convergent series and that
 Part of what parts 1 and 2 in Theorem~\ref{thm-series-order-arithmetic}
 is claiming is that these two series do in fact converge.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, toprule=.15mm]
 
 When an equation or proposition does not depend on the starting index of
 a series, we sometimes just write \(\sum a_n\) as shorthand for
@@ -3781,7 +3781,7 @@ Often we need to negate logical statements. For example, a problem may
 ask you prove that a sequence does \emph{not} converge to \(a\), or you
 may need to set up the contrapositive of an if-then statement.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``For all'' statements}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``For all'' statements}, coltitle=black, toprule=.15mm]
 
 \[\neg\big[(\forall x\in A)P(x)\big]~\Longleftrightarrow~(\exists x\in A)\big[\neg P(x)\big]\]
 
@@ -3794,7 +3794,7 @@ may need to set up the contrapositive of an if-then statement.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``There exists\ldots{} such that'' statements}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``There exists\ldots{} such that'' statements}, coltitle=black, toprule=.15mm]
 
 \[\neg\big[(\exists x\in A)P(x)\big]~\Longleftrightarrow~(\forall x\in A)\big[\neg P(x)\big]\]
 
@@ -3807,7 +3807,7 @@ may need to set up the contrapositive of an if-then statement.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Conditionals}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Conditionals}, coltitle=black, toprule=.15mm]
 
 \[\neg\big( P \Rightarrow Q \big)~\Longleftrightarrow~ P \wedge (\neg Q)\]
 
@@ -3824,7 +3824,7 @@ even.''
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``And'' statements}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``And'' statements}, coltitle=black, toprule=.15mm]
 
 \[\neg\big(P\wedge Q\big)~\Longleftrightarrow~ (\neg P)\vee(\neg Q)\]
 
@@ -3841,7 +3841,7 @@ divide 15 or 2 does not divide \(n\).''
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``Or'' statements}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``Or'' statements}, coltitle=black, toprule=.15mm]
 
 \[\neg\big(P\vee Q\big)~\Longleftrightarrow~ (\neg P)\wedge(\neg Q)\]
 
@@ -3863,7 +3863,7 @@ not even and \(n\) is not odd.''
 Below are what I call ``proof skeleta''---basic structures you can use
 when implementing standard proof techniques.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Conditional Statements (Direct)}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Conditional Statements (Direct)}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} For propositions \(P,Q\), proving \(P\Rightarrow Q\).
 
@@ -3873,7 +3873,7 @@ Therefore \(Q\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Conditional Statements (Contrapositive)}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Conditional Statements (Contrapositive)}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} For propositions \(P,Q\), proving \(P\Rightarrow Q\).
 
@@ -3883,7 +3883,7 @@ Therefore \(Q\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Biconditionals}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Biconditionals}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} For propositions \(P,Q\), proving \(P\Leftrightarrow Q\).
 
@@ -3902,7 +3902,7 @@ Therefore \(P\) if and only if \(Q\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``The following are equivalent''}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``The following are equivalent''}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} Proving propositions \(P\), \(Q\), and \(R\) are
 logically equivalent.
@@ -3931,7 +3931,7 @@ Therefore \(P\), \(Q\), and \(R\) are logically equivalent.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Subsets}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Subsets}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} For sets \(A,B\), proving \(A\subseteq B\).
 
@@ -3941,7 +3941,7 @@ Therefore \(P\), \(Q\), and \(R\) are logically equivalent.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Set Equality}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Set Equality}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} For sets \(A,B\), proving \(A=B\).
 
@@ -3960,7 +3960,7 @@ Therefore \(A=B\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``For all'' statements}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``For all'' statements}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} Proving \((\forall x\in A)P(x)\).
 
@@ -3970,7 +3970,7 @@ Therefore \(A=B\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``There exists\ldots{} such that'' statements}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{``There exists\ldots{} such that'' statements}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} Proving \((\exists x\in A)P(x)\).
 
@@ -3988,7 +3988,7 @@ Therefore there exists \(x\in A\) such that \(P(x)\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Uniqueness}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Uniqueness}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} Proving \((\exists !x\in A)P(x)\).
 
@@ -4008,7 +4008,7 @@ Therefore there exists a unique \(x\in A\) such that \(P(x)\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof by Contradiction}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof by Contradiction}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} Proving a proposition \(P\).
 
@@ -4027,7 +4027,7 @@ results to arrive at a contradiction.{]}} Therefore \(P\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof by Induction}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Proof by Induction}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} Proving \((\forall n\in\mathbb N)P(n)\).
 
@@ -4048,7 +4048,7 @@ Therefore \(P(n)\) is true for all \(n\in\mathbb{N}\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Function Equality}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Function Equality}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} For two functions \(f,g:A\rightarrow B\), prove \(f=g\).
 
@@ -4059,7 +4059,7 @@ Therefore \(P(n)\) is true for all \(n\in\mathbb{N}\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Injectivity}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Injectivity}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} Prove that \(f:A\rightarrow B\) is injective.
 
@@ -4070,7 +4070,7 @@ whenever \(f(x_1)=f(x_2)\), so \(f\) is injective.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Surjectivity}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Surjectivity}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} Prove that \(f:A\rightarrow B\) is surjective.
 
@@ -4081,7 +4081,7 @@ there exists \(x\in A\) such that \(f(x)=y\), so \(f\) is surjective.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Bijectivity}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Bijectivity}, coltitle=black, toprule=.15mm]
 
 \textbf{Goal:} Prove that \(f:A\rightarrow B\) is bijective.
 
@@ -4284,7 +4284,7 @@ Prove that second equation from DeMorgan's Laws is true.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, bottomrule=.15mm, bottomtitle=1mm, breakable, leftrule=.75mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, colback=white, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, titlerule=0mm, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, left=2mm, arc=.35mm, colback=white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, breakable, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Hint}, coltitle=black, toprule=.15mm]
 
 There are at least two ways to do this. First is to give an argument
 similar to the proof of the first equation. The other is to \emph{apply}

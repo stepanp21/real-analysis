@@ -156,7 +156,7 @@ $$\frac{p}{q}\leq b< \frac{p+1}{q}$$
 
 #### Hint
 
-Don't start from scratch. How can you *apply* the previous exercise to help you prove the result of this one? Here we need to prove something about *all $b\in\R$* and *all q\in\N*, so we must start with something like "Suppose $b\in\R$ and $q\in\N$". To what value of $a$ should we apply the result of @exr-floors?
+Don't start from scratch. How can you *apply* the previous exercise to help you prove the result of this one? Here we need to prove something about *all $b\in\R$* and *all $q\in\N$*, so we must start with something like "Suppose $b\in\R$ and $q\in\N$". To what value of $a$ should we apply the result of @exr-floors?
 :::
 
 :::{.exercise #exr-rational-in-neighborhood}

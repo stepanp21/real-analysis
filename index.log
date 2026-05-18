@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.10.14)  29 APR 2026 11:07
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.10.14)  29 APR 2026 11:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -928,12 +928,12 @@ Package: amsthm 2020/05/29 v2.20.6
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 )
 Class scrreprt Info: amsthm's \deferred@thm@head patched.
-\c@example=\count369
-\c@lemma=\count370
-\c@exercise=\count371
-\c@definition=\count372
-\c@theorem=\count373
-\c@corollary=\count374
+\c@theorem=\count369
+\c@exercise=\count370
+\c@corollary=\count371
+\c@lemma=\count372
+\c@example=\count373
+\c@definition=\count374
 \c@refremark=\count375
 \c@refsolution=\count376
 (/Users/sspaul2/Library/TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty
