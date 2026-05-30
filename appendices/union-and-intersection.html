@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix B — Collections of Sets – Real Analysis</title>
+<title>Appendix B — Collections of Sets – An Illustrated Course in Real Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../appendices/cardinality.html" rel="next">
+<link href="../appendices/cauchy-schwartz.html" rel="next">
 <link href="../appendices/proof-writing.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -77,6 +77,17 @@ ul.task-list li input[type="checkbox"] {
 \newcommand{\st}{~:~}
 \newcommand{\cee}{\mathsf{C}}
 \newcommand{\bee}{\mathrm{B}}
+\def\mathhlyellow#1{\bbox[##fff3bf,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlgold#1{\bbox[##ffe8a3,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlorange#1{\bbox[##ffddb3,2px,border:1px solid ##c05621]{#1}}
+\def\mathhlgreen#1{\bbox[##d9f7d7,2px,border:1px solid ##3f8f46]{#1}}
+\def\mathhlmint#1{\bbox[##d4f5e9,2px,border:1px solid ##2c7a7b]{#1}}
+\def\mathhlblue#1{\bbox[##dceeff,2px,border:1px solid ##2b6cb0]{#1}}
+\def\mathhlpurple#1{\bbox[##eadffd,2px,border:1px solid ##6b46c1]{#1}}
+\def\mathhlpink#1{\bbox[##ffdbe8,2px,border:1px solid ##b83280]{#1}}
+\def\mathhlred#1{\bbox[##ffd6d6,2px,border:1px solid ##c53030]{#1}}
+\def\mathhlgray#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
+\def\mathhlgrey#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
 $$
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -136,7 +147,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Real Analysis</a> 
+      <a href="../">An Illustrated Course in Real Analysis</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -149,7 +160,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -160,7 +171,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../axioms-of-r/intro-to-r.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">The Real Numbers</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -228,53 +239,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Sequences</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/sequence-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/subsequences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Subsequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../constructing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../minmax.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -283,13 +247,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -304,20 +268,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/cardinality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/wop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/desmos-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Links to Desmos Web Apps</span></span></a>
   </div>
 </li>
       </ul>
@@ -362,7 +326,6 @@ window.Quarto = {
 
 <p>In set theory, we often need to think about not just one set, but a whole <em>collection</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of sets.</p>
 <p>Some examples that appear in the text are below.</p>
-<p>(Try to make these feel motivated.)</p>
 <div id="exm-nit-collection" class="grouped-theorem grouped-theorem-example">
 <p><span class="theorem-title"><strong>Example 2.1</strong></span> One distinguishing feature of the real numbers is, intuitively, if you keep zooming in on the number line, you are always zooming in <em>to a number</em>. For example, consider the following collection of intervals:</p>
 <p><span class="math display">\[\begin{aligned}
@@ -374,13 +337,11 @@ window.Quarto = {
   U_6&amp;=&amp;[3.14159,3.14160]\\
   &amp;\vdots&amp;
 \end{aligned}\]</span></p>
-<p>If the universe is <span class="math inline">\(\R\)</span>, there is a number that will be in <span class="math inline">\(U_i\)</span> for all <span class="math inline">\(i\)</span>: <span class="math inline">\(\pi\)</span>. By contrast, in <span class="math inline">\(\Q\)</span>, there is no number inside all of these sets—we’d be zooming in onto something that isn’t there.</p>
+<p>If the universe is <span class="math inline">\(\R\)</span>, there is a number that will be in <span class="math inline">\(U_i\)</span> for all <span class="math inline">\(i\)</span>, the number <span class="math inline">\(\pi\)</span>. By contrast, in <span class="math inline">\(\Q\)</span>, there is no number inside all of these sets—we’d be zooming in onto something that isn’t there.</p>
 </div>
 <div id="exm-open-set-union" class="grouped-theorem grouped-theorem-example">
 <p><span class="theorem-title"><strong>Example 2.2</strong></span> In a metric space, an open set <span class="math inline">\(S\)</span> is a union of <em>a collection of</em> open balls.</p>
-<p>(Desmos image of a union of finitely many open balls)</p>
 <p>Often we think about putting an open ball around every point of <span class="math inline">\(S\)</span>, each with a radius small enough so that the ball is a subset of <span class="math inline">\(S\)</span>.</p>
-<p>(Desmos interactive: points appear at random inside an open square with balls around each; slider to include more and more points.)</p>
 </div>
 <div id="exm-bounded" class="grouped-theorem grouped-theorem-example">
 <p><span class="theorem-title"><strong>Example 2.3</strong></span> To say that a subset of a metric space is <em>unbounded</em> means that it does not fit in any open ball. One technique for proving that a set <span class="math inline">\(V\)</span> is unbounded is to pick any point and consider the collection of balls of radii 1,2,3,… around that point and show that <span class="math inline">\(V\)</span> contains a point in the complement of each ball.</p>
@@ -866,8 +827,8 @@ Hint
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../appendices/cardinality.html" class="pagination-link" aria-label="Cardinality">
-        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../appendices/cauchy-schwartz.html" class="pagination-link" aria-label="The Cauchy-Schwarz Inequality">
+        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

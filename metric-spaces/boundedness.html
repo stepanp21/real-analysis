@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Boundedness – Real Analysis</title>
+<title>9&nbsp; Boundedness – An Illustrated Course in Real Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sequences/sequence-basics.html" rel="next">
+<link href="../references.html" rel="next">
 <link href="../metric-spaces/open-set-props.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -77,6 +77,17 @@ ul.task-list li input[type="checkbox"] {
 \newcommand{\st}{~:~}
 \newcommand{\cee}{\mathsf{C}}
 \newcommand{\bee}{\mathrm{B}}
+\def\mathhlyellow#1{\bbox[##fff3bf,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlgold#1{\bbox[##ffe8a3,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlorange#1{\bbox[##ffddb3,2px,border:1px solid ##c05621]{#1}}
+\def\mathhlgreen#1{\bbox[##d9f7d7,2px,border:1px solid ##3f8f46]{#1}}
+\def\mathhlmint#1{\bbox[##d4f5e9,2px,border:1px solid ##2c7a7b]{#1}}
+\def\mathhlblue#1{\bbox[##dceeff,2px,border:1px solid ##2b6cb0]{#1}}
+\def\mathhlpurple#1{\bbox[##eadffd,2px,border:1px solid ##6b46c1]{#1}}
+\def\mathhlpink#1{\bbox[##ffdbe8,2px,border:1px solid ##b83280]{#1}}
+\def\mathhlred#1{\bbox[##ffd6d6,2px,border:1px solid ##c53030]{#1}}
+\def\mathhlgray#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
+\def\mathhlgrey#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
 $$
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -136,7 +147,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Real Analysis</a> 
+      <a href="../">An Illustrated Course in Real Analysis</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -149,7 +160,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -160,7 +171,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../axioms-of-r/intro-to-r.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">The Real Numbers</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -228,53 +239,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Sequences</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/sequence-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/subsequences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Subsequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../constructing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../minmax.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -283,13 +247,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -304,20 +268,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/cardinality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/wop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/desmos-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Links to Desmos Web Apps</span></span></a>
   </div>
 </li>
       </ul>
@@ -345,7 +309,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../metric-spaces/metric-space-axioms.html">Metric Spaces</a></li><li class="breadcrumb-item"><a href="../metric-spaces/boundedness.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Boundedness</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Boundedness</span></h1>
+<h1 class="title"><span id="sec-bounded" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Boundedness</span></span></h1>
 </div>
 
 
@@ -373,10 +337,10 @@ window.Quarto = {
 <section id="preparation" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">9.1</span> Preparation</h2>
 <div id="thm-bounded" class="tfae grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 9.1</strong></span> Let <span class="math inline">\(X\)</span> be a metric space and let <span class="math inline">\(S\subseteq X\)</span>. Then the following are equivalent.</p>
+<p><span class="theorem-title"><strong>Theorem 9.1</strong></span> Let <span class="math inline">\(X\)</span> be a metric space and let <span class="math inline">\(S\subseteq X.\)</span> Then the following are equivalent.</p>
 <ol type="1">
-<li>For any <span class="math inline">\(a\in X\)</span>, there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math inline">\(S\subseteq B_r(a)\)</span>.</li>
-<li>There exists <span class="math inline">\(a\in X\)</span> and <span class="math inline">\(r&gt;0\)</span> such that <span class="math inline">\(S\subseteq B_r(a).\)</span></li>
+<li>For any <span class="math inline">\(a\in X,\)</span> there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math inline">\(S\subseteq \bee_r(a).\)</span></li>
+<li>There exists <span class="math inline">\(a\in X\)</span> and <span class="math inline">\(r&gt;0\)</span> such that <span class="math inline">\(S\subseteq \bee_r(a).\)</span></li>
 </ol>
 <p>In this case, we say <span class="math inline">\(S\)</span> is <strong>bounded</strong>.</p>
 </div>
@@ -413,7 +377,7 @@ window.Quarto = {
 </script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-des" id="des-bounded-def-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Desmos Applet&nbsp;9.1: An illustration of Part 2 of the boundedness condition. Wherever the point <span class="math inline">\(a\)</span> is moved, there is a large enough <span class="math inline">\(r\)</span> so that the set <span class="math inline">\(S\)</span> lives inside the open ball.
+Desmos Applet&nbsp;9.1: An illustration of Condition 1 of the boundedness condition. Wherever the point <span class="math inline">\(a\)</span> is moved, there is a large enough <span class="math inline">\(r\)</span> so that the set <span class="math inline">\(S\)</span> lives inside the open ball.
 </figcaption>
 </figure>
 <p>You will prove <a href="metric-spaces/boundedness.html#thm-bounded">Theorem 9.1</a> in <a href="metric-spaces/boundedness.html#exr-bounded-tfae-proof">Exercise 9.4</a> below.</p>
@@ -468,21 +432,21 @@ Hint
 </div>
 </div>
 <div id="exr-unbounded-subset-of-r2" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 9.5</strong></span> Let <span class="math inline">\(S=\{(n,n)\in\R^2\st n\in\N\}\)</span>. Draw a picture of <span class="math inline">\(S\)</span> and give a careful proof that <span class="math inline">\(S\)</span> is unbounded.</p>
+<p><span class="theorem-title"><strong>Exercise 9.5</strong></span> Let <span class="math inline">\(S=\{(n,n)\in\R^2\st n\in\N\}.\)</span> Draw a picture of <span class="math inline">\(S\)</span> and give a careful proof that <span class="math inline">\(S\)</span> is unbounded.</p>
 </div>
 <div id="exr-union-of-two-bounded-is-bounded" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 9.6</strong></span> Suppose <span class="math inline">\(S_1\)</span> and <span class="math inline">\(S_2\)</span> are bounded subsets of a metric space <span class="math inline">\(X\)</span>. Prove that <span class="math inline">\(S_1\cup S_2\)</span> is bounded.</p>
+<p><span class="theorem-title"><strong>Exercise 9.6</strong></span> Suppose <span class="math inline">\(S_1\)</span> and <span class="math inline">\(S_2\)</span> are bounded subsets of a metric space <span class="math inline">\(X.\)</span> Prove that <span class="math inline">\(S_1\cup S_2\)</span> is bounded.</p>
 </div>
 </section>
 <section id="boundedness-in-r" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="boundedness-in-r"><span class="header-section-number">9.3</span> Boundedness in <span class="math inline">\(\R\)</span></h2>
 <p>As ever, what we really care about is how this concept applies to <span class="math inline">\(\R\)</span> and how the concepts defined thus far interact. We’ve already defined “bounded above” and “bounded below”. The next theorem will connect these definitions to our new more general defintion of “bounded” for metric spaces.</p>
 <div id="thm-boundedness-in-r" class="tfae grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 9.7</strong></span> Suppose <span class="math inline">\(S\subseteq\R\)</span>.Then the following are equivalent.</p>
+<p><span class="theorem-title"><strong>Theorem 9.7</strong></span> Suppose <span class="math inline">\(S\subseteq\R.\)</span> Then the following are equivalent.</p>
 <ol type="1">
 <li><span class="math inline">\(S\)</span> is bounded.</li>
 <li><span class="math inline">\(S\)</span> has an upper bound and a lower bound.</li>
-<li>There exists <span class="math inline">\(K&gt;0\)</span> such that for all <span class="math inline">\(x\in X\)</span>, <span class="math inline">\(|x|&lt;K\)</span>.</li>
+<li>There exists <span class="math inline">\(K&gt;0\)</span> such that for all <span class="math inline">\(x\in X,\)</span> <span class="math inline">\(|x|&lt;K.\)</span></li>
 </ol>
 </div>
 <div id="exr-boundedness-in-r" class="grouped-theorem grouped-theorem-exercise">
@@ -521,11 +485,11 @@ Hint
 </script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-des" id="des-boundedness-in-r-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Desmos Applet&nbsp;9.2: An illustration of the three equivalent conditions for the boundedness of <span class="math inline">\(S\)</span> in <span class="math inline">\(\R\)</span>: an open ball <span class="math inline">\(B_r(a)\)</span>, the set of <span class="math inline">\(x\)</span> with <span class="math inline">\(|x|&lt;K\)</span>, and an upper and lower bound, <span class="math inline">\(u\)</span> and <span class="math inline">\(l\)</span>, on <span class="math inline">\(S\)</span>. A hint for <a href="metric-spaces/boundedness.html#exr-boundedness-in-r">Exercise 9.8</a> is to think about how to construct the variables for one construction from another.
+Desmos Applet&nbsp;9.2: An illustration of the three equivalent conditions for the boundedness of <span class="math inline">\(S\)</span> in <span class="math inline">\(\R\)</span>: an open ball <span class="math inline">\(\bee_r(a),\)</span> the set of <span class="math inline">\(x\)</span> with <span class="math inline">\(|x|&lt;K,\)</span> and an upper and lower bound, <span class="math inline">\(u\)</span> and <span class="math inline">\(l,\)</span> on <span class="math inline">\(S.\)</span> A hint for <a href="metric-spaces/boundedness.html#exr-boundedness-in-r">Exercise 9.8</a> is to think about how to construct the variables for one construction from another.
 </figcaption>
 </figure>
 <div id="exr-unbounded-subset-of-r" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 9.9</strong></span> Prove that the complement of an unbounded subset of <span class="math inline">\(\R\)</span> is bounded.</p>
+<p><span class="theorem-title"><strong>Exercise 9.9</strong></span> Prove that the complement of a bounded subset of <span class="math inline">\(\R\)</span> is unbounded.</p>
 </div>
 </section>
 <section id="review-questions" class="level2 unnumbered">
@@ -533,7 +497,140 @@ Desmos Applet&nbsp;9.2: An illustration of the three equivalent conditions for t
 <ol type="1">
 <li>What does it mean for a subset of a metric space to be bounded? Unbounded?</li>
 <li>With <a href="metric-spaces/boundedness.html#thm-bounded">Theorem 9.1</a> and <a href="metric-spaces/boundedness.html#thm-boundedness-in-r">Theorem 9.7</a>, we have four equivalent ways of describing boundedness in <span class="math inline">\(\R\)</span>; what are they?</li>
+<li>Building on Review Question 1 from <a href="r-as-a-metric-space.html" class="quarto-xref"><span>Chapter 6</span></a>, think about what theorems or facts relate the major concepts we’ve encountered thus far.</li>
 </ol>
+<div class="cell" data-fig-width="4" data-fig-height="4" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-k6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-k6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<svg width="384" height="384" viewbox="0.00 0.00 512.76 359.68" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(0 359.68)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="0,0 0,-359.68 512.76,-359.68 512.76,0 0,0"></polygon>
+<!-- arithmetic -->
+<g id="node1" class="node">
+<title>arithmetic</title>
+<ellipse fill="none" stroke="black" cx="363.77" cy="-18" rx="50.37" ry="18"></ellipse>
+<text text-anchor="middle" x="363.77" y="-13.8" font-family="Times,serif" font-size="14.00">arithmetic</text>
+</g>
+<!-- inequalities -->
+<g id="node2" class="node">
+<title>inequalities</title>
+<ellipse fill="none" stroke="black" cx="457.21" cy="-179.84" rx="55.61" ry="18"></ellipse>
+<text text-anchor="middle" x="457.21" y="-175.64" font-family="Times,serif" font-size="14.00">inequalities</text>
+</g>
+<!-- arithmetic&#45;&#45;inequalities -->
+<g id="edge1" class="edge">
+<title>arithmetic--inequalities</title>
+<path fill="none" stroke="black" d="M373.94,-35.63C391.82,-66.6 428.69,-130.44 446.76,-161.74"></path>
+</g>
+<!-- least upper bounds -->
+<g id="node3" class="node">
+<title>least upper bounds</title>
+<ellipse fill="none" stroke="black" cx="83.45" cy="-179.84" rx="83.4" ry="18"></ellipse>
+<text text-anchor="middle" x="83.45" y="-175.64" font-family="Times,serif" font-size="14.00">least upper bounds</text>
+</g>
+<!-- arithmetic&#45;&#45;least upper bounds -->
+<g id="edge2" class="edge">
+<title>arithmetic--least upper bounds</title>
+<path fill="none" stroke="black" d="M337.14,-33.37C284.53,-63.75 167.59,-131.26 112.82,-162.88"></path>
+</g>
+<!-- distance -->
+<g id="node4" class="node">
+<title>distance</title>
+<ellipse fill="none" stroke="black" cx="176.89" cy="-341.68" rx="42.85" ry="18"></ellipse>
+<text text-anchor="middle" x="176.89" y="-337.48" font-family="Times,serif" font-size="14.00">distance</text>
+</g>
+<!-- arithmetic&#45;&#45;distance -->
+<g id="edge3" class="edge">
+<title>arithmetic--distance</title>
+<path fill="none" stroke="black" d="M353.45,-35.86C320.78,-92.46 219.8,-267.36 187.17,-323.87"></path>
+</g>
+<!-- inequalities&#45;&#45;least upper bounds -->
+<g id="edge4" class="edge">
+<title>inequalities--least upper bounds</title>
+<path fill="none" stroke="black" d="M401.25,-179.84C339.24,-179.84 238.58,-179.84 167.18,-179.84"></path>
+</g>
+<!-- inequalities&#45;&#45;distance -->
+<g id="edge5" class="edge">
+<title>inequalities--distance</title>
+<path fill="none" stroke="black" d="M429.82,-195.65C375.54,-226.99 255.02,-296.57 202.35,-326.98"></path>
+</g>
+<!-- least upper bounds&#45;&#45;distance -->
+<g id="edge6" class="edge">
+<title>least upper bounds--distance</title>
+<path fill="none" stroke="black" d="M93.81,-197.78C111.86,-229.05 148.88,-293.17 166.77,-324.16"></path>
+</g>
+<!-- open sets -->
+<g id="node5" class="node">
+<title>open sets</title>
+<ellipse fill="none" stroke="black" cx="363.77" cy="-341.68" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="363.77" y="-337.48" font-family="Times,serif" font-size="14.00">open sets</text>
+</g>
+<!-- open sets&#45;&#45;arithmetic -->
+<g id="edge7" class="edge">
+<title>open sets--arithmetic</title>
+<path fill="none" stroke="black" d="M363.77,-323.35C363.77,-266.38 363.77,-92.83 363.77,-36.13"></path>
+</g>
+<!-- open sets&#45;&#45;inequalities -->
+<g id="edge8" class="edge">
+<title>open sets--inequalities</title>
+<path fill="none" stroke="black" d="M373.94,-324.06C391.82,-293.09 428.69,-229.24 446.76,-197.94"></path>
+</g>
+<!-- open sets&#45;&#45;least upper bounds -->
+<g id="edge9" class="edge">
+<title>open sets--least upper bounds</title>
+<path fill="none" stroke="black" d="M337.65,-326.6C285.32,-296.39 167.96,-228.63 112.95,-196.88"></path>
+</g>
+<!-- open sets&#45;&#45;distance -->
+<g id="edge10" class="edge">
+<title>open sets--distance</title>
+<path fill="none" stroke="black" d="M316.61,-341.68C286.88,-341.68 248.77,-341.68 219.87,-341.68"></path>
+</g>
+<!-- boundedness -->
+<g id="node6" class="node">
+<title>boundedness</title>
+<ellipse fill="none" stroke="black" cx="176.89" cy="-18" rx="60.85" ry="18"></ellipse>
+<text text-anchor="middle" x="176.89" y="-13.8" font-family="Times,serif" font-size="14.00">boundedness</text>
+</g>
+<!-- boundedness&#45;&#45;arithmetic -->
+<g id="edge11" class="edge">
+<title>boundedness--arithmetic</title>
+<path fill="none" stroke="black" d="M237.82,-18C262.32,-18 290.22,-18 313.53,-18"></path>
+</g>
+<!-- boundedness&#45;&#45;inequalities -->
+<g id="edge12" class="edge">
+<title>boundedness--inequalities</title>
+<path fill="none" stroke="black" d="M204.79,-34.11C258.66,-65.21 376.38,-133.18 429.83,-164.04"></path>
+</g>
+<!-- boundedness&#45;&#45;least upper bounds -->
+<g id="edge13" class="edge">
+<title>boundedness--least upper bounds</title>
+<path fill="none" stroke="black" d="M166.53,-35.94C148.57,-67.05 111.85,-130.66 93.85,-161.82"></path>
+</g>
+<!-- boundedness&#45;&#45;distance -->
+<g id="edge14" class="edge">
+<title>boundedness--distance</title>
+<path fill="none" stroke="black" d="M176.89,-36.33C176.89,-93.3 176.89,-266.86 176.89,-323.55"></path>
+</g>
+<!-- boundedness&#45;&#45;open sets -->
+<g id="edge15" class="edge">
+<title>boundedness--open sets</title>
+<path fill="none" stroke="black" d="M187.2,-35.86C219.88,-92.46 320.86,-267.36 353.49,-323.87"></path>
+</g>
+</g>
+</svg>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-k6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -945,8 +1042,8 @@ Desmos Applet&nbsp;9.2: An illustration of the three equivalent conditions for t
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sequences/sequence-basics.html" class="pagination-link" aria-label="Talking About Sequences">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,241 @@
+{
+    "hash": "or66tr4fy5",
+    "parent_hash": "ydtxsaiapl",
+    "title": "Sample Points Uniform Partition",
+    "created": "2026-05-21T00:05:50.584Z",
+    "versionCreatedAt": "2026-05-21T00:16:38.582Z",
+    "stateUrl": "https://www.desmos.com/calc-states/production/version/or66tr4fy5/55c01060-54aa-11f1-95b3-31aec4cbfb73",
+    "thumbUrl": "https://www.desmos.com/calc_thumbs/production/version/or66tr4fy5/55c01060-54aa-11f1-95b3-31aec4cbfb73.png",
+    "currentVersion": "55c01060-54aa-11f1-95b3-31aec4cbfb73",
+    "type": "my-graph",
+    "access": "link",
+    "product": "graphing",
+    "state": {
+        "version": 11,
+        "randomSeed": "fa5f3e86e6173c82dd40452fddb25858",
+        "graph": {
+            "viewport": {
+                "xmin": -1.9803971449768643,
+                "ymin": -1.746625560848997,
+                "xmax": 3.968702198319761,
+                "ymax": 2.135064869783272
+            },
+            "showGrid": false,
+            "showYAxis": false,
+            "xAxisStep": 1,
+            "__v12ViewportLatexStash": {
+                "xmin": "-1.9803971449768643",
+                "xmax": "3.968702198319761",
+                "ymin": "-1.746625560848997",
+                "ymax": "2.135064869783272"
+            }
+        },
+        "expressions": {
+            "list": [
+                {
+                    "type": "folder",
+                    "id": "11",
+                    "title": "Subintervals",
+                    "collapsed": true
+                },
+                {
+                    "type": "expression",
+                    "id": "1",
+                    "folderId": "11",
+                    "color": "#c74440",
+                    "latex": "c=0.3"
+                },
+                {
+                    "type": "expression",
+                    "id": "2",
+                    "folderId": "11",
+                    "color": "#2d70b3",
+                    "latex": "y=c\\left\\{a\\le x\\le b\\right\\}"
+                },
+                {
+                    "type": "expression",
+                    "id": "3",
+                    "folderId": "11",
+                    "color": "#388c46",
+                    "latex": "a=-1",
+                    "hidden": true
+                },
+                {
+                    "type": "expression",
+                    "id": "4",
+                    "folderId": "11",
+                    "color": "#6042a6",
+                    "latex": "b=3",
+                    "hidden": true,
+                    "slider": {
+                        "hardMin": true,
+                        "min": "a"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "5",
+                    "folderId": "11",
+                    "color": "#2d70b3",
+                    "latex": "\\left(a,c\\right)",
+                    "showLabel": true,
+                    "label": "`a`",
+                    "dragMode": "X",
+                    "labelOrientation": "left"
+                },
+                {
+                    "type": "expression",
+                    "id": "6",
+                    "folderId": "11",
+                    "color": "#2d70b3",
+                    "latex": "\\left(b,c\\right)",
+                    "showLabel": true,
+                    "label": "`b`",
+                    "dragMode": "X",
+                    "labelOrientation": "right"
+                },
+                {
+                    "type": "expression",
+                    "id": "n-slider",
+                    "folderId": "11",
+                    "color": "#2d70b3",
+                    "latex": "n=8"
+                },
+                {
+                    "type": "expression",
+                    "id": "8",
+                    "folderId": "11",
+                    "color": "#388c46",
+                    "latex": "k=\\left[0,...,n\\right]"
+                },
+                {
+                    "type": "expression",
+                    "id": "9",
+                    "folderId": "11",
+                    "color": "#6042a6",
+                    "latex": "x_{i}=a+\\frac{k\\left(b-a\\right)}{n}"
+                },
+                {
+                    "type": "expression",
+                    "id": "10",
+                    "folderId": "11",
+                    "color": "#c74440",
+                    "latex": "\\left(x_{i},c\\right)",
+                    "showLabel": true,
+                    "label": "`x_${k}`",
+                    "labelOrientation": "below"
+                },
+                {
+                    "type": "expression",
+                    "id": "13",
+                    "folderId": "11",
+                    "color": "#c74440",
+                    "latex": "l=\\left[1,...,n\\right]"
+                },
+                {
+                    "type": "folder",
+                    "id": "12",
+                    "title": "Right Sample Points",
+                    "hidden": true,
+                    "collapsed": true
+                },
+                {
+                    "type": "expression",
+                    "id": "14",
+                    "folderId": "12",
+                    "color": "#2d70b3",
+                    "latex": "r_{i}=a+\\frac{l\\left(b-a\\right)}{n}"
+                },
+                {
+                    "type": "expression",
+                    "id": "16",
+                    "folderId": "12",
+                    "color": "#6042a6",
+                    "latex": "\\left(r_{i},2c\\right)",
+                    "showLabel": true,
+                    "label": "`x_${l}^*`",
+                    "labelOrientation": "above"
+                },
+                {
+                    "type": "folder",
+                    "id": "17",
+                    "title": "Left Sample Points",
+                    "hidden": true,
+                    "collapsed": true
+                },
+                {
+                    "type": "expression",
+                    "id": "18",
+                    "folderId": "17",
+                    "color": "#000000",
+                    "latex": "l_{i}=a+\\frac{\\left(l-1\\right)\\left(b-a\\right)}{n}"
+                },
+                {
+                    "type": "expression",
+                    "id": "19",
+                    "folderId": "17",
+                    "color": "#6042a6",
+                    "latex": "\\left(l_{i},2c\\right)",
+                    "showLabel": true,
+                    "label": "`x_${l}^*`",
+                    "labelOrientation": "above"
+                },
+                {
+                    "type": "folder",
+                    "id": "21",
+                    "title": "Midpoint Sample Points",
+                    "hidden": true,
+                    "collapsed": true
+                },
+                {
+                    "type": "expression",
+                    "id": "23",
+                    "folderId": "21",
+                    "color": "#6042a6",
+                    "latex": "m_{i}=a+\\frac{\\left(l-0.5\\right)\\left(b-a\\right)}{n}"
+                },
+                {
+                    "type": "expression",
+                    "id": "24",
+                    "folderId": "21",
+                    "color": "#6042a6",
+                    "latex": "\\left(m_{i},2c\\right)",
+                    "showLabel": true,
+                    "label": "`x_${l}^*`",
+                    "labelOrientation": "above"
+                },
+                {
+                    "type": "folder",
+                    "id": "26",
+                    "title": "Random Sample Points",
+                    "hidden": true,
+                    "collapsed": true
+                },
+                {
+                    "type": "expression",
+                    "id": "28",
+                    "folderId": "26",
+                    "color": "#388c46",
+                    "latex": "q_{i}=a+\\frac{\\left(l-\\operatorname{random}\\left(n\\right)\\right)\\left(b-a\\right)}{n}"
+                },
+                {
+                    "type": "expression",
+                    "id": "29",
+                    "folderId": "26",
+                    "color": "#6042a6",
+                    "latex": "\\left(q_{i},2c\\right)",
+                    "showLabel": true,
+                    "label": "`x_${l}^*`",
+                    "labelOrientation": "above"
+                },
+                {
+                    "type": "expression",
+                    "id": "27",
+                    "color": "#2d70b3"
+                }
+            ]
+        },
+        "includeFunctionParametersInRandomSeed": true,
+        "doNotMigrateMovablePointStyle": true
+    }
+}

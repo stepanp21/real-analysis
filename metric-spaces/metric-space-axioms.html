@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Metric Spaces and Distance Functions – Real Analysis</title>
+<title>5&nbsp; Metric Spaces and Distance Functions – An Illustrated Course in Real Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,6 +77,17 @@ ul.task-list li input[type="checkbox"] {
 \newcommand{\st}{~:~}
 \newcommand{\cee}{\mathsf{C}}
 \newcommand{\bee}{\mathrm{B}}
+\def\mathhlyellow#1{\bbox[##fff3bf,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlgold#1{\bbox[##ffe8a3,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlorange#1{\bbox[##ffddb3,2px,border:1px solid ##c05621]{#1}}
+\def\mathhlgreen#1{\bbox[##d9f7d7,2px,border:1px solid ##3f8f46]{#1}}
+\def\mathhlmint#1{\bbox[##d4f5e9,2px,border:1px solid ##2c7a7b]{#1}}
+\def\mathhlblue#1{\bbox[##dceeff,2px,border:1px solid ##2b6cb0]{#1}}
+\def\mathhlpurple#1{\bbox[##eadffd,2px,border:1px solid ##6b46c1]{#1}}
+\def\mathhlpink#1{\bbox[##ffdbe8,2px,border:1px solid ##b83280]{#1}}
+\def\mathhlred#1{\bbox[##ffd6d6,2px,border:1px solid ##c53030]{#1}}
+\def\mathhlgray#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
+\def\mathhlgrey#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
 $$
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -136,7 +147,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Real Analysis</a> 
+      <a href="../">An Illustrated Course in Real Analysis</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -149,7 +160,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -160,7 +171,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../axioms-of-r/intro-to-r.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">The Real Numbers</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -228,53 +239,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Sequences</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/sequence-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/subsequences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Subsequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../constructing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../minmax.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -283,13 +247,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -304,20 +268,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/cardinality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/wop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/desmos-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Links to Desmos Web Apps</span></span></a>
   </div>
 </li>
       </ul>
@@ -336,6 +300,7 @@ window.Quarto = {
   <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">5.1</span> Preparation</a></li>
   <li><a href="#distances-in-rn" id="toc-distances-in-rn" class="nav-link" data-scroll-target="#distances-in-rn"><span class="header-section-number">5.2</span> Distances in <span class="math inline">\(\R^n\)</span></a></li>
   <li><a href="#absolute-values" id="toc-absolute-values" class="nav-link" data-scroll-target="#absolute-values"><span class="header-section-number">5.3</span> Absolute Values</a></li>
+  <li><a href="#more-exercises" id="toc-more-exercises" class="nav-link" data-scroll-target="#more-exercises"><span class="header-section-number">5.4</span> More Exercises</a></li>
   <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review Questions</a></li>
   </ul>
 </nav>
@@ -345,7 +310,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../metric-spaces/metric-space-axioms.html">Metric Spaces</a></li><li class="breadcrumb-item"><a href="../metric-spaces/metric-space-axioms.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Metric Spaces and Distance Functions</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Metric Spaces and Distance Functions</span></h1>
+<h1 class="title"><span id="sec-metric-space-axioms" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Metric Spaces and Distance Functions</span></span></h1>
 </div>
 
 
@@ -366,7 +331,7 @@ window.Quarto = {
 <h2 class="unnumbered anchored" data-anchor-id="highlights">Highlights</h2>
 <ul>
 <li>The definitions of “metric space” and “distance function”</li>
-<li>The usual distance functions on <span class="math inline">\(\R^n\)</span>, including <span class="math inline">\(\R=\R^1\)</span>.</li>
+<li>The usual distance functions on <span class="math inline">\(\R^n,\)</span> including <span class="math inline">\(\R=\R^1.\)</span></li>
 <li>Properties of absolute values</li>
 </ul>
 </section>
@@ -374,8 +339,8 @@ window.Quarto = {
 <h2 data-number="5.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">5.1</span> Preparation</h2>
 <p>The limits that you learn about in calculus are often described in terms of a variable getting “closer and closer” or “arbitrarily close” to some quantity. In order to say more precisely what it means to be “close”, though, we need to be precise about what we mean by “distance” in the first place.</p>
 <p>In this chapter we’ll talk about a fundamental construction in the theory of real analysis, which is the concept of a metric space. Basically, a metric space will be any set with a reasonable (and we’ll make precise what we mean by “reasonable”) notion of distance.</p>
-<p>You are likely familiar with the distance formulas in <span class="math inline">\(\R^2\)</span> and <span class="math inline">\(\R^3\)</span>, and we will use these two spaces as our mental model for how to think about metric spaces. We’ll see that distance can reasonably be defined in other contexts as well, including in the real number system.</p>
-<p>For the moment, play around with the applet below to see if you can think about what formula would give us the distance between the real numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
+<p>You are likely familiar with the distance formulas in <span class="math inline">\(\R^2\)</span> and <span class="math inline">\(\R^3,\)</span> and we will use these two spaces as our mental model for how to think about metric spaces. We’ll see that distance can reasonably be defined in other contexts as well, including in the real number system.</p>
+<p>For the moment, play around with the applet below to see if you can think about what formula would give us the distance between the real numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b.\)</span></p>
 <figure class="quarto-float quarto-float-des figure">
 <div aria-describedby="des-distance-in-r-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
@@ -424,12 +389,35 @@ Desmos Applet&nbsp;5.1: Start by writing down a formula that will measure the di
 <div aria-describedby="des-function-distances-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <p>Try and answer this for yourself in your mind, and then see if you can adjust the sliders for <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> to make the blue function as “close” as possible to the red one (whatever that means to you).</p>
 <script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
-<div id="calculator-function-distance" class="calculator-container" style="width: 100%; height: 350px;">
+<div id="calculator-function-distance" class="calculator-container" style="width: 100%; height: 600px;">
 
 </div>
+<div class="slider-container">
+<div class="centered-slider">
+<label for="a-slider" class="left-label"><span class="math inline">\(a\)</span></label> <input id="a-slider" class="desmos-slider" type="range" min="-5" max="5" step="0.01" value="1">
+</div>
+<div class="centered-slider">
+<label for="b-slider" class="left-label"><span class="math inline">\(b\)</span></label> <input id="b-slider" class="desmos-slider" type="range" min="-5" max="5" step="0.01" value="1">
+</div>
+<div class="centered-slider">
+<label for="c-slider" class="left-label"><span class="math inline">\(c\)</span></label> <input id="c-slider" class="desmos-slider" type="range" min="-5" max="5" step="0.01" value="1">
+</div>
+</div>
 <script>
+  var aSlider = document.getElementById('a-slider');
+  var a = parseFloat(aSlider.value);
+
+  var bSlider = document.getElementById('b-slider');
+  var b = parseFloat(bSlider.value);
+
+  var cSlider = document.getElementById('c-slider');
+  var c = parseFloat(cSlider.value);
+
   var elt2 = document.getElementById('calculator-function-distance');
   var options2 = {
+    expressions: false,
+    lockViewport: true,
+    keypad: false
   }
   var calculator2 = Desmos.GraphingCalculator(elt2,options2);
   
@@ -448,6 +436,21 @@ Desmos Applet&nbsp;5.1: Start by writing down a formula that will measure the di
       .catch(error => {
         console.error('Error loading Desmos state:', error);
       });
+
+  aSlider.addEventListener('input', function() {
+    a = parseFloat(this.value);
+    calculator2.setExpression({id:'3', latex:`a=${a}`});
+  });
+
+  bSlider.addEventListener('input', function() {
+    b = parseFloat(this.value);
+    calculator2.setExpression({id:'4', latex:`b=${b}`});
+  });
+
+  cSlider.addEventListener('input', function() {
+    c = parseFloat(this.value);
+    calculator2.setExpression({id:'5', latex:`c=${c}`});
+  });
 </script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-des" id="des-function-distances-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -458,24 +461,24 @@ Desmos Applet&nbsp;5.2: Try to make the blue function as close as possible to th
 <div id="def-metric-space" class="grouped-theorem grouped-theorem-definition">
 <p><span class="theorem-title"><strong>Definition 5.1</strong></span> A <strong>metric space</strong> is a nonempty set <span class="math inline">\(X\)</span> equipped with a function <span class="math inline">\(d:X\times X\rightarrow\R\)</span> called a <strong>distance function</strong> with the following properties.</p>
 <ol type="1">
-<li>(Positivity) For any <span class="math inline">\(a,b\in X\)</span>, <span class="math inline">\(d(a,b)\geq 0\)</span>.</li>
-<li>(Positive Definiteness) For any <span class="math inline">\(a,b\in X\)</span>, <span class="math inline">\(d(a,b)=0\)</span> if and only if <span class="math inline">\(a=b\)</span>.</li>
-<li>(Symmetry) For any <span class="math inline">\(a,b\in X\)</span>, <span class="math inline">\(d(a,b)=d(b,a)\)</span>.</li>
-<li>(Triangle Inequality) For any <span class="math inline">\(a,b,c\in X\)</span>, <span class="math inline">\(d(a,b)+d(b,c)\geq d(a,c)\)</span>.</li>
+<li>(Positivity) For any <span class="math inline">\(a,b\in X,\)</span> <span class="math inline">\(d(a,b)\geq 0.\)</span></li>
+<li>(Positive Definiteness) For any <span class="math inline">\(a,b\in X,\)</span> <span class="math inline">\(d(a,b)=0\)</span> if and only if <span class="math inline">\(a=b.\)</span></li>
+<li>(Symmetry) For any <span class="math inline">\(a,b\in X,\)</span> <span class="math inline">\(d(a,b)=d(b,a).\)</span></li>
+<li>(Triangle Inequality) For any <span class="math inline">\(a,b,c\in X,\)</span> <span class="math inline">\(d(a,b)+d(b,c)\geq d(a,c).\)</span></li>
 </ol>
 </div>
 <div id="exr-distance-in-r2" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 5.2</strong></span> Explain why the usual distance formula in <span class="math inline">\(\R^2\)</span>,</p>
+<p><span class="theorem-title"><strong>Exercise 5.2</strong></span> Explain why the usual distance formula in <span class="math inline">\(\R^2,\)</span></p>
 <p><span class="math display">\[d((x_1,y_1),(x_2,y_2))=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2},\]</span></p>
 <p>satisfies the properties in <a href="metric-spaces/metric-space-axioms.html#def-metric-space">Definition 5.1</a>. Give a proof for Positivity, Positive-Definiteness, and Symmetry, and provide a picture with an intuitive explanation for the triangle inequality.</p>
 </div>
 <p>While we are used to measuring distances in two and three dimensions, we can define distances in other contexts as well.</p>
 <div id="exr-trivial-metric" class="grouped-theorem grouped-theorem-exercise">
 <p><span class="theorem-title"><strong>Exercise 5.3</strong></span> Let <span class="math inline">\(S\)</span> be any set. Prove that <span class="math inline">\(d:S\times S\rightarrow\R\)</span> defined for any <span class="math inline">\(x,y\in S\)</span> by</p>
-<p><span class="math display">\[d(x,y)=\begin{cases} 0 &amp; x=y \\ 1 x\neq y \end{cases}\]</span></p>
-<p>is a distance function for <span class="math inline">\(S\)</span> (i.e.&nbsp;that it satisfies the four properties). We call this the <strong>trivial</strong> metric for <span class="math inline">\(S\)</span>.</p>
+<p><span class="math display">\[d(x,y)=\begin{cases} 0 &amp; x=y \\ 1 &amp; x\neq y \end{cases}\]</span></p>
+<p>is a distance function for <span class="math inline">\(S\)</span> (i.e.&nbsp;that it satisfies the four properties). We call this the <strong>trivial</strong> metric for <span class="math inline">\(S.\)</span></p>
 </div>
-<p>To talk about a metric space, we really ought to specify both the set <span class="math inline">\(X\)</span> and the distance funciton <span class="math inline">\(d\)</span>. For example, it’s technically possible to equip <span class="math inline">\(\R^2\)</span> with the trivial metric from <a href="metric-spaces/metric-space-axioms.html#exr-trivial-metric">Exercise 5.3</a> (although I’m hard-pressed to think of why this would be useful). A somewhat more practical alternative metric on <span class="math inline">\(\R^2\)</span> is the subject of <a href="metric-spaces/metric-space-axioms.html#exr-taxicab">Exercise 5.11</a>, but we’ll refer to the distance function from <a href="metric-spaces/metric-space-axioms.html#exr-distance-in-r2">Exercise 5.2</a> as the “standard” distance function for <span class="math inline">\(\R^2\)</span>.</p>
+<p>To talk about a metric space, we really ought to specify both the set <span class="math inline">\(X\)</span> and the distance funciton <span class="math inline">\(d.\)</span> For example, it’s technically possible to equip <span class="math inline">\(\R^2\)</span> with the trivial metric from <a href="metric-spaces/metric-space-axioms.html#exr-trivial-metric">Exercise 5.3</a> (although I’m hard-pressed to think of why this would be useful). A somewhat more practical alternative metric on <span class="math inline">\(\R^2\)</span> is the subject of <a href="metric-spaces/metric-space-axioms.html#exr-taxicab">Exercise 5.11</a>, but we’ll refer to the distance function from <a href="metric-spaces/metric-space-axioms.html#exr-distance-in-r2">Exercise 5.2</a> as the “standard” distance function for <span class="math inline">\(\R^2.\)</span></p>
 <p>Before reading further, take just a moment to reflect on the question raised in <a href="#des-distance-in-r" class="quarto-xref">Desmos Applet&nbsp;<span>5.1</span></a>.</p>
 <div id="exr-metric-on-r-guess" class="grouped-theorem grouped-theorem-exercise">
 <p><span class="theorem-title"><strong>Exercise 5.4</strong></span> Make a guess about how we will define the “standard” distance function that will turn <span class="math inline">\(\R\)</span> into a metric space.</p>
@@ -483,10 +486,12 @@ Desmos Applet&nbsp;5.2: Try to make the blue function as close as possible to th
 </section>
 <section id="distances-in-rn" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="distances-in-rn"><span class="header-section-number">5.2</span> Distances in <span class="math inline">\(\R^n\)</span></h2>
-<p>You are likely familiar with the distance formulas in <span class="math inline">\(\R^2\)</span> and <span class="math inline">\(\R^3\)</span>. Generalizing those formulas, the standard distance function in <span class="math inline">\(\R^n\)</span> is given by</p>
-<p><span id="eq-rn-distance"><span class="math display">\[d((a_1,\ldots,a_n),(b_1,\ldots,b_n))=\sqrt{(b_1-a_1)^2+\cdots+(b_n-a_n)^2}. \tag{5.1}\]</span></span></p>
-<p>The proofs that this distance function satisfies Positivity, Positive-Definiteness, and Symmetry are straightforward generalizations of what you did in <a href="metric-spaces/metric-space-axioms.html#exr-distance-in-r2">Exercise 5.2</a>. The proof that the standard distance function satisfies the Triangle Inequality is much more involved, and we defer it to <a href="appendices/cauchy-schwartz.html#thm-cauchy-schwartz">Theorem 4.1</a> in <a href="../appendices/cauchy-schwartz.html" class="quarto-xref"><span>Appendix D</span></a>.</p>
-<p>More important to us at the moment, though, is how to define distances in <span class="math inline">\(\R\)</span>. If we apply the formula (<a href="#eq-rn-distance" class="quarto-xref"><span>5.1</span></a>) to the case where <span class="math inline">\(n=1\)</span> we get<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <span class="math inline">\(d(a,b)=\sqrt{(b-a)^2}\)</span>. This ends up simplifying to <span class="math inline">\(|b-a|\)</span>, which hopefully matches your guess in <a href="metric-spaces/metric-space-axioms.html#exr-metric-on-r-guess">Exercise 5.4</a>.</p>
+<p>You are likely familiar with the distance formulas in <span class="math inline">\(\R^2\)</span> and <span class="math inline">\(\R^3.\)</span> Generalizing those formulas, the standard distance function in <span class="math inline">\(\R^n\)</span> is given by</p>
+<p><span id="eq-rn-distance"><span class="math display">\[
+d((a_1,\ldots,a_n),(b_1,\ldots,b_n))=\sqrt{(b_1-a_1)^2+\cdots+(b_n-a_n)^2}.
+\tag{5.1}\]</span></span></p>
+<p>The proofs that this distance function satisfies Positivity, Positive-Definiteness, and Symmetry are straightforward generalizations of what you did in <a href="metric-spaces/metric-space-axioms.html#exr-distance-in-r2">Exercise 5.2</a>. The proof that the standard distance function satisfies the Triangle Inequality is much more involved, and we defer it to <a href="appendices/cauchy-schwartz.html#thm-cauchy-schwarz">Theorem 3.1</a> in <a href="../appendices/cauchy-schwartz.html" class="quarto-xref"><span>Appendix C</span></a>.</p>
+<p>More important to us at the moment, though, is how to define distances in <span class="math inline">\(\R.\)</span> If we apply the formula (<a href="#eq-rn-distance" class="quarto-xref"><span>5.1</span></a>) to the case where <span class="math inline">\(n=1\)</span> we get<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <span class="math inline">\(d(a,b)=\sqrt{(b-a)^2}.\)</span> This ends up simplifying to <span class="math inline">\(|b-a|,\)</span> which hopefully matches your guess in <a href="metric-spaces/metric-space-axioms.html#exr-metric-on-r-guess">Exercise 5.4</a>.</p>
 <p>Thus we define the <strong>standard distance function on <span class="math inline">\(\R\)</span></strong> to be <span class="math display">\[d(a,b)=|b-a|.\]</span></p>
 <blockquote class="blockquote">
 <p>From now until the end of your days, whenever you see an absolute value—especially the absolute value of a difference—you should think “distance”.</p>
@@ -497,25 +502,38 @@ Desmos Applet&nbsp;5.2: Try to make the blue function as close as possible to th
 <h2 data-number="5.3" class="anchored" data-anchor-id="absolute-values"><span class="header-section-number">5.3</span> Absolute Values</h2>
 <p>We can define the absolute value function for any <span class="math inline">\(x\in\R\)</span> via <span class="math display">\[|x|=\begin{cases} x &amp; x\geq 0 \\ -x &amp; x&lt;0 \end{cases}\]</span> Make sure you understand how the second case matches what you know about absolute values before moving on!</p>
 <div id="thm-absolute-value-props" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 5.5</strong></span> Suppose <span class="math inline">\(a,b\in\R\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 5.5</strong></span> Suppose <span class="math inline">\(a,b\in\R.\)</span></p>
 <ol type="1">
-<li><span class="math inline">\(|a|\geq0\)</span>.</li>
-<li><span class="math inline">\(|-a|=|a|\)</span>.</li>
-<li><span class="math inline">\(|a|=\max\{a,-a\}\)</span>.</li>
-<li><span class="math inline">\(|a|\geq a\)</span>.</li>
-<li><span class="math inline">\(|ab|=|a||b|\)</span>.</li>
-<li><span class="math inline">\(|a+b|\leq|a|+|b|\)</span>.</li>
-<li><span class="math inline">\(|a-b|\geq\big||a|-|b|\big|\)</span>.</li>
+<li><span class="math inline">\(|a|\geq0.\)</span></li>
+<li><span class="math inline">\(|a|=\max\{a,-a\}.\)</span></li>
+<li><span class="math inline">\(|-a|=|a|.\)</span></li>
+<li><span class="math inline">\(|a|\geq a.\)</span></li>
+<li><span class="math inline">\(|ab|=|a||b|.\)</span></li>
+<li><span class="math inline">\(|a+b|\leq|a|+|b|.\)</span></li>
+<li><span class="math inline">\(|a-b|\geq\big||a|-|b|\big|.\)</span></li>
+</ol>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We will prove parts 1–5. Since the definition of absolute value is piecewise, we need to do some case-by-case proofs here.</p>
+<ol type="1">
+<li><p>If <span class="math inline">\(a\geq 0\)</span>, then <span class="math inline">\(|a|=a\geq0\)</span>. If <span class="math inline">\(a&lt;0\)</span>, then <span class="math inline">\(|a|=-a&gt;0\)</span>.</p></li>
+<li><p>If <span class="math inline">\(a\geq0\)</span>, then <span class="math inline">\(a\geq0\geq-a\)</span>, so <span class="math inline">\(|a|=a=\max\{a,-a\}\)</span>. If <span class="math inline">\(a&lt;0\)</span>, then <span class="math inline">\(-a&gt;0&gt;a\)</span>, so <span class="math inline">\(|a|=-a=\max\{a,-a\}\)</span>.</p></li>
+<li><p>By the previous part, <span class="math inline">\(|a|=\max\{a,-a\}=|-a|\)</span>.</p></li>
+<li><p>Follows from the previous part.</p></li>
+<li><p>This can be proven by considering each of the three cases where <span class="math inline">\(a,b\)</span> are both positive, <span class="math inline">\(a,b\)</span> are both negative, and where one of <span class="math inline">\(a,b\)</span> is positive and the other is negative.</p></li>
 </ol>
 </div>
 <div id="exr-absolute-value-basics" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 5.6</strong></span> Prove <a href="metric-spaces/metric-space-axioms.html#thm-absolute-value-props">Theorem 5.5</a>. Note that since the definition of absolute value is piecewise, you may need to do case-by-case proofs here.</p>
+<p><span class="theorem-title"><strong>Exercise 5.6</strong></span> Prove the remaining parts of <a href="metric-spaces/metric-space-axioms.html#thm-absolute-value-props">Theorem 5.5</a>. As a hint for Part 6, try breaking into two cases: one where <span class="math inline">\(a+b\geq0\)</span> (so that <span class="math inline">\(|a+b|=a+b\)</span>) and one where <span class="math inline">\(a+b&lt;0\)</span> (so that <span class="math inline">\(|a+b|=(-a)+(-b)\)</span>) and then apply Part 4 to both <span class="math inline">\(a\)</span> and <span class="math inline">\(b.\)</span></p>
 </div>
 <div id="exr-triangle-inequality-in-r" class="grouped-theorem grouped-theorem-exercise">
 <p><span class="theorem-title"><strong>Exercise 5.7</strong></span> Prove that the standard distance function <span class="math inline">\(d(x,y)=|y-x|\)</span> for <span class="math inline">\(\R\)</span> satisfies the Triangle Inequality.</p>
 </div>
+</section>
+<section id="more-exercises" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="more-exercises"><span class="header-section-number">5.4</span> More Exercises</h2>
 <div id="exr-distance-less-than-all-epsilon" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 5.8</strong></span> Let <span class="math inline">\(X\)</span> be a metric space with distance function <span class="math inline">\(d\)</span> and let <span class="math inline">\(x,y\in X\)</span>. Suppose that for all <span class="math inline">\(\epsilon&gt;0\)</span>, <span class="math inline">\(d(x,y)\leq \epsilon\)</span>. Prove that <span class="math inline">\(x=y\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 5.8</strong></span> Let <span class="math inline">\(X\)</span> be a metric space with distance function <span class="math inline">\(d\)</span> and let <span class="math inline">\(x,y\in X.\)</span> Suppose that for all <span class="math inline">\(\epsilon&gt;0,\)</span> <span class="math inline">\(d(x,y)\leq \epsilon.\)</span> Prove that <span class="math inline">\(x=y.\)</span></p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -531,10 +549,10 @@ Tip
 </div>
 </div>
 <div id="exr-reverse-triangle-inequality" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 5.9</strong></span> Let <span class="math inline">\(X\)</span> be a metric space with distance function <span class="math inline">\(d\)</span>. Prove that for any <span class="math inline">\(a,b,c\in X\)</span>, <span class="math display">\[|d(a,b)-d(b,c)|\leq d(a,c)\]</span></p>
+<p><span class="theorem-title"><strong>Exercise 5.9</strong></span> Let <span class="math inline">\(X\)</span> be a metric space with distance function <span class="math inline">\(d.\)</span> Prove that for any <span class="math inline">\(a,b,c\in X,\)</span> <span class="math display">\[|d(a,b)-d(b,c)|\leq d(a,c).\]</span></p>
 </div>
 <div id="exr-ngon-inequality" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 5.10</strong></span> Prove the “polygon inequality”, which says that for any <span class="math inline">\(x_1,\ldots,x_n\)</span> with <span class="math inline">\(n\geq 3\)</span> in a metric space <span class="math inline">\(X\)</span> with distance function <span class="math inline">\(d\)</span>, <span class="math display">\[d(x_1,x_2)+d(x_2,x_3)+\cdots+d(x_{n-1},x_n)\geq d(x_1,x_n)\]</span> Hint: this is a good candidate for mathematical induction. It’s also a good example of how drawing a picture in two dimensions can help give you intuition about what happens in any metric space.</p>
+<p><span class="theorem-title"><strong>Exercise 5.10</strong></span> Prove the “polygon inequality”, which says that for any <span class="math inline">\(x_1,\ldots,x_n\)</span> with <span class="math inline">\(n\geq 3\)</span> in a metric space <span class="math inline">\(X\)</span> with distance function <span class="math inline">\(d,\)</span> <span class="math display">\[d(x_1,x_2)+d(x_2,x_3)+\cdots+d(x_{n-1},x_n)\geq d(x_1,x_n)\]</span> Hint: this is a good candidate for mathematical induction. It’s also a good example of how drawing a picture in two dimensions can help give you intuition about what happens in any metric space.</p>
 </div>
 <div id="exr-taxicab" class="grouped-theorem grouped-theorem-exercise">
 <p><span class="theorem-title"><strong>Exercise 5.11</strong></span> Here we will consider <span class="math inline">\(\R^2\)</span> with a different distance function. Define <span class="math display">\[d_1((x_1,y_1),(x_2,y_2))=|y_1-x_1|+|y_2-x_2|\]</span> Prove that <span class="math inline">\(d_1\)</span> does in fact satisfy the four conditions of being a metric space.</p>
@@ -543,10 +561,10 @@ Tip
 <p><span class="theorem-title"><strong>Exercise 5.12</strong></span> Here we will consider <span class="math inline">\(\R\)</span> with a different purported distance function. Define <span class="math display">\[d_{\mathrm{inv}}(a,b)=\begin{cases} \frac{1}{|a-b|} &amp; a\neq b \\ 0 &amp; a=b \end{cases}\]</span> Show that <span class="math inline">\(d_{\mathrm{inv}}\)</span> is <em>not</em> a distance function.</p>
 </div>
 <div id="exr-subspaces" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 5.13</strong></span> If <span class="math inline">\(X\)</span> is a metric space with distance function <span class="math inline">\(d\)</span>, and <span class="math inline">\(S\subseteq X\)</span>, then we can think of <span class="math inline">\(S\)</span> itself as a metric space using the same distance function restricted to <span class="math inline">\(S\)</span>. In this case we say <span class="math inline">\(S\)</span> is a <strong>subspace</strong> of <span class="math inline">\(X\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 5.13</strong></span> If <span class="math inline">\(X\)</span> is a metric space with distance function <span class="math inline">\(d,\)</span> and <span class="math inline">\(S\subseteq X,\)</span> then we can think of <span class="math inline">\(S\)</span> itself as a metric space using the same distance function restricted to <span class="math inline">\(S.\)</span> In this case we say <span class="math inline">\(S\)</span> is a <strong>subspace</strong> of <span class="math inline">\(X.\)</span></p>
 <ol type="1">
-<li>If we treat <span class="math inline">\(\Q\)</span> as a subspace of <span class="math inline">\(\R\)</span>, prove that the distance between any two points in <span class="math inline">\(\Q\)</span> is a rational number.</li>
-<li>If we treat <span class="math inline">\(\Z^2\)</span> (the set of points in <span class="math inline">\(\R^2\)</span> both of whose entries are integers), as a subspace of <span class="math inline">\(\R^2\)</span>, is the distance between two points in <span class="math inline">\(\Z^2\)</span> always an integer? Explain.</li>
+<li>If we treat <span class="math inline">\(\Q\)</span> as a subspace of <span class="math inline">\(\R,\)</span> prove that the distance between any two points in <span class="math inline">\(\Q\)</span> is a rational number.</li>
+<li>If we treat <span class="math inline">\(\Z^2\)</span> (the set of points in <span class="math inline">\(\R^2\)</span> both of whose entries are integers), as a subspace of <span class="math inline">\(\R^2,\)</span> is the distance between two points in <span class="math inline">\(\Z^2\)</span> always an integer? Explain.</li>
 </ol>
 </div>
 </section>
@@ -565,7 +583,7 @@ Tip
 <ol>
 <li id="fn1"><p>For instance, most metric spaces don’t have arithmetic or inequalities, so we won’t be distracted by these features of <span class="math inline">\(\R\)</span> in contexts where they aren’t relevant.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>The <span class="math inline">\(L^2\)</span> norm is one that you may see in a differential equations or functional analysis course, but if you haven’t heard of it, it won’t be important for this course.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Here we set <span class="math inline">\(a=(a_1)\)</span>, and <span class="math inline">\(b=(b_1)\)</span> to simplify the notation.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Here we set <span class="math inline">\(a=(a_1),\)</span> and <span class="math inline">\(b=(b_1)\)</span> to simplify the notation.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

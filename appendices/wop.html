@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix E — The Well-Ordering Property – Real Analysis</title>
+<title>Appendix D — The Well-Ordering Property – An Illustrated Course in Real Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../appendices/desmos-links.html" rel="next">
 <link href="../appendices/cauchy-schwartz.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -76,6 +77,17 @@ ul.task-list li input[type="checkbox"] {
 \newcommand{\st}{~:~}
 \newcommand{\cee}{\mathsf{C}}
 \newcommand{\bee}{\mathrm{B}}
+\def\mathhlyellow#1{\bbox[##fff3bf,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlgold#1{\bbox[##ffe8a3,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlorange#1{\bbox[##ffddb3,2px,border:1px solid ##c05621]{#1}}
+\def\mathhlgreen#1{\bbox[##d9f7d7,2px,border:1px solid ##3f8f46]{#1}}
+\def\mathhlmint#1{\bbox[##d4f5e9,2px,border:1px solid ##2c7a7b]{#1}}
+\def\mathhlblue#1{\bbox[##dceeff,2px,border:1px solid ##2b6cb0]{#1}}
+\def\mathhlpurple#1{\bbox[##eadffd,2px,border:1px solid ##6b46c1]{#1}}
+\def\mathhlpink#1{\bbox[##ffdbe8,2px,border:1px solid ##b83280]{#1}}
+\def\mathhlred#1{\bbox[##ffd6d6,2px,border:1px solid ##c53030]{#1}}
+\def\mathhlgray#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
+\def\mathhlgrey#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
 $$
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -120,7 +132,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendices/proof-writing.html">Appendices</a></li><li class="breadcrumb-item"><a href="../appendices/wop.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendices/proof-writing.html">Appendices</a></li><li class="breadcrumb-item"><a href="../appendices/wop.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -135,7 +147,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Real Analysis</a> 
+      <a href="../">An Illustrated Course in Real Analysis</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -148,7 +160,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -159,7 +171,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../axioms-of-r/intro-to-r.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">The Real Numbers</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -227,53 +239,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Sequences</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/sequence-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/subsequences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Subsequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../constructing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../minmax.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -282,13 +247,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -303,20 +268,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/cardinality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/wop.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/desmos-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Links to Desmos Web Apps</span></span></a>
   </div>
 </li>
       </ul>
@@ -332,9 +297,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendices/proof-writing.html">Appendices</a></li><li class="breadcrumb-item"><a href="../appendices/wop.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendices/proof-writing.html">Appendices</a></li><li class="breadcrumb-item"><a href="../appendices/wop.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-wop" class="quarto-section-identifier">Appendix E — The Well-Ordering Property</span></h1>
+<h1 class="title"><span id="sec-wop" class="quarto-section-identifier">Appendix D — The Well-Ordering Property</span></h1>
 </div>
 
 
@@ -352,20 +317,20 @@ window.Quarto = {
 
 
 <p>One of the basic assumptions we make about the number system <span class="math inline">\(\N\)</span> that underwrites our ability to use mathematical induction is what’s known as the Well-Ordered Axiom.</p>
-<div id="thm-ax-wop-n" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 5.1</strong></span> Let <span class="math inline">\(S\)</span> be any nonempty subset of <span class="math inline">\(\N\)</span>. Then <span class="math inline">\(S\)</span> has a least element.</p>
+<div id="ax-wop-n" class="grouped-theorem grouped-theorem-axiom">
+<p><span class="theorem-title"><strong>Axiom 4.1 (The Well-Ordering Axiom)</strong></span> Let <span class="math inline">\(S\)</span> be any nonempty subset of <span class="math inline">\(\N\)</span>. Then <span class="math inline">\(S\)</span> has a least element.</p>
 </div>
 <p>We treat this as an axiom, which means we assume it without proof. While not true as written for <span class="math inline">\(\Z\)</span>, we can adapt it to integers with an additional assumption.</p>
 <div id="thm-wop-z" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 5.2</strong></span> Let <span class="math inline">\(S\)</span> be any nonempty subset of <span class="math inline">\(\Z\)</span> that is bounded below by an element of <span class="math inline">\(\Z\)</span>. Then <span class="math inline">\(S\)</span> has a least element.</p>
+<p><span class="theorem-title"><strong>Theorem 4.2</strong></span> Let <span class="math inline">\(S\)</span> be any nonempty subset of <span class="math inline">\(\Z\)</span> that is bounded below by an element of <span class="math inline">\(\Z\)</span>. Then <span class="math inline">\(S\)</span> has a least element.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Suppose <span class="math inline">\(n\in\Z\)</span> is a lower bound on <span class="math inline">\(S\)</span>. Then define <span class="math display">\[T=\{1-n+s\st s\in S\}\]</span></p>
 <p>Then if <span class="math inline">\(t\in T\)</span>, <span class="math inline">\(t=1-n+s\)</span> for some <span class="math inline">\(s\in S\)</span>, <span class="math display">\[t=1-n+s\geq 1-n+n=1.\]</span></p>
-<p>Thus all elements of <span class="math inline">\(T\)</span> are positive integers, so <span class="math inline">\(T\subseteq\N\)</span>. So by <a href="appendices/wop.html#thm-ax-wop-n">Theorem 5.1</a>, <span class="math inline">\(T\)</span> has a least element <span class="math inline">\(m\)</span>; that is <span class="math inline">\(m\in T\)</span> and <span class="math inline">\(m\leq t\)</span> for all <span class="math inline">\(t\in T\)</span>. Thus <span class="math inline">\(m=1-n+k\)</span> for some <span class="math inline">\(k\in S\)</span>, so <span class="math inline">\(m+n-1=k\in S\)</span>. And if <span class="math inline">\(s\in S\)</span>, then <span class="math inline">\(1-n+s\in T\)</span>, so <span class="math inline">\(1-n+s\leq m\)</span> and therefore <span class="math inline">\(s\leq m+n-1=k\)</span>. Thus <span class="math inline">\(k\)</span> is the least element of <span class="math inline">\(S\)</span>.</p>
+<p>Thus all elements of <span class="math inline">\(T\)</span> are positive integers, so <span class="math inline">\(T\subseteq\N\)</span>. So by <a href="appendices/wop.html#ax-wop-n">Axiom 4.1</a>, <span class="math inline">\(T\)</span> has a least element <span class="math inline">\(m\)</span>; that is <span class="math inline">\(m\in T\)</span> and <span class="math inline">\(m\leq t\)</span> for all <span class="math inline">\(t\in T\)</span>. Thus <span class="math inline">\(m=1-n+k\)</span> for some <span class="math inline">\(k\in S\)</span>, so <span class="math inline">\(m+n-1=k\in S\)</span>. And if <span class="math inline">\(s\in S\)</span>, then <span class="math inline">\(1-n+s\in T\)</span>, so <span class="math inline">\(1-n+s\leq m\)</span> and therefore <span class="math inline">\(s\leq m+n-1=k\)</span>. Thus <span class="math inline">\(k\)</span> is the least element of <span class="math inline">\(S\)</span>.</p>
 </div>
 <div id="exr-wop-for-other-number-systems" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 5.3</strong></span> Would <a href="appendices/wop.html#thm-wop-z">Theorem 5.2</a> be true if we replaced <span class="math inline">\(\Z\)</span> with <span class="math inline">\(\Q\)</span>? or <span class="math inline">\(\R\)</span>? Give a proof or counterexample for each.</p>
+<p><span class="theorem-title"><strong>Exercise 4.3</strong></span> Would <a href="appendices/wop.html#thm-wop-z">Theorem 4.2</a> be true if we replaced <span class="math inline">\(\Z\)</span> with <span class="math inline">\(\Q\)</span>? or <span class="math inline">\(\R\)</span>? Give a proof or counterexample for each.</p>
 </div>
 
 
@@ -772,11 +737,14 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../appendices/cauchy-schwartz.html" class="pagination-link" aria-label="The Cauchy-Schwartz Inequality">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span>
+      <a href="../appendices/cauchy-schwartz.html" class="pagination-link" aria-label="The Cauchy-Schwarz Inequality">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../appendices/desmos-links.html" class="pagination-link" aria-label="Links to Desmos Web Apps">
+        <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Links to Desmos Web Apps</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Consequences of the Least Upper Bound Axiom – Real Analysis</title>
+<title>4&nbsp; Consequences of the Least Upper Bound Axiom – An Illustrated Course in Real Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,6 +77,17 @@ ul.task-list li input[type="checkbox"] {
 \newcommand{\st}{~:~}
 \newcommand{\cee}{\mathsf{C}}
 \newcommand{\bee}{\mathrm{B}}
+\def\mathhlyellow#1{\bbox[##fff3bf,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlgold#1{\bbox[##ffe8a3,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlorange#1{\bbox[##ffddb3,2px,border:1px solid ##c05621]{#1}}
+\def\mathhlgreen#1{\bbox[##d9f7d7,2px,border:1px solid ##3f8f46]{#1}}
+\def\mathhlmint#1{\bbox[##d4f5e9,2px,border:1px solid ##2c7a7b]{#1}}
+\def\mathhlblue#1{\bbox[##dceeff,2px,border:1px solid ##2b6cb0]{#1}}
+\def\mathhlpurple#1{\bbox[##eadffd,2px,border:1px solid ##6b46c1]{#1}}
+\def\mathhlpink#1{\bbox[##ffdbe8,2px,border:1px solid ##b83280]{#1}}
+\def\mathhlred#1{\bbox[##ffd6d6,2px,border:1px solid ##c53030]{#1}}
+\def\mathhlgray#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
+\def\mathhlgrey#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
 $$
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -121,7 +132,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../axioms-of-r/intro-to-r.html">The Real Numbers</a></li><li class="breadcrumb-item"><a href="../axioms-of-r/lub-props.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Consequences of the Least Upper Bound Axiom</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../axioms-of-r/field-and-order.html">The Real Numbers</a></li><li class="breadcrumb-item"><a href="../axioms-of-r/lub-props.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Consequences of the Least Upper Bound Axiom</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -136,7 +147,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Real Analysis</a> 
+      <a href="../">An Illustrated Course in Real Analysis</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -149,7 +160,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -160,7 +171,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../axioms-of-r/intro-to-r.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">The Real Numbers</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -228,53 +239,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Sequences</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/sequence-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/subsequences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Subsequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../constructing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../minmax.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -283,13 +247,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -304,20 +268,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/cardinality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/wop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/desmos-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Links to Desmos Web Apps</span></span></a>
   </div>
 </li>
       </ul>
@@ -333,9 +297,9 @@ window.Quarto = {
    
   <ul>
   <li><a href="#highlights" id="toc-highlights" class="nav-link active" data-scroll-target="#highlights">Highlights</a></li>
-  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation">Preparation</a></li>
-  <li><a href="#nested-interval-theorem" id="toc-nested-interval-theorem" class="nav-link" data-scroll-target="#nested-interval-theorem"><span class="header-section-number">4.1</span> Nested Interval Theorem</a></li>
-  <li><a href="#uncountability-of-r" id="toc-uncountability-of-r" class="nav-link" data-scroll-target="#uncountability-of-r"><span class="header-section-number">4.2</span> Uncountability of <span class="math inline">\(\R\)</span></a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">4.1</span> Preparation</a></li>
+  <li><a href="#nested-interval-theorem" id="toc-nested-interval-theorem" class="nav-link" data-scroll-target="#nested-interval-theorem"><span class="header-section-number">4.2</span> Nested Interval Theorem</a></li>
+  <li><a href="#uncountability-of-r" id="toc-uncountability-of-r" class="nav-link" data-scroll-target="#uncountability-of-r"><span class="header-section-number">4.3</span> Uncountability of <span class="math inline">\(\R\)</span></a></li>
   <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review Questions</a></li>
   </ul>
 </nav>
@@ -343,7 +307,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../axioms-of-r/intro-to-r.html">The Real Numbers</a></li><li class="breadcrumb-item"><a href="../axioms-of-r/lub-props.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Consequences of the Least Upper Bound Axiom</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../axioms-of-r/field-and-order.html">The Real Numbers</a></li><li class="breadcrumb-item"><a href="../axioms-of-r/lub-props.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Consequences of the Least Upper Bound Axiom</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-lub-props" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Consequences of the Least Upper Bound Axiom</span></span></h1>
 </div>
@@ -370,15 +334,15 @@ window.Quarto = {
 <li>We show how the Nested Interval Theorem can be used to prove that <span class="math inline">\(\R\)</span> is uncountable.</li>
 </ul>
 </section>
-<section id="preparation" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="preparation">Preparation</h2>
+<section id="preparation" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">4.1</span> Preparation</h2>
 <p>We start with a definition that should seem very natural given what we did in the last section.</p>
 <div id="def-inf" class="grouped-theorem grouped-theorem-definition">
 <p><span class="theorem-title"><strong>Definition 4.1</strong></span> Let <span class="math inline">\(S\subseteq\R\)</span> be a subset of the real numbers.</p>
 <ol type="1">
-<li><p>We say <span class="math inline">\(b\in\R\)</span> is a <em>lower bound</em> of <span class="math inline">\(S\)</span> if for all <span class="math inline">\(x\in S\)</span>, <span class="math inline">\(b\leq x.\)</span> If <span class="math inline">\(S\)</span> has a lower bound, we say <span class="math inline">\(S\)</span> is <em>bounded below</em>.</p></li>
-<li><p>We say that <span class="math inline">\(l\in\R\)</span> the <em>greatest lower bound</em> or <em>infimum</em> of <span class="math inline">\(S\)</span> if for all lower bounds <span class="math inline">\(b\)</span> of <span class="math inline">\(S\)</span>, <span class="math inline">\(l\geq b\)</span>, and in this case we write <span class="math display">\[l=\inf S.\]</span></p></li>
-<li><p>If <span class="math inline">\(l\)</span> is the greatest lower bound <span class="math inline">\(S\)</span> and <span class="math inline">\(l\in S\)</span>, we say that <span class="math inline">\(l\)</span> is the <em>least element</em> of <span class="math inline">\(S.\)</span></p></li>
+<li><p>We say <span class="math inline">\(b\in\R\)</span> is a <strong>lower bound</strong> of <span class="math inline">\(S\)</span> if for all <span class="math inline">\(x\in S,\)</span> <span class="math inline">\(b\leq x.\)</span> If <span class="math inline">\(S\)</span> has a lower bound, we say <span class="math inline">\(S\)</span> is <strong>bounded below</strong>.</p></li>
+<li><p>We say that <span class="math inline">\(l\in\R\)</span> the <strong>greatest lower bound</strong> or <strong>infimum</strong> of <span class="math inline">\(S\)</span> if for all lower bounds <span class="math inline">\(b\)</span> of <span class="math inline">\(S,\)</span> <span class="math inline">\(l\geq b,\)</span> and in this case we write <span class="math display">\[l=\inf S.\]</span></p></li>
+<li><p>If <span class="math inline">\(l\)</span> is the greatest lower bound <span class="math inline">\(S\)</span> and <span class="math inline">\(l\in S,\)</span> we say that <span class="math inline">\(l\)</span> is the <strong>least element</strong> of <span class="math inline">\(S.\)</span></p></li>
 </ol>
 </div>
 <div id="exr-inf-examples" class="grouped-theorem grouped-theorem-exercise">
@@ -387,25 +351,25 @@ window.Quarto = {
 <li><span class="math inline">\([0,\infty)\)</span></li>
 <li><span class="math inline">\((-\infty,0]\)</span></li>
 <li><span class="math inline">\((0,3]\)</span></li>
-<li>The set of upper bounds on <span class="math inline">\([0,3]\)</span>.</li>
-<li>The set of upper bounds on <span class="math inline">\([0,3)\)</span>.</li>
+<li>The set of upper bounds on <span class="math inline">\([0,3].\)</span></li>
+<li>The set of upper bounds on <span class="math inline">\([0,3).\)</span></li>
 </ol>
 </div>
 <p>Parts 4 and 5 of <a href="axioms-of-r/lub-props.html#exr-inf-examples">Exercise 4.2</a> are meant to demonstrate another way of thinking about the Least Upper Bound Axiom: it tells us that sets of upper bounds <em>always</em> have a least element when they are non-empty.</p>
 <p>Rather than make an assumption about infima existing, as we did with suprema, we can prove this as a theorem from the Least Upper Bound Axiom using this idea.</p>
 <div id="thm-infs-exist" class="lub-thread grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 4.3</strong></span> If a nonempty subset <span class="math inline">\(S\subseteq\R\)</span> has a lower bound, then <span class="math inline">\(S\)</span> has a greatest lower bound in <span class="math inline">\(\R\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 4.3</strong></span> If a nonempty subset <span class="math inline">\(S\subseteq\R\)</span> has a lower bound, then <span class="math inline">\(S\)</span> has a greatest lower bound in <span class="math inline">\(\R.\)</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Suppose <span class="math inline">\(S\subseteq\R\)</span> is nonempty and bounded below. Then let <span class="math inline">\(T\)</span> be the <em>set of lower bounds</em> of <span class="math inline">\(S\)</span>. Note that <span class="math inline">\(T\)</span> is nonempty (since <span class="math inline">\(S\)</span> was bounded above) and bounded above (by any element of <span class="math inline">\(S\)</span>). Thus <span class="math inline">\(T\)</span> has a least upper bound <span class="math inline">\(l=\sup T\)</span>.</p>
-<p>I claim that <span class="math inline">\(l=\inf(S)\)</span>. First, we note that <span class="math inline">\(l\)</span> is in fact greater than any other lower bound of <span class="math inline">\(S\)</span>, since <span class="math inline">\(l\)</span> is an upper bound on <span class="math inline">\(T\)</span>. Also, since every element of <span class="math inline">\(S\)</span> is an upper bound on <span class="math inline">\(T\)</span>, we have <span class="math inline">\(l\leq s\)</span> for all <span class="math inline">\(s\in S\)</span> since <span class="math inline">\(l\)</span> is the <em>least</em> upper bound of <span class="math inline">\(T\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Suppose <span class="math inline">\(S\subseteq\R\)</span> is nonempty and bounded below. Then let <span class="math inline">\(T\)</span> be the <em>set of lower bounds</em> of <span class="math inline">\(S.\)</span> Note that <span class="math inline">\(T\)</span> is nonempty (since <span class="math inline">\(S\)</span> was bounded above) and bounded above (by any element of <span class="math inline">\(S\)</span>). Thus <span class="math inline">\(T\)</span> has a least upper bound <span class="math inline">\(l=\sup T.\)</span></p>
+<p>I claim that <span class="math inline">\(l=\inf(S).\)</span> First, we note that <span class="math inline">\(l\)</span> is in fact greater than any other lower bound of <span class="math inline">\(S,\)</span> since <span class="math inline">\(l\)</span> is an upper bound on <span class="math inline">\(T.\)</span> Also, since every element of <span class="math inline">\(S\)</span> is an upper bound on <span class="math inline">\(T,\)</span> we have <span class="math inline">\(l\leq s\)</span> for all <span class="math inline">\(s\in S\)</span> since <span class="math inline">\(l\)</span> is the <em>least</em> upper bound of <span class="math inline">\(T.\)</span></p>
 </div>
 <div id="exr-infs-exist-2" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 4.4</strong></span> Try proving <a href="axioms-of-r/lub-props.html#thm-infs-exist">Theorem 4.3</a> another way. Consider the set <span class="math inline">\(U=\{x\st -x\in S\}\)</span>, and show that <span class="math inline">\(-\sup U=\inf S\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><span class="theorem-title"><strong>Exercise 4.4</strong></span> Try proving <a href="axioms-of-r/lub-props.html#thm-infs-exist">Theorem 4.3</a> another way. Consider the set <span class="math inline">\(U=\{x\st -x\in S\},\)</span> and show that <span class="math inline">\(-\sup U=\inf S.\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </div>
 <p>One more concept we’ll need in order to get started on this section is the idea of taking an infinite union or intersection, which will be important for understanding the Nested Interval Theorem.</p>
 <div id="exr-intersection-practice" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 4.5</strong></span> For each example below, (i) draw the sequence of intervals on a number line, (ii) decide whether the sequence of intervals satisfies the conditions of <a href="axioms-of-r/lub-props.html#thm-NIT">Theorem 4.6</a> below, and (iii) identify the intersection <span class="math inline">\(\displaystyle \bigcap_{i=1}^\infty [a_i,b_i]\)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><span class="theorem-title"><strong>Exercise 4.5</strong></span> For each example below, (i) draw the sequence of intervals on a number line, (ii) decide whether the sequence of intervals satisfies the conditions of <a href="axioms-of-r/lub-props.html#thm-NIT">Theorem 4.6</a> below, and (iii) identify the intersection <span class="math inline">\(\displaystyle \bigcap_{i=1}^\infty [a_i,b_i].\)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <ol type="1">
 <li><span class="math inline">\([a_i,b_i]=\left[-\frac{1}{i},\frac{1}{i}\right]\)</span> for <span class="math inline">\(i\in\N\)</span></li>
 <li><span class="math inline">\([a_i,b_i]=[-i,i]\)</span> for <span class="math inline">\(i\in\N\)</span></li>
@@ -413,11 +377,12 @@ window.Quarto = {
 </ol>
 </div>
 </section>
-<section id="nested-interval-theorem" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="nested-interval-theorem"><span class="header-section-number">4.1</span> Nested Interval Theorem</h2>
+<section id="nested-interval-theorem" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="nested-interval-theorem"><span class="header-section-number">4.2</span> Nested Interval Theorem</h2>
 <p>One distinguishing feature of the real numbers is, intuitively, if you keep zooming in on the number line, you are always zooming in <em>to a number</em>.</p>
 <p>As a thought experiment, consider the following collection of intervals:</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
   U_1&amp;=&amp;[3,4]\\
   U_2&amp;=&amp;[3.1,3.2]\\
   U_3&amp;=&amp;[3.14,3.15]\\
@@ -425,11 +390,12 @@ window.Quarto = {
   U_5&amp;=&amp;[3.1415,3.1416]\\
   U_6&amp;=&amp;[3.14159,3.14160]\\
   &amp;\vdots&amp;
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>Specifically, <span class="math inline">\(U_i\)</span> is the closed interval between <span class="math inline">\(\pi\)</span> rounded up and down to <span class="math inline">\(i\)</span> significant figures.</p>
-<p>If the universe is <span class="math inline">\(\R\)</span>, there is a number that will be in <span class="math inline">\(U_i\)</span> for all <span class="math inline">\(i\)</span>: <span class="math inline">\(\pi\)</span>. By contrast, in <span class="math inline">\(\Q\)</span>, there is no number inside all of these sets—we’d be zooming in onto something that isn’t there. The Nested Interval Theorem below generalizes this idea.</p>
+<p>If the universe is <span class="math inline">\(\R,\)</span> there is a number that will be in <span class="math inline">\(U_i\)</span> for all <span class="math inline">\(i\)</span>: <span class="math inline">\(\pi.\)</span> By contrast, in <span class="math inline">\(\Q,\)</span> there is no number inside all of these sets—we’d be zooming in onto something that isn’t there. The Nested Interval Theorem below generalizes this idea.</p>
 <div id="thm-NIT" class="lub-thread grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 4.6 (Nested Interval Theorem)</strong></span> Suppose <span class="math inline">\(a_i\)</span> and <span class="math inline">\(b_i\)</span> are real numbers with <span class="math inline">\(a_i\leq b_i\)</span> for all <span class="math inline">\(i\in\N\)</span> such that if we set <span class="math inline">\(U_i=[a_i,b_i]\)</span>, we have <span class="math inline">\(U_{i+1}\subseteq U_i\)</span> for all <span class="math inline">\(i\in\N.\)</span> In this case</p>
+<p><span class="theorem-title"><strong>Theorem 4.6 (Nested Interval Theorem)</strong></span> Suppose <span class="math inline">\(a_i\)</span> and <span class="math inline">\(b_i\)</span> are real numbers with <span class="math inline">\(a_i\leq b_i\)</span> for all <span class="math inline">\(i\in\N\)</span> such that if we set <span class="math inline">\(U_i=[a_i,b_i],\)</span> we have <span class="math inline">\(U_{i+1}\subseteq U_i\)</span> for all <span class="math inline">\(i\in\N.\)</span> In this case</p>
 <p><span class="math display">\[\bigcap_{i=1}^\infty U_i \neq \varnothing.\]</span></p>
 </div>
 <figure class="quarto-float quarto-float-des figure">
@@ -443,7 +409,7 @@ window.Quarto = {
   var eltNIT = document.getElementById('calculator-nit');
   var options = {
     lockViewport: true,
-    expressionsCollapsed: true
+    expressions: false
   }
   var calculatorNIT = Desmos.GraphingCalculator(eltNIT,options);
   
@@ -469,13 +435,13 @@ Desmos Applet&nbsp;4.1: A sequence of nested closed intervals.
 </figcaption>
 </figure>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em> (Setup Only). </span>Assuming the hypotheses of the theorem, we note that since <span class="math inline">\(U_{i+1}\subseteq U_i\)</span>, we have for all <span class="math inline">\(i\in\N\)</span> <span class="math display">\[a_i\leq a_{i+1} \qquad b_{i+1}\leq b_i.\]</span></p>
-<p>In fact, from this, one can prove<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> that <span class="math inline">\(a_i\leq b_j\)</span> for any <span class="math inline">\(i,j\in\N\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em> (Setup Only). </span>Assuming the hypotheses of the theorem, we note that since <span class="math inline">\(U_{i+1}\subseteq U_i,\)</span> we have for all <span class="math inline">\(i\in\N\)</span> <span class="math display">\[a_i\leq a_{i+1} \leq b_{i+1}\leq b_i.\]</span></p>
+<p>In fact, from this, <span class="explain explained-highlight" style=" --explain-bg: #fff3bf; --explain-border: #b7791f;" aria-describedby="explain-popover-1" tabindex="0">one can prove that <span class="math inline">\(a_i\leq b_j\)</span> for any <span class="math inline">\(i,j\in\N.\)</span><span id="explain-popover-1" class="explain-popover">Here’s the proof. If <span class="math inline">\(i\leq j,\)</span> then we have <span class="math inline">\(a_i\leq a_{i+1}\leq\cdots\leq a_j\leq b_j,\)</span> and if <span class="math inline">\(i\geq j,\)</span> we have <span class="math inline">\(a_i\leq b_i\leq b_{i-1}\leq \cdots\leq b_j.\)</span></span></span></p>
 <p>…</p>
 </div>
 <div id="exr-finish-nit-proof" class="grouped-theorem grouped-theorem-exercise">
 <p><span class="theorem-title"><strong>Exercise 4.7</strong></span> Finish the proof of the Nested Interval Theorem.</p>
-<p>The big hint here is that Nested Interval Theorem is true for <span class="math inline">\(\R\)</span> but not for <span class="math inline">\(\Q\)</span>, so it must use the Least Upper Bound Axiom in some essential way.</p>
+<p>The big hint here is that Nested Interval Theorem is true for <span class="math inline">\(\R\)</span> but not for <span class="math inline">\(\Q,\)</span> so it must use the Least Upper Bound Axiom in some essential way.</p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -494,19 +460,19 @@ Hint
 </div>
 </div>
 </section>
-<section id="uncountability-of-r" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="uncountability-of-r"><span class="header-section-number">4.2</span> Uncountability of <span class="math inline">\(\R\)</span></h2>
-<p>Recall that a set <span class="math inline">\(S\)</span> is called <em>countable</em> if there exists a surjective function <span class="math inline">\(\N\rightarrow S\)</span>. Intuitively, it means that there is some way of listing the elements of <span class="math inline">\(S\)</span> (possibly with repetition) so that every element of <span class="math inline">\(S\)</span> eventually appears on the list.</p>
-<p>It is clear that <span class="math inline">\(\N\)</span> is countable, but somewhat less obvious are the facts that <span class="math inline">\(\Z\)</span> and <span class="math inline">\(\Q\)</span> are countable<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. However, <span class="math inline">\(\R\)</span> is uncountable; it has a strictly larger cardinality than <span class="math inline">\(\N\)</span>, <span class="math inline">\(\Z\)</span>, and <span class="math inline">\(\Q\)</span>. Intuitively, the number of real numbers is a “higher level of infinity” than the number of natural/integer/rational numbers.</p>
+<section id="uncountability-of-r" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="uncountability-of-r"><span class="header-section-number">4.3</span> Uncountability of <span class="math inline">\(\R\)</span></h2>
+<p>Recall that a set <span class="math inline">\(S\)</span> is called <em>countable</em> if there exists a surjective function <span class="math inline">\(\N\rightarrow S.\)</span> Intuitively, it means that there is some way of listing the elements of <span class="math inline">\(S\)</span> (possibly with repetition) so that every element of <span class="math inline">\(S\)</span> eventually appears on the list.</p>
+<p>It is clear that <span class="math inline">\(\N\)</span> is countable, but somewhat less obvious are the facts that <span class="math inline">\(\Z\)</span> and <span class="math inline">\(\Q\)</span> are countable. However, <span class="math inline">\(\R\)</span> is uncountable; it has a strictly larger cardinality than <span class="math inline">\(\N,\)</span> <span class="math inline">\(\Z,\)</span> and <span class="math inline">\(\Q.\)</span> Intuitively, the number of real numbers is a “higher level of infinity” than the number of natural/integer/rational numbers.</p>
 <p>There are a few ways to prove that <span class="math inline">\(\R\)</span> is uncountable, but as we should now expect, all of them rely on the Least Upper Bound Axiom since uncountability is a property <span class="math inline">\(\R\)</span> has but <span class="math inline">\(\Q\)</span> does not. We will take the approach of using the Nested Interval Theorem, which in turn relies on the Least Upper Bound Axiom.</p>
 <div id="thm-r-uncountable" class="lub-thread grouped-theorem grouped-theorem-theorem">
 <p><span class="theorem-title"><strong>Theorem 4.8</strong></span> <span class="math inline">\(\R\)</span> is uncountable.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>By way of contradiction, suppose <span class="math inline">\(\R\)</span> is countable. Then there exists a surjective function <span class="math inline">\(f:\N\rightarrow\R\)</span>. We will use this function to construct a sequence of nonempty nested closed intervals <span class="math inline">\(\{U_i\}\)</span> and apply the Nested Interval Theorem to arrive at a contradiction. The idea will be to construct <span class="math inline">\(U_{i+1}\)</span> so that it excludes <span class="math inline">\(f(i)\)</span>, and that way no value of <span class="math inline">\(f\)</span> will lie in all of the intervals.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By way of contradiction, suppose <span class="math inline">\(\R\)</span> is countable. Then there exists a surjective function <span class="math inline">\(f:\N\rightarrow\R.\)</span> We will use this function to construct a sequence of nonempty nested closed intervals <span class="math inline">\(\{U_i\}\)</span> and apply the Nested Interval Theorem to arrive at a contradiction. The idea will be to construct <span class="math inline">\(U_{i+1}\)</span> so that it excludes <span class="math inline">\(f(i),\)</span> and that way no value of <span class="math inline">\(f\)</span> will lie in all of the intervals.</p>
 <p>Let <span class="math inline">\(a_1=0\)</span> and <span class="math inline">\(b_1=1.\)</span> For each <span class="math inline">\(i\geq 1,\)</span> we recursively contruct <span class="math inline">\(a_{i+1}\)</span> and <span class="math inline">\(b_{i+1}\)</span> using the following procedure:</p>
 <ul>
-<li>If <span class="math inline">\(f(i)\notin [a_i,b_i]\)</span>, we let <span class="math inline">\(a_{i+1}=a_i\)</span> and <span class="math inline">\(b_{i+1}=b_i\)</span> (i.e.&nbsp;the interval remains unchanged).</li>
+<li>If <span class="math inline">\(f(i)\notin [a_i,b_i],\)</span> we let <span class="math inline">\(a_{i+1}=a_i\)</span> and <span class="math inline">\(b_{i+1}=b_i\)</span> (i.e.&nbsp;the interval remains unchanged).</li>
 <li>If <span class="math inline">\(f(i)\in\left[a_i,\frac{b_i+a_i}{2}\right]\)</span> (that is, <span class="math inline">\(f(i)\)</span> is in the left half of the interval), let <span class="math inline">\(a_{i+1}=\frac{2b_i+a_i}{3}\)</span> and <span class="math inline">\(b_{i+1}=b_i\)</span> (so that <span class="math inline">\([a_{i+1},b_{i+1}]\)</span> is the right third of the interval).</li>
 <li>If <span class="math inline">\(f(i)\in\left(\frac{b_i+a_i}{2}, b_i\right]\)</span> (that is, <span class="math inline">\(f(i)\)</span> is in the right half of the interval), let <span class="math inline">\(a_{i+1}=a_i\)</span> and <span class="math inline">\(b_{i+1}=\frac{b_i+2a_i}{3}\)</span> (so that <span class="math inline">\([a_{i+1},b_{i+1}]\)</span> is the left third of the interval).</li>
 </ul>
@@ -543,11 +509,11 @@ Hint
 </script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-des" id="des-uncountability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Desmos Applet&nbsp;4.2: A visualization of how the intervals <span class="math inline">\(U_i=[a_i,b_i]\)</span> are defined. If <span class="math inline">\(f(i)\)</span> lands inside <span class="math inline">\(U_i\)</span>, then the next interval <span class="math inline">\(U_{i+1}\)</span> shrinks to exclude it. Try to predict what will happen in the next step and click “Advance” to check if you were right.
+Desmos Applet&nbsp;4.2: A visualization of how the intervals <span class="math inline">\(U_i=[a_i,b_i]\)</span> are defined. If <span class="math inline">\(f(i)\)</span> lands inside <span class="math inline">\(U_i,\)</span> then the next interval <span class="math inline">\(U_{i+1}\)</span> shrinks to exclude it. Try to predict what will happen in the next step and click “Advance” to check if you were right.
 </figcaption>
 </figure>
-<p>Note that in each of the three cases <span class="math inline">\(f(i)\notin [a_{i+1},b_{i+1}]\)</span>. Letting <span class="math inline">\(U_i=[a_i,b_i]\)</span> for <span class="math inline">\(i\geq1\)</span>, this means that <span class="math inline">\(f(i)\notin U_{i+1}\)</span>, and therefore no value <span class="math inline">\(f(n)\)</span> is in <em>all</em> of the closed intervals. That is, for all <span class="math inline">\(n\in\N\)</span>, <span class="math display">\[f(n)\notin\bigcap_{i=1}^\infty U_i\]</span></p>
-<p>However, by our assumption, every real number is equal to <span class="math inline">\(f(n)\)</span> for some <span class="math inline">\(n\in\N\)</span>, so no real numbers are in the intersection, contradicting the Nested Interval Theorem.</p>
+<p>Note that in each of the three cases <span class="math inline">\(f(i)\notin [a_{i+1},b_{i+1}].\)</span> Letting <span class="math inline">\(U_i=[a_i,b_i]\)</span> for <span class="math inline">\(i\geq1,\)</span> this means that <span class="math inline">\(f(i)\notin U_{i+1},\)</span> and therefore no value <span class="math inline">\(f(n)\)</span> is in <em>all</em> of the closed intervals. That is, for all <span class="math inline">\(n\in\N,\)</span> <span class="math display">\[f(n)\notin\bigcap_{i=1}^\infty U_i\]</span></p>
+<p>However, by our assumption, every real number is equal to <span class="math inline">\(f(n)\)</span> for some <span class="math inline">\(n\in\N,\)</span> so no real numbers are in the intersection, contradicting the Nested Interval Theorem.</p>
 </div>
 <p>We mention here that the proof above actually shows that <span class="math inline">\([0,1]\)</span> is uncountable, and can be adapted to prove the following.</p>
 <div id="thm-intervals-uncountable" class="grouped-theorem grouped-theorem-theorem">
@@ -558,7 +524,7 @@ Desmos Applet&nbsp;4.2: A visualization of how the intervals <span class="math i
 <h2 class="unnumbered anchored" data-anchor-id="review-questions">Review Questions</h2>
 <ol type="1">
 <li>Give the definitions of lower bound, bounded below, infimum, and least element.</li>
-<li>What does the Nested Interval Theorem say? Give an example that shows how it distinguishes <span class="math inline">\(\R\)</span> from <span class="math inline">\(\Q\)</span>.</li>
+<li>What does the Nested Interval Theorem say? Give an example that shows how it distinguishes <span class="math inline">\(\R\)</span> from <span class="math inline">\(\Q.\)</span></li>
 <li>What does it mean when we say <span class="math inline">\(\R\)</span> is uncountable?</li>
 <li>How did we know we would need to use the Least Upper Bound Axiom or one of its consequences when proving <span class="math inline">\(\R\)</span> is uncountable?</li>
 </ol>
@@ -570,8 +536,6 @@ Desmos Applet&nbsp;4.2: A visualization of how the intervals <span class="math i
 <ol>
 <li id="fn1"><p>We will use this kind of technqiue frequently to obtain the second two cases of a theorem we want to prove (e.g.&nbsp;one for increasing functions and one for decreasing function, or one for sups and one for infs).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>If you are rusty on unions and intersections, see <a href="../appendices/union-and-intersection.html#sec-union-intersection" class="quarto-xref"><span>Section B.2</span></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>This is mathspeak for “I don’t feel like writing down all the details.” In this case, the claim is hopefully very believable, but the simple version of the proof requires some theorems about sequences we’ll prove later on in <a href="../sequences/sequence-basics.html" class="quarto-xref"><span>Chapter 10</span></a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>See <a href="../appendices/cardinality.html" class="quarto-xref"><span>Appendix C</span></a> for a quick overview of why this is true.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

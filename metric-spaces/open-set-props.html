@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Properties of Open Sets – Real Analysis</title>
+<title>8&nbsp; Properties of Open Sets – An Illustrated Course in Real Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,6 +77,17 @@ ul.task-list li input[type="checkbox"] {
 \newcommand{\st}{~:~}
 \newcommand{\cee}{\mathsf{C}}
 \newcommand{\bee}{\mathrm{B}}
+\def\mathhlyellow#1{\bbox[##fff3bf,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlgold#1{\bbox[##ffe8a3,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlorange#1{\bbox[##ffddb3,2px,border:1px solid ##c05621]{#1}}
+\def\mathhlgreen#1{\bbox[##d9f7d7,2px,border:1px solid ##3f8f46]{#1}}
+\def\mathhlmint#1{\bbox[##d4f5e9,2px,border:1px solid ##2c7a7b]{#1}}
+\def\mathhlblue#1{\bbox[##dceeff,2px,border:1px solid ##2b6cb0]{#1}}
+\def\mathhlpurple#1{\bbox[##eadffd,2px,border:1px solid ##6b46c1]{#1}}
+\def\mathhlpink#1{\bbox[##ffdbe8,2px,border:1px solid ##b83280]{#1}}
+\def\mathhlred#1{\bbox[##ffd6d6,2px,border:1px solid ##c53030]{#1}}
+\def\mathhlgray#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
+\def\mathhlgrey#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
 $$
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -136,7 +147,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Real Analysis</a> 
+      <a href="../">An Illustrated Course in Real Analysis</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -149,7 +160,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -160,7 +171,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../axioms-of-r/intro-to-r.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">The Real Numbers</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -228,53 +239,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Sequences</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/sequence-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/subsequences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Subsequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../constructing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../minmax.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -283,13 +247,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -304,20 +268,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/cardinality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/wop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/desmos-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Links to Desmos Web Apps</span></span></a>
   </div>
 </li>
       </ul>
@@ -334,8 +298,9 @@ window.Quarto = {
   <ul>
   <li><a href="#highlights" id="toc-highlights" class="nav-link active" data-scroll-target="#highlights">Highlights</a></li>
   <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">8.1</span> Preparation</a></li>
+  <li><a href="#open-sets-as-unions-of-open-balls" id="toc-open-sets-as-unions-of-open-balls" class="nav-link" data-scroll-target="#open-sets-as-unions-of-open-balls"><span class="header-section-number">8.2</span> Open Sets as Unions of Open Balls</a></li>
+  <li><a href="#unions-and-intersections-of-open-sets" id="toc-unions-and-intersections-of-open-sets" class="nav-link" data-scroll-target="#unions-and-intersections-of-open-sets"><span class="header-section-number">8.3</span> Unions and Intersections of Open Sets</a></li>
   <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review Questions</a></li>
-  <li><a href="#to-include" id="toc-to-include" class="nav-link" data-scroll-target="#to-include"><span class="header-section-number">8.2</span> To include</a></li>
   </ul>
 </nav>
     </div>
@@ -370,30 +335,173 @@ window.Quarto = {
 </section>
 <section id="preparation" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">8.1</span> Preparation</h2>
+<p>We’ll start with a few warm-up exercises using the definition of an open set from <a href="open-balls.html" class="quarto-xref"><span>Chapter 7</span></a>.</p>
+<div id="exr-open-negation" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 8.1</strong></span> &nbsp;</p>
+<ol type="1">
+<li>Write down what it means for a subset of a metric space to <em>not</em> be open.</li>
+<li>Write down a careful proof that <span class="math inline">\((-\infty,2]\)</span> is not an open subset of <span class="math inline">\(\R\)</span>.</li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We are <em>not</em> going to call non-open sets “closed”. The term “closed” will have a different definition that we’ll get to later.</p>
+</div>
+</div>
+<div id="exr-open-subset-of-r-has-no-greatest-element" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 8.2</strong></span> Let <span class="math inline">\(U\)</span> be an open subset of <span class="math inline">\(\R\)</span>. Prove that <span class="math inline">\(U\)</span> has no greatest element.</p>
+</div>
+<p>The next theorem gives us another useful characterization of open sets—that each is a union of a collection of open balls.</p>
 <div id="thm-open-set-tfae" class="tfae grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 8.1</strong></span> Let <span class="math inline">\(X\)</span> be a metric space and <span class="math inline">\(U\subseteq X\)</span>. The following are equivalent.</p>
+<p><span class="theorem-title"><strong>Theorem 8.3</strong></span> Let <span class="math inline">\(X\)</span> be a metric space and <span class="math inline">\(U\subseteq X\)</span>. The following are equivalent.</p>
 <ol type="1">
 <li><span class="math inline">\(U\)</span> is open.</li>
 <li><span class="math inline">\(U\)</span> is a union of open balls.</li>
 </ol>
 </div>
-<div id="exr-prove-open-set-tfae" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 8.2</strong></span> Prove <a href="metric-spaces/open-set-props.html#thm-open-set-tfae">Theorem 8.1</a></p>
+<figure class="quarto-float quarto-float-des figure">
+<div aria-describedby="des-open-ball-union-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+<div id="calculator-open-ball-union" class="calculator-container" style="width: 100%; height: 400px;">
+
 </div>
-<p><a href="metric-spaces/open-set-props.html#thm-open-set-tfae">Theorem 8.1</a> is another “the following are equivalent” theorem. We love these because anytime there is a proof involving an open set, we get to pick which condition to use.</p>
+<div class="slider-container">
+<div class="centered-slider">
+<label for="alpha-slider" class="left-label">Slide to reveal</label> <input id="alpha-slider" class="desmos-slider" type="range" min="-0.5" max="1" step="0.01" value="-0.5">
+</div>
+</div>
+<script>
+  var alphaSlider = document.getElementById('alpha-slider');
+  var a = parseFloat(alphaSlider.value);
+  
+  var elt = document.getElementById('calculator-open-ball-union');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator2 = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('open-ball-union.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator2.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  alphaSlider.addEventListener('input', function() {
+    a = parseFloat(this.value);
+    calculator2.setExpression({id:'29', latex:`b=${a}`});
+  });
+</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-des" id="des-open-ball-union-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Desmos Applet&nbsp;8.1: A demonstration of the second condition of <a href="metric-spaces/open-set-props.html#thm-open-set-tfae">Theorem 8.3</a>. The open set <span class="math inline">\(S\)</span> is union of open balls.
+</figcaption>
+</figure>
+<p><a href="metric-spaces/open-set-props.html#thm-open-set-tfae">Theorem 8.3</a> is another “the following are equivalent” theorem. We love these because anytime there is a proof involving an open set, we get to pick which condition to use. Before getting into the proof of this theorem, we’ll see how it can be used.</p>
+<div id="exr-prove-z-comp-is-open" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 8.4</strong></span> Redo <a href="metric-spaces/open-balls.html#exr-open-infinite-interval-is-open">Exercise 7.13</a> using Condition 2 of <a href="metric-spaces/open-set-props.html#thm-open-set-tfae">Theorem 8.3</a> by showing that the interval <span class="math inline">\((-\infty,3)\)</span> is a union of open balls.</p>
+</div>
+</section>
+<section id="open-sets-as-unions-of-open-balls" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="open-sets-as-unions-of-open-balls"><span class="header-section-number">8.2</span> Open Sets as Unions of Open Balls</h2>
+<p>Now we get to the proof.</p>
+<div id="exr-prove-open-set-tfae" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 8.5</strong></span> Prove <a href="metric-spaces/open-set-props.html#thm-open-set-tfae">Theorem 8.3</a>.</p>
+</div>
+<p>It is worth mentioning that some open sets are easier to witness as unions of open balls than others. Compare the two examples below.</p>
+<div id="exr-open-set-proofs" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 8.6</strong></span> Prove that each set below is open. Think about which condition of <a href="metric-spaces/open-set-props.html#thm-open-set-tfae">Theorem 8.3</a> will be easiest to use in each case.</p>
+<ol type="1">
+<li>The complement of <span class="math inline">\(\Z\)</span> in <span class="math inline">\(\R\)</span>.</li>
+<li>The upper half plane <span class="math inline">\(H=\{(x,y)\in\R^2\st y&gt;0\}\)</span> as a subset of <span class="math inline">\(\R^2\)</span>.</li>
+</ol>
+</div>
+<figure class="quarto-float quarto-float-des figure">
+<div aria-describedby="des-half-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+<div id="calculator-half-plane" class="calculator-container" style="width: 100%; height: 300px;">
+
+</div>
+<div class="slider-container">
+<label for="n-slider" class="left-label">Number of open balls:</label>
+<div class="centered-slider">
+<input id="n-slider" class="desmos-slider" type="range" min="0" max="40" step="1" value="0" list="values"> <datalist id="values"> <option value="0" label="0"></option> <option value="40" label="40"></option> </datalist>
+</div>
+</div>
+<script>
+  var nSlider = document.getElementById('n-slider');
+  var n = parseInt(nSlider.value);
+  
+  var elt = document.getElementById('calculator-half-plane');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator3 = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('half-plane.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator3.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  nSlider.addEventListener('input', function() {
+    n = parseInt(this.value);
+    calculator3.setExpression({id:'37', latex:`n=${n}`});
+  });
+</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-des" id="des-half-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Desmos Applet&nbsp;8.2: The upper half plane from <a href="metric-spaces/open-set-props.html#exr-open-set-proofs">Exercise 8.6</a> is hard to imagine as a union of open balls since finitely many cannot cover the plane.
+</figcaption>
+</figure>
+</section>
+<section id="unions-and-intersections-of-open-sets" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="unions-and-intersections-of-open-sets"><span class="header-section-number">8.3</span> Unions and Intersections of Open Sets</h2>
+<p>We can construct new open sets out of old ones using unions and intersections via the following theorem.</p>
 <div id="thm-unions-and-intersections-of-open-sets" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 8.3</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Theorem 8.7</strong></span> &nbsp;</p>
 <ol type="1">
 <li>The union of any collection of open sets is open.</li>
 <li>The intersection of any finite collection of open sets is open.</li>
 </ol>
 </div>
 <div id="exr-unions-of-open-sets" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 8.4</strong></span> Prove Part 1 of <a href="metric-spaces/open-set-props.html#thm-unions-and-intersections-of-open-sets">Theorem 8.3</a>.</p>
-<p>Hint: Will it be easier to work with the <em>definition</em> of openness, or Condition 2 of <a href="metric-spaces/open-set-props.html#thm-open-set-tfae">Theorem 8.1</a> for this proof?</p>
+<p><span class="theorem-title"><strong>Exercise 8.8</strong></span> Prove Part 1 of <a href="metric-spaces/open-set-props.html#thm-unions-and-intersections-of-open-sets">Theorem 8.7</a>.</p>
+<p>Hint: Will it be easier to work with the <em>definition</em> of openness, or Condition 2 of <a href="metric-spaces/open-set-props.html#thm-open-set-tfae">Theorem 8.3</a> for this proof?</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em> (Setup of proof of Part 2 of <a href="metric-spaces/open-set-props.html#thm-unions-and-intersections-of-open-sets">Theorem 8.3</a>). </span>Suppose <span class="math inline">\(U_1,\ldots,U_n\)</span> are open and let <span class="math inline">\(U=\bigcap_{i=1}^n U_i\)</span>. We will prove <span class="math inline">\(U\)</span> is open using the definition of openness, so we start by supposing that <span class="math inline">\(x\in U\)</span>. This means <span class="math inline">\(x\in U_i\)</span> for all <span class="math inline">\(i=1,\ldots,n\)</span>. Therefore, applying the definition of openness to each <span class="math inline">\(U_i\)</span>, there exists <span class="math inline">\(r_i\)</span> such that <span class="math inline">\(\bee_{r_i}(x)\subseteq U_i\subseteq U\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em> (Setup of proof of Part 2 of <a href="metric-spaces/open-set-props.html#thm-unions-and-intersections-of-open-sets">Theorem 8.7</a>). </span>Suppose <span class="math inline">\(U_1,\ldots,U_n\)</span> are open and let <span class="math inline">\(U=\bigcap_{i=1}^n U_i\)</span>. We will prove <span class="math inline">\(U\)</span> is open using the definition of openness, so we start by supposing that <span class="math inline">\(x\in U\)</span>. This means <span class="math inline">\(x\in U_i\)</span> for all <span class="math inline">\(i=1,\ldots,n\)</span>. Therefore, applying the definition of openness to each <span class="math inline">\(U_i\)</span>, there exists <span class="math inline">\(r_i\)</span> such that <span class="math inline">\(\bee_{r_i}(x)\subseteq U_i\subseteq U\)</span>.</p>
 </div>
 <figure class="quarto-float quarto-float-des figure">
 <div aria-describedby="des-open-set-int-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -450,31 +558,26 @@ window.Quarto = {
 </script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-des" id="des-open-set-int-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Desmos Applet&nbsp;8.1: Here is an illustration of what’s going on in the proof so far with just <span class="math inline">\(n=2\)</span> open sets. Here, <span class="math inline">\(x\)</span> is in <span class="math inline">\(U_1\)</span>, so there is an open ball around <span class="math inline">\(x\)</span> which lies entirely within <span class="math inline">\(U_1\)</span>. Similarly, <span class="math inline">\(x\)</span> is in <span class="math inline">\(U_2\)</span>, so there is an open ball around <span class="math inline">\(x\)</span> which lies entirely within <span class="math inline">\(U_2\)</span>. What of these two open balls could you use to finish proving that the <em>intersection</em> is open? How would you generalize this to the case where there are <span class="math inline">\(n\)</span> open sets?
+Desmos Applet&nbsp;8.3: Here is an illustration of what’s going on in the proof so far with just <span class="math inline">\(n=2\)</span> open sets. Here, <span class="math inline">\(x\)</span> is in <span class="math inline">\(U_1\)</span>, so there is an open ball around <span class="math inline">\(x\)</span> which lies entirely within <span class="math inline">\(U_1\)</span>. Similarly, <span class="math inline">\(x\)</span> is in <span class="math inline">\(U_2\)</span>, so there is an open ball around <span class="math inline">\(x\)</span> which lies entirely within <span class="math inline">\(U_2\)</span>. What of these two open balls could you use to finish proving that the <em>intersection</em> is open? How would you generalize this to the case where there are <span class="math inline">\(n\)</span> open sets?
 </figcaption>
 </figure>
 <div id="exr-intersections-of-open-sets" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 8.5</strong></span> Finish the proof of Part 2 of <a href="metric-spaces/open-set-props.html#thm-unions-and-intersections-of-open-sets">Theorem 8.3</a>.</p>
+<p><span class="theorem-title"><strong>Exercise 8.9</strong></span> Finish the proof of Part 2 of <a href="metric-spaces/open-set-props.html#thm-unions-and-intersections-of-open-sets">Theorem 8.7</a>.</p>
 </div>
 <div id="exr-infinite-intersection-of-open-sets" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 8.6</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Exercise 8.10</strong></span> &nbsp;</p>
 <ol type="1">
-<li>At what point in the proof of Part 2 of <a href="metric-spaces/open-set-props.html#thm-unions-and-intersections-of-open-sets">Theorem 8.3</a> did you use the fact that we were only dealing with <em>finitely many</em> open sets?</li>
+<li>At what point in the proof of Part 2 of <a href="metric-spaces/open-set-props.html#thm-unions-and-intersections-of-open-sets">Theorem 8.7</a> did you use the fact that we were only dealing with <em>finitely many</em> open sets?</li>
 <li>Give an example of a(n infinite) collection of open sets whose intersection is <em>not</em> open. (Remember, <span class="math inline">\(\varnothing\)</span> is open!)</li>
 </ol>
 </div>
-<p>It is worth mentioning that some open sets are easier to witness as unions of open balls than others. Compare the two examples below.</p>
-<p>[Two images? Desmos interactives?]</p>
 </section>
 <section id="review-questions" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="review-questions">Review Questions</h2>
-</section>
-<section id="to-include" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="to-include"><span class="header-section-number">8.2</span> To include</h2>
-<ol start="5" type="1">
-<li>Desmos app with C&amp;C Fig 3.1 and fading-in/out open balls</li>
-<li>Visual proof that the open square is open (and that the closed square is not)</li>
-<li>Negate “open”</li>
+<ol type="1">
+<li>Say what it means for a set to be “not open”.</li>
+<li>What are the equivalent characterizations of open sets?</li>
+<li>How do open sets behave under unions and intersections?</li>
 </ol>
 
 

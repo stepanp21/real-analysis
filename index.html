@@ -9,7 +9,7 @@
 <meta name="author" content="Stepan Paul">
 <meta name="dcterms.date" content="2026-03-05">
 
-<title>Real Analysis</title>
+<title>An Illustrated Course in Real Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -78,6 +98,17 @@ ul.task-list li input[type="checkbox"] {
 \newcommand{\st}{~:~}
 \newcommand{\cee}{\mathsf{C}}
 \newcommand{\bee}{\mathrm{B}}
+\def\mathhlyellow#1{\bbox[##fff3bf,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlgold#1{\bbox[##ffe8a3,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlorange#1{\bbox[##ffddb3,2px,border:1px solid ##c05621]{#1}}
+\def\mathhlgreen#1{\bbox[##d9f7d7,2px,border:1px solid ##3f8f46]{#1}}
+\def\mathhlmint#1{\bbox[##d4f5e9,2px,border:1px solid ##2c7a7b]{#1}}
+\def\mathhlblue#1{\bbox[##dceeff,2px,border:1px solid ##2b6cb0]{#1}}
+\def\mathhlpurple#1{\bbox[##eadffd,2px,border:1px solid ##6b46c1]{#1}}
+\def\mathhlpink#1{\bbox[##ffdbe8,2px,border:1px solid ##b83280]{#1}}
+\def\mathhlred#1{\bbox[##ffd6d6,2px,border:1px solid ##c53030]{#1}}
+\def\mathhlgray#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
+\def\mathhlgrey#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
 $$
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -122,7 +153,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -137,7 +168,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Real Analysis</a> 
+      <a href="./">An Illustrated Course in Real Analysis</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -150,7 +181,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -161,7 +192,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./axioms-of-r/intro-to-r.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">The Real Numbers</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -229,53 +260,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Sequences</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sequences/sequence-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sequences/subsequences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Subsequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sequences/series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./constructing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./minmax.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -284,13 +268,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -305,20 +289,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendices/cardinality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices/wop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendices/desmos-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Links to Desmos Web Apps</span></span></a>
   </div>
 </li>
       </ul>
@@ -333,7 +317,19 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
+  <ul class="collapse">
+  <li><a href="#book-features-and-structure" id="toc-book-features-and-structure" class="nav-link" data-scroll-target="#book-features-and-structure">Book Features and Structure</a>
+  <ul class="collapse">
+  <li><a href="#desmos-interactives" id="toc-desmos-interactives" class="nav-link" data-scroll-target="#desmos-interactives">Desmos Interactives</a></li>
+  <li><a href="#annotated-proofs" id="toc-annotated-proofs" class="nav-link" data-scroll-target="#annotated-proofs">Annotated Proofs</a></li>
+  <li><a href="#structure-of-each-chapter" id="toc-structure-of-each-chapter" class="nav-link" data-scroll-target="#structure-of-each-chapter">Structure of Each Chapter</a></li>
+  </ul></li>
+  <li><a href="#notes-on-the-content" id="toc-notes-on-the-content" class="nav-link" data-scroll-target="#notes-on-the-content">Notes on the content</a></li>
+  <li><a href="#technology-used-in-authorship" id="toc-technology-used-in-authorship" class="nav-link" data-scroll-target="#technology-used-in-authorship">Technology Used in Authorship</a></li>
+  <li><a href="#licensing" id="toc-licensing" class="nav-link" data-scroll-target="#licensing">Licensing</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -342,7 +338,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Real Analysis</h1>
+<h1 class="title">An Illustrated Course in Real Analysis</h1>
 </div>
 
 
@@ -371,12 +367,163 @@ window.Quarto = {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This is a Quarto book.</p>
-<p>To learn more about Quarto books visit <a href="https://quarto.org/docs/books" class="uri">https://quarto.org/docs/books</a>.</p>
+<section id="welcome" class="level1 unnumbered">
+<h1 class="unnumbered">Welcome</h1>
+<div class="desmos">
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+<div id="calculator-open-set-def" class="calculator-container" style="width: 100%; height: 400px;">
+
+</div>
+<script>
+  var elt = document.getElementById('calculator-open-set-def');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('metric-spaces/open-set-def.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+</script>
+</div>
+<p>Real analysis occupies a special place in the psyche of undergraduate math majors and instructors. The course is widely regarded as the most difficult required course for the major. And yet for many, it fundamentally changes their relationship with mathematics. Getting through the course is a challenge, but the subject’s simultaneous applicability and dedication to rigor often resonates with both learners and teachers.</p>
+<p>I think for this reason, teaching the course is very personal and each instructor wants to bring their own flavor of understanding into the classroom. For me, illustrating and visualizing each concept is an important component of understanding, and this informs my take on the course in this text.</p>
+<p>This version of the textbook is still in flux, with updates and fixes constantly being made. I hope to eventually have a stable “first edition”.</p>
+<section id="book-features-and-structure" class="level2">
+<h2 class="anchored" data-anchor-id="book-features-and-structure">Book Features and Structure</h2>
+<p>Each chapter is meant to correspond to one day of instruction. When this disrupted the natural grouping of topics and theorems, I did my best. The number of chapters corresponds to a typical number of days of primary instruction for a three-times-per-week, 14-week course (leaving days for review, exams, etc).</p>
+<section id="desmos-interactives" class="level3">
+<h3 class="anchored" data-anchor-id="desmos-interactives">Desmos Interactives</h3>
+<p>The most distinguishing feature of this textbook is the incorporation of interactive illustrations created with Desmos. These were created using the Desmos API and are included in this textbook with permission from Desmos Studio PBC.</p>
+<div class="desmos">
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+<div id="calculator-distance-in-r" class="calculator-container" style="width: 100%; height: 250px;">
+
+</div>
+<script>
+  var elt1 = document.getElementById('calculator-distance-in-r');
+  var options1 = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator1 = Desmos.GraphingCalculator(elt1,options1);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('metric-spaces/distanceInR.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state1 = payload && payload.state ? payload.state : payload;
+        calculator1.setState(state1);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+</script>
+</div>
+<p>Each illustration was carefully designed with the learner in mind. While I have a great deal of fun creating these things, I tried to exercise restraint. I feel strongly that students should get in the habit of drawing their own pictures, and many of the exercises explicitly ask them to do so.</p>
+<p>Most of the illustrations in the textbook have the equations and controls hidden. Links to versions that can be seen and edited on the Desmos web app are available in <a href="appendices/desmos-links.html" class="quarto-xref"><span>Appendix E — Links to Desmos Web Apps</span></a>.</p>
+</section>
+<section id="annotated-proofs" class="level3">
+<h3 class="anchored" data-anchor-id="annotated-proofs">Annotated Proofs</h3>
+<p>Many of my proofs are <span class="explain explained-highlight" style=" --explain-bg: #fff3bf; --explain-border: #b7791f;" tabindex="0" aria-describedby="explain-popover-1">annotated with mouse-overs<span id="explain-popover-1" class="explain-popover">Meaning that you can mouse-over highlighted words or phrases to see the rationale for that step.</span></span>.</p>
+<p>It is no secret that the students who struggle most in undergraduate real analysis are ones who don’t enter the course with solid basic proof-writing skills. And when dealing with complicated stacked quantifiers (as in the definition of continuity), bright students who had gotten by on intuition alone up until this course often find themselves struggling and need to return to the basics.</p>
+<p>For these reasons, I include some highly systematic proofs that go “by the book” in terms of dealing with quantifiers and using standard proof structures, with annotations explaining every step.</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em> (<span class="math inline">\(f(x)=3x+1\)</span> is continuous at <span class="math inline">\(a=4\)</span>). </span>We need to prove that <span class="math display">\[
+\mathhlred{(\forall \epsilon&gt;0)}\,\mathhlblue{(\exists \delta&gt;0)}\,(\mathhlorange{|x-4|&lt;\delta}\,\Longrightarrow\,\mathhlgreen{|f(x)-f(4)|&lt;\epsilon})
+\]</span></p>
+<p><span class="explain explained-highlight" style=" --explain-bg: #ffd6d6; --explain-border: #c53030;" tabindex="0" aria-describedby="explain-popover-2">Suppose <span class="math inline">\(\epsilon&gt;0.\)</span><span id="explain-popover-2" class="explain-popover">To address the <span class="math inline">\(\forall\)</span> quantifier in a direct proof, we have no choice but to start with a sentence like this.</span></span> <span class="explain explained-highlight" style=" --explain-bg: #dceeff; --explain-border: #2b6cb0;" tabindex="0" aria-describedby="explain-popover-3">Let <span class="math inline">\(\delta=\frac{\epsilon}{3}.\)</span><span id="explain-popover-3" class="explain-popover">Here we exhibit a candidate for <span class="math inline">\(\delta.\)</span> The choice we made here was the result of some scratchwork, which we show below.</span></span> <span class="explain explained-highlight" style=" --explain-bg: #ffddb3; --explain-border: #c05621;" tabindex="0" aria-describedby="explain-popover-4">Suppose <span class="math inline">\(|x-4|\)</span>&lt;<span id="explain-popover-4" class="explain-popover">Assuming the hypothesis of the conditional.</span></span> <span class="explain explained-highlight" style=" --explain-bg: #d9f7d7; --explain-border: #3f8f46;" tabindex="0" aria-describedby="explain-popover-5">Then<span id="explain-popover-5" class="explain-popover">Now we set about proving the conclusion of the conditional. If we chose <span class="math inline">\(\delta\)</span> wisely, this should be a matter of doing some inequality algebra.</span></span> <span class="math display">\[
+\begin{aligned}
+|f(x)-f(4)| &amp;= |(3x+1)-(3\cdot4+1)| \\
+&amp;= |3(x-4)| \\
+&amp;\vdots
+\end{aligned}
+\]</span></p>
+</div>
+<p>The resulting proofs are very dry, and I don’t necessarily recommend doing every proof so systematically, but I hope that it gives students something to fall back on.</p>
+</section>
+<section id="structure-of-each-chapter" class="level3">
+<h3 class="anchored" data-anchor-id="structure-of-each-chapter">Structure of Each Chapter</h3>
+<p>Anyone should feel free to use this textbook however they’d like, but here were my intentions while writing.</p>
+<ul>
+<li><em>Highlights</em> give a quick overview of what’s covered. I think this is especially helpful for the web rendering.</li>
+<li>The subsection <em>Preparation</em> is intended as pre-class readings and exercises for students. I think it’s important for math majors to get practice <em>actively reading mathematics</em>. Designating the introduction to each section as the required reading is a sort of compromise, and they are meant to be especially student-readable.</li>
+<li>Subsequent sections outline what might be covered during class. Many proofs, even of major theorems, are left as exercises. This gives the instructor the option of assigning them to students (for homework or during class).</li>
+<li><em>Review Questions</em> at the end of each section are meant to be useful for students to go through right after class or while studying for an exam.</li>
+</ul>
+</section>
+</section>
+<section id="notes-on-the-content" class="level2">
+<h2 class="anchored" data-anchor-id="notes-on-the-content">Notes on the content</h2>
+<p>This textbook was written with the course <em>MA 425: Mathematical Analysis I</em> at North Carolina State University in mind. Officially, the course description reads:</p>
+<blockquote class="blockquote">
+<p>Real number system, functions and limits, topology on the real line, continuity, differential and integral calculus for functions of one variable. Infinite series, uniform convergence.</p>
+</blockquote>
+<p>Here are a few decisions I made in curating the content.</p>
+<ul>
+<li>Even though it isn’t required, I spend a bit of time on metric spaces in general. This is because I believe we gain a lot of intuition about distances by thinking about geometry in <span class="math inline">\(\R^2\)</span> and <span class="math inline">\(\R^3\)</span>; for some reason geometry is actually harder for our brains in <span class="math inline">\(\R^1.\)</span> It’s also often the case that proving something for a general metric space is no harder than proving it for <span class="math inline">\(\R\)</span>; and knowing that the proof should be general lets students focus on using metric space properties without getting distracted by <span class="math inline">\(\R\)</span>’s additional structure. The philosophy in general is “get intuition from <span class="math inline">\(\R^2\)</span> and <span class="math inline">\(\R^3\)</span>; prove for general metric spaces; apply in <span class="math inline">\(\R\)</span>”.</li>
+<li>While dealing with general metric spaces in principle could allow us to talk about the topological definition of compactness, this topic is relegated to an appendix; one needs to pick one’s battles.</li>
+</ul>
+</section>
+<section id="technology-used-in-authorship" class="level2">
+<h2 class="anchored" data-anchor-id="technology-used-in-authorship">Technology Used in Authorship</h2>
+<p>This textbook was created using <a href="https://quarto.org/docs/books">Quarto</a>, which is designed for multiformat output. A PDF version is available for download, but of course, the interactivity is lost.</p>
+<p>As stated above, the Desmos API is used in this textbook with with permission from Desmos Studio PBC.</p>
+<p>I used OpenAI tools (Codex and ChatGPT) to assist with technical aspects of the textbook including formatting, troubleshooting interactivity for the Desmos interactives and annotated proofs, and proof-reading.</p>
+<p>Every word of the written content—typos, errors, hallucinations, goblins, em-dashes, and all—is my own.</p>
+</section>
+<section id="licensing" class="level2">
+<h2 class="anchored" data-anchor-id="licensing">Licensing</h2>
+<p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.</p>
+</section>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<blockquote class="blockquote">
+<p>The author acknowledges support of the Institut Henri Poincaré (UAR 839 CNRS-Sorbonne Université), and LabEx CARMIN (ANR-10-LABX-59-01).</p>
+</blockquote>
+<p>I started writing this textbook in January 2026, while spending time at the Institut Henri Poincaré for the <em>Mathematical Illustration as a Research Technique</em> trimester program. In addition to acknowledging the support of the institute and the program organizers (Dave Bachmann, Rémi Coulon, Gabriel Dorfsman-Hopkins, Edmund Harriss, Martin Skrodzki, Katherine Stange, and Glen Whitney), I also want to thank Yuri Sulyma for running a mini-course on Javascript and Dave Bachmann for running a session on vibe coding.</p>
+<p>I also want to acknowledge and thank NC State University and the Mathematics Department in particular for granting my sabbatical to participate in the program and for travel support.</p>
+<blockquote class="blockquote">
+<p>The Desmos API is used with Permission from Desmos Studio PBC.</p>
+</blockquote>
+<p>Thank you to the Desmos Studio Public Benefit Corporation for allowing me to use your wonderful product in this text.</p>
+<p>I also acknowledge additional support from an NC State University Libraries Alt-Textbook Project grant, and thank David Tully and Will Cross for their support and advice.</p>
+<p>Part of the organiation and presentation are inspired by <em>Closer and Closer</em> by Carol Schumacher <span class="citation" data-cites="schumacher2008closer">Schumacher (<a href="references.html#ref-schumacher2008closer" role="doc-biblioref">2008</a>)</span> and <em>Understanding Real Analysis</em> by Stephen Abbott <span class="citation" data-cites="abbott2016understanding">Abbott (<a href="references.html#ref-abbott2016understanding" role="doc-biblioref">2016</a>)</span>.</p>
+<p>Finally, I want to acknowledge John Rock, author of <em>Arbitrarily Close</em> <span class="citation" data-cites="rock2025arbitrarily">Rock (<a href="references.html#ref-rock2025arbitrarily" role="doc-biblioref">2025</a>)</span>, another real analysis textbook with dozens of wonderful linked Desmos interactives. John has been extremely generous in sharing his experiences in authoring in this format.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-abbott2016understanding" class="csl-entry" role="listitem">
+Abbott, Stephen. 2016. <em>Understanding Analysis</em>. Vol. 2. Springer.
+</div>
+<div id="ref-rock2025arbitrarily" class="csl-entry" role="listitem">
+Rock, John A. 2025. <em>Arbitrarily Close</em>. 619 Wreath.
+</div>
+<div id="ref-schumacher2008closer" class="csl-entry" role="listitem">
+Schumacher, Carol. 2008. <em>Closer and Closer: Introducing Real Analysis</em>. Jones <span>and</span> Bartlett Publishers.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; \mathbb{R} as a Metric Space – Real Analysis</title>
+<title>6&nbsp; \mathbb{R} as a Metric Space – An Illustrated Course in Real Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,6 +77,17 @@ ul.task-list li input[type="checkbox"] {
 \newcommand{\st}{~:~}
 \newcommand{\cee}{\mathsf{C}}
 \newcommand{\bee}{\mathrm{B}}
+\def\mathhlyellow#1{\bbox[##fff3bf,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlgold#1{\bbox[##ffe8a3,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlorange#1{\bbox[##ffddb3,2px,border:1px solid ##c05621]{#1}}
+\def\mathhlgreen#1{\bbox[##d9f7d7,2px,border:1px solid ##3f8f46]{#1}}
+\def\mathhlmint#1{\bbox[##d4f5e9,2px,border:1px solid ##2c7a7b]{#1}}
+\def\mathhlblue#1{\bbox[##dceeff,2px,border:1px solid ##2b6cb0]{#1}}
+\def\mathhlpurple#1{\bbox[##eadffd,2px,border:1px solid ##6b46c1]{#1}}
+\def\mathhlpink#1{\bbox[##ffdbe8,2px,border:1px solid ##b83280]{#1}}
+\def\mathhlred#1{\bbox[##ffd6d6,2px,border:1px solid ##c53030]{#1}}
+\def\mathhlgray#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
+\def\mathhlgrey#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
 $$
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -136,7 +147,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Real Analysis</a> 
+      <a href="../">An Illustrated Course in Real Analysis</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -149,7 +160,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -160,7 +171,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../axioms-of-r/intro-to-r.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">The Real Numbers</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -228,53 +239,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Sequences</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/sequence-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/subsequences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Subsequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../constructing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../minmax.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -283,13 +247,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -304,20 +268,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/cardinality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/wop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/desmos-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Links to Desmos Web Apps</span></span></a>
   </div>
 </li>
       </ul>
@@ -345,7 +309,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../metric-spaces/metric-space-axioms.html">Metric Spaces</a></li><li class="breadcrumb-item"><a href="../metric-spaces/r-as-a-metric-space.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="math inline">\(\mathbb{R}\)</span> as a Metric Space</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="math inline">\(\mathbb{R}\)</span> as a Metric Space</span></h1>
+<h1 class="title"><span id="sec-r-as-a-metric-space" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="math inline">\(\mathbb{R}\)</span> as a Metric Space</span></span></h1>
 </div>
 
 
@@ -373,26 +337,26 @@ window.Quarto = {
 <section id="preparation" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">6.1</span> Preparation</h2>
 <p>In this section, we will focus on thinking about the real number system as a metric space. We start with what will end up being one of the most-cited theorems in the course.</p>
-<div id="thm-open-ball-in-r" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 6.1</strong></span> Let <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(a\in\R\)</span>. Then <span class="math inline">\(|a-x|&lt;r\)</span> if and only if <span class="math inline">\(x\in(a-r,a+r)\)</span>.</p>
+<div id="thm-open-ball-in-r" class="tfae grouped-theorem grouped-theorem-theorem">
+<p><span class="theorem-title"><strong>Theorem 6.1</strong></span> Let <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(a\in\R.\)</span> Then <span class="math inline">\(|a-x|&lt;r\)</span> if and only if <span class="math inline">\(x\in(a-r,a+r).\)</span></p>
 </div>
 <div id="exr-open-ball-in-r" class="grouped-theorem grouped-theorem-exercise">
 <p><span class="theorem-title"><strong>Exercise 6.2</strong></span> &nbsp;</p>
 <ol type="1">
 <li>Draw a picture of what this <a href="metric-spaces/r-as-a-metric-space.html#thm-open-ball-in-r">Theorem 6.1</a> is saying on the number line.</li>
 <li>Prove <a href="metric-spaces/r-as-a-metric-space.html#thm-open-ball-in-r">Theorem 6.1</a>.</li>
-<li>Rewrite <span class="math inline">\(|a-x|&lt;r\)</span> as a statement about distance in <span class="math inline">\(\R\)</span>.</li>
+<li>Rewrite <span class="math inline">\(|a-x|&lt;r\)</span> as a statement about distance in <span class="math inline">\(\R.\)</span></li>
 <li>Rewrite <span class="math inline">\(x\in(a-r,a+r)\)</span> as an inequality.</li>
 </ol>
 </div>
 <p><a href="metric-spaces/r-as-a-metric-space.html#thm-open-ball-in-r">Theorem 6.1</a> is foundational because it connects a statement about analysis (distances and closeness) to a statement about geometry (subsets of <span class="math inline">\(\R\)</span>). In general, mathematicians love “if and only if” statements because they often let you translate a statement in one context to a statement in another, where you may have a whole new set of tools you can apply. Together with Parts 3 and 4 from <a href="metric-spaces/r-as-a-metric-space.html#exr-open-ball-in-r">Exercise 6.2</a>, you now have four toolbags you can use to analyze the statement: absolute values, intervals, distances, and inequalities.</p>
 <p>Indeed, the connections furnished by <a href="metric-spaces/r-as-a-metric-space.html#thm-open-ball-in-r">Theorem 6.1</a> can be used to help us prove other theorems relating the concepts we’ve encountered so far.</p>
 <div id="thm-lub-tfae" class="tfae grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 6.3</strong></span> Suppose <span class="math inline">\(b\)</span> is an upper bound on a nonempty subset <span class="math inline">\(S\subseteq\R\)</span>. Then the following are equivalent.</p>
+<p><span class="theorem-title"><strong>Theorem 6.3</strong></span> Suppose <span class="math inline">\(b\)</span> is an upper bound on a nonempty subset <span class="math inline">\(S\subseteq\R.\)</span> Then the following are equivalent.</p>
 <ol type="1">
 <li><span class="math inline">\(b=\sup S\)</span></li>
-<li>For all <span class="math inline">\(\epsilon&gt;0\)</span> there exists <span class="math inline">\(x\in S\)</span> such that <span class="math inline">\(x\in(b-\epsilon,b]\)</span>.</li>
-<li>For all <span class="math inline">\(\epsilon&gt;0\)</span> there exists <span class="math inline">\(x\in S\)</span> such that <span class="math inline">\(|b-x|&lt;\epsilon\)</span>.</li>
+<li>For all <span class="math inline">\(\epsilon&gt;0\)</span> there exists <span class="math inline">\(x\in S\)</span> such that <span class="math inline">\(x\in(b-\epsilon,b].\)</span></li>
+<li>For all <span class="math inline">\(\epsilon&gt;0\)</span> there exists <span class="math inline">\(x\in S\)</span> such that <span class="math inline">\(|b-x|&lt;\epsilon.\)</span></li>
 </ol>
 </div>
 <figure class="quarto-float quarto-float-des figure">
@@ -437,16 +401,19 @@ window.Quarto = {
 
   eSlider.addEventListener('input', function() {
     e = parseFloat(this.value);
-    calculator.setExpression({id:'epsilon-slider', latex:`\\varepsilon=${e}`});
+    calculator.setExpression({id:'21', latex:`\\varepsilon=${e}`});
   });
 </script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-des" id="des-sup-tfae-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Desmos Applet&nbsp;6.1: A demonstration of <a href="metric-spaces/r-as-a-metric-space.html#thm-lub-tfae">Theorem 6.3</a>. In blue is the set <span class="math inline">\(S=\left\{\frac{0}{1},\frac{1}{2},\frac{2}{3},\ldots\right\}\)</span>. When <span class="math inline">\(b=1\)</span>, note that for whatever <span class="math inline">\(\epsilon&gt;0\)</span> is chosen, there is at least one element of <span class="math inline">\(S\)</span> in both the green and orange intervals. When <span class="math inline">\(b&gt;1\)</span>, you could choose a small <span class="math inline">\(\epsilon&gt;0\)</span> and have <em>no</em> points of <span class="math inline">\(S\)</span> in the orange and green intervals.
+Desmos Applet&nbsp;6.1: A demonstration of <a href="metric-spaces/r-as-a-metric-space.html#thm-lub-tfae">Theorem 6.3</a>. In blue is the set <span class="math inline">\(S=\left\{\frac{0}{1},\frac{1}{2},\frac{2}{3},\ldots\right\}.\)</span> When <span class="math inline">\(b=1,\)</span> note that for whatever <span class="math inline">\(\epsilon&gt;0\)</span> is chosen, there is at least one element of <span class="math inline">\(S\)</span> in both the green and orange intervals. When <span class="math inline">\(b&gt;1,\)</span> you could choose a small <span class="math inline">\(\epsilon&gt;0\)</span> and have <em>no</em> points of <span class="math inline">\(S\)</span> in the orange and green intervals.
 </figcaption>
 </figure>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>(Inclue link to my video proof?)</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Suppose <span class="math inline">\(b\)</span> is an upper bound on <span class="math inline">\(S.\)</span></p>
+<p><span class="math inline">\((1\Rightarrow2)\)</span>: Suppose <span class="math inline">\(b=\sup S\)</span> and <span class="explain explained-highlight" aria-describedby="explain-popover-1" style=" --explain-bg: #ffd6d6; --explain-border: #c53030;" tabindex="0">let <span class="math inline">\(\epsilon&gt;0\)</span><span id="explain-popover-1" class="explain-popover">Since we are proving something starting with ’for all <span class="math inline">\(\epsilon&gt;0,\)</span> this has to be the first line of our proof (after stating the baseline assumptions).</span></span>. Then <span class="math inline">\(b-\epsilon\)</span> is not an upper bound on <span class="math inline">\(S\)</span> because <span class="math inline">\(b-\epsilon&lt;b\)</span> and <span class="math inline">\(b\)</span> is the <em>least</em> upper bound on <span class="math inline">\(S.\)</span> That means there exists <span class="math inline">\(x\in S\)</span> with <span class="math inline">\(b-\epsilon&lt;x.\)</span> Since <span class="math inline">\(b\)</span> is an upper bound on <span class="math inline">\(S,\)</span> <span class="math inline">\(x\leq b.\)</span> Thus we have shown <span class="math inline">\(x\in(b-\epsilon,b].\)</span></p>
+<p><span class="math inline">\((2\Rightarrow3)\)</span>: If <span class="math inline">\(x\in(b-\epsilon,b],\)</span> then <span class="math inline">\(x\in(b-\epsilon,b+\epsilon),\)</span> so <span class="math inline">\(|b-x|&lt;\epsilon\)</span> by <a href="metric-spaces/r-as-a-metric-space.html#thm-open-ball-in-r">Theorem 6.1</a>.</p>
+<p><span class="math inline">\((3\Rightarrow1)\)</span>: We will prove this by <span class="explain explained-highlight" aria-describedby="explain-popover-2" style=" --explain-bg: #d9f7d7; --explain-border: #3f8f46;" tabindex="0">contraposition<span id="explain-popover-2" class="explain-popover">This means we need to prove ‘(not 1) <span class="math inline">\(\Rightarrow\)</span> (not 3).’ What is the negation of (3)?</span></span>. Suppose <span class="math inline">\(b\)</span> is not the least upper bound on <span class="math inline">\(S.\)</span> That means there exists another upper bound <span class="math inline">\(u\)</span> on <span class="math inline">\(S\)</span> such that <span class="math inline">\(u&lt;b.\)</span> If we let <span class="math inline">\(\epsilon=b-u,\)</span> then for any <span class="math inline">\(x\in S,\)</span> <span class="math inline">\(x\leq b-\epsilon=u,\)</span> so by <a href="metric-spaces/r-as-a-metric-space.html#thm-open-ball-in-r">Theorem 6.1</a>, <span class="math inline">\(|b-x|\geq \epsilon.\)</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -458,7 +425,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When we encounter a new concept, we will often have a TFAE (“the following are equivalent”) theorem that follows giving us alternative ways of understanding the new concept. Since these theorems are so useful, I will color-code them with a <span class="tfae-hl">lightseagreen</span> vertical bar.</p>
+<p>When we encounter a new concept, we will often have a TFAE (“the following are equivalent”) theorem that follows giving us alternative ways of understanding the new concept. Since these theorems are so useful, I will color-code them with a <span class="tfae-hl">lightseagreen</span> vertical bar. In fact, the last two theorems are of this kind.</p>
 </div>
 </div>
 <div id="exr-reproof-of-sup-basic" class="grouped-theorem grouped-theorem-exercise">
@@ -472,13 +439,13 @@ Note
 <h2 data-number="6.2" class="anchored" data-anchor-id="the-max-and-min-of-a-finite-set"><span class="header-section-number">6.2</span> The <span class="math inline">\(\max\)</span> and <span class="math inline">\(\min\)</span> of a Finite Set</h2>
 <p>In <a href="metric-spaces/metric-space-axioms.html#thm-absolute-value-props">Theorem 5.5</a>, I used the notation <span class="math inline">\(\max\{a,-a\}\)</span> to mean whichever of these two numbers is greater. Here we will make that notation precise with some words of caution about when you can use it.</p>
 <div id="thm-max-of-finite-set" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 6.6</strong></span> Suppose <span class="math inline">\(F\subseteq\R\)</span> is a nonempty finite set. Prove that <span class="math inline">\(\sup F\)</span> exists and <span class="math inline">\(\sup F\in F\)</span> (i.e.&nbsp;that <span class="math inline">\(F\)</span> has a greatest element). In this case we write <span class="math inline">\(\max F\)</span> for the greatest element of <span class="math inline">\(F\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 6.6</strong></span> Suppose <span class="math inline">\(F\subseteq\R\)</span> is a nonempty finite set. Then <span class="math inline">\(\sup F\)</span> exists and <span class="math inline">\(\sup F\in F\)</span> (i.e.&nbsp;that <span class="math inline">\(F\)</span> has a greatest element). In this case we write <span class="math inline">\(\max F\)</span> for the greatest element of <span class="math inline">\(F.\)</span></p>
 </div>
-<p>For example, <span class="math inline">\(\max\{3,7,5\}=7\)</span>.</p>
+<p>For example, <span class="math inline">\(\max\{3,7,5\}=7.\)</span></p>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(n\)</span> be the number of elements of <span class="math inline">\(F\)</span>. We will prove that <span class="math inline">\(F\)</span> has a greatest element by induction on <span class="math inline">\(n\)</span>.</p>
-<p>As a base case, suppose <span class="math inline">\(n=1\)</span>. Then <span class="math inline">\(F=\{x_1\}\)</span>. In this case <span class="math inline">\(x_1\geq x_1\)</span>, so <span class="math inline">\(x_1\)</span> is an upper bound on <span class="math inline">\(F\)</span>. And any upper bound <span class="math inline">\(b\)</span> on <span class="math inline">\(F\)</span> must have <span class="math inline">\(b\geq x_1\)</span>, so <span class="math inline">\(x_1\)</span> is the least upper bound. And of course <span class="math inline">\(x_1\in F\)</span>.</p>
-<p>Now suppose that <span class="math inline">\(k\in\N\)</span> and any set with <span class="math inline">\(k\)</span> elements has a greatest element. Now suppose <span class="math inline">\(F=\{x_1,\ldots,x_k,x_{k+1}\}\)</span> has <span class="math inline">\(k+1\)</span> elements. Define <span class="math inline">\(E=\{x_1,\ldots,x_k\}\)</span> so that <span class="math inline">\(E\)</span> has <span class="math inline">\(k\)</span> elements and therefore a greatest element <span class="math inline">\(g\)</span>. If <span class="math inline">\(x_{k+1}\geq g\)</span>, then let <span class="math inline">\(b=x_{k+1}\)</span>, and otherwise, let <span class="math inline">\(b=g\)</span>. Either way, <span class="math inline">\(b\geq x_{k+1}\)</span> and <span class="math inline">\(b\geq g\geq x_i\)</span> for all <span class="math inline">\(i=1,\ldots,n\)</span> (so <span class="math inline">\(b\)</span> is an upper bound), and either way <span class="math inline">\(b\in F\)</span>. And if <span class="math inline">\(u\)</span> is any upper bound on <span class="math inline">\(F\)</span>, then <span class="math inline">\(u\geq b\)</span> and <span class="math inline">\(u\geq x_{k+1}\)</span>, so <span class="math inline">\(u\geq b\)</span>. Thus, <span class="math inline">\(b\)</span> is the <em>least</em> upper bound of <span class="math inline">\(F\)</span>, and since <span class="math inline">\(b\in F\)</span>, <span class="math inline">\(b\)</span> is the greatest element.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(n\)</span> be the number of elements of <span class="math inline">\(F.\)</span> We will prove that <span class="math inline">\(F\)</span> has a greatest element by induction on <span class="math inline">\(n.\)</span></p>
+<p>As a base case, suppose <span class="math inline">\(n=1.\)</span> Then <span class="math inline">\(F=\{x_1\}.\)</span> In this case <span class="math inline">\(x_1\geq x_1,\)</span> so <span class="math inline">\(x_1\)</span> is an upper bound on <span class="math inline">\(F.\)</span> And any upper bound <span class="math inline">\(b\)</span> on <span class="math inline">\(F\)</span> must have <span class="math inline">\(b\geq x_1,\)</span> so <span class="math inline">\(x_1\)</span> is the least upper bound. And of course <span class="math inline">\(x_1\in F.\)</span></p>
+<p>Now suppose that <span class="math inline">\(k\in\N\)</span> and any set with <span class="math inline">\(k\)</span> elements has a greatest element. Now suppose <span class="math inline">\(F=\{x_1,\ldots,x_k,x_{k+1}\}\)</span> has <span class="math inline">\(k+1\)</span> elements. Define <span class="math inline">\(E=\{x_1,\ldots,x_k\}\)</span> so that <span class="math inline">\(E\)</span> has <span class="math inline">\(k\)</span> elements and therefore a greatest element <span class="math inline">\(g.\)</span> If <span class="math inline">\(x_{k+1}\geq g,\)</span> then let <span class="math inline">\(b=x_{k+1},\)</span> and otherwise, let <span class="math inline">\(b=g.\)</span> Either way, <span class="math inline">\(b\geq x_{k+1}\)</span> and <span class="math inline">\(b\geq g\geq x_i\)</span> for all <span class="math inline">\(i=1,\ldots,n\)</span> (so <span class="math inline">\(b\)</span> is an upper bound), and either way <span class="math inline">\(b\in F.\)</span> And if <span class="math inline">\(u\)</span> is any upper bound on <span class="math inline">\(F,\)</span> then <span class="math inline">\(u\geq g\)</span> and <span class="math inline">\(u\geq x_{k+1},\)</span> so <span class="math inline">\(u\geq b.\)</span> Thus, <span class="math inline">\(b\)</span> is the <em>least</em> upper bound of <span class="math inline">\(F,\)</span> and since <span class="math inline">\(b\in F,\)</span> <span class="math inline">\(b\)</span> is the greatest element.</p>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -494,7 +461,7 @@ Caution
 </div>
 </div>
 <div id="exr-min" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 6.7</strong></span> Prove that if <span class="math inline">\(F\)</span> is a finite nonempty subset of <span class="math inline">\(\R\)</span>, then <span class="math inline">\(F\)</span> has a least element, which we call the <span class="math inline">\(\min\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 6.7</strong></span> Prove that if <span class="math inline">\(F\)</span> is a finite nonempty subset of <span class="math inline">\(\R,\)</span> then <span class="math inline">\(F\)</span> has a least element, which we call the <span class="math inline">\(\min.\)</span></p>
 <p>Hint: You can try replicating the proof of <a href="metric-spaces/r-as-a-metric-space.html#thm-max-of-finite-set">Theorem 6.6</a>, but it may be easier to <em>apply</em> that theorem to <span class="math inline">\(F\)</span> somehow instead!</p>
 </div>
 </section>
@@ -502,12 +469,12 @@ Caution
 <h2 data-number="6.3" class="anchored" data-anchor-id="integers-rationals-and-irrationals-in-r"><span class="header-section-number">6.3</span> Integers, Rationals, and Irrationals in <span class="math inline">\(\R\)</span></h2>
 <p>By now we may have an intuitive sense that even though the rationals have “holes” where we would expect suprema to be, they are still “everywhere” along the number line. This somewhat bizarre discrepancy is made precise by the next few exercises.</p>
 <div id="exr-floors" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 6.8</strong></span> Let <span class="math inline">\(a\in\R\)</span>. Prove that there exists a unique <span class="math inline">\(n\in\Z\)</span> such that <span class="math inline">\(n\leq a&lt;n+1\)</span>.</p>
-<p>Note that you will need the Well-Ordered Property of <span class="math inline">\(\Z\)</span> in order to prove this (see <a href="../appendices/wop.html" class="quarto-xref"><span>Appendix E</span></a>).</p>
+<p><span class="theorem-title"><strong>Exercise 6.8</strong></span> Let <span class="math inline">\(a\in\R.\)</span> Prove that there exists a unique <span class="math inline">\(n\in\Z\)</span> such that <span class="math inline">\(n\leq a&lt;n+1.\)</span></p>
+<p>Note that you will need the Well-Ordered Property of <span class="math inline">\(\Z\)</span> in order to prove this (see <a href="../appendices/wop.html" class="quarto-xref"><span>Appendix D</span></a>).</p>
 </div>
-<p><a href="metric-spaces/r-as-a-metric-space.html#exr-floors">Exercise 6.8</a> now allows us to use the “floor function”; for any <span class="math inline">\(x\in \R\)</span> we can define <span class="math inline">\(\lfloor x\rfloor\)</span> to be the greatest integer that is less than or equal to <span class="math inline">\(x\)</span>; similarly, <span class="math inline">\(\lceil x\rceil\)</span>, the “ceiling”, is the least integer that is greater than or equal to <span class="math inline">\(x\)</span>. In practice, students tend to overuse the floor function in real analysis proofs—most of the time you just need <em>an</em> integer that is greater <span class="math inline">\(x\)</span>, which is furnished by the Archimedian Property (<a href="axioms-of-r/lub.html#thm-arch-prop">Theorem 3.8</a>).</p>
+<p><a href="metric-spaces/r-as-a-metric-space.html#exr-floors">Exercise 6.8</a> now allows us to use the “floor function”; for any <span class="math inline">\(x\in \R\)</span> we can define <span class="math inline">\(\lfloor x\rfloor\)</span> to be the greatest integer that is less than or equal to <span class="math inline">\(x\)</span>; similarly, <span class="math inline">\(\lceil x\rceil,\)</span> the “ceiling”, is the least integer that is greater than or equal to <span class="math inline">\(x.\)</span> In practice, students tend to overuse the floor function in real analysis proofs—most of the time you just need <em>an</em> integer that is greater <span class="math inline">\(x,\)</span> which is furnished by the Archimedian Property (<a href="axioms-of-r/lub.html#thm-arch-prop">Theorem 3.8</a>).</p>
 <div id="exr-rational-floor" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 6.9</strong></span> Let <span class="math inline">\(b\in\R\)</span> and <span class="math inline">\(q\in\N\)</span>. Prove that there exists a unique <span class="math inline">\(p\in\Z\)</span> such that <span class="math display">\[\frac{p}{q}\leq b&lt; \frac{p+1}{q}\]</span></p>
+<p><span class="theorem-title"><strong>Exercise 6.9</strong></span> Let <span class="math inline">\(b\in\R\)</span> and <span class="math inline">\(q\in\N.\)</span> Prove that there exists a unique <span class="math inline">\(p\in\Z\)</span> such that <span class="math display">\[\frac{p}{q}\leq b&lt; \frac{p+1}{q}\]</span></p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -526,7 +493,7 @@ Hint
 </div>
 </div>
 <div id="exr-rational-in-neighborhood" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 6.10</strong></span> Let <span class="math inline">\(b\in\R\)</span> and <span class="math inline">\(\epsilon&gt;0\)</span>. Prove that there exists <span class="math inline">\(r\in\Q\)</span> such that <span class="math inline">\(d(b,r)&lt;\epsilon\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 6.10</strong></span> Let <span class="math inline">\(b\in\R\)</span> and <span class="math inline">\(\epsilon&gt;0.\)</span> Prove that there exists <span class="math inline">\(r\in\Q\)</span> such that <span class="math inline">\(d(b,r)&lt;\epsilon.\)</span></p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -542,12 +509,12 @@ Hint
 <div class="callout-body-container callout-body">
 <p>Once again, don’t start from scratch. First note that the inequality you are trying to prove appears in <a href="metric-spaces/r-as-a-metric-space.html#thm-open-ball-in-r">Theorem 6.1</a> although the variable names have changed. How can you apply <a href="metric-spaces/r-as-a-metric-space.html#exr-rational-floor">Exercise 6.9</a> to get what you want?</p>
 <p>If you get stuck, draw this a picture on the number line.</p>
-<p>If you are still stuck, use the following concrete example to help you wrap your head around the problem. If <span class="math inline">\(b=\pi\)</span> and <span class="math inline">\(\epsilon=0.1\)</span>, how would you choose the rational number <span class="math inline">\(r\)</span>? Can you frame your technique in terms of the notation <a href="metric-spaces/r-as-a-metric-space.html#exr-rational-floor">Exercise 6.9</a>? Given <span class="math inline">\(\epsilon\)</span>, to what value of <span class="math inline">\(q\)</span> would you apply the result?</p>
+<p>If you are still stuck, use the following concrete example to help you wrap your head around the problem. If <span class="math inline">\(b=\pi\)</span> and <span class="math inline">\(\epsilon=0.1,\)</span> how would you choose the rational number <span class="math inline">\(r\)</span>? Can you frame your technique in terms of the notation <a href="metric-spaces/r-as-a-metric-space.html#exr-rational-floor">Exercise 6.9</a>? Given <span class="math inline">\(\epsilon,\)</span> to what value of <span class="math inline">\(q\)</span> would you apply the result?</p>
 </div>
 </div>
 </div>
 <div id="exr-rational-between-any-two-reals" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 6.11</strong></span> Let <span class="math inline">\(c,d\in\R\)</span>. Prove that there exists a rational number <span class="math inline">\(x\)</span> with <span class="math inline">\(c&lt;x&lt;d\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 6.11</strong></span> Let <span class="math inline">\(c,d\in\R.\)</span> Prove that there exists a rational number <span class="math inline">\(x\)</span> with <span class="math inline">\(c&lt;x&lt;d.\)</span></p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -561,12 +528,12 @@ Hint
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Once again, don’t start from scratch. In both this exercise and <a href="metric-spaces/r-as-a-metric-space.html#exr-rational-in-neighborhood">Exercise 6.10</a>, you need to show that a rational number exists in a particular interval but the intervals are described differently. Given <span class="math inline">\(c,d\)</span>, can you figure out what <span class="math inline">\(b,\epsilon\)</span> to use so you can apply <a href="metric-spaces/r-as-a-metric-space.html#exr-rational-in-neighborhood">Exercise 6.10</a>?</p>
+<p>Once again, don’t start from scratch. In both this exercise and <a href="metric-spaces/r-as-a-metric-space.html#exr-rational-in-neighborhood">Exercise 6.10</a>, you need to show that a rational number exists in a particular interval but the intervals are described differently. Given <span class="math inline">\(c,d,\)</span> can you figure out what <span class="math inline">\(b,\epsilon\)</span> to use so you can apply <a href="metric-spaces/r-as-a-metric-space.html#exr-rational-in-neighborhood">Exercise 6.10</a>?</p>
 </div>
 </div>
 </div>
 <div id="exr-irrational-between-any-two-reals" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 6.12</strong></span> Let <span class="math inline">\(c,d\in\R\)</span>. Prove that there exists an irrational number <span class="math inline">\(x\)</span> with <span class="math inline">\(c&lt;x&lt;d\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 6.12</strong></span> Let <span class="math inline">\(c,d\in\R.\)</span> Prove that there exists an irrational number <span class="math inline">\(x\)</span> with <span class="math inline">\(c&lt;x&lt;d.\)</span></p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
@@ -590,73 +557,78 @@ Hint
 <ol type="1">
 <li>A good study strategy for this course is to keep a catalog of all the major concepts in the course, and then quiz yourself by picking two at random and asking yourself to think of how they are connected.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Give this a try for the major concepts we’ve encountered so far</li>
 </ol>
-<div class="cell" data-layout-align="default">
+<div class="cell" data-fig-width="4" data-fig-height="4" data-layout-align="center">
 <div class="cell-output-display">
+<div id="fig-k4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-k4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<p></p><figure class="figure"><p></p>
-<div>
-<svg width="672" height="480" viewbox="0.00 0.00 410.41 348.18" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 344.18)">
+<svg width="384" height="384" viewbox="0.00 0.00 347.40 285.17" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(0 285.17)">
 <title>G</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-344.18 406.41,-344.18 406.41,4 -4,4"></polygon>
+<polygon fill="white" stroke="transparent" points="0,0 0,-285.17 347.4,-285.17 347.4,0 0,0"></polygon>
 <!-- arithmetic -->
 <g id="node1" class="node">
 <title>arithmetic</title>
-<ellipse fill="none" stroke="black" cx="194.76" cy="-18" rx="50.37" ry="18"></ellipse>
-<text text-anchor="middle" x="194.76" y="-13.8" font-family="Times,serif" font-size="14.00">arithmetic</text>
+<ellipse fill="none" stroke="black" cx="167.26" cy="-18" rx="50.37" ry="18"></ellipse>
+<text text-anchor="middle" x="167.26" y="-13.8" font-family="Times,serif" font-size="14.00">arithmetic</text>
 </g>
 <!-- inequalities -->
 <g id="node2" class="node">
 <title>inequalities</title>
-<ellipse fill="none" stroke="black" cx="346.85" cy="-170.09" rx="55.61" ry="18"></ellipse>
-<text text-anchor="middle" x="346.85" y="-165.89" font-family="Times,serif" font-size="14.00">inequalities</text>
+<ellipse fill="none" stroke="black" cx="291.85" cy="-142.59" rx="55.61" ry="18"></ellipse>
+<text text-anchor="middle" x="291.85" y="-138.39" font-family="Times,serif" font-size="14.00">inequalities</text>
 </g>
 <!-- arithmetic&#45;&#45;inequalities -->
 <g id="edge1" class="edge">
 <title>arithmetic--inequalities</title>
-<path fill="none" stroke="black" d="M211.91,-35.15C241.12,-64.36 300.2,-123.44 329.53,-152.77"></path>
+<path fill="none" stroke="black" d="M184.32,-35.06C208.05,-58.79 250.76,-101.5 274.59,-125.33"></path>
 </g>
 <!-- least upper bounds -->
 <g id="node3" class="node">
 <title>least upper bounds</title>
-<ellipse fill="none" stroke="black" cx="194.76" cy="-322.18" rx="83.4" ry="18"></ellipse>
-<text text-anchor="middle" x="194.76" y="-317.98" font-family="Times,serif" font-size="14.00">least upper bounds</text>
+<ellipse fill="none" stroke="black" cx="167.26" cy="-267.17" rx="83.4" ry="18"></ellipse>
+<text text-anchor="middle" x="167.26" y="-262.97" font-family="Times,serif" font-size="14.00">least upper bounds</text>
 </g>
 <!-- arithmetic&#45;&#45;least upper bounds -->
 <g id="edge2" class="edge">
 <title>arithmetic--least upper bounds</title>
-<path fill="none" stroke="black" d="M194.76,-36.12C194.76,-90.22 194.76,-250.18 194.76,-304.15"></path>
+<path fill="none" stroke="black" d="M167.26,-36.32C167.26,-82.51 167.26,-203.3 167.26,-249.16"></path>
 </g>
 <!-- distance -->
 <g id="node4" class="node">
 <title>distance</title>
-<ellipse fill="none" stroke="black" cx="42.68" cy="-170.09" rx="42.85" ry="18"></ellipse>
-<text text-anchor="middle" x="42.68" y="-165.89" font-family="Times,serif" font-size="14.00">distance</text>
+<ellipse fill="none" stroke="black" cx="42.68" cy="-142.59" rx="42.85" ry="18"></ellipse>
+<text text-anchor="middle" x="42.68" y="-138.39" font-family="Times,serif" font-size="14.00">distance</text>
 </g>
 <!-- arithmetic&#45;&#45;distance -->
 <g id="edge3" class="edge">
 <title>arithmetic--distance</title>
-<path fill="none" stroke="black" d="M177.61,-35.15C148.25,-64.52 88.69,-124.07 59.53,-153.23"></path>
+<path fill="none" stroke="black" d="M150.2,-35.06C126.34,-58.92 83.28,-101.98 59.53,-125.73"></path>
 </g>
 <!-- inequalities&#45;&#45;least upper bounds -->
 <g id="edge4" class="edge">
 <title>inequalities--least upper bounds</title>
-<path fill="none" stroke="black" d="M329.7,-187.24C300.65,-216.29 242.04,-274.9 212.56,-304.38"></path>
+<path fill="none" stroke="black" d="M274.52,-159.91C250.99,-183.44 209.12,-225.32 185.24,-249.19"></path>
 </g>
 <!-- inequalities&#45;&#45;distance -->
 <g id="edge5" class="edge">
 <title>inequalities--distance</title>
-<path fill="none" stroke="black" d="M291.06,-170.09C231.72,-170.09 139.15,-170.09 85.36,-170.09"></path>
+<path fill="none" stroke="black" d="M236.24,-142.59C190.77,-142.59 127.41,-142.59 85.73,-142.59"></path>
 </g>
 <!-- least upper bounds&#45;&#45;distance -->
 <g id="edge6" class="edge">
 <title>least upper bounds--distance</title>
-<path fill="none" stroke="black" d="M177.02,-304.43C147.4,-274.81 88.29,-215.7 59.38,-186.79"></path>
+<path fill="none" stroke="black" d="M149.41,-249.32C125.32,-225.23 82.74,-182.65 59.3,-159.21"></path>
 </g>
 </g>
 </svg>
 </div>
-<p></p></figure><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-k4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1
+</figcaption>
+</figure>
 </div>
 </div>
 </div>

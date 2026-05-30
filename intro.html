@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction – Real Analysis</title>
+<title>1&nbsp; Introduction – An Illustrated Course in Real Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,7 +30,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./axioms-of-r/intro-to-r.html" rel="next">
+<link href="./axioms-of-r/field-and-order.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -97,6 +77,17 @@ div.csl-indent {
 \newcommand{\st}{~:~}
 \newcommand{\cee}{\mathsf{C}}
 \newcommand{\bee}{\mathrm{B}}
+\def\mathhlyellow#1{\bbox[##fff3bf,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlgold#1{\bbox[##ffe8a3,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlorange#1{\bbox[##ffddb3,2px,border:1px solid ##c05621]{#1}}
+\def\mathhlgreen#1{\bbox[##d9f7d7,2px,border:1px solid ##3f8f46]{#1}}
+\def\mathhlmint#1{\bbox[##d4f5e9,2px,border:1px solid ##2c7a7b]{#1}}
+\def\mathhlblue#1{\bbox[##dceeff,2px,border:1px solid ##2b6cb0]{#1}}
+\def\mathhlpurple#1{\bbox[##eadffd,2px,border:1px solid ##6b46c1]{#1}}
+\def\mathhlpink#1{\bbox[##ffdbe8,2px,border:1px solid ##b83280]{#1}}
+\def\mathhlred#1{\bbox[##ffd6d6,2px,border:1px solid ##c53030]{#1}}
+\def\mathhlgray#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
+\def\mathhlgrey#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
 $$
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -156,7 +147,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Real Analysis</a> 
+      <a href="./">An Illustrated Course in Real Analysis</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -169,7 +160,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -180,7 +171,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./axioms-of-r/intro-to-r.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">The Real Numbers</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -248,53 +239,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Sequences</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sequences/sequence-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sequences/subsequences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Subsequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sequences/series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./constructing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./minmax.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -303,13 +247,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -324,20 +268,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendices/cardinality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices/wop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendices/desmos-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Links to Desmos Web Apps</span></span></a>
   </div>
 </li>
       </ul>
@@ -352,7 +296,14 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link active" data-scroll-target="#acknowledgements"><span class="header-section-number">1.1</span> Acknowledgements</a></li>
+  <li><a href="#teasers" id="toc-teasers" class="nav-link active" data-scroll-target="#teasers"><span class="header-section-number">1.1</span> Teasers</a>
+  <ul class="collapse">
+  <li><a href="#continuity-and-differentiability" id="toc-continuity-and-differentiability" class="nav-link" data-scroll-target="#continuity-and-differentiability"><span class="header-section-number">1.1.1</span> Continuity and differentiability</a></li>
+  <li><a href="#non-continuous-derivatives" id="toc-non-continuous-derivatives" class="nav-link" data-scroll-target="#non-continuous-derivatives"><span class="header-section-number">1.1.2</span> Non-continuous derivatives?</a></li>
+  <li><a href="#subsequences" id="toc-subsequences" class="nav-link" data-scroll-target="#subsequences"><span class="header-section-number">1.1.3</span> Subsequences</a></li>
+  <li><a href="#limit-of-continuous-functions" id="toc-limit-of-continuous-functions" class="nav-link" data-scroll-target="#limit-of-continuous-functions"><span class="header-section-number">1.1.4</span> Limit of Continuous Functions</a></li>
+  <li><a href="#a-very-strange-integral" id="toc-a-very-strange-integral" class="nav-link" data-scroll-target="#a-very-strange-integral"><span class="header-section-number">1.1.5</span> A very strange integral</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -378,32 +329,40 @@ window.Quarto = {
 </header>
 
 
-<p>This is a book created from markdown and executable code.</p>
-<p>See <span class="citation" data-cites="knuth84">Knuth (<a href="references.html#ref-knuth84" role="doc-biblioref">1984</a>)</span> for additional discussion of literate programming.</p>
-<div id="thm-hi" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 1.1 (Fermat’s First Theorem)</strong></span> This extension has been written by a teacher who hopes that students read the course notes…</p>
-</div>
-<p>Please look back to <a href="#thm-hi">Theorem 1.1</a></p>
-<div id="lem-bye" class="grouped-theorem grouped-theorem-lemma">
-<p><span class="theorem-title"><strong>Lemma 1.2</strong></span> This extension has been written by a teacher who hopes that students read the course notes…</p>
-</div>
-<div id="exr-next" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 1.3</strong></span> This extension has been written by a teacher who hopes that students read the course notes…</p>
-</div>
-<div id="exm-the" class="grouped-theorem grouped-theorem-example">
-<p><span class="theorem-title"><strong>Example 1.4</strong></span> This extension has been written by a teacher who hopes that students read the course notes…</p>
-</div>
-<section id="acknowledgements" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">1.1</span> Acknowledgements</h2>
-<p>The author acknowledges support of the Institut Henri Poincar'e (UAR 839 CNRS-Sorbonne Universit'e), and LabEx CARMIN (ANR-10-LABX-59-01).</p>
-<p>Also thank: John Rock, Yuri Sulyman, Desmos</p>
+<p>One way of thinking about the topic of real analysis is that we are going to go back and <em>prove</em> everything you learned in calculus—from big theorems like Fundamental Theorem of Calculus and Mean Value Theorem down to nitty-gritty facts like the “limit laws” and Product Rule. But real analysis is more than that. We’ll learn new things about series, derivatives, integrals by pushing the boundaries of what our theorems tell us. We’ll encounter (and ultimately explain) bizarre features of the real number system, functions, and limits that will probably be new to you. And we’ll learn techniques for proof and calculation that are useful both for developing the theory and in real-world applications.</p>
+<section id="teasers" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="teasers"><span class="header-section-number">1.1</span> Teasers</h2>
+<p>As a bit of a teaser, here are some questions dealing with concepts like continuity, derivatives, and integrals that go beyond what you’d see in a typical calculus class, but which we’ll be able to address by studying those concepts from a proof-based perspective.</p>
+<p>(This list can be improved - maybe use some of Abbott’s examples)</p>
+<section id="continuity-and-differentiability" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="continuity-and-differentiability"><span class="header-section-number">1.1.1</span> Continuity and differentiability</h3>
+<p>Consider the function <span class="math inline">\(f(x)=\begin{cases} x\sin\left(\frac{1}{x}\right) &amp; x\neq 0 \\ 0 &amp; x=0 \end{cases}\)</span> whose graph is shown below.</p>
+<p>Is this function continuous at <span class="math inline">\(0\)</span>? Differentiable at <span class="math inline">\(0\)</span>? What happens if we change it to just <span class="math inline">\(\sin\left(\frac{1}{x}\right)\)</span> or to <span class="math inline">\(x^2\sin\left(\frac{1}{x}\right)\)</span>?</p>
+</section>
+<section id="non-continuous-derivatives" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="non-continuous-derivatives"><span class="header-section-number">1.1.2</span> Non-continuous derivatives?</h3>
+<p>We know it’s possible for a function like <span class="math inline">\(|x|\)</span> to have a point where it is not differentiable. But is it possible for a function to be differentiable at every point, but the derivative function is not continuous?</p>
+</section>
+<section id="subsequences" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="subsequences"><span class="header-section-number">1.1.3</span> Subsequences</h3>
+<p>Some sequences don’t approach a fixed value, but if you skip over some terms and take, say, just the odd numbered terms, you end up with a <em>subsequence</em> that converges.</p>
+<p>(Picture)</p>
+<p>The sequence <span class="math inline">\((\sin(n))\)</span> clearly does not approach any particular number, and the values seem to bounce all over the place.</p>
+<p>(Picture)</p>
+<p>Is it possible to obtain a convergent subsequence by skipping over some of the terms? Which ones?</p>
+</section>
+<section id="limit-of-continuous-functions" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="limit-of-continuous-functions"><span class="header-section-number">1.1.4</span> Limit of Continuous Functions</h3>
+<p>The functions <span class="math inline">\(f_n(x)\)</span> below are all continuous.</p>
+<p>(DESMOS)</p>
+<p>Furthermore, for any fixed <span class="math inline">\(a\in[0,1]\)</span>, the limit of <span class="math inline">\(f_n(a)\)</span> as <span class="math inline">\(n\rightarrow\infty\)</span> is well defined. Is the function <span class="math inline">\(f(x)=\lim f_n(x)\)</span> continous?</p>
+</section>
+<section id="a-very-strange-integral" class="level3" data-number="1.1.5">
+<h3 data-number="1.1.5" class="anchored" data-anchor-id="a-very-strange-integral"><span class="header-section-number">1.1.5</span> A very strange integral</h3>
+<p>(Integral of Dirichlet’s function)</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
-</div>
-</div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -808,13 +767,13 @@ Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./index.html" class="pagination-link" aria-label="Welcome">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./axioms-of-r/intro-to-r.html" class="pagination-link" aria-label="The Real Numbers">
-        <span class="nav-page-text">The Real Numbers</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./axioms-of-r/field-and-order.html" class="pagination-link" aria-label="The Field and Order Axioms">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Field and Order Axioms</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

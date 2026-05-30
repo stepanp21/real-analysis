@@ -18,6 +18,14 @@
   color: white;
 }
 
+.proof::after {
+  content: "\25FB";
+  display: block;
+  margin-top: 0.25rem;
+  text-align: right;
+  line-height: 1;
+}
+
 .tfae {
     position: relative; /* Required for absolute positioning of the pseudo-element */
     padding-left: 20px; /* Make room for the vertical bar */
@@ -78,3 +86,105 @@ option {
   align-items: center;
 }
 
+.explained-highlight {
+  --explain-bg: #fff3bf;
+  --explain-border: rgba(120, 89, 0, 0.35);
+  --explain-text: inherit;
+  --explain-popover-bg: #ffffff;
+  --explain-popover-text: #1f2933;
+
+  position: relative;
+  display: inline;
+  padding: 0.04em 0.18em;
+  border-radius: 0.18em;
+  background: var(--explain-bg);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  color: var(--explain-text);
+  cursor: help;
+}
+
+.explained-highlight:focus {
+  outline: 2px solid var(--explain-border);
+  outline-offset: 2px;
+}
+
+.explained-highlight > .explain-popover {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.55rem);
+  z-index: 1000;
+  width: max-content;
+  max-width: min(26rem, calc(100vw - 2rem));
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  border-left: 4px solid var(--explain-border);
+  border-radius: 0.35rem;
+  background: var(--explain-popover-bg);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+  color: var(--explain-popover-text);
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.35;
+  text-align: left;
+  white-space: normal;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0.25rem);
+  transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
+}
+
+.explained-highlight > .explain-popover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  border: 0.45rem solid transparent;
+  border-top-color: var(--explain-popover-bg);
+  transform: translateX(-50%);
+}
+
+.explained-highlight:hover > .explain-popover,
+.explained-highlight:focus > .explain-popover,
+.explained-highlight:focus-within > .explain-popover {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.grouped-theorem-theorem, .grouped-theorem-lemma, .grouped-theorem-corollary {
+  background-color: #fff3f3;
+}
+
+.grouped-theorem-example {
+  background-color: honeydew
+}
+
+.grouped-theorem-axiom {
+  background-color: #fff3e0;
+}
+
+.grouped-theorem-definition {
+  background-color: #fff0ff;
+}
+
+.grouped-theorem-exercise {
+  background-color: #f3f3ff;
+}
+
+.proof {
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+
+blockquote {
+  background: #f3f3ff;
+  border-left: 10px solid #ccccff
+}
+
+blockquote p {
+  color: #000088;
+  font-style: italic;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}

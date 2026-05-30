@@ -1,0 +1,123 @@
+{
+    "hash": "ydtxsaiapl",
+    "title": "Interval Subdivided",
+    "created": "2026-05-20T23:50:03.505Z",
+    "versionCreatedAt": "2026-05-21T00:01:56.720Z",
+    "stateUrl": "https://www.desmos.com/calc-states/production/version/ydtxsaiapl/481b8cc0-54a8-11f1-95b3-31aec4cbfb73",
+    "thumbUrl": "https://www.desmos.com/calc_thumbs/production/version/ydtxsaiapl/481b8cc0-54a8-11f1-95b3-31aec4cbfb73.png",
+    "currentVersion": "481b8cc0-54a8-11f1-95b3-31aec4cbfb73",
+    "type": "my-graph",
+    "access": "link",
+    "product": "graphing",
+    "state": {
+        "version": 11,
+        "randomSeed": "fa5f3e86e6173c82dd40452fddb25858",
+        "graph": {
+            "viewport": {
+                "xmin": -1.9682857863789391,
+                "ymin": -1.7708482780448302,
+                "xmax": 3.980813556917686,
+                "ymax": 2.1108421525874386
+            },
+            "showGrid": false,
+            "showYAxis": false,
+            "xAxisStep": 1,
+            "__v12ViewportLatexStash": {
+                "xmin": "-1.9682857863789391",
+                "xmax": "3.980813556917686",
+                "ymin": "-1.7708482780448302",
+                "ymax": "2.1108421525874386"
+            }
+        },
+        "expressions": {
+            "list": [
+                {
+                    "type": "expression",
+                    "id": "1",
+                    "color": "#c74440",
+                    "latex": "c=0.2"
+                },
+                {
+                    "type": "expression",
+                    "id": "2",
+                    "color": "#2d70b3",
+                    "latex": "y=c\\left\\{a\\le x\\le b\\right\\}"
+                },
+                {
+                    "type": "expression",
+                    "id": "3",
+                    "color": "#388c46",
+                    "latex": "a=-1",
+                    "hidden": true
+                },
+                {
+                    "type": "expression",
+                    "id": "4",
+                    "color": "#6042a6",
+                    "latex": "b=3",
+                    "hidden": true,
+                    "slider": {
+                        "hardMin": true,
+                        "min": "a"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "5",
+                    "color": "#2d70b3",
+                    "latex": "\\left(a,c\\right)",
+                    "showLabel": true,
+                    "label": "`a`",
+                    "dragMode": "X",
+                    "labelOrientation": "left"
+                },
+                {
+                    "type": "expression",
+                    "id": "6",
+                    "color": "#2d70b3",
+                    "latex": "\\left(b,c\\right)",
+                    "showLabel": true,
+                    "label": "`b`",
+                    "dragMode": "X",
+                    "labelOrientation": "right"
+                },
+                {
+                    "type": "expression",
+                    "id": "n-slider",
+                    "color": "#2d70b3",
+                    "latex": "n=8",
+                    "slider": {
+                        "hardMin": true,
+                        "hardMax": true,
+                        "min": "1",
+                        "max": "20",
+                        "step": "1"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "8",
+                    "color": "#388c46",
+                    "latex": "k=\\left[0,...,n\\right]"
+                },
+                {
+                    "type": "expression",
+                    "id": "9",
+                    "color": "#6042a6",
+                    "latex": "x_{i}=a+\\frac{k\\left(b-a\\right)}{n}"
+                },
+                {
+                    "type": "expression",
+                    "id": "10",
+                    "color": "#c74440",
+                    "latex": "\\left(x_{i},c\\right)",
+                    "showLabel": true,
+                    "label": "`x_${k}`",
+                    "labelOrientation": "above"
+                }
+            ]
+        },
+        "includeFunctionParametersInRandomSeed": true,
+        "doNotMigrateMovablePointStyle": true
+    }
+}

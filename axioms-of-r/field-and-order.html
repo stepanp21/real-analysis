@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; The Field and Order Axioms – Real Analysis</title>
+<title>2&nbsp; The Field and Order Axioms – An Illustrated Course in Real Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../axioms-of-r/lub.html" rel="next">
-<link href="../axioms-of-r/intro-to-r.html" rel="prev">
+<link href="../intro.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -77,6 +77,17 @@ ul.task-list li input[type="checkbox"] {
 \newcommand{\st}{~:~}
 \newcommand{\cee}{\mathsf{C}}
 \newcommand{\bee}{\mathrm{B}}
+\def\mathhlyellow#1{\bbox[##fff3bf,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlgold#1{\bbox[##ffe8a3,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlorange#1{\bbox[##ffddb3,2px,border:1px solid ##c05621]{#1}}
+\def\mathhlgreen#1{\bbox[##d9f7d7,2px,border:1px solid ##3f8f46]{#1}}
+\def\mathhlmint#1{\bbox[##d4f5e9,2px,border:1px solid ##2c7a7b]{#1}}
+\def\mathhlblue#1{\bbox[##dceeff,2px,border:1px solid ##2b6cb0]{#1}}
+\def\mathhlpurple#1{\bbox[##eadffd,2px,border:1px solid ##6b46c1]{#1}}
+\def\mathhlpink#1{\bbox[##ffdbe8,2px,border:1px solid ##b83280]{#1}}
+\def\mathhlred#1{\bbox[##ffd6d6,2px,border:1px solid ##c53030]{#1}}
+\def\mathhlgray#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
+\def\mathhlgrey#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
 $$
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -121,7 +132,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../axioms-of-r/intro-to-r.html">The Real Numbers</a></li><li class="breadcrumb-item"><a href="../axioms-of-r/field-and-order.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Field and Order Axioms</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../axioms-of-r/field-and-order.html">The Real Numbers</a></li><li class="breadcrumb-item"><a href="../axioms-of-r/field-and-order.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Field and Order Axioms</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -136,7 +147,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Real Analysis</a> 
+      <a href="../">An Illustrated Course in Real Analysis</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -149,7 +160,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -160,7 +171,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../axioms-of-r/intro-to-r.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">The Real Numbers</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -228,53 +239,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Sequences</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/sequence-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Talking About Sequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/subsequences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Subsequences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../constructing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Constructing the Reals</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../minmax.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -283,13 +247,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -304,20 +268,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/cardinality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cardinality</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Cauchy-Schwartz Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/wop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/desmos-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Links to Desmos Web Apps</span></span></a>
   </div>
 </li>
       </ul>
@@ -346,7 +310,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../axioms-of-r/intro-to-r.html">The Real Numbers</a></li><li class="breadcrumb-item"><a href="../axioms-of-r/field-and-order.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Field and Order Axioms</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../axioms-of-r/field-and-order.html">The Real Numbers</a></li><li class="breadcrumb-item"><a href="../axioms-of-r/field-and-order.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Field and Order Axioms</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Field and Order Axioms</span></h1>
 </div>
@@ -374,11 +338,37 @@ window.Quarto = {
 </section>
 <section id="preparation" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="preparation"><span class="header-section-number">2.2</span> Preparation</h2>
+<p>As discussed in the introduction, our approach to real analysis will be to start by laying out a set of axioms that we <em>assume</em> are true about the real number system <span class="math inline">\(\R\)</span> and then <em>prove</em> everything else based upon this set of axioms.</p>
+<p>In order to properly take this approach, we need a set of axioms that:</p>
+<ul>
+<li>contains enough information to let us prove everything there is to know about <span class="math inline">\(\R\)</span> (all of calculus, for example),</li>
+<li>is specific enough so that it distinguishes <span class="math inline">\(\R\)</span> from other number systems, and</li>
+<li>is as simple as possible</li>
+</ul>
+<p>The purpose of the first bullet point is clear enough: if I don’t assume anything, I won’t be able to prove anything.</p>
+<p>The second bullet point about distinguishing <span class="math inline">\(\R\)</span> from other number systems is related, but deserves some explanation. Consider the following proposition:</p>
+<blockquote class="blockquote">
+<p>For every <span class="math inline">\(x&gt;0\)</span>, there exists <span class="math inline">\(y\)</span> such that <span class="math inline">\(y^2=x.\)</span></p>
+</blockquote>
+<p>This is true if our universe is <span class="math inline">\(\R\)</span> but false our universe is <span class="math inline">\(\Q.\)</span> If our axioms for <span class="math inline">\(\R\)</span> do not distinguish it from <span class="math inline">\(\Q\)</span>, we will have no hope of proving such a propositon. In short, I want a set of axioms that is true for <span class="math inline">\(\R\)</span> <em>but for no other number system</em>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I am using the term <em>number system</em> a bit loosely. For our purposes, though, it’s fine to think of any set with binary operations corresponding to addition and multiplication—think <span class="math inline">\(\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R},\mathbb{C}.\)</span></p>
+</div>
+</div>
 <p>Look ahead to the definition of a field (<a href="axioms-of-r/field-and-order.html#def-field">Definition 2.2</a>) and definition of an ordered field (<a href="axioms-of-r/field-and-order.html#def-ordered-field">Definition 2.7</a>). See if you can convince yourself the real number system does indeed satisfy both of these definitions. For example, every real number <span class="math inline">\(x\)</span> <em>does</em> in fact have an additive inverse (a number <span class="math inline">\(-x\)</span> that be added to <span class="math inline">\(x\)</span> to obtain <span class="math inline">\(0\)</span>); it <em>is</em> true that when you multiply two positive real numbers you get another positive real number.</p>
 <p>Take another moment to scan some of the <em>theorems</em> that follow each of these axioms. None of these should be surprising—they are all well-known facts about how arithmetic and inequalities work in <span class="math inline">\(\R\)</span>—but what may be surprising is that extremely simple facts like <span class="math inline">\(0x=0\)</span> (<a href="axioms-of-r/field-and-order.html#thm-zero-times-x">Theorem 2.4</a>) and <span class="math inline">\(1&gt;0\)</span> (<a href="axioms-of-r/field-and-order.html#thm-one-greater-than-zero">Theorem 2.9</a>) can be <em>proven</em> from even simpler assumptions.</p>
 <p>For now, let’s focus on thinking about which other familiar number systems satisfy the field and order axioms.</p>
 <div id="exr-number-system-properties" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 2.1</strong></span> Think about some familiar number systems that <em>aren’t</em> the real numbers: <span class="math inline">\(\mathbb{N}\)</span>, <span class="math inline">\(\mathbb{Z}\)</span>, <span class="math inline">\(\mathbb{Q}\)</span>, and <span class="math inline">\(\mathbb{C}\)</span>. You may rely on prior knowledge for this problem—no need to show all of your work.</p>
+<p><span class="theorem-title"><strong>Exercise 2.1</strong></span> Think about some familiar number systems that <em>aren’t</em> the real numbers: <span class="math inline">\(\mathbb{N}\)</span>, <span class="math inline">\(\mathbb{Z}\)</span>, <span class="math inline">\(\mathbb{Q}\)</span>, and <span class="math inline">\(\mathbb{C}.\)</span> You may rely on prior knowledge for this problem—no need to show all of your work.</p>
 <ol type="1">
 <li>Which of these are fields? For those that are not, which properties do they fail to have?</li>
 <li>Which of these are ordered fields? Which of these satisfy the two conditions of <a href="axioms-of-r/field-and-order.html#def-ordered-field">Definition 2.7</a> despite not actually being a field?</li>
@@ -388,54 +378,32 @@ window.Quarto = {
 </section>
 <section id="fields" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="fields"><span class="header-section-number">2.3</span> Fields</h2>
-<p>For our purposes, a <em>number system</em> <span class="math inline">\(\mathbb{S}\)</span> is a set with two binary operations <span class="math inline">\(+\)</span> and <span class="math inline">\(\cdot\)</span>. This is a nonstandard term, but we won’t use it much beyond this section.</p>
+<p>For our purposes, a <strong>number system</strong> <span class="math inline">\(\mathbb{S}\)</span> is a set with two binary operations <span class="math inline">\(+\)</span> and <span class="math inline">\(\cdot.\)</span> This is a nonstandard term, but we won’t use it much beyond this section.</p>
 <div id="def-field" class="grouped-theorem grouped-theorem-definition">
-<p><span class="theorem-title"><strong>Definition 2.2</strong></span> A number system <span class="math inline">\(\mathbb{S}\)</span> is said to be a <em>field</em> if it satisfies the following properties.</p>
+<p><span class="theorem-title"><strong>Definition 2.2</strong></span> A number system <span class="math inline">\(\mathbb{S}\)</span> is said to be a <strong>field</strong> if it satisfies the following properties.</p>
 <ol type="1">
 <li>Addition is commutative (for all <span class="math inline">\(a,b\in\mathbb{S}\)</span>, <span class="math inline">\(a+b=b+a\)</span>).</li>
 <li>Addition is associative (for all <span class="math inline">\(a,b,c\in\mathbb{S}\)</span>, <span class="math inline">\((a+b)+c=a+(b+c)\)</span>).</li>
-<li>There is an element <span class="math inline">\(0\in\mathbb{S}\)</span>, called the <em>additive identity</em> such that for all <span class="math inline">\(a\in\mathbb{S}\)</span>, <span class="math inline">\(a+0=a\)</span>.</li>
-<li>Every <span class="math inline">\(a\in\mathbb{S}\)</span> has an <em>additive inverse</em> <span class="math inline">\(-a\)</span> with the property that <span class="math inline">\(a+(-a)=0\)</span>.</li>
+<li>There is an element <span class="math inline">\(0\in\mathbb{S}\)</span>, called the <em>additive identity</em> such that for all <span class="math inline">\(a\in\mathbb{S}\)</span>, <span class="math inline">\(a+0=a.\)</span></li>
+<li>Every <span class="math inline">\(a\in\mathbb{S}\)</span> has an <em>additive inverse</em> <span class="math inline">\(-a\)</span> with the property that <span class="math inline">\(a+(-a)=0.\)</span></li>
 <li>Multiplication is commutative (for all <span class="math inline">\(a,b\in\mathbb{S}\)</span>, <span class="math inline">\(a\cdot b=b\cdot a\)</span>).</li>
 <li>Multiplication is associative (for all <span class="math inline">\(a,b,c\in\mathbb{S}\)</span>, <span class="math inline">\((a\cdot b)\cdot c=a\cdot(b\cdot c)\)</span>).</li>
-<li>There is an element <span class="math inline">\(1\in\mathbb{S}\)</span> different from 0, called the <em>multiplicative identity</em> such that for all <span class="math inline">\(a\in\mathbb{S}\)</span>, <span class="math inline">\(a\cdot 1=a\)</span>.</li>
-<li>Every <span class="math inline">\(a\in\mathbb{S}\setminus\{0\}\)</span> has an <em>additive inverse</em> <span class="math inline">\(a^{-1}\)</span> with the property that <span class="math inline">\(a+(a^{-1})=1\)</span>.</li>
+<li>There is an element <span class="math inline">\(1\in\mathbb{S}\)</span> different from 0, called the <em>multiplicative identity</em> such that for all <span class="math inline">\(a\in\mathbb{S}\)</span>, <span class="math inline">\(a\cdot 1=a.\)</span></li>
+<li>Every <span class="math inline">\(a\in\mathbb{S}\setminus\{0\}\)</span> has an <em>additive inverse</em> <span class="math inline">\(a^{-1}\)</span> with the property that <span class="math inline">\(a+(a^{-1})=1.\)</span></li>
 <li>The <em>distributive rule</em> holds (for all <span class="math inline">\(a,b,c\in\mathbb{S}\)</span>, <span class="math inline">\(a(b+c)=a\cdot b+a\cdot c\)</span>).</li>
 </ol>
 </div>
-<p>Collectively, these properties tell us how <strong>arithmetic</strong> works for fields. And the first axiom we make aobut the real number system is that it is indeed a field.</p>
-<div id="thm-ax-field" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 2.3</strong></span> <span class="math inline">\(\R\)</span> is a field.</p>
+<p>Collectively, these properties tell us how <strong>arithmetic</strong> works for fields. And the first axiom we make about the real number system is that it is indeed a field.</p>
+<div id="ax-field" class="grouped-theorem grouped-theorem-axiom">
+<p><span class="theorem-title"><strong>Axiom 2.3</strong></span> <span class="math inline">\(\R\)</span> is a field.</p>
 </div>
 <p>Note that there is no reference to the operations of subtraction and division in the definition of a field, but these can be <em>defined</em> in terms of the established properties: <span class="math inline">\(a-b\)</span> is defined to be <span class="math inline">\(a+(-b)\)</span> (after all, <span class="math inline">\(-b\)</span> is defined above), and if <span class="math inline">\(b\neq0\)</span>, we define <span class="math inline">\(\frac{a}{b}\)</span> to be <span class="math inline">\(a\cdot b^{-1}\)</span> (after all, <span class="math inline">\(b^{-1}\)</span> is defined above).</p>
 <p>What is somewhat remarkable is that <em>all</em> of the other rules of arithmetic for the real numbers can be derived from the field axiom. For example, you may have supposed that the following theorem would be an assumption, but one can prove it from the even more basic assumptions in the definition of a field.</p>
 <div id="thm-zero-times-x" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 2.4</strong></span> For any <span class="math inline">\(x\in\R\)</span>, <span class="math inline">\(0x=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 2.4</strong></span> For any <span class="math inline">\(x\in\R\)</span>, <span class="math inline">\(0x=0.\)</span></p>
 </div>
 <div id="exr-zero-times-x" class="grouped-theorem grouped-theorem-exercise">
 <p><span class="theorem-title"><strong>Exercise 2.5</strong></span> Prove <a href="axioms-of-r/field-and-order.html#thm-zero-times-x">Theorem 2.4</a>.</p>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Note that <a href="axioms-of-r/field-and-order.html#thm-zero-times-x">Theorem 2.4</a> involves both multiplication and, implicitly, addition (since it involves the <em>additive</em> identity). Thus its proof must involve the one part of the field axiom that combines addition and multiplication: the distributive property.</p>
-</div>
-</div>
-</div>
-<p>(More theorems with the caveat that we won’t keep doing this for long.)</p>
-<p>Any facts that we can prove about <span class="math inline">\(\R\)</span> that use <em>only</em> the assumption that <span class="math inline">\(\R\)</span> is a field, will in fact be true for <em>any</em> field. And there are some weird fields.</p>
-<div id="exr-z2-is-a-field" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 2.6</strong></span> Consider the number system <span class="math inline">\(\mathbb{F}_2=\{\alpha,\beta\}\)</span> consisting of just two elements, where the addition and multiplication operations are defined by <span class="math display">\[\alpha+\alpha=\beta \qquad \alpha+\beta=\alpha \qquad \beta+\alpha=\alpha \qquad \beta+\beta=\beta\]</span> and <span class="math display">\[\alpha\cdot\alpha=\alpha \qquad \alpha\cdot\beta=\beta \qquad \beta\cdot\alpha=\beta \qquad \beta\cdot\beta=\beta.\]</span></p>
-<p>It turns out that <span class="math inline">\(\mathbb{F}_2\)</span> is a field. Which element of <span class="math inline">\(\mathbb{F}_2\)</span> is <span class="math inline">\(0?\)</span> Which is <span class="math inline">\(1?\)</span> Which is <span class="math inline">\(-1?\)</span></p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -449,49 +417,14 @@ Hint
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Asking which element is <span class="math inline">\(0\)</span> means asking which element is the additive identity—the thing that can be added to any element and get that same element back. Similarly for the multiplicative identity <span class="math inline">\(1\)</span>. And asking which element is <span class="math inline">\(-1\)</span> means asking which element is <em>the additive inverse of <span class="math inline">\(1\)</span></em> (the thing you add to <span class="math inline">\(1\)</span> and get back <span class="math inline">\(0\)</span>).</p>
+<p>Note that <a href="axioms-of-r/field-and-order.html#thm-zero-times-x">Theorem 2.4</a> involves both multiplication and, implicitly, addition (since it involves the <em>additive</em> identity). Thus its proof must involve the one part of the field axiom that combines addition and multiplication: the distributive property.</p>
 </div>
 </div>
 </div>
-<p>So the field axiom alone fails miserably at the goal of distinguishing <span class="math inline">\(\R\)</span> from other number systems—it cannot even distinguish <span class="math inline">\(\R\)</span> from a number system with just two elements! So we need more axioms capturing more of the structure of <span class="math inline">\(\R\)</span>.</p>
-</section>
-<section id="order-and-inequalities" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="order-and-inequalities"><span class="header-section-number">2.4</span> Order and Inequalities</h2>
-<p>Another important feature of the real number system is the behavior of inequalities and how they interact with arithmetic. This is captured by the next axiom.</p>
-<div id="def-ordered-field" class="grouped-theorem grouped-theorem-definition">
-<p><span class="theorem-title"><strong>Definition 2.7</strong></span> A field <span class="math inline">\(\mathbb{F}\)</span> is called an <em>ordered field</em> if it has a relation <span class="math inline">\(&gt;\)</span> with the following properties.</p>
-<ol type="1">
-<li><p>For all <span class="math inline">\(a\in\mathbb{F}\)</span>, exactly one of the following is true:</p>
-<ul>
-<li><span class="math inline">\(a&gt;0\)</span>,</li>
-<li><span class="math inline">\(a=0\)</span>, or</li>
-<li><span class="math inline">\(-a&gt;0\)</span>.</li>
-</ul></li>
-<li><p>If <span class="math inline">\(a&gt;0\)</span> and <span class="math inline">\(b&gt;0\)</span>, then <span class="math inline">\(a+b&gt;0\)</span> and <span class="math inline">\(a\cdot b&gt;0\)</span>.</p></li>
-<li><p><span class="math inline">\(b&gt;a\)</span> if and only if <span class="math inline">\(b-a&gt;0\)</span>.</p></li>
-</ol>
-</div>
-<p>We can then <em>define</em> relations <span class="math inline">\(&lt;,\leq,\geq\)</span> in the usual way based on the relation <span class="math inline">\(&gt;\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<div id="thm-ax-ordered-field" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 2.8</strong></span> <span class="math inline">\(\R\)</span> is an ordered field.</p>
-</div>
-<p>Again, the properties listed in <a href="axioms-of-r/field-and-order.html#def-ordered-field">Definition 2.7</a> are not surprising; we already knew they were true for <span class="math inline">\(\R\)</span>. But more surprising is the fact the everything else we know about how inequalities behave and interact with arithmetic can be prove from <a href="axioms-of-r/field-and-order.html#thm-ax-field">Theorem 2.3</a> and <a href="axioms-of-r/field-and-order.html#thm-ax-ordered-field">Theorem 2.8</a>.</p>
-<div id="thm-one-greater-than-zero" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 2.9</strong></span> <span class="math inline">\(1&gt;0\)</span>.</p>
-</div>
-<p>You are probably familiar with the basics of how inequalities and arithmetic interact, and henceforth, we can use them at will without citation. In this class, being fluent with the rules for inequalities will be essential, though, so we collect a list of “inequality rules” (all of which could in principle be proven from <a href="axioms-of-r/field-and-order.html#thm-ax-field">Theorem 2.3</a> and <a href="axioms-of-r/field-and-order.html#thm-ax-ordered-field">Theorem 2.8</a>) in <a href="#sec-inequality-rules" class="quarto-xref"><span>Section 2.5</span></a>.</p>
-<p>Worth reflecting on now is where we stand on our stated goals in creating the axioms. The <a href="axioms-of-r/field-and-order.html#thm-ax-ordered-field">Theorem 2.8</a> was successful in distinguishing <span class="math inline">\(\R\)</span> from <span class="math inline">\(\mathbb{F}_2\)</span> because there is no ordering on <span class="math inline">\(\mathbb{F}_2\)</span> satisfying <a href="axioms-of-r/field-and-order.html#def-ordered-field">Definition 2.7</a> (you will prove this in <a href="axioms-of-r/field-and-order.html#exr-z2-not-ordered">Exercise 2.11</a> below).</p>
-<p>However, we can note that <span class="math inline">\(\mathbb{Q}\)</span> is also an ordered field since it satisfies <a href="axioms-of-r/field-and-order.html#thm-ax-ordered-field">Theorem 2.8</a>. This means that anything we can prove directly from <a href="axioms-of-r/field-and-order.html#thm-ax-field">Theorem 2.3</a> and <a href="axioms-of-r/field-and-order.html#thm-ax-ordered-field">Theorem 2.8</a> will apply just as well if our universe were <span class="math inline">\(\mathbb{Q}\)</span> as it would if our universe were <span class="math inline">\(\mathbb{R}\)</span>. In particular, we would have no hope of proving, say, the Intermediate Value Theorem, which is true in <span class="math inline">\(\mathbb{R}\)</span> but not in <span class="math inline">\(\mathbb{Q}\)</span>.</p>
-<p>This all means that we need another assumption—an axiom that will distinguish the real number system from the rationals in a way that will allow us to prove everything else we’ll need in order to do calculus.</p>
-<div id="exr-one-greater-than-zero" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 2.10</strong></span> Prove <a href="axioms-of-r/field-and-order.html#thm-one-greater-than-zero">Theorem 2.9</a> using only the Field and Order Axioms.</p>
-</div>
-<div id="exr-z2-not-ordered" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 2.11</strong></span> Prove that the following fields are <em>not</em> ordered.</p>
-<ol type="1">
-<li><span class="math inline">\(\mathbb{F}_2\)</span> (defined in <a href="axioms-of-r/field-and-order.html#exr-z2-is-a-field">Exercise 2.6</a>)</li>
-<li>The complex numbers <span class="math inline">\(\mathbb{C}\)</span></li>
-</ol>
+<p>Any facts that we can prove about <span class="math inline">\(\R\)</span> that use <em>only</em> the assumption that <span class="math inline">\(\R\)</span> is a field, will in fact be true for <em>any</em> field. And there are some weird fields.</p>
+<div id="exr-z2-is-a-field" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 2.6</strong></span> Consider the number system <span class="math inline">\(\mathbb{F}_2=\{\alpha,\beta\}\)</span> consisting of just two elements, where the addition and multiplication operations are defined by <span class="math display">\[\alpha+\alpha=\beta \qquad \alpha+\beta=\alpha \qquad \beta+\alpha=\alpha \qquad \beta+\beta=\beta\]</span> and <span class="math display">\[\alpha\cdot\alpha=\alpha \qquad \alpha\cdot\beta=\beta \qquad \beta\cdot\alpha=\beta \qquad \beta\cdot\beta=\beta.\]</span></p>
+<p>It turns out that <span class="math inline">\(\mathbb{F}_2\)</span> is a field. Which element of <span class="math inline">\(\mathbb{F}_2\)</span> is <span class="math inline">\(0?\)</span> Which is <span class="math inline">\(1?\)</span> Which is <span class="math inline">\(-1?\)</span></p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -505,13 +438,82 @@ Hint
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>Asking which element is <span class="math inline">\(0\)</span> means asking which element is the additive identity—the thing that can be added to any element and get that same element back. Similarly for the multiplicative identity <span class="math inline">\(1.\)</span> And asking which element is <span class="math inline">\(-1\)</span> means asking which element is <em>the additive inverse of <span class="math inline">\(1\)</span></em> (the thing you add to <span class="math inline">\(1\)</span> and get back <span class="math inline">\(0\)</span>).</p>
+</div>
+</div>
+</div>
+<p>So the field axiom alone fails miserably at the goal of distinguishing <span class="math inline">\(\R\)</span> from other number systems—it cannot even distinguish <span class="math inline">\(\R\)</span> from a number system with just two elements! So we need more axioms capturing more of the structure of <span class="math inline">\(\R.\)</span></p>
+</section>
+<section id="order-and-inequalities" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="order-and-inequalities"><span class="header-section-number">2.4</span> Order and Inequalities</h2>
+<p>Another important feature of the real number system is the behavior of inequalities and how they interact with arithmetic. This is captured by the next axiom.</p>
+<div id="def-ordered-field" class="grouped-theorem grouped-theorem-definition">
+<p><span class="theorem-title"><strong>Definition 2.7</strong></span> A field <span class="math inline">\(\mathbb{F}\)</span> is called an <strong>ordered field</strong> if it has a relation <span class="math inline">\(&gt;\)</span> with the following properties.</p>
+<ol type="1">
+<li><p>For all <span class="math inline">\(a\in\mathbb{F}\)</span>, exactly one of the following is true:</p>
+<ul>
+<li><span class="math inline">\(a&gt;0\)</span>,</li>
+<li><span class="math inline">\(a=0\)</span>, or</li>
+<li><span class="math inline">\(-a&gt;0.\)</span></li>
+</ul></li>
+<li><p>If <span class="math inline">\(a&gt;0\)</span> and <span class="math inline">\(b&gt;0\)</span>, then <span class="math inline">\(a+b&gt;0\)</span> and <span class="math inline">\(a\cdot b&gt;0.\)</span></p></li>
+<li><p><span class="math inline">\(b&gt;a\)</span> if and only if <span class="math inline">\(b-a&gt;0.\)</span></p></li>
+</ol>
+</div>
+<p>We can then <em>define</em> relations <span class="math inline">\(&lt;,\leq,\geq\)</span> in the usual way based on the relation <span class="math inline">\(&gt;\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div id="ax-ordered-field" class="grouped-theorem grouped-theorem-axiom">
+<p><span class="theorem-title"><strong>Axiom 2.8</strong></span> <span class="math inline">\(\R\)</span> is an ordered field.</p>
+</div>
+<p>Again, the properties listed in <a href="axioms-of-r/field-and-order.html#def-ordered-field">Definition 2.7</a> are not surprising; we already knew they were true for <span class="math inline">\(\R.\)</span> But more surprising is the fact the everything else we know about how inequalities behave and interact with arithmetic can be prove from <a href="axioms-of-r/field-and-order.html#ax-field">Axiom 2.3</a> and <a href="axioms-of-r/field-and-order.html#ax-ordered-field">Axiom 2.8</a>.</p>
+<div id="thm-one-greater-than-zero" class="grouped-theorem grouped-theorem-theorem">
+<p><span class="theorem-title"><strong>Theorem 2.9</strong></span> <span class="math inline">\(1&gt;0.\)</span></p>
+</div>
+<div id="exr-one-greater-than-zero" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 2.10</strong></span> Prove <a href="axioms-of-r/field-and-order.html#thm-one-greater-than-zero">Theorem 2.9</a> using only the Field and Order Axioms.</p>
+</div>
+<p>You are probably familiar with the basics of how inequalities and arithmetic interact, and henceforth, we can use them at will without citation. In this class, being fluent with the rules for inequalities will be essential, though, so we collect a list of “inequality rules” (all of which could in principle be proven from <a href="axioms-of-r/field-and-order.html#ax-field">Axiom 2.3</a> and <a href="axioms-of-r/field-and-order.html#ax-ordered-field">Axiom 2.8</a>) in <a href="#sec-inequality-rules" class="quarto-xref"><span>Section 2.5</span></a>.</p>
+<p>Worth reflecting on now is where we stand on our stated goals in creating the axioms. The <a href="axioms-of-r/field-and-order.html#ax-ordered-field">Axiom 2.8</a> was successful in distinguishing <span class="math inline">\(\R\)</span> from <span class="math inline">\(\mathbb{F}_2\)</span> because there is no ordering on <span class="math inline">\(\mathbb{F}_2\)</span> satisfying <a href="axioms-of-r/field-and-order.html#def-ordered-field">Definition 2.7</a> (you will prove this in <a href="axioms-of-r/field-and-order.html#exr-z2-not-ordered">Exercise 2.11</a> below).</p>
+<p>However, we can note that <span class="math inline">\(\mathbb{Q}\)</span> is also an ordered field since it satisfies <a href="axioms-of-r/field-and-order.html#ax-ordered-field">Axiom 2.8</a>. This means that anything we can prove directly from <a href="axioms-of-r/field-and-order.html#ax-field">Axiom 2.3</a> and <a href="axioms-of-r/field-and-order.html#ax-ordered-field">Axiom 2.8</a> will apply just as well if our universe were <span class="math inline">\(\mathbb{Q}\)</span> as it would if our universe were <span class="math inline">\(\mathbb{R}.\)</span> In particular, we would have no hope of proving, say, the Intermediate Value Theorem, which is true in <span class="math inline">\(\mathbb{R}\)</span> but not in <span class="math inline">\(\mathbb{Q}.\)</span></p>
+<p>This all means that we need another assumption—an axiom that will distinguish the real number system from the rationals in a way that will allow us to prove everything else we’ll need in order to do calculus.</p>
+<div id="exr-z2-not-ordered" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 2.11</strong></span> Prove that the following fields are <em>not</em> ordered.</p>
+<ol type="1">
+<li><span class="math inline">\(\mathbb{F}_2\)</span> (defined in <a href="axioms-of-r/field-and-order.html#exr-z2-is-a-field">Exercise 2.6</a>)</li>
+<li>The complex numbers <span class="math inline">\(\mathbb{C}\)</span></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>This is a good opportunity to use a proof by contradiction. What contradiction can you create by assuming there <em>is</em> an ordering on <span class="math inline">\(\mathbb{F}_2\)</span> satisfying the conditions of <a href="axioms-of-r/field-and-order.html#def-ordered-field">Definition 2.7</a>? What about in <span class="math inline">\(\mathbb{C}\)</span>?</p>
 </div>
 </div>
 </div>
 <p>The following exercise says something very simple, but ends up being very useful in practice.</p>
 <div id="exr-nonnegative-less-than-all-epsilon" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 2.12</strong></span> Suppose <span class="math inline">\(r\geq0\)</span> and that for all <span class="math inline">\(\epsilon&gt;0\)</span>, <span class="math inline">\(r\leq \epsilon\)</span>. Prove that <span class="math inline">\(r=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 2.12</strong></span> Suppose <span class="math inline">\(r\geq0\)</span> and that for all <span class="math inline">\(\epsilon&gt;0\)</span>, <span class="math inline">\(r\leq \epsilon.\)</span> Prove that <span class="math inline">\(r=0.\)</span></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Now that you’ve finished this section, you can use whatever facts you want about arithmetic and order in <span class="math inline">\(\R\)</span> without citing theorems or axioms.</p>
+</div>
 </div>
 <section id="review-questions" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">2.4.1</span> Review Questions</h3>
@@ -545,7 +547,7 @@ Hint
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>That is, we define <span class="math inline">\(a&lt;b\)</span> to mean <span class="math inline">\(b&gt;a\)</span>, <span class="math inline">\(a\leq b\)</span> to mean <span class="math inline">\(a&lt;b\)</span> or <span class="math inline">\(a=b\)</span>, and <span class="math inline">\(a\geq b\)</span> to mean <span class="math inline">\(a&gt;b\)</span> or <span class="math inline">\(a=b\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>That is, we define <span class="math inline">\(a&lt;b\)</span> to mean <span class="math inline">\(b&gt;a\)</span>, <span class="math inline">\(a\leq b\)</span> to mean <span class="math inline">\(a&lt;b\)</span> or <span class="math inline">\(a=b\)</span>, and <span class="math inline">\(a\geq b\)</span> to mean <span class="math inline">\(a&gt;b\)</span> or <span class="math inline">\(a=b.\)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -951,8 +953,8 @@ Hint
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../axioms-of-r/intro-to-r.html" class="pagination-link" aria-label="The Real Numbers">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">The Real Numbers</span>
+      <a href="../intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
