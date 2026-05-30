@@ -1,7 +1,81 @@
-# The Cauchy-Schwartz Inequality {#sec-cauchy-schwartz}
+# The Cauchy-Schwarz Inequality {#sec-cauchy-schwarz}
 
-Hello
+In @sec-metric-space-axioms, we defined the *standard distance function* on $\R^n$ to be
 
-:::{.theorem #thm-cauchy-schwartz}
-CS
+$$
+d(\mathbf a,\mathbf b)=\sqrt{(b_1-a_1)^2 +  \cdots + (b_n-a_n)^2}
+$$
+
+where $\mathbf a=(a_1,\ldots,a_n)$, $\mathbf b=(b_1,\ldots,b_n).$
+
+we claimed that the standard distance function on $\R^n$ satisfies the Triangle Inequality, but we never proved it. That is, for any $\mathbf a,\mathbf b,\mathbf c\in\R^n$, we have
+$$
+d(\mathbf a,\mathbf c)\leq d(\mathbf a,\mathbf b) + d(\mathbf b,\mathbf c).
+$${#eq-triangle-ineq-rn}
+
+As a first step, we will prove the Cauchy-Schwarz Inequality.
+
+:::{.theorem #thm-cauchy-schwarz}
+
+#### Cauchy-Schwarz Inequality
+
+Suppose $u_1,\ldots, u_n\in\R$ and $v_1,\ldots,v_n\in\R$. Then
+$$
+\left(\sum_{i=1}^n u_iv_i\right)^2 \leq \left(\sum_{i=1}^n u_i\right)\left(\sum_{i=1}^n v_i\right).
+$$
+:::
+
+:::{.proof}
+Define a polynomial
+$$
+p(t)=\sum_{i=1}^n (tu_i+v_i)^2.
+$$
+
+Note that $p(t)$ is never negative. Its formula can be rewritten as
+$$
+p(t)=\sum_{i=1}^n t^2u_i^2 + 2tu_iv_i + v_i^2=t^2\left(\sum_{i=1}^n u_i^2\right)+2t\left(\sum_{i=1}^n u_iv_i\right) + \left(\sum_{i=1}^n v_i^2\right).
+$$
+
+Note that $p(t)$ is a quadratic function, so since it is never negative, its [discriminant]{.explain color="yellow" note="This is a throwback to Algebra I. Remember that the discriminant of a quadratic function $at^2+bt+c$ is $b^2-4ac$. A quadratic function take both positive and negative values if and only if $\Delta>0.$"} $\Delta$ is non-positive. That is
+$$
+0\geq\Delta=\left(2\sum_{i=1}^n u_iv_i\right)^2-4\left(\sum_{i=1}^n u_i^2\right)\left(\sum_{i=1}^n v_i^2\right)
+$$
+
+which implies
+$$\left(\sum_{i=1}^n u_i^2\right)\left(\sum_{i=1}^n v_i^2\right)\geq\left(\sum_{i=1}^n u_iv_i\right)^2.$$
+:::
+
+Now that we have the Cauchy-Schwarz Inequality, the rest of the proof is just a matter of applying it and doing some algebra.
+
+:::{.corollary #cor-rn-triangle-inequality}
+The standard distance function on $\R^n$ satisfies the Triangle Inequality.
+:::
+
+:::{.proof}
+Squaring both sides of @eq-triangle-ineq-rn, we will prove that for points $\mathbf a=(a_1,\ldots,a_n)$, $\mathbf b=(b_1,\ldots,b_n)$, and $\mathbf c=(c_1,\ldots,c_n)$,
+$$
+d(\mathbf a,\mathbf c)^2\leq (d(\mathbf a,\mathbf b) + d(\mathbf b,\mathbf c))^2.
+$$
+
+Expanding the right side, we have
+$$
+(d(\mathbf a,\mathbf b) + d(\mathbf b,\mathbf c))^2=d(\mathbf a,\mathbf b)^2+2d(\mathbf a,\mathbf b)d(\mathbf b,\mathbf c)+d(\mathbf b,\mathbf c)^2.
+$$
+
+Letting $u_i=b_i-a_i$ and $v_i=c_i-b_i$, this becomes
+$$
+\left(\sum_{i=1}^n u_i^2\right) + 2\sqrt{\left(\sum_{i=1}^n u_i^2\right)\left(\sum_{i=1}^n v_i^2\right)} + \left(\sum_{i=1}^n v_i^2\right),
+$$
+
+which, by @thm-cauchy-schwarz, is at least
+$$
+\left(\sum_{i=1}^n u_i^2\right) + 2\left(\sum_{i=1}^n u_iv_i\right) + \left(\sum_{i=1}^n v_i^2\right).
+$$
+
+However, this last line is equal to
+$$
+\sum_{i=1}^n (u_i+v_i)^2=d(\mathbf a,\mathbf c),
+$$
+
+and so we have proven the theorem.
 :::

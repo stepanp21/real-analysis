@@ -6,14 +6,16 @@ project:
     - "**/*.json"
     - "metric-spaces/*.json"
 
+license: "CC BY-NC-SA"
+
 book:
-  title: "Real Analysis"
+  title: "An Illustrated Course in Real Analysis"
   author: "Stepan Paul"
   date: "3/5/2026"
   chapters:
     - index.qmd
     - intro.qmd
-    - part: axioms-of-r/intro-to-r.qmd
+    - part: "The Real Numbers"
       chapters:
         - axioms-of-r/field-and-order.qmd
         - axioms-of-r/lub.qmd
@@ -25,21 +27,32 @@ book:
         - metric-spaces/open-balls.qmd
         - metric-spaces/open-set-props.qmd
         - metric-spaces/boundedness.qmd
-    - part: "Sequences"
-      chapters:
-        - sequences/sequence-basics.qmd
-        - sequences/subsequences.qmd
-        - sequences/series.qmd
-    - constructing-r.qmd
-    - minmax.qmd
-    - summary.qmd
+    # - part: "Sequences"
+    #   chapters:
+    #     - sequences/sequence-basics.qmd
+    #     - sequences/sequence-convergence.qmd
+    #     - sequences/subsequences.qmd
+    #     - sequences/sequences-in-r-i.qmd
+    #     - sequences/cauchy.qmd
+    #     - sequences/series.qmd
+    # - part: "Integration"
+    #   chapters:
+    #     - integration/naive.qmd
+    #     - integration/riemann-integral.qmd
+    #     - integration/integral-props.qmd
+    # - constructing-r.qmd
+    # - minmax.qmd
+    # - summary.qmd
     - references.qmd
   appendices:
     - appendices/proof-writing.qmd
     - appendices/union-and-intersection.qmd
-    - appendices/cardinality.qmd
+    # - appendices/cardinality.qmd
     - appendices/cauchy-schwartz.qmd
     - appendices/wop.qmd
+    - appendices/desmos-links.qmd
+
+  
 
 bibliography: references.bib
 
@@ -51,6 +64,7 @@ format:
     include-in-header:
       - tex-macros/_dollar.tex
       - tex-macros/_macros.tex
+      - tex-macros/_math-highlights-html.tex
       - tex-macros/_dollar.tex
     css: styles.css
     
@@ -58,10 +72,14 @@ format:
     documentclass: scrreprt
     include-in-header:
           - tex-macros/_macros.tex
+          - tex-macros/_math-highlights-pdf.tex
+          - tex-macros/_proof-symbol.tex
 
 filters:
+  - _filters/explained-highlights.lua
   - path: _extensions/local/grouped-theorem-counters/grouped-theorem-counters.lua
     at: post-render
+  - custom-amsthm-environments
 
 grouped-theorem-counters:
   groups:
@@ -75,6 +93,11 @@ grouped-theorem-counters:
         - exercise
         - problem
         - corollary
+        - axiom
+
+custom-amsthm:
+  - key: ax
+    name: Axiom
 
 crossref:
   chapters: true

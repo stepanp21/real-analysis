@@ -30,6 +30,38 @@ The **range** of $(a_n)$ is $\{a_n\st n\in\N\}$.
 Can a sequence have a range that is finite? Explain.
 :::
 
+We often visualize a sequence $(a_n)$ by showing either its *range* in the codomain or, for sequences in $\R$, its *graph* in the cartesian plane.
+
+:::{#fig-sequence-ranges layout-ncol=1}
+
+![The sequence $\left(\frac{1}{n}\right)$ in $\R$.](recip-seq-range.png){#fig-recip-seq-range}
+
+![A sequence in $\R^2$](seq-range-r2.png){#fig-seq-range-r2}
+
+Here we show the ranges of two sequences. When plotting the range of a sequence, we usually number at least the first several terms.
+:::
+
+When plotting the graph of a sequence, we use the horizontal axis for the indices (in $\N$) and the vertical axis for the terms (in $\R$).
+
+:::{#fig-sequence-graph layout-ncol=1}
+
+![The sequence $(\sin(n))$.](sin-n-graph.png){#fig-sin-n-graph}
+
+![The sequence $(\sqrt n)$.](sqrt-n-graph.png){#fig-sqrt-n-graph}
+
+![The sequence $((-1)^n)$.](alternating-graph.png){#fig-alternating-graph}
+
+The graphs of three sequences in $\R$.
+:::
+
+:::{.exercise #exr-graph-and-range}
+For each sequence below, make a sketch of both its range on the number line, and its graph in $\R^2$. Which visualization do you find more helpful for understanding what's going on in each case?
+
+1. The sequence $\left(\frac{(-1)^n}{n}\right)$.
+2. The sequence $0,1,0,2,0,3,0,4,\ldots$
+:::
+
+
 ## Sequence Properties
 
 Below are several properties of sequences that we will need moving forward.
@@ -50,7 +82,7 @@ Let $(a_n)$ be a sequence in $\R$. Then $(a_n)$ is said to be$\ldots$
 1. **increasing** if $i\leq j$ implies $a_i\leq a_j$.
 2. **decreasing** if $i\leq j$ implies $a_i\geq a_j$.
 3. **strictly increasing** (repsectively **strictly decreasing**) if $i< j$ implies $a_i< a_j$ (respectively $a_i>a_j$).
-4. **monotonic** if it is either only increasing or only decreasing, and **strictly monotonic** if it is either only strictly increasing or only strictly decreasing.
+4. **monotonic** if either it is increasing or it is decreasing, and **strictly monotonic** if it is strictly increasing or if it is strictly decreasing.
 5. **bounded above** (respectively, **bounded below**) if its range is.
 :::
 
@@ -77,47 +109,11 @@ Prove @thm-amazingly-useful by induction.
 :::
 
 :::{.proof .content-hidden}
-We will do a proof by induction.
+We will do a proof by induction or by using the Well-Ordering Principle (@ax-wop).
 
 For $n=1$, $i_n\in\N$ so $i_1\geq1$.
 
 Suppose $i_k\geq k$. Then since the sequence is strictly increasing, $i_{k+1}>i_k\geq k$. Since $i_{k+1}$ is a natural number strictly greater than $k$, $i_{k+1}\geq k+1$.
-:::
-
-## Visualizing Sequences
-
-We often visualize a sequence $(a_n)$ by showing either its *range* in the codomain or, for sequences in $\R$, its *graph* in the cartesian plane.
-
-:::{#fig-sequence-ranges layout-ncol=1}
-
-![The sequence $\left(\frac{1}{n}\right)$ in $\R$.](recip-seq-range.png){#fig-recip-seq-range}
-
-![A sequence in $\R^2$](seq-range-r2.png){#fig-seq-range-r2}
-
-Here we show the ranges of two sequences. When plotting the range of a sequence, we usually number at least the first several terms.
-:::
-
-When plotting the graph of a sequence, we use the horizontal axis for the indices (in $\N$) and the vertical axis for the terms (in $\R$).
-
-:::{#fig-sequence-graph layout-ncol=1}
-
-![The sequence $(\sin(n))$.](sin-n-graph.png){#fig-sin-n-graph}
-
-![The sequence $(\sqrt n)$.](sqrt-n-graph.png){#fig-sqrt-n-graph}
-
-![The sequence $((-1)^n)$.](alternating-graph.png){#fig-alternating-graph}
-
-The graphs of three sequences in $\R$.
-:::
-
-
-
-
-:::{.callout-tip collapse="true"}
-
-#### Hint
-
-A collapsed hint.
 :::
 
 
@@ -129,6 +125,4 @@ A collapsed hint.
 
 ## To include
 
-- Quick teaser about convergence
-- Lots of examples of sequences
 - Constructing sequences by induction?

@@ -1,0 +1,314 @@
+# Naive integration
+
+## Highlights {.unnumbered}
+
+- A review of the naive Calc I definition of the integral
+- Why basing a theory on the naive definition is insufficient.
+
+## Preparation
+
+Most calculus students strongly associate integrals with taking antiderivatives, and for good reason. Typically, the most efficient way to calculate the exact value of a definite integral is to employ the Fundamental Theorem of Calculus, which tells us that how to use the antiderivative of the integrand. However, in order to understand how definite integrals can be applied in both abstract mathematics and in the real world, we should not lose sight of the definition of the definite integral in terms of Riemann sums.
+
+We will start with a review of how the definite integral is presented in a typical Calc I course, what we'll call the "naive integral". However, as we shall see, this definition fails to produce a self-contained theory of integration that behaves nicely. 
+
+As a result, it will be impossible to prove the Fundamental Theorem of Calculus linking integration and differentiation using the naive definition of the integral. This serves to motivate the more robust defintion of the Riemann integral in the next section. It will also be a reminder of what you know from calculus and a warmup for what's to come.
+
+:::{.definition #def-right-sum}
+Let $a<b$, and suppose $f$ is a real-valued function whose domain contains $[a,b]$. Define the **right Riemann Sum** of $f$ on the interval $[a,b]$ with $n$ subintervals to be 
+$$
+R_n(f)=\sum_{i=1}^n f(x_i)\Delta x \qquad \text{where $\Delta x=\frac{b-a}{n}$ and $x_i=a+i\Delta x$}
+$$ {#eq-right-sum}
+:::
+
+:::{.exercise #exr-right-sum-example}
+Let $f:[1,3]\rightarrow\R$ be defined by $f(x)=\sqrt x$. Use a calculator to find $R_{10}(f)$.
+:::
+
+Note that we aren't initially making any assumptions about the function $f$ being "nice" in any way. In particular, $f$ might be badly discontinuous as in the next example.
+
+:::{.exercise #exr-dirichlet}
+Let $f:[0,1]\rightarrow\R$ be defined by $f(x)=0$ when $x$ is irrational and $f(x)=1$ when $x$ is rational. We call this function **Dirichlet's function**. Sketch a graph of $f$ (as best you can), and find a formula for $R_n(f)$.
+:::
+
+In calculus, we are taught to think of right Riemann sums as approximations to the exact value of the integral. Visually, for non-negative-valued functions at least, we can represent this by representing the products $f(x_i)\Delta x$ as rectangles; as $n$ tends to $\infty$, this set of rectangles seems to better and better approximate the region under the curve, as in the demo below that you are likely familiar with.
+
+:::{#des-right-sum-classic .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-right-sum-classic" class="calculator-container" style="width: 100%; height: 400px;"></div>
+  
+
+<div class="slider-container">
+  <div class="centered-slider">
+  <label for="n3-slider" class="left-label">$n$</label>
+  <input id="n3-slider" class="desmos-slider" type="range" min="1" max="50" step="1" value="12">
+  </div>
+  <div class="centered-slider">
+  <label for="i-slider" class="left-label">$i$</label>
+  <input id="i-slider" class="desmos-slider" type="range" min="1" max="12" step="1" value="7">
+  </div>
+</div>
+
+
+<script>
+  var n3Slider = document.getElementById('n3-slider');
+  var n3 = parseInt(n3Slider.value);
+
+  var iSlider = document.getElementById('i-slider');
+  var i = parseInt(iSlider.value);
+  
+  var elt = document.getElementById('calculator-right-sum-classic');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator3 = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('right-sum-classic.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator3.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  n3Slider.addEventListener('input', function() {
+    n3 = parseFloat(this.value);
+    calculator3.setExpression({id:'6', latex:`n=${n3}`});
+    iSlider.max = n3;
+  });
+
+  iSlider.addEventListener('input', function() {
+    i = parseFloat(this.value);
+    calculator3.setExpression({id:'12', latex:`i=${i}`});
+  });
+</script>
+
+Visualizing the right Riemann sum the sum of the areas of rectangles.
+:::
+
+And thus we make the following definition.
+
+:::{.definition #def-naive-integral}
+Let $a<b$, and suppose $f$ is a real-valued function whose domain contains $[a,b]$. If the sequence $(R_n(f))$ of right Riemann sums of $f$ over $[a,b]$ converges to some real number $I$, we say that $f$ is **right integrable** on $[a,b]$. In this case, we write ${\mathsf R}_a^b f$ for $I$ and call this value the **right integral** of $f$ over $[a,b]$.
+:::
+
+This definition does two things for us. First it tells us which functions get to be part of our theory---ones where the sequence of right Riemann sums converges. And second it tells us what the value of those integrals should be. While the second part is what we focus on when doing calculations, it's the first part that's important for being able to prove theorems; it lays out the baseline assumptions we can make about the functions being integrated.
+
+The problem with this definition is that those baseline assumptions are too weak to be able to derive theorems from. @def-naive-integral allows too many problematic functions into the theory without being able to properly handle them. The next example hints at the sort of thing that can go wrong.
+
+:::{.exercise #exr-right-integral-pathology}
+Show that Dirichlet's function from @exr-right-sum-pathology is right integrable, and find its right integral. Does the value of the right integral make sense given the sketch you made? Explain.
+:::
+
+As one more warmup question to reflect on, the following exercise provides another hint about an arbitrary and possibly-probelmatic choice we make in the definitions so far.
+
+:::{.exercise #exr-why-called-right}
+Why do you think we refer to the expression in @def-right-sum as the "right" Riemann sum? What would it mean to take the "left" Riemann sum?
+:::
+
+## The Domain Additivity Issue
+
+We haven't proven it yet, but take a peak ahead at @thm-domain-additivity. This theorem should make intuitive sense if we are thinking about areas under the curve, but it is also one of the keys to proving the Fundamental Theorem of Calculus.
+
+Unfortunately, right integrable functions do not necessarily obey the corresponding rule as you'll show below.
+
+:::{.exercise #exr-non-additivity-of-right-integral}
+For Dirichlet's function $f$ defined in @exr-right-sum-pathology, show that $f$ is integrable over $\left[0,\frac{1}{\sqrt2}\right]$ and over $\left[\frac{1}{\sqrt2},1\right]$. Find  $\mathsf R_0^{1/\sqrt2} f$ and $\mathsf R_{1/\sqrt2}^1 f$, and show that
+$$
+\mathsf R_0^{1/\sqrt2} f+\mathsf R_{1/\sqrt2}^1 f\neq \mathsf R_0^1 f.
+$$
+:::
+
+:::{.callout-hint collapse="true"}
+In your answer to @exr-non-additivity-of-right-integral, you can feel free to use familiar facts about whether sums, products, etc. of rational and irrational numbers are rational or irrational without proof, but make sure your facts are actually true!
+:::
+
+Because of this and related issues, we are forced to seek an alternative to what we'll call the "naive theory of integration" that arises from @def-naive-integral.
+
+To gain a foothold on how to do this, we start by returning to @exr-why-called-right, and trying to conceptualize what's going on in the definition of right Riemann sums. When calculating $\mathsf R_n(f)$, we should imagine dividing the interval $[a,b]$ into $n$ (equal) subintervals, $[x_0,x_1],[x_1,x_2],\ldots,[x_{n-1},x_n]$. Then each summand $f(x_i)\Delta x$ of @eq-right-sum can be thought of as the width of the $i$th subinterval (always $\Delta x$) times the value of the function at a certain point in the that subinterval; namely $f(x_i)$ is the value of the function at the *right* endpoint of the $i$th interval $[x_{i-1},x_i]$.
+
+:::{#des-subintervals .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-subintervals" class="calculator-container" style="width: 100%; height: 150px;"></div>
+
+
+  
+
+<div class="slider-container">
+  <label for="n-slider" class="left-label">$n$</label>
+  <div class="centered-slider">
+  <input id="n-slider" class="desmos-slider" type="range" min="1" max="20" step="1" value="5" list="values">
+  <datalist id="values">
+    <option value="1" label="1"></option>
+    <option value="20" label="20"></option>
+  </datalist>
+  </div>
+</div>
+
+
+<script>
+  var nSlider = document.getElementById('n-slider');
+  var n = parseInt(nSlider.value);
+  
+  var elt = document.getElementById('calculator-subintervals');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('subintervals.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  nSlider.addEventListener('input', function() {
+    n = parseFloat(this.value);
+    calculator.setExpression({id:'n-slider', latex:`n=${n}`});
+  });
+</script>
+
+The interval $[a,b]$ partitioned into into $n$ subintervals.
+:::
+
+However, the choice to plug the *right* endpoint of each interval is somewhat arbitrary. For a well-behaved function, we would expect that choosing the left endpoints, midpoints, or any other sample point $x_i^*$ from the $i$th subinterval would be just as reaonable, and that *as long as the subintervals are all small enough*, adding up the products of the values $f(x_i^*)$ at these sample points with the widths $\Delta x$ will get us close to the true value of the integral.
+
+:::{#des-sample-points-uniform .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-sample-points-uniform" class="calculator-container" style="width: 100%; height: 250px;"></div>
+
+
+<div class="slider-container">
+  <label for="n-slider-2" class="left-label">$n$</label>
+  <div class="centered-slider">
+  <input id="n-slider-2" class="desmos-slider" type="range" min="1" max="20" step="1" value="5" list="values-2">
+  <datalist id="values-2">
+    <option value="1" label="1"></option>
+    <option value="20" label="20"></option>
+  </datalist>
+  </div>
+</div>
+
+<div class="radio-container">
+
+<div>
+<span style="margin-right:1.5rem;">Sampling Method:</span>
+<label style="margin-right: 1.5rem;">
+  <input type="radio" id="right" name="method" value="right" /> Right
+</label>
+<label style="margin-right: 1.5rem;">
+  <input type="radio" id="left" name="method" value="left" /> Left
+</label>
+<label style="margin-right: 1.5rem;">
+  <input type="radio" id="midpoint" name="method" value="midpoint" /> Midpoint
+</label>
+<label style="margin-right: 1.5rem;">
+  <input type="radio" id="random" name="method" value="random" /> Random
+</label>
+</div>
+</div>
+
+
+<script>
+  var nSlider2 = document.getElementById('n-slider-2');
+  var n2 = parseInt(nSlider2.value);
+  
+  var elt = document.getElementById('calculator-sample-points-uniform');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator2 = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('sample-points-uniform.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator2.setState(state);
+        document.getElementById('right').checked = true;
+        setSamplingMethod('right');
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  function setSamplingMethod(method) {
+    var folderMap = {
+      right: '12',
+      left: '17',
+      midpoint: '21',
+      random: '26'
+    };
+
+    console.log('setSamplingMethod', method, folderMap[method]);
+    Object.keys(folderMap).forEach(function(key) {
+      calculator2.setExpression({id: folderMap[key], hidden: key !== method});
+    });
+  }
+
+  var sampleMethodRadios = document.querySelectorAll('input[name="method"]');
+  sampleMethodRadios.forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      if (this.checked) {
+        setSamplingMethod(this.value);
+      }
+    });
+  });
+
+  nSlider2.addEventListener('input', function() {
+    n2 = parseFloat(this.value);
+    calculator2.setExpression({id:'n-slider', latex:`n=${n2}`});
+  });
+</script>
+
+Different methods for choosing sample points from a partition of $[a,b]$.
+:::
+
+:::{.exercise #exr-left-and-right-agree}
+1. Write down a reasonable definition for the **left Riemann sum** $L_n(f)$, what it means for a function to be **left integrable**, and the **left integral** $\mathsf L_a^b f$ of a real-valued function $f$ whose domain includes $[a,b]$.
+2. Prove that $f$ is right integrable on $[a,b]$ if and only if $f$ is left integrable on $[a,b]$ and that in this case, $\mathsf R_a^b f=\mathsf L_a^b f$.
+:::
+
+:::{.exercise #exr-sampling-irrationals}
+For Dirichlet's function $f$ defined in @exr-right-sum-pathology, prove that for any $n\in\N$, there exist sample points $x_i^*$ in the $i$th subinterval such that $\sum_{i=1}^n f(x_i^*)\Delta x=0$.
+:::
+
+The previous exercise shows that for Dirichlet's function, the choice of sample points *does* matter. That dependence will be grounds for us to exclude this function from the more rigorous theory that we develop in the remainder of this chapter[^1].
+
+## Review Questions {.unnumbered}
+
+1. What does it mean for a function to be "right integrable"? What is the definition of the "right integral" of such a function?
+2. Give an example of a familiar property of integrals that can fail if we adopt the naive theory of integration based on right integrability.
+
+[^1]: We will return to this idea later, but sophisticated theories of integration that go beyond the scope of this class *do* allow functions like this one and are able to handle them gracefully. For now, we won't try to be as cool as the cat in @fig-lebesgue-cat.

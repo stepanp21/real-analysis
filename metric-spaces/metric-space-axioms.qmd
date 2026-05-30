@@ -1,9 +1,9 @@
-# Metric Spaces and Distance Functions
+# Metric Spaces and Distance Functions {#sec-metric-space-axioms}
 
 ## Highlights {.unnumbered}
 
 - The definitions of "metric space" and "distance function"
-- The usual distance functions on $\R^n$, including $\R=\R^1$.
+- The usual distance functions on $\R^n,$ including $\R=\R^1.$
 - Properties of absolute values
 
 ## Preparation
@@ -12,9 +12,9 @@ The limits that you learn about in calculus are often described in terms of a va
 
 In this chapter we'll talk about a fundamental construction in the theory of real analysis, which is the concept of a metric space. Basically, a metric space will be any set with a reasonable (and we'll make precise what we mean by "reasonable") notion of distance.
 
-You are likely familiar with the distance formulas in $\R^2$ and $\R^3$, and we will use these two spaces as our mental model for how to think about metric spaces. We'll see that distance can reasonably be defined in other contexts as well, including in the real number system.
+You are likely familiar with the distance formulas in $\R^2$ and $\R^3,$ and we will use these two spaces as our mental model for how to think about metric spaces. We'll see that distance can reasonably be defined in other contexts as well, including in the real number system.
 
-For the moment, play around with the applet below to see if you can think about what formula would give us the distance between the real numbers $a$ and $b$.
+For the moment, play around with the applet below to see if you can think about what formula would give us the distance between the real numbers $a$ and $b.$
 
 :::{#des-distance-in-r .content-visible when-format="html"}
 <script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
@@ -65,11 +65,38 @@ Try and answer this for yourself in your mind, and then see if you can adjust th
 
 <script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
 
-<div id="calculator-function-distance" class="calculator-container" style="width: 100%; height: 350px;"></div>
+<div id="calculator-function-distance" class="calculator-container" style="width: 100%; height: 600px;"></div>
+
+<div class="slider-container">
+  <div class="centered-slider">
+  <label for="a-slider" class="left-label">$a$</label>
+  <input id="a-slider" class="desmos-slider" type="range" min="-5" max="5" step="0.01" value="1">
+  </div>
+  <div class="centered-slider">
+  <label for="b-slider" class="left-label">$b$</label>
+  <input id="b-slider" class="desmos-slider" type="range" min="-5" max="5" step="0.01" value="1">
+  </div>
+  <div class="centered-slider">
+  <label for="c-slider" class="left-label">$c$</label>
+  <input id="c-slider" class="desmos-slider" type="range" min="-5" max="5" step="0.01" value="1">
+  </div>
+</div>
 
 <script>
+  var aSlider = document.getElementById('a-slider');
+  var a = parseFloat(aSlider.value);
+
+  var bSlider = document.getElementById('b-slider');
+  var b = parseFloat(bSlider.value);
+
+  var cSlider = document.getElementById('c-slider');
+  var c = parseFloat(cSlider.value);
+
   var elt2 = document.getElementById('calculator-function-distance');
   var options2 = {
+    expressions: false,
+    lockViewport: true,
+    keypad: false
   }
   var calculator2 = Desmos.GraphingCalculator(elt2,options2);
   
@@ -88,6 +115,21 @@ Try and answer this for yourself in your mind, and then see if you can adjust th
       .catch(error => {
         console.error('Error loading Desmos state:', error);
       });
+
+  aSlider.addEventListener('input', function() {
+    a = parseFloat(this.value);
+    calculator2.setExpression({id:'3', latex:`a=${a}`});
+  });
+
+  bSlider.addEventListener('input', function() {
+    b = parseFloat(this.value);
+    calculator2.setExpression({id:'4', latex:`b=${b}`});
+  });
+
+  cSlider.addEventListener('input', function() {
+    c = parseFloat(this.value);
+    calculator2.setExpression({id:'5', latex:`c=${c}`});
+  });
 </script>
 
 Try to make the blue function as close as possible to the red one. Some possible measures of "closeness" are given on the right; see if you can find parameters that minimize each.^[The $L^2$ norm is one that you may see in a differential equations or functional analysis course, but if you haven't heard of it, it won't be important for this course.]
@@ -98,15 +140,15 @@ As we said earlier, we will define a metric space to be any set in which we can 
 :::{.definition #def-metric-space}
 A **metric space** is a nonempty set $X$ equipped with a function $d:X\times X\rightarrow\R$ called a **distance function** with the following properties.
 
-1. (Positivity) For any $a,b\in X$, $d(a,b)\geq 0$.
-2. (Positive Definiteness) For any $a,b\in X$, $d(a,b)=0$ if and only if $a=b$.
-3. (Symmetry) For any $a,b\in X$, $d(a,b)=d(b,a)$.
-4. (Triangle Inequality) For any $a,b,c\in X$, $d(a,b)+d(b,c)\geq d(a,c)$.
+1. (Positivity) For any $a,b\in X,$ $d(a,b)\geq 0.$
+2. (Positive Definiteness) For any $a,b\in X,$ $d(a,b)=0$ if and only if $a=b.$
+3. (Symmetry) For any $a,b\in X,$ $d(a,b)=d(b,a).$
+4. (Triangle Inequality) For any $a,b,c\in X,$ $d(a,b)+d(b,c)\geq d(a,c).$
 :::
 
 :::{.exercise #exr-distance-in-r2}
 
-Explain why the usual distance formula in $\R^2$,
+Explain why the usual distance formula in $\R^2,$
 
 $$d((x_1,y_1),(x_2,y_2))=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2},$$
 
@@ -118,12 +160,12 @@ While we are used to measuring distances in two and three dimensions, we can def
 :::{.exercise #exr-trivial-metric}
 Let $S$ be any set. Prove that $d:S\times S\rightarrow\R$ defined for any $x,y\in S$ by
 
-$$d(x,y)=\begin{cases} 0 & x=y \\ 1 x\neq y \end{cases}$$
+$$d(x,y)=\begin{cases} 0 & x=y \\ 1 & x\neq y \end{cases}$$
 
-is a distance function for $S$ (i.e. that it satisfies the four properties). We call this the **trivial** metric for $S$.
+is a distance function for $S$ (i.e. that it satisfies the four properties). We call this the **trivial** metric for $S.$
 :::
 
-To talk about a metric space, we really ought to specify both the set $X$ and the distance funciton $d$. For example, it's technically possible to equip $\R^2$ with the trivial metric from @exr-trivial-metric (although I'm hard-pressed to think of why this would be useful). A somewhat more practical alternative metric on $\R^2$ is the subject of @exr-taxicab, but we'll refer to the distance function from @exr-distance-in-r2 as the "standard" distance function for $\R^2$.
+To talk about a metric space, we really ought to specify both the set $X$ and the distance funciton $d.$ For example, it's technically possible to equip $\R^2$ with the trivial metric from @exr-trivial-metric (although I'm hard-pressed to think of why this would be useful). A somewhat more practical alternative metric on $\R^2$ is the subject of @exr-taxicab, but we'll refer to the distance function from @exr-distance-in-r2 as the "standard" distance function for $\R^2.$
 
 :::{.content-visible when-format="html"}
 Before reading further, take just a moment to reflect on the question raised in @des-distance-in-r.
@@ -135,13 +177,15 @@ Make a guess about how we will define the "standard" distance function that will
 
 ## Distances in $\R^n$
 
-You are likely familiar with the distance formulas in $\R^2$ and $\R^3$. Generalizing those formulas, the standard distance function in $\R^n$ is given by
+You are likely familiar with the distance formulas in $\R^2$ and $\R^3.$ Generalizing those formulas, the standard distance function in $\R^n$ is given by
 
-$$d((a_1,\ldots,a_n),(b_1,\ldots,b_n))=\sqrt{(b_1-a_1)^2+\cdots+(b_n-a_n)^2}.$${#eq-rn-distance}
+$$
+d((a_1,\ldots,a_n),(b_1,\ldots,b_n))=\sqrt{(b_1-a_1)^2+\cdots+(b_n-a_n)^2}.
+$${#eq-rn-distance}
 
-The proofs that this distance function satisfies Positivity, Positive-Definiteness, and Symmetry are straightforward generalizations of what you did in @exr-distance-in-r2. The proof that the standard distance function satisfies the Triangle Inequality is much more involved, and we defer it to @thm-cauchy-schwartz in @sec-cauchy-schwartz.
+The proofs that this distance function satisfies Positivity, Positive-Definiteness, and Symmetry are straightforward generalizations of what you did in @exr-distance-in-r2. The proof that the standard distance function satisfies the Triangle Inequality is much more involved, and we defer it to @thm-cauchy-schwarz in @sec-cauchy-schwarz.
 
-More important to us at the moment, though, is how to define distances in $\R$. If we apply the formula ([-@eq-rn-distance]) to the case where $n=1$ we get^[Here we set $a=(a_1)$, and $b=(b_1)$ to simplify the notation.] $d(a,b)=\sqrt{(b-a)^2}$. This ends up simplifying to $|b-a|$, which hopefully matches your guess in @exr-metric-on-r-guess.
+More important to us at the moment, though, is how to define distances in $\R.$ If we apply the formula ([-@eq-rn-distance]) to the case where $n=1$ we get^[Here we set $a=(a_1),$ and $b=(b_1)$ to simplify the notation.] $d(a,b)=\sqrt{(b-a)^2}.$ This ends up simplifying to $|b-a|,$ which hopefully matches your guess in @exr-metric-on-r-guess.
 
 Thus we define the **standard distance function on $\R$** to be 
 $$d(a,b)=|b-a|.$$
@@ -157,27 +201,43 @@ $$|x|=\begin{cases} x & x\geq 0 \\ -x & x<0 \end{cases}$$
 Make sure you understand how the second case matches what you know about absolute values before moving on!
 
 :::{.theorem #thm-absolute-value-props}
-Suppose $a,b\in\R$.
+Suppose $a,b\in\R.$
 
-1. $|a|\geq0$.
-2. $|-a|=|a|$.
-2. $|a|=\max\{a,-a\}$.
-3. $|a|\geq a$.
-4. $|ab|=|a||b|$.
-5. $|a+b|\leq|a|+|b|$.
-6. $|a-b|\geq\big||a|-|b|\big|$.
+1. $|a|\geq0.$
+2. $|a|=\max\{a,-a\}.$
+2. $|-a|=|a|.$
+3. $|a|\geq a.$
+4. $|ab|=|a||b|.$
+5. $|a+b|\leq|a|+|b|.$
+6. $|a-b|\geq\big||a|-|b|\big|.$
+:::
+
+:::{.proof}
+We will prove parts 1--5. Since the definition of absolute value is piecewise, we need to do some case-by-case proofs here.
+
+1. If $a\geq 0$, then $|a|=a\geq0$. If $a<0$, then $|a|=-a>0$.
+
+2. If $a\geq0$, then $a\geq0\geq-a$, so $|a|=a=\max\{a,-a\}$. If $a<0$, then $-a>0>a$, so $|a|=-a=\max\{a,-a\}$.
+
+3. By the previous part, $|a|=\max\{a,-a\}=|-a|$.
+
+4. Follows from the previous part.
+
+5. This can be proven by considering each of the three cases where $a,b$ are both positive, $a,b$ are both negative, and where one of $a,b$ is positive and the other is negative.
 :::
 
 :::{.exercise #exr-absolute-value-basics}
-Prove @thm-absolute-value-props. Note that since the definition of absolute value is piecewise, you may need to do case-by-case proofs here.
+Prove the remaining parts of @thm-absolute-value-props. As a hint for Part 6, try breaking into two cases: one where $a+b\geq0$ (so that $|a+b|=a+b$) and one where $a+b<0$ (so that $|a+b|=(-a)+(-b)$) and then apply Part 4 to both $a$ and $b.$
 :::
 
 :::{.exercise #exr-triangle-inequality-in-r}
 Prove that the standard distance function $d(x,y)=|y-x|$ for $\R$ satisfies the Triangle Inequality.
 :::
 
+## More Exercises
+
 :::{.exercise #exr-distance-less-than-all-epsilon}
-Let $X$ be a metric space with distance function $d$ and let $x,y\in X$. Suppose that for all $\epsilon>0$, $d(x,y)\leq \epsilon$. Prove that $x=y$.
+Let $X$ be a metric space with distance function $d$ and let $x,y\in X.$ Suppose that for all $\epsilon>0,$ $d(x,y)\leq \epsilon.$ Prove that $x=y.$
 :::
 
 :::{.callout-tip}
@@ -185,12 +245,12 @@ In this section, you should cite Positivity, Positive-Definiteness, and the Tria
 :::
 
 :::{.exercise #exr-reverse-triangle-inequality}
-Let $X$ be a metric space with distance function $d$. Prove that for any $a,b,c\in X$,
-$$|d(a,b)-d(b,c)|\leq d(a,c)$$
+Let $X$ be a metric space with distance function $d.$ Prove that for any $a,b,c\in X,$
+$$|d(a,b)-d(b,c)|\leq d(a,c).$$
 :::
 
 :::{.exercise #exr-ngon-inequality}
-Prove the "polygon inequality", which says that for any $x_1,\ldots,x_n$ with $n\geq 3$ in a metric space $X$ with distance function $d$,
+Prove the "polygon inequality", which says that for any $x_1,\ldots,x_n$ with $n\geq 3$ in a metric space $X$ with distance function $d,$
 $$d(x_1,x_2)+d(x_2,x_3)+\cdots+d(x_{n-1},x_n)\geq d(x_1,x_n)$$
 Hint: this is a good candidate for mathematical induction. It's also a good example of how drawing a picture in two dimensions can help give you intuition about what happens in any metric space.
 :::
@@ -208,10 +268,10 @@ Show that $d_{\mathrm{inv}}$ is *not* a distance function.
 :::
 
 :::{.exercise #exr-subspaces}
-If $X$ is a metric space with distance function $d$, and $S\subseteq X$, then we can think of $S$ itself as a metric space using the same distance function restricted to $S$. In this case we say $S$ is a **subspace** of $X$.
+If $X$ is a metric space with distance function $d,$ and $S\subseteq X,$ then we can think of $S$ itself as a metric space using the same distance function restricted to $S.$ In this case we say $S$ is a **subspace** of $X.$
 
-1. If we treat $\Q$ as a subspace of $\R$, prove that the distance between any two points in $\Q$ is a rational number.
-2. If we treat $\Z^2$ (the set of points in $\R^2$ both of whose entries are integers), as a subspace of $\R^2$, is the distance between two points in $\Z^2$ always an integer? Explain.
+1. If we treat $\Q$ as a subspace of $\R,$ prove that the distance between any two points in $\Q$ is a rational number.
+2. If we treat $\Z^2$ (the set of points in $\R^2$ both of whose entries are integers), as a subspace of $\R^2,$ is the distance between two points in $\Z^2$ always an integer? Explain.
 :::
 
 ## Review Questions {.unnumbered}

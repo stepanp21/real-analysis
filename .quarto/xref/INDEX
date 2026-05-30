@@ -82,5 +82,29 @@
   },
   "sequences/subsequences.qmd": {
     "subsequences.html": "a32ed79e"
+  },
+  "sequences/cauchy.qmd": {
+    "cauchy.html": "c65a93b6"
+  },
+  "integration/naive.qmd": {
+    "naive.html": "cf273c46"
+  },
+  "integration/integral-props.qmd": {
+    "integral-props.html": "96543ae3"
+  },
+  "integration/riemann-integral.qmd": {
+    "riemann-integral.html": "b1b43b72"
+  },
+  "sequences/sequence-convergence.qmd": {
+    "sequence-convergence.html": "6a02271e"
+  },
+  "sequences/sequences-in-r-i.qmd": {
+    "sequences-in-r-i.html": "92f40543"
+  },
+  "appendices/desmos-links.qmd": {
+    "desmos-links.html": "ee3abbf0"
+  },
+  "template.qmd": {
+    "template.html": "15e27baa"
   }
 }

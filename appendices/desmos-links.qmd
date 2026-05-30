@@ -1,0 +1,20 @@
+# Links to Desmos Web Apps {#sec-desmos-links}
+
+Below are links to the web app versions of the Desmos interactives found throughout the textbook.
+
+## Axioms of $\R$
+
+1. [Supremum of $[0,3)$](https://www.desmos.com/calculator/id4yxbqxjt)
+2. [Nested Interval Theorem](https://www.desmos.com/calculator/rtplk3e0wd)
+3. [Uncountability of $\R$ using NIT](https://www.desmos.com/calculator/ici222hmu6)
+
+## Metric Spaces
+
+1. [Distance on the number line](https://www.desmos.com/calculator/yddudu87rz)
+2. [Distance between functions](https://www.desmos.com/calculator/ema0bshe0z)
+3. [Suprema and distance](https://www.desmos.com/calculator/zewq4rlcwu)
+4. [Open set definition demo](https://www.desmos.com/calculator/99lvjme6ty)
+5. [Open set as a union of open balls](https://www.desmos.com/calculator/karw42l115)
+5. [Open half plane as a union of open balls](https://www.desmos.com/calculator/qfkadimcrk)
+5. [Boundedness definition](https://www.desmos.com/calculator/ins60ntkoh)
+6. [Boundedness in $\R$](https://www.desmos.com/calculator/yrcctbabfh)

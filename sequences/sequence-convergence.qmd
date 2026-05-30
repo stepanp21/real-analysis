@@ -1,0 +1,258 @@
+# Sequence Convergence {#sec-sequence-convergence}
+
+## Highlights {.unnumbered}
+
+- Definition of sequence convergence
+- Basic properties of convergence in a metric space
+
+## Preparation
+
+The most fundamental question we will ask about a sequence in a metric space is whether or not it *converges* to some point in the metric space. Before giving the official definition, let's consider some examples of sequences.
+
+:::{.exercise #exr-guess-convergence}
+For each of the sequences in $\R$ below, draw a picture of the sequence (either of its range or its graph), say whether or not you think the sequence convergences, and write a sentence explaining your thoughts.
+
+1. $(-1)^n$
+
+2. $\sqrt{n}$
+
+3. $\left(\frac{n-1}{n}\right)$
+
+4. $1,1,\frac{1}{2},\frac{1}{3},1,\frac{1}{4},\frac{1}{5},\frac{1}{6},1,\frac{1}{7},\frac{1}{8},\frac{1}{9},\frac{1}{10},1,\ldots$
+
+5. $1,\frac{1}{2},\frac{1}{2},\frac{1}{3},\frac{1}{3},\frac{1}{3},\frac{1}{4},\frac{1}{4},\frac{1}{4},\frac{1}{4},\ldots$
+
+6. $1,\frac{1}{2},\frac{1}{\sqrt2},\frac{1}{3},\frac{1}{\sqrt3},\frac{1}{4},\frac{1}{\sqrt4},\ldots$
+
+The goal here is not to write proofs---it's to think about what *should* count as a convergent sequence so we can test out the definition of sequence convergence that we are about to write down.
+:::
+
+
+@exr-guess-convergence deals with sequences in $\R$, but we will define sequence convergence in any metric space. Two phrases often associated with limiting processes in mathematics are "arbitrarily close" and "closer and closer". It is therefore no surprise that the following definition involves the distance function in an essential way.
+
+:::{.definition #def-sequence-convergence}
+Suppose $(x_n)$ is a sequence in a metric space $X$ with distance function $d$. We say $(x_i)$ **converges to** a point $a\in X$ when for all $\epsilon>0$, there exists $N\in\N$ such that if $n>N$, then $d(x_n,a)<\epsilon$. If $(x_i)$ converges to a point in $X$, we say $(x_i)$ **converges**, and otherwise we say $(x_i)$ **diverges**.
+:::
+
+:::{.exercise #exr-sequence-logical-notation}
+Write down what $\lim x_n=a$ means in logical notation (i.e. with $\forall$, $\exists$, etc). Hint: how is $n$ quantified?
+:::
+
+:::{#des-convergence-r2 .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-convergence" class="calculator-container" style="width: 100%; height: 400px;"></div>
+
+
+  
+
+<div class="slider-container">
+  <label for="e-slider" class="left-label">$\varepsilon$</label>
+  <div class="centered-slider">
+  <input id="e-slider" class="desmos-slider" type="range" min="0" max="2" step="0.01" value="0.5" list="values">
+  <datalist id="values">
+    <option value="0" label="0"></option>
+    <option value="2" label="2"></option>
+  </datalist>
+  </div>
+</div>
+
+
+<script>
+  var eSlider = document.getElementById('e-slider');
+  var e = parseFloat(eSlider.value);
+  
+  var elt = document.getElementById('calculator-convergence');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('sequence-convergence.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  eSlider.addEventListener('input', function() {
+    e = parseFloat(this.value);
+    calculator.setExpression({id:'7', latex:`p=${e}`});
+  });
+</script>
+
+A sequence $(a_n)$ in the metric space $\R^2$ that converges to a point $x$.
+:::
+
+:::{.exercise #exr-sequence-find-N-desmos}
+For the convergent sequence shown in @des-convergence-r2, if $\epsilon=0.5$, what value of $N\in\N$ will ensure that if $n>N$, then $d(a_n,x)<\epsilon$?
+:::
+
+## Sequence Convergence Basic Properties
+
+A slogan we can use to remember what sequence convergence means is the following.
+
+> The sequence eventually stays arbitrarily close to $a$.
+
+:::{.hidden}
+To break this slogan down, the word "close" captures the assumption that $d(x_n,a)$ is less than something, "arbitrarily" is meant to capture the assumption that $\epsilon>0$ is universally quantified, and "eventually" captures the existential quantification of $N$ and the fact that we are only considering $n$ greater than ("after", in a sense) that $N$. The word "stays" is the most subtle because it points to a hidden quantifier; since $n$ is not explicitly quantified in the "if-then" statement in @def-sequence-convergence, we infer that $n$ is *universally* quantified; that is, we are talking about *all* $n>N$.
+
+With this in mind, an equivalent rephrasing of the definition of $\lim x_i=a$ is "for all $\epsilon>0$, there exists $N\in\N$ such that *for all* $n>N$, $d(x_n,a)<\epsilon$".
+:::
+
+The next few theorems may seem obvious, but we should write down careful proofs that make sure we understand all of the moving parts of the definition.
+
+:::{.theorem #thm-constant-sequences-converge}
+Every constant sequence in a metric space converges.
+:::
+
+:::{.exercise #exr-constant-sequences-converge}
+Prove @thm-constant-sequences-converge.
+:::
+
+:::{.theorem #thm-unique-sequence-limit}
+Every convergent sequence has a unique limit.
+:::
+
+:::{.proof}
+To prove uniqueness, we will assume that the sequence $(x_i)$ converges to $a$ and that $(x_i)$ converges to $b$, by way of contradiction, that $a\neq b$.[^1] This first convergence statement means that
+$$
+(\forall\, \epsilon_1>0)(\exists\, N_1\in\N)(\forall n_1>N_1) d(x_{n_1},a)<\epsilon_1
+$$ {#eq-unique-sequence-limit-1}
+
+and the second means
+$$
+(\forall\, \epsilon_2>0)(\exists\, N_2\in\N)(\forall n_2>N_2) d(x_{n_2},b)<\epsilon_2.
+$$ {#eq-unique-sequence-limit-2}
+
+The subscripts indicate that the "epsilons" and "ens" need not be equal between the two convergence statements. Since we are *assuming* both of these statements, we can choose whatever $\epsilon_1$ and $\epsilon_2$ we want. In this case, we'll choose $\epsilon_1=\epsilon_2=\frac{1}{2}d(a,b)$.
+
+Then because of the first convergence statement ([-@eq-unique-sequence-limit-1]), there exists $N_1\in\N$ so that for all $n_1>N_1$, $d(x_{n_1},a)<\frac{1}{2}d(a,b)$.
+
+And because of the second convergence statement ([-@eq-unique-sequence-limit-2]), there exists $N_2\in\N$ so that for all $n_2>N_2$, $d(x_{n_2},a)<\frac{1}{2}d(a,b)$.
+
+Now let $n=\max\{N_1,N_2\}+1$ so that $n>N_1$ and $n>N_2$ and thus by ([-@eq-unique-sequence-limit-1]) and ([-@eq-unique-sequence-limit-2]), we have $d(x_n,a)<\frac{1}{2}d(a,b)$ and $d(x_n,b)<\frac{1}{2}d(a,b)$. However, this contradicts the Triangle Inequality since
+$$d(a,b)\leq d(x_n,a)+d(x_n,b) < \frac{1}{2}d(a,b)+\frac{1}{2}d(a,b)=d(a,b).$$
+:::
+
+:::{.exercise #exr-constant-sequences-converge .hidden}
+Draw a picture of what's going on in the proof of @thm-unique-sequence-limit so far (include the point $x_n$ in your picture), and finish the proof. Note that this is a proof by contradiction, so if something about your picture doesn't make sense, that's by design!
+:::
+
+Because of this uniqueness property, when $(x_n)$ converges to $a$, we can justifiedly call $a$ **the limit** of the sequence $(x_n)$ and write $\lim x_n=a$.
+
+:::{.example #exm-sqrt-sequence}
+Here we will prove that the sequence $(s_n)$ defined by $s_n=\frac{1}{\sqrt{n+3}}$ converges to $0$. Symbolically, we are trying to prove
+$$
+\mathhlred{(\forall \epsilon>0)}\,\mathhlblue{(\exists N\in\N)}\,\mathhlorange{(\forall n>N)}\,\mathhlgreen{d\left(\frac{1}{\sqrt{n+3}},0\right)<\epsilon}.
+$$
+To be systematic, we should go through the quantifiers one-by-one in order. The steps in the proof are color-coded to match the quantifiers above.
+
+[Suppose $\epsilon>0$.]{.explain color="red" note="To address the $\forall \epsilon>0$, our proof has to start with a sentence like this; we don't get to choose $\epsilon$."} [Let $N$ be a natural number greater than $\frac{1}{\epsilon^2}$]{.explain color="blue" note="This is the step where most of the action is happening. To address the $\exists N\in\N$, we need to exhibit a candidate for $N$. Before knowing what candidate is appropriate, you need to do some scratch work, which is outlined below."} [Suppose $n>N$.]{.explain color="orange" note="Again, to address a $\forall$ quantifier, we write a sentence like this to make $n$ arbitrary."} [Then we have]{.explain color="green" note="Here we need to prove the inequality. If we chose our $N$ wisely, this should be a straightforward algebra problem with a string of inequalities."}
+$$
+\begin{aligned}
+d\left(\frac{1}{\sqrt{n+3}},0\right)&=\left|\frac{1}{\sqrt{n+3}}-0\right| \\
+& = \frac{1}{\sqrt{n+3}} \\
+& < \frac{1}{\sqrt{N+3}} \\
+& < \frac{1}{\sqrt{N}} \\
+& < \frac{1}{\sqrt{1/\epsilon^2}} \\
+& = \epsilon.
+\end{aligned}
+$$
+
+The one piece that we haven't explained here is how we came up with the candidate for $N$. This was the result of working backwards from what we wanted in the end, which was that $\frac{1}{\sqrt{n+3}}<\epsilon$. We get to assume $n>N$, so it should be enough to work backwards from $\frac{1}{\sqrt{N+3}}<\epsilon$. This is equivalent to $\sqrt{N+3}>\frac{1}{\epsilon}$, which is equivalent to $N+3>\frac{1}{\epsilon^2}$. That in turn is *implied by* $N>\frac{1}{\epsilon^2}$, so this would be an appropriate assumption to make about $N$. Setting $N=\frac{1}{\epsilon^2}$ wouldn't necessarily give us an integer, hence the invocation of the Archimedean Property to ask $N$ to be a natural number *greater than* $\frac{1}{\epsilon^2}$.
+:::
+
+:::{.exercise #exr-sequence-convergence-examples}
+Prove that the sequences in $\R$ below converge, and say what their limits are.
+
+1. $\left(\frac{n-1}{n}\right)$
+
+2. $0,1,0,\frac{1}{2},0,\frac{1}{3},0,\frac{1}{4},\ldots$
+
+3. $(e^{1/n})$. For this example, you may use familiar properties of logarithms and exponentials without proof.
+:::
+
+We need to understand all of the moving parts of the definition of sequence convergence. One way to do this is to think about what goes wrong when we modify the definition.
+
+:::{.exercise #exr-bogus-sequence-convergence-definitions}
+Below are five bogus definitions of $\lim x_n=a$. Give an example of a sequence that show the bogus definition does not correctly characterize sequence convergence.
+
+1. For all $\epsilon>0$, there exists $n>0$ such that $d(x_n,a)<\epsilon$.
+
+2. For all $\epsilon>0$, if $n>0$, then $d(x_n,a)<\epsilon$.
+
+3. There exists $N\in\N$ such that for all $\epsilon>0$, if $n>N$, then $d(x_n,a)<\epsilon$.
+
+4. For all $\epsilon>0$, there exists $N\in\N$ such that $d(x_n,a)<\epsilon$ for some $n>N$.
+
+5. For all $\epsilon>0$ and for all $N\in\N$, there exists $n>N$ such that $d(x_n,a)<\epsilon$.
+:::
+
+We now show how sequence convergence can be understood geometrically.
+
+:::{.theorem #thm-sequence-convergence-tfae .tfae}
+Let $(x_n)$ be a sequence in a metric space $X$ with distance function $d$. The following are equivalent.
+
+1. $\lim x_n=a$.
+
+2. For all $\epsilon>0$, there exists $N\in\N$ such that for all $n>N$, $x_n\in\bee_\epsilon(a)$.
+:::
+
+:::{.exercise #exr-sequence-convergence-tfae}
+Prove @thm-sequence-convergence-tfae.
+:::
+
+In fact, we already used @thm-sequence-convergence-tfae implicitly in the visualization @des-convergence-r2.
+
+## More on sequence convergence
+
+:::{.exercise #exr-divergent-sequences}
+In this exercise we explore what it means for a sequence to diverge.
+
+1. Write down what it means for a sequence $(x_n)$ in a metric space to diverge in logical notation.
+
+2. Prove that the sequence $((-1)^n)$ diverges.
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+For Part 1 of @exr-divergent-sequences, think first about what the logical statement "$(x_n)$ converges" is. This is slightly different from your answer to @exr-sequence-logical-notation where you wrote down the logical statement for "$(x_n)$ converges to $a$".
+:::
+
+:::{.theoremm #thm-convergent-implies-bounded}
+If $(x_n)$ is convergent, then $(x_n)$ is bounded.
+:::
+
+:::{.exercise #exr-convergent-implies-bounded}
+Prove @thm-convergent-implies-bounded. Is its converse true?
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+Remember that "bounded" means all of the terms lie inside a large enough open ball (see @sec-bounded). Start by supposing that $\lim x_n=a$ and letting $\epsilon=1$. Do all of the terms lie inside $\bee_\epsilon(a)$? If not, how many terms might lie outside of this open ball? Try drawing a picture!
+:::
+
+
+## Review Questions {.unnumbered}
+
+1. What does it mean for a sequence to converge in a metric space? (Make sure you can give the definition exactly.)
+2. Go back to the list of sequences in @exr-sequence-convergence-examples. Explain, now in terms of the *definition* of convergence why each converges or divereges.
+3. The definition of convergence has three quantified variables: $\epsilon$, $N$, and $n$. How is each quantified? Why are they quantified the way they are and in the order that they are?
+
+[^1]: The other main way to prove uniqueness is to assume that $(x_n)$ converges to $a$ and that $(x_n)$ converges to $b$ and prove $a=b$. In some ways this is more elegant, but it's often easier to understand proofs of uniqueness by contradiction.

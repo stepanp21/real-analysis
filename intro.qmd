@@ -1,32 +1,41 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+One way of thinking about the topic of real analysis is that we are going to go back and *prove* everything you learned in calculus---from big theorems like Fundamental Theorem of Calculus and Mean Value Theorem down to nitty-gritty facts like the "limit laws" and Product Rule. But real analysis is more than that. We'll learn new things about series, derivatives, integrals by pushing the boundaries of what our theorems tell us. We'll encounter (and ultimately explain) bizarre features of the real number system, functions, and limits that will probably be new to you. And we'll learn techniques for proof and calculation that are useful both for developing the theory and in real-world applications.
 
-See @knuth84 for additional discussion of literate programming.
+## Teasers
 
-::: {.theorem #thm-hi}
+As a bit of a teaser, here are some questions dealing with concepts like continuity, derivatives, and integrals that go beyond what you'd see in a typical calculus class, but which we'll be able to address by studying those concepts from a proof-based perspective.
 
-## Fermat's First Theorem
+(This list can be improved - maybe use some of Abbott's examples)
 
-This extension has been written by a teacher who hopes that students read the course notes...
-:::
+### Continuity and differentiability
+Consider the function $f(x)=\begin{cases} x\sin\left(\frac{1}{x}\right) & x\neq 0 \\ 0 & x=0 \end{cases}$ whose graph is shown below. 
 
-Please look back to @thm-hi
+Is this function continuous at $0$? Differentiable at $0$? What happens if we change it to just $\sin\left(\frac{1}{x}\right)$ or to $x^2\sin\left(\frac{1}{x}\right)$?
 
-::: {.lemma #lem-bye}
-This extension has been written by a teacher who hopes that students read the course notes...
-:::
+### Non-continuous derivatives?
+We know it's possible for a function like $|x|$ to have a point where it is not differentiable. But is it possible for a function to be differentiable at every point, but the derivative function is not continuous?
 
-::: {.exercise #exr-next}
-This extension has been written by a teacher who hopes that students read the course notes...
-:::
+### Subsequences
 
-::: {.example #exm-the}
-This extension has been written by a teacher who hopes that students read the course notes...
-:::
+Some sequences don't approach a fixed value, but if you skip over some terms and take, say, just the odd numbered terms, you end up with a *subsequence* that converges.
 
-## Acknowledgements
+(Picture)
 
-The author acknowledges support of the Institut Henri Poincar\'e (UAR 839 CNRS-Sorbonne Universit\'e), and LabEx CARMIN (ANR-10-LABX-59-01).
+The sequence $(\sin(n))$ clearly does not approach any particular number, and the values seem to bounce all over the place.
 
-Also thank: John Rock, Yuri Sulyman, Desmos
+(Picture)
+
+Is it possible to obtain a convergent subsequence by skipping over some of the terms? Which ones?
+
+### Limit of Continuous Functions
+
+The functions $f_n(x)$ below are all continuous.
+ 
+(DESMOS)
+ 
+Furthermore, for any fixed $a\in[0,1]$, the limit of $f_n(a)$ as $n\rightarrow\infty$ is well defined. Is the function $f(x)=\lim f_n(x)$ continous?
+
+### A very strange integral
+
+(Integral of Dirichlet's function)

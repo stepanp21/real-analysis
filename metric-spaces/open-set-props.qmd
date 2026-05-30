@@ -7,6 +7,23 @@
 
 ## Preparation
 
+We'll start with a few warm-up exercises using the definition of an open set from @sec-open-balls.
+
+:::{.exercise #exr-open-negation}
+1. Write down what it means for a subset of a metric space to *not* be open.
+2. Write down a careful proof that $(-\infty,2]$ is not an open subset of $\R$.
+:::
+
+:::{.callout-caution}
+We are *not* going to call non-open sets "closed". The term "closed" will have a different definition that we'll get to later.
+:::
+
+:::{.exercise #exr-open-subset-of-r-has-no-greatest-element}
+Let $U$ be an open subset of $\R$. Prove that $U$ has no greatest element.
+:::
+
+The next theorem gives us another useful characterization of open sets---that each is a union of a collection of open balls.
+
 :::{.theorem #thm-open-set-tfae .tfae}
 Let $X$ be a metric space and $U\subseteq X$. The following are equivalent.
 
@@ -14,11 +31,140 @@ Let $X$ be a metric space and $U\subseteq X$. The following are equivalent.
 2. $U$ is a union of open balls.
 :::
 
-:::{.exercise #exr-prove-open-set-tfae}
-Prove @thm-open-set-tfae
+:::{#des-open-ball-union .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-open-ball-union" class="calculator-container" style="width: 100%; height: 400px;"></div>
+
+
+  
+
+<div class="slider-container">
+  <div class="centered-slider">
+  <label for="alpha-slider" class="left-label">Slide to reveal</label>
+  <input id="alpha-slider" class="desmos-slider" type="range" min="-0.5" max="1" step="0.01" value="-0.5">
+  </div>
+</div>
+
+
+<script>
+  var alphaSlider = document.getElementById('alpha-slider');
+  var a = parseFloat(alphaSlider.value);
+  
+  var elt = document.getElementById('calculator-open-ball-union');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator2 = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('open-ball-union.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator2.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  alphaSlider.addEventListener('input', function() {
+    a = parseFloat(this.value);
+    calculator2.setExpression({id:'29', latex:`b=${a}`});
+  });
+</script>
+
+A demonstration of the second condition of @thm-open-set-tfae. The open set $S$ is union of open balls.
 :::
 
-@thm-open-set-tfae is another "the following are equivalent" theorem. We love these because anytime there is a proof involving an open set, we get to pick which condition to use.
+@thm-open-set-tfae is another "the following are equivalent" theorem. We love these because anytime there is a proof involving an open set, we get to pick which condition to use. Before getting into the proof of this theorem, we'll see how it can be used.
+
+:::{.exercise #exr-prove-z-comp-is-open}
+Redo @exr-open-infinite-interval-is-open using Condition 2 of @thm-open-set-tfae by showing that the interval $(-\infty,3)$ is a union of open balls.
+:::
+
+## Open Sets as Unions of Open Balls
+
+Now we get to the proof.
+
+:::{.exercise #exr-prove-open-set-tfae}
+Prove @thm-open-set-tfae.
+:::
+
+It is worth mentioning that some open sets are easier to witness as unions of open balls than others. Compare the two examples below.
+
+:::{.exercise #exr-open-set-proofs}
+Prove that each set below is open. Think about which condition of @thm-open-set-tfae will be easiest to use in each case.
+
+1. The complement of $\Z$ in $\R$.
+2. The upper half plane $H=\{(x,y)\in\R^2\st y>0\}$ as a subset of $\R^2$.
+:::
+
+:::{#des-half-plane .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="calculator-half-plane" class="calculator-container" style="width: 100%; height: 300px;"></div>
+  
+
+<div class="slider-container">
+  <label for="n-slider" class="left-label">Number of open balls:</label>
+  <div class="centered-slider">
+  <input id="n-slider" class="desmos-slider" type="range" min="0" max="40" step="1" value="0" list="values">
+  <datalist id="values">
+    <option value="0" label="0"></option>
+    <option value="40" label="40"></option>
+  </datalist>
+  </div>
+</div>
+
+
+<script>
+  var nSlider = document.getElementById('n-slider');
+  var n = parseInt(nSlider.value);
+  
+  var elt = document.getElementById('calculator-half-plane');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator3 = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('half-plane.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator3.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  nSlider.addEventListener('input', function() {
+    n = parseInt(this.value);
+    calculator3.setExpression({id:'37', latex:`n=${n}`});
+  });
+</script>
+
+The upper half plane from @exr-open-set-proofs is hard to imagine as a union of open balls since finitely many cannot cover the plane.
+:::
+
+## Unions and Intersections of Open Sets
+
+We can construct new open sets out of old ones using unions and intersections via the following theorem.
 
 :::{.theorem #thm-unions-and-intersections-of-open-sets}
 
@@ -105,17 +251,8 @@ Finish the proof of Part 2 of @thm-unions-and-intersections-of-open-sets.
 2. Give an example of a(n infinite) collection of open sets whose intersection is *not* open. (Remember, $\varnothing$ is open!)
 :::
 
-:::{.content-visible when-format="html"}
-It is worth mentioning that some open sets are easier to witness as unions of open balls than others. Compare the two examples below.
-:::
-
-[Two images? Desmos interactives?]
-
-
 ## Review Questions {.unnumbered}
 
-## To include
-
-5. Desmos app with C&C Fig 3.1 and fading-in/out open balls
-6. Visual proof that the open square is open (and that the closed square is not)
-7. Negate "open"
+1. Say what it means for a set to be "not open".
+2. What are the equivalent characterizations of open sets?
+3. How do open sets behave under unions and intersections?

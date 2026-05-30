@@ -1,37 +1,135 @@
-# Subsequences
+# Subsequences {#sec-subsequences}
 
 ## Highlights {.unnumbered}
 
-- highlight 1
-- highlight 2
+- Subsequence notation and vocabulary
+- Investigating what properties "pass to" subsequences
+- Theorems about subsequences and convergence.
 
 ## Preparation
 
-(Pre-class reading and exercises)
+If $(a_n)$ is a sequence, we often want to talk about a sequence that only uses some subset of the terms; this is what we call a "subsequence". For example, you have no doubt by now realized that the sequence consisting only of even terms of the sequence $((-1)^n)$ is constant. We are able to specify subsequences by defining a sequence of *indices* telling us exactly which terms of the original sequence to include.
 
-## Body
-
-What will be covered in class plus exercises
-
-:::{.callout-tip collapse="true"}
-
-#### Hint
-
-A collapsed hint.
+:::{.definition #def-subsequence}
+Let $(a_n)$ be a sequence and let $(i_n)$ be a strictly increasing sequence of natural numbers. Then the sequence $(a_{i_n})$ with terms $a_{i_1},a_{i_2},a_{i_3},\ldots$ is called a **subsequence** of $(a_n)$. 
 :::
 
-## More sections
+When talking subsequences, the hardest part is often keeping track of which variable indicates what. Remember that in both the subsequence $(a_{i_n})$ of $(a_n)$, we are allowing $n$ to be any natural number. In the subsequence $(a_{i_n})$, 
 
-More content
+* $a_{i_n}$ is the value of the term, 
+* $i_n$ is the position/index of in the term in the original sequence (a natural number), and
+* $n$ is the position/index of the term in the subsequence.
+
+:::{.exercise #exr-which-are-subsequences}
+Which of the following are subsequences of $(2^n)$?
+
+1. $4,16,64,\ldots$
+
+2. $2,4,8$
+
+3. $4,2,8,16,32,\ldots$ (the first two terms are switched)
+
+4. $2,2,4,4,8,8,\ldots$
+:::
+
+:::{.exercise #exr-terms-from-in}
+Let $(s_n)$ be the sequence defined by $s_n=n^2$. Let $i_n=2n-1$. Write the first few terms of $(s_{i_n})$.
+:::
+
+:::{.exercise #exr-find-subsequences}
+Let $(a_n)$ be the sequence $0,1,0,2,0,3,0,4,\ldots$.
+
+1. Does $(a_n)$ have a subsequence with distinct terms? If so, say what $(i_n)$ would make the sequence $(a_{i_n})$ have distinct terms.
+2. Does $(a_n)$ have a constant subsequence? If so, say what $(j_n)$ would make the sequence $(a_{j_n})$ constant.
+:::
+
+## Properties of Subsequences
+
+:::{.theorem #thm-extremely-useful-subsequences}
+Suppose $(a_{i_n})$ is a subsequence of $(a_n)$. Then $i_n\geq n$.
+:::
+
+:::{.exercise #exr-extremely-useful-subsequences}
+Prove @thm-extremely-useful-subsequences.
+:::
+
+When working with subsequences, it is very helpful to know what properties of sequences *pass to* subsequences; that is for what properties $P$ of a sequence is it true that every subsequence also has property $P$? The next few exercises deal with this and give some practice in using the notation of subsequences.
+
+:::{.exercise #exr-pass-to-subsequences-tf}
+Which of the following properties pass to subsequences? That is for each property below, is it correct to say "if a sequence is ________, then every subsequence is also _______?" Either give a careful proof or a counterexample.
+
+1. constant
+2. increasing
+4. unbounded
+:::
+
+:::{.definition #def-eventually}
+Suppose $(a_n)$ is a sequence. Then if $k\in\N$, the subsequence $(a_{n+k})$ (the sequence $a_{k+1},a_{k+2},a_{k+3},\ldots$) is called the **$k$th tail** of $(a_n)$.
+
+If there exists $k\in\N$ such that the $k$th tail of a sequence $(a_n)$ has property $P$, then we say $(a_n)$ **eventually** has property $P$.
+:::
+
+Using the adverb "eventually" in this way gives a convenient way of talking about various properties that a sequence might have if we just exclude the first several terms. For the purposes of thinking about convergence, we generally don't care what happens to the first several terms anyway.
+
+:::{.exercise #exr-eventually}
+Say whether each is true or false, and give a one-sentence explanation.
+
+1. If a sequence is eventually constant, then it is convergent.
+1. If a sequence is eventually bounded, then it is bounded.
+2. If a sequence in $\R$ is eventually monotonic, then it is monotonic.
+3. If for every $r>0$, the sequence $(x_n)$ eventually lies in $\bee_r(a)$, then $\lim x_n=a$.
+:::
+
+## Subsequences and convergence
+
+Considering subsequences can often afford us various shortcuts for proving that a sequence converges or diverges. The next few results help us out in this direction.
+
+:::{.lemma #lem-outside-ball-around-a-implies-no-subsequence-converges-to-a}
+Suppose $(x_n)$ is a sequence with no terms lying in $\bee_r(a)$ for some $r>0$. Then no subsequence of $(x_n)$ converges to $a$.
+:::
+
+:::{.exercise #exr--outside-ball-around-a-implies-no-subsequence-converges-to-a}
+Prove @lem-outside-ball-around-a-implies-no-subsequence-converges-to-a.
+:::
+
+:::{.theorem #thm-subsequences-and-convergence .tfae}
+Suppose $(x_n)$ is a sequence in a metric space $X$ and that $a\in X$. The following are equivalent.
+
+1. $(x_n)$ converges to $a$
+2. Every subsequence of $(x_n)$ converges to $a$.
+3. Every subsequence of $(x_n)$ has a subsequence that converges to $a$.
+:::
+
+:::{.proof}
+#### Proof that $3\Rightarrow1$
+
+We will prove the contrapositive. Suppose $(x_n)$ does not converge to $a$. Then there exists $\epsilon>0$ such that for all $N\in\N$, there exists $n>N$ so that $d(x_n,a)\geq\epsilon$. We will define a strictly increasing sequence $(i_n)$ in $\N$ inductively so that $(x_{i_n})$ lies entirely outside of $\bee_{\epsilon}(a)$.
+
+As a base case, applying the assumption when $N=1$, there exists $i_1>1$ such that $d(x_{i_1},a)\geq\epsilon$.
+
+For the inductive step to define $i_{k+1}$ for any $k\in\N$, apply the assumption to $N=i_k$, so that there exists $i_{k+1}>i_k$ such that $d(x_{i_{k+1}},a)\geq\epsilon$.
+
+Since $i_{k+1}>i_k$ for all $k\in\N$ and $d(x_{i_n},a)\geq\epsilon$, we have a subsequence $(x_{i_n})$  that lies entirely outside of $\bee_{\epsilon}(a)$. Since no terms are within $\epsilon$ of $a$, $(x_{i_n})$ has no subsequence converging to $a$ by @lem-outside-ball-around-a-implies-no-subsequence-converges-to-a.
+:::
+
+:::{.exercise #exr-convergence-passes-to-subsequences}
+Prove $1\Rightarrow2$ and $2\Rightarrow3$ from @thm-subsequences-and-convergence to complete the proof.
+:::
+
+:::{.exercise #exr-quick-proofs}
+Prove each of the following useful facts. Each should follow quickly from results we've already proven.
+
+1. If $(s_i)$ has two convergent subsequences $(s_{m_i})$ and $(s_{n_i})$ with different limits, then $(s_i)$ diverges.
+2. If a convergent sequence $(s_i)$ has a constant sequence, then the limit of $(s_i)$ must be that constant.
+3. If a sequence is unbounded, then it diverges.
+4. If a sequence has a divergent subsequence, then that sequence also diverges.
+:::
 
 ## Review Questions {.unnumbered}
 
-1. Question 1
-2. Question 2
+1. Go back and find some problems from previous sections asking you to prove a sequence converges or diverges. Would any of the theorems from this section have offered shortcuts?
+2. What does it mean to say that a sequence is "eventually" [something]? Give some examples.
 
 ## To include
 
-- Subsequence index theorem
-- "Nth tail" and "eventually"
-- Exercises of the form "which properties pass to subsequences?"
 - Examples of proofs that are made easier by considering subsequences

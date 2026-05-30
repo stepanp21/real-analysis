@@ -3,10 +3,10 @@
     "parent_hash": "iadi8m2mjg",
     "title": "Supremum TFAE",
     "created": "2026-03-23T23:58:55.038Z",
-    "versionCreatedAt": "2026-03-24T00:28:19.599Z",
-    "stateUrl": "https://www.desmos.com/calc-states/production/version/mc98p0gfqr/5b9fbe50-2718-11f1-bb23-d1ca14a50015",
-    "thumbUrl": "https://www.desmos.com/calc_thumbs/production/version/mc98p0gfqr/5b9fbe50-2718-11f1-bb23-d1ca14a50015.png",
-    "currentVersion": "5b9fbe50-2718-11f1-bb23-d1ca14a50015",
+    "versionCreatedAt": "2026-05-29T14:24:59.380Z",
+    "stateUrl": "https://www.desmos.com/calc-states/production/version/mc98p0gfqr/2c4a64d0-5b6a-11f1-b72e-ff45c3f7f7b0",
+    "thumbUrl": "https://www.desmos.com/calc_thumbs/production/version/mc98p0gfqr/2c4a64d0-5b6a-11f1-b72e-ff45c3f7f7b0.png",
+    "currentVersion": "2c4a64d0-5b6a-11f1-b72e-ff45c3f7f7b0",
     "type": "my-graph",
     "access": "link",
     "product": "graphing",
@@ -16,9 +16,9 @@
         "graph": {
             "viewport": {
                 "xmin": -0.27659517946350665,
-                "ymin": -0.6812372430438999,
+                "ymin": -0.645591718757705,
                 "xmax": 1.9786211197028738,
-                "ymax": 0.9355899340129373
+                "ymax": 0.8999444097267425
             },
             "showGrid": false,
             "showYAxis": false,
@@ -26,29 +26,23 @@
             "__v12ViewportLatexStash": {
                 "xmin": "-0.27659517946350665",
                 "xmax": "1.9786211197028738",
-                "ymin": "-0.6812372430438999",
-                "ymax": "0.9355899340129373"
+                "ymin": "-0.645591718757705",
+                "ymax": "0.8999444097267425"
             }
         },
         "expressions": {
             "list": [
                 {
                     "type": "expression",
-                    "id": "epsilon-slider",
+                    "id": "21",
                     "color": "#000000",
-                    "latex": "\\varepsilon=0.2",
-                    "slider": {
-                        "hardMin": true,
-                        "hardMax": true,
-                        "min": "0",
-                        "max": "1"
-                    }
+                    "latex": "\\varepsilon=0.2"
                 },
                 {
                     "type": "expression",
                     "id": "3",
                     "color": "#388c46",
-                    "latex": "b=1.256",
+                    "latex": "b=1.25",
                     "hidden": true,
                     "slider": {
                         "hardMin": true,
@@ -61,8 +55,7 @@
                     "type": "folder",
                     "id": "5",
                     "title": "Decorations",
-                    "collapsed": true,
-                    "secret": true
+                    "collapsed": true
                 },
                 {
                     "type": "expression",
@@ -194,7 +187,17 @@
                     "folderId": "5",
                     "color": "#000000",
                     "latex": "x=b-\\varepsilon\\left\\{0\\le y\\le2c\\right\\}",
+                    "hidden": true,
                     "lineWidth": "0.25"
+                },
+                {
+                    "type": "expression",
+                    "id": "31",
+                    "folderId": "5",
+                    "color": "#2d70b3",
+                    "latex": "x=\\frac{\\left(k-1\\right)}{k}\\left\\{b-\\varepsilon<\\frac{\\left(k-1\\right)}{k}\\right\\}\\left\\{0\\le y\\le2c\\right\\}",
+                    "lineOpacity": "0.1",
+                    "lineWidth": "1"
                 }
             ]
         },

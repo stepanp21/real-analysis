@@ -1,4 +1,4 @@
-# $\mathbb{R}$ as a Metric Space
+# $\mathbb{R}$ as a Metric Space {#sec-r-as-a-metric-space}
 
 ## Highlights {.unnumbered}
 
@@ -10,14 +10,14 @@
 
 In this section, we will focus on thinking about the real number system as a metric space. We start with what will end up being one of the most-cited theorems in the course.
 
-:::{.theorem #thm-open-ball-in-r}
-Let $r>0$ and $a\in\R$. Then $|a-x|<r$ if and only if $x\in(a-r,a+r)$.
+:::{.theorem #thm-open-ball-in-r .tfae}
+Let $r>0$ and $a\in\R.$ Then $|a-x|<r$ if and only if $x\in(a-r,a+r).$
 :::
 
 :::{.exercise #exr-open-ball-in-r}
 1. Draw a picture of what this @thm-open-ball-in-r is saying on the number line.
 2. Prove @thm-open-ball-in-r.
-2. Rewrite $|a-x|<r$ as a statement about distance in $\R$.
+2. Rewrite $|a-x|<r$ as a statement about distance in $\R.$
 4. Rewrite $x\in(a-r,a+r)$ as an inequality.
 :::
 
@@ -26,11 +26,11 @@ Let $r>0$ and $a\in\R$. Then $|a-x|<r$ if and only if $x\in(a-r,a+r)$.
 Indeed, the connections furnished by @thm-open-ball-in-r can be used to help us prove other theorems relating the concepts we've encountered so far.
 
 :::{.theorem .tfae #thm-lub-tfae}
-Suppose $b$ is an upper bound on a nonempty subset $S\subseteq\R$. Then the following are equivalent.
+Suppose $b$ is an upper bound on a nonempty subset $S\subseteq\R.$ Then the following are equivalent.
 
 1. $b=\sup S$
-2. For all $\epsilon>0$ there exists $x\in S$ such that $x\in(b-\epsilon,b]$.
-3. For all $\epsilon>0$ there exists $x\in S$ such that $|b-x|<\epsilon$.
+2. For all $\epsilon>0$ there exists $x\in S$ such that $x\in(b-\epsilon,b].$
+3. For all $\epsilon>0$ there exists $x\in S$ such that $|b-x|<\epsilon.$
 :::
 
 :::{#des-sup-tfae .content-visible when-format="html"}
@@ -83,19 +83,25 @@ Suppose $b$ is an upper bound on a nonempty subset $S\subseteq\R$. Then the foll
 
   eSlider.addEventListener('input', function() {
     e = parseFloat(this.value);
-    calculator.setExpression({id:'epsilon-slider', latex:`\\varepsilon=${e}`});
+    calculator.setExpression({id:'21', latex:`\\varepsilon=${e}`});
   });
 </script>
 
-A demonstration of @thm-lub-tfae. In blue is the set $S=\left\{\frac{0}{1},\frac{1}{2},\frac{2}{3},\ldots\right\}$. When $b=1$, note that for whatever $\epsilon>0$ is chosen, there is at least one element of $S$ in both the green and orange intervals. When $b>1$, you could choose a small $\epsilon>0$ and have *no* points of $S$ in the orange and green intervals.
+A demonstration of @thm-lub-tfae. In blue is the set $S=\left\{\frac{0}{1},\frac{1}{2},\frac{2}{3},\ldots\right\}.$ When $b=1,$ note that for whatever $\epsilon>0$ is chosen, there is at least one element of $S$ in both the green and orange intervals. When $b>1,$ you could choose a small $\epsilon>0$ and have *no* points of $S$ in the orange and green intervals.
 :::
 
 :::{.proof}
-(Inclue link to my video proof?)
+Suppose $b$ is an upper bound on $S.$
+
+$(1\Rightarrow2)$: Suppose $b=\sup S$ and [let $\epsilon>0$]{.explain color="red" note="Since we are proving something starting with 'for all $\epsilon>0,$ this has to be the first line of our proof (after stating the baseline assumptions)."}. Then $b-\epsilon$ is not an upper bound on $S$ because $b-\epsilon<b$ and $b$ is the *least* upper bound on $S.$ That means there exists $x\in S$ with $b-\epsilon<x.$ Since $b$ is an upper bound on $S,$ $x\leq b.$ Thus we have shown $x\in(b-\epsilon,b].$
+
+$(2\Rightarrow3)$: If $x\in(b-\epsilon,b],$ then $x\in(b-\epsilon,b+\epsilon),$ so $|b-x|<\epsilon$ by @thm-open-ball-in-r.
+
+$(3\Rightarrow1)$: We will prove this by [contraposition]{.explain color="green" note="This means we need to prove '(not 1) $\Rightarrow$ (not 3).' What is the negation of (3)?"}. Suppose $b$ is not the least upper bound on $S.$ That means there exists another upper bound $u$ on $S$ such that $u<b.$ If we let $\epsilon=b-u,$ then for any $x\in S,$ $x\leq b-\epsilon=u,$ so by @thm-open-ball-in-r, $|b-x|\geq \epsilon.$
 :::
 
 :::{.callout-note}
-When we encounter a new concept, we will often have a TFAE ("the following are equivalent") theorem that follows giving us alternative ways of understanding the new concept. Since these theorems are so useful, I will color-code them with a [lightseagreen]{.tfae-hl} vertical bar.
+When we encounter a new concept, we will often have a TFAE ("the following are equivalent") theorem that follows giving us alternative ways of understanding the new concept. Since these theorems are so useful, I will color-code them with a [lightseagreen]{.tfae-hl} vertical bar. In fact, the last two theorems are of this kind.
 :::
 
 :::{.exercise #exr-reproof-of-sup-basic}
@@ -111,17 +117,17 @@ Write down a "the following are equivalent" theorem about infima analogous to @t
 In @thm-absolute-value-props, I used the notation $\max\{a,-a\}$ to mean whichever of these two numbers is greater. Here we will make that notation precise with some words of caution about when you can use it.
 
 :::{.theorem #thm-max-of-finite-set}
-Suppose $F\subseteq\R$ is a nonempty finite set. Prove that $\sup F$ exists and $\sup F\in F$ (i.e. that $F$ has a greatest element). In this case we write $\max F$ for the greatest element of $F$.
+Suppose $F\subseteq\R$ is a nonempty finite set. Then $\sup F$ exists and $\sup F\in F$ (i.e. that $F$ has a greatest element). In this case we write $\max F$ for the greatest element of $F.$
 :::
 
-For example, $\max\{3,7,5\}=7$.
+For example, $\max\{3,7,5\}=7.$
 
 :::{.proof}
-Let $n$ be the number of elements of $F$. We will prove that $F$ has a greatest element by induction on $n$.
+Let $n$ be the number of elements of $F.$ We will prove that $F$ has a greatest element by induction on $n.$
 
-As a base case, suppose $n=1$. Then $F=\{x_1\}$. In this case $x_1\geq x_1$, so $x_1$ is an upper bound on $F$. And any upper bound $b$ on $F$ must have $b\geq x_1$, so $x_1$ is the least upper bound. And of course $x_1\in F$.
+As a base case, suppose $n=1.$ Then $F=\{x_1\}.$ In this case $x_1\geq x_1,$ so $x_1$ is an upper bound on $F.$ And any upper bound $b$ on $F$ must have $b\geq x_1,$ so $x_1$ is the least upper bound. And of course $x_1\in F.$
 
-Now suppose that $k\in\N$ and any set with $k$ elements has a greatest element. Now suppose $F=\{x_1,\ldots,x_k,x_{k+1}\}$ has $k+1$ elements. Define $E=\{x_1,\ldots,x_k\}$ so that $E$ has $k$ elements and therefore a greatest element $g$. If $x_{k+1}\geq g$, then let $b=x_{k+1}$, and otherwise, let $b=g$. Either way, $b\geq x_{k+1}$ and $b\geq g\geq x_i$ for all $i=1,\ldots,n$ (so $b$ is an upper bound), and either way $b\in F$. And if $u$ is any upper bound on $F$, then $u\geq b$ and $u\geq x_{k+1}$, so $u\geq b$. Thus, $b$ is the *least* upper bound of $F$, and since $b\in F$, $b$ is the greatest element.
+Now suppose that $k\in\N$ and any set with $k$ elements has a greatest element. Now suppose $F=\{x_1,\ldots,x_k,x_{k+1}\}$ has $k+1$ elements. Define $E=\{x_1,\ldots,x_k\}$ so that $E$ has $k$ elements and therefore a greatest element $g.$ If $x_{k+1}\geq g,$ then let $b=x_{k+1},$ and otherwise, let $b=g.$ Either way, $b\geq x_{k+1}$ and $b\geq g\geq x_i$ for all $i=1,\ldots,n$ (so $b$ is an upper bound), and either way $b\in F.$ And if $u$ is any upper bound on $F,$ then $u\geq g$ and $u\geq x_{k+1},$ so $u\geq b.$ Thus, $b$ is the *least* upper bound of $F,$ and since $b\in F,$ $b$ is the greatest element.
 :::
 
 :::{.callout-caution}
@@ -129,7 +135,7 @@ We *cannot* write $\max S$ when $S$ is not known to be a nonempty finite set. In
 :::
 
 :::{.exercise #exr-min}
-Prove that if $F$ is a finite nonempty subset of $\R$, then $F$ has a least element, which we call the $\min$.
+Prove that if $F$ is a finite nonempty subset of $\R,$ then $F$ has a least element, which we call the $\min.$
 
 Hint: You can try replicating the proof of @thm-max-of-finite-set, but it may be easier to *apply* that theorem to $F$ somehow instead!
 :::
@@ -140,15 +146,15 @@ Hint: You can try replicating the proof of @thm-max-of-finite-set, but it may be
 By now we may have an intuitive sense that even though the rationals have "holes" where we would expect suprema to be, they are still "everywhere" along the number line. This somewhat bizarre discrepancy is made precise by the next few exercises.
 
 :::{.exercise #exr-floors}
-Let $a\in\R$. Prove that there exists a unique $n\in\Z$ such that $n\leq a<n+1$.
+Let $a\in\R.$ Prove that there exists a unique $n\in\Z$ such that $n\leq a<n+1.$
 
 Note that you will need the Well-Ordered Property of $\Z$ in order to prove this (see @sec-wop).
 :::
 
-@exr-floors now allows us to use the "floor function"; for any $x\in \R$ we can define $\lfloor x\rfloor$ to be the greatest integer that is less than or equal to $x$; similarly, $\lceil x\rceil$, the "ceiling", is the least integer that is greater than or equal to $x$. In practice, students tend to overuse the floor function in real analysis proofs---most of the time you just need *an* integer that is greater $x$, which is furnished by the Archimedian Property (@thm-arch-prop).
+@exr-floors now allows us to use the "floor function"; for any $x\in \R$ we can define $\lfloor x\rfloor$ to be the greatest integer that is less than or equal to $x$; similarly, $\lceil x\rceil,$ the "ceiling", is the least integer that is greater than or equal to $x.$ In practice, students tend to overuse the floor function in real analysis proofs---most of the time you just need *an* integer that is greater $x,$ which is furnished by the Archimedian Property (@thm-arch-prop).
 
 :::{.exercise #exr-rational-floor}
-Let $b\in\R$ and $q\in\N$. Prove that there exists a unique $p\in\Z$ such that
+Let $b\in\R$ and $q\in\N.$ Prove that there exists a unique $p\in\Z$ such that
 $$\frac{p}{q}\leq b< \frac{p+1}{q}$$
 :::
 
@@ -160,7 +166,7 @@ Don't start from scratch. How can you *apply* the previous exercise to help you 
 :::
 
 :::{.exercise #exr-rational-in-neighborhood}
-Let $b\in\R$ and $\epsilon>0$. Prove that there exists $r\in\Q$ such that $d(b,r)<\epsilon$.
+Let $b\in\R$ and $\epsilon>0.$ Prove that there exists $r\in\Q$ such that $d(b,r)<\epsilon.$
 :::
 
 :::{.callout-tip collapse="true"}
@@ -171,22 +177,22 @@ Once again, don't start from scratch. First note that the inequality you are try
 
 If you get stuck, draw this a picture on the number line.
 
-If you are still stuck, use the following concrete example to help you wrap your head around the problem. If $b=\pi$ and $\epsilon=0.1$, how would you choose the rational number $r$? Can you frame your technique in terms of the notation @exr-rational-floor? Given $\epsilon$, to what value of $q$ would you apply the result?
+If you are still stuck, use the following concrete example to help you wrap your head around the problem. If $b=\pi$ and $\epsilon=0.1,$ how would you choose the rational number $r$? Can you frame your technique in terms of the notation @exr-rational-floor? Given $\epsilon,$ to what value of $q$ would you apply the result?
 :::
 
 :::{.exercise #exr-rational-between-any-two-reals}
-Let $c,d\in\R$. Prove that there exists a rational number $x$ with $c<x<d$.
+Let $c,d\in\R.$ Prove that there exists a rational number $x$ with $c<x<d.$
 :::
 
 :::{.callout-tip collapse="true"}
 
 #### Hint
 
-Once again, don't start from scratch. In both this exercise and @exr-rational-in-neighborhood, you need to show that a rational number exists in a particular interval but the intervals are described differently. Given $c,d$, can you figure out what $b,\epsilon$ to use so you can apply @exr-rational-in-neighborhood?
+Once again, don't start from scratch. In both this exercise and @exr-rational-in-neighborhood, you need to show that a rational number exists in a particular interval but the intervals are described differently. Given $c,d,$ can you figure out what $b,\epsilon$ to use so you can apply @exr-rational-in-neighborhood?
 :::
 
 :::{.exercise #exr-irrational-between-any-two-reals}
-Let $c,d\in\R$. Prove that there exists an irrational number $x$ with $c<x<d$.
+Let $c,d\in\R.$ Prove that there exists an irrational number $x$ with $c<x<d.$
 :::
 
 :::{.callout-tip collapse="true"}
@@ -201,14 +207,22 @@ Think about using @thm-intervals-uncountable and a cardinality argument here!
 1. A good study strategy for this course is to keep a catalog of all the major concepts in the course, and then quiz yourself by picking two at random and asking yourself to think of how they are connected.^[I heard one study skills expert suggest writing the concepts on index cards, shuffling, and drawing the cards two at a time.] Give this a try for the major concepts we've encountered so far
 
 ```{dot}
+//| fig-width: 4
+//| fig-height: 4
+//| fig-align: "center"
+//| label: fig-k4
+
 graph G {
+    pad="0";
+    mindist=0.4; 
+    overlap_scaling=0.5;
     layout=circo
-    arithmetic -- inequalities;
-    arithmetic -- "least upper bounds";
-    arithmetic -- distance;
-    inequalities -- "least upper bounds";
-    inequalities -- distance;
-    "least upper bounds" -- distance;
+    arithmetic -- inequalities [len=0.2];
+    arithmetic -- "least upper bounds" [len=0.5];
+    arithmetic -- distance [len=0.5];
+    inequalities -- "least upper bounds" [len=0.5];
+    inequalities -- distance [len=0.5];
+    "least upper bounds" -- distance [len=0.5];
 }
 ```
 

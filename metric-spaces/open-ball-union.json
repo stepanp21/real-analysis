@@ -1,0 +1,118 @@
+{
+    "hash": "karw42l115",
+    "parent_hash": "tezzvszxa3",
+    "title": "Open Set as Union",
+    "created": "2026-03-24T01:45:01.545Z",
+    "versionCreatedAt": "2026-03-24T01:48:42.502Z",
+    "stateUrl": "https://www.desmos.com/calc-states/production/version/karw42l115/96529850-2723-11f1-84e6-3f5e33a9ea51",
+    "thumbUrl": "https://www.desmos.com/calc_thumbs/production/version/karw42l115/96529850-2723-11f1-84e6-3f5e33a9ea51.png",
+    "currentVersion": "96529850-2723-11f1-84e6-3f5e33a9ea51",
+    "type": "my-graph",
+    "access": "link",
+    "product": "graphing",
+    "state": {
+        "version": 11,
+        "randomSeed": "069769638a1141f8501a9a0433dc2d8a",
+        "graph": {
+            "viewport": {
+                "xmin": -5.041468863461647,
+                "ymin": -3.590624208111657,
+                "xmax": 5.224777209708167,
+                "ymax": 3.7695326263301485
+            },
+            "showGrid": false,
+            "showXAxis": false,
+            "showYAxis": false,
+            "__v12ViewportLatexStash": {
+                "xmin": "-5.041468863461647",
+                "xmax": "5.224777209708167",
+                "ymin": "-3.590624208111657",
+                "ymax": "3.7695326263301485"
+            }
+        },
+        "expressions": {
+            "list": [
+                {
+                    "type": "expression",
+                    "id": "1",
+                    "color": "#388c46",
+                    "latex": "\\left\\{\\left\\{\\left(x-c\\left[1\\right]\\right)^{2}+\\left(y-d\\left[1\\right]\\right)^{2}<k^{2}\\left[1\\right]:1,0\\right\\}+\\left\\{\\left(x-c\\left[2\\right]\\right)^{2}+\\left(y-d\\left[2\\right]\\right)^{2}<k\\left[2\\right]^{2}:1,0\\right\\}+\\left\\{\\left(x-c\\left[3\\right]\\right)^{2}+\\left(y-d\\left[3\\right]\\right)^{2}<k\\left[3\\right]^{2}:1,0\\right\\}>0\\right\\}>0"
+                },
+                {
+                    "type": "expression",
+                    "id": "25",
+                    "color": "#388c46",
+                    "latex": "\\left(x-c\\left[1\\right]\\right)^{2}+\\left(y-d\\left[1\\right]\\right)^{2}=k^{2}\\left[1\\right]\\left\\{\\left(x-c\\left[2\\right]\\right)^{2}+\\left(y-d\\left[2\\right]\\right)^{2}\\ge k\\left[2\\right]^{2}:1,0\\right\\}\\left\\{\\left(x-c\\left[3\\right]\\right)^{2}+\\left(y-d\\left[3\\right]\\right)^{2}>k\\left[3\\right]^{2}\\right\\}",
+                    "lineStyle": "DASHED",
+                    "lineWidth": "1"
+                },
+                {
+                    "type": "expression",
+                    "id": "26",
+                    "color": "#388c46",
+                    "latex": "\\left(x-c\\left[2\\right]\\right)^{2}+\\left(y-d\\left[2\\right]\\right)^{2}=k^{2}\\left[2\\right]\\left\\{\\left(x-c\\left[1\\right]\\right)^{2}+\\left(y-d\\left[1\\right]\\right)^{2}\\ge k\\left[1\\right]^{2}\\right\\}\\left\\{\\left(x-c\\left[3\\right]\\right)^{2}+\\left(y-d\\left[3\\right]\\right)^{2}>k\\left[3\\right]^{2}\\right\\}",
+                    "lineStyle": "DASHED",
+                    "lineWidth": "1"
+                },
+                {
+                    "type": "expression",
+                    "id": "27",
+                    "color": "#388c46",
+                    "latex": "\\left(x-c\\left[3\\right]\\right)^{2}+\\left(y-d\\left[3\\right]\\right)^{2}=k^{2}\\left[3\\right]\\left\\{\\left(x-c\\left[1\\right]\\right)^{2}+\\left(y-d\\left[1\\right]\\right)^{2}\\ge k\\left[1\\right]^{2}\\right\\}\\left\\{\\left(x-c\\left[2\\right]\\right)^{2}+\\left(y-d\\left[2\\right]\\right)^{2}>k\\left[2\\right]^{2}\\right\\}",
+                    "lineStyle": "DASHED",
+                    "lineWidth": "1"
+                },
+                {
+                    "type": "expression",
+                    "id": "24",
+                    "color": "#388c46",
+                    "latex": "\\left(2,-1\\right)",
+                    "showLabel": true,
+                    "label": "`S`",
+                    "hidden": true
+                },
+                {
+                    "type": "expression",
+                    "id": "19",
+                    "color": "#6042a6",
+                    "latex": "c=\\left[-1,0,2\\right]"
+                },
+                {
+                    "type": "expression",
+                    "id": "20",
+                    "color": "#000000",
+                    "latex": "d=\\left[0,0,1\\right]"
+                },
+                {
+                    "type": "expression",
+                    "id": "21",
+                    "color": "#c74440",
+                    "latex": "k=\\left[\\sqrt{2},2,\\sqrt{2}\\right]"
+                },
+                {
+                    "type": "expression",
+                    "id": "28",
+                    "color": "#388c46",
+                    "latex": "\\left(x-c\\left[m\\right]\\right)^{2}+\\left(y-d\\left[m\\right]\\right)^{2}=k^{2}\\left[m\\right]",
+                    "lineStyle": "DASHED",
+                    "lineOpacity": "b"
+                },
+                {
+                    "type": "expression",
+                    "id": "29",
+                    "color": "#2d70b3",
+                    "latex": "b=-0.4786",
+                    "hidden": true
+                },
+                {
+                    "type": "expression",
+                    "id": "30",
+                    "color": "#388c46",
+                    "latex": "m=\\left[1,2,3\\right]"
+                }
+            ]
+        },
+        "includeFunctionParametersInRandomSeed": true,
+        "doNotMigrateMovablePointStyle": true
+    }
+}

@@ -1,0 +1,27 @@
+\documentclass[tikz]{standalone}
+% \usepackage{tikz} % already loaded by the documentclass
+
+
+\begin{document}
+%%| filename: equivalent-open-balls
+%%| caption: Equivalent conditions to being an open ball.
+
+\begin{tikzpicture}[
+  node distance=2.8cm,
+  every node/.style={align=center},
+  iff/.style={<->, thick}
+]
+\node (A) at (90:3cm)  {$d(a,x)<r$};
+\node (B) at (18:3cm)  {$|a-x|<r$};
+\node (C) at (-54:3cm) {$x\in(a-r,a+r)$};
+\node (D) at (-126:3cm){$a-r<x<a+r$};
+\node (E) at (162:3cm) {$x\in\bee_r(a)$};
+
+\draw[iff] (A) -- (B);
+\draw[iff] (B) -- (C);
+\draw[iff] (C) -- (D);
+\draw[iff] (D) -- (E);
+\draw[iff] (E) -- (A);
+\end{tikzpicture}
+\end{document}
+      

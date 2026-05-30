@@ -1,0 +1,35 @@
+# Properties of the Definite Integral
+
+## Highlights {.unnumbered}
+
+- highlight 1
+- highlight 2
+
+## Preparation
+
+(Pre-class reading and exercises)
+
+## Body
+
+:::{.theorem #thm-domain-additivity}
+Suppose $a<b<c$ and that $f$ is Riemann integrable over $[a,c]$. Then
+$$
+\int_a^b f+\int_b^c f = \int_a^c f.
+$$
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+A collapsed hint.
+:::
+
+## More sections
+
+More content
+
+## Review Questions {.unnumbered}
+
+1. Question 1
+2. Question 2

@@ -1,4 +1,4 @@
-# Open Sets
+# Open Sets {#sec-open-balls}
 
 ## Highlights {.unnumbered}
 
@@ -25,7 +25,7 @@ Describe and draw pictures of open balls in $\R^3$, $\R^2$, and $\R$.
 Answer the following questions about open balls in $\R$.
 
 1. Write $\bee_r(c)$ in interval notation.
-2. If $a,b\in\R$ with $a<b$, is $(a,b)$ an open ball? If so, what is its center and radius?
+2. If $a,b\in\R$ with $a<b$, is the interval $(a,b)$ an open ball? If so, what is its center and radius?
 3. Is $(0,\infty)$ an open ball? If so, what is its center and radius?
 :::
 
@@ -34,8 +34,8 @@ The following exercise is meant to prepare you for the definition of an open set
 :::{.exercise #exr-neighborhood-within-subset-tf}
 Say whether each statement below is true or false and give a brief justification.
 
-1. "If $S=(1,\infty), for each point $a\in S$ there is an open ball centered at $a$ that lies entirely inside of $S$."
-2. "If $S=[1,\infty), for each point $a\in S$ there is an open ball centered at $a$ that lies entirely inside of $S$."
+1. "If $S=(1,\infty)$, for each point $a\in S$ there is an open ball centered at $a$ that lies entirely inside of $S$."
+2. "If $S=[1,\infty)$, for each point $a\in S$ there is an open ball centered at $a$ that lies entirely inside of $S$."
 :::
 
 ## Open Balls
@@ -44,18 +44,17 @@ When we apply the definition of an open ball to $\R$, we realize that it's an ob
 
 Putting @thm-open-ball-in-r together with the language of open balls, we now have many equivalent ways of saying the same thing:
 
-[TO DO: turn this into a circular diagram with "In $\R$" in the center. Then make a smaller one for "for any metric space"]
+:::{.tfae #fig-open-ball-tfae}
+![](open-ball-equivalence-r.png){width=400}
 
-:::{.tfae}
-In $\R$:
-$$ d(a,x)<r \Longleftrightarrow |a-x|<r \Longleftrightarrow x\in(a-r,a+r) \Longleftrightarrow a-r<x<a+r \Longleftrightarrow x\in\bee_r(a)$${#eq-open-ball-tfae}
+Equivalent formulations for being an open ball in the metric space $\R$.
 :::
 
-The equivalent conditions of ([-@eq-open-ball-tfae]) in $\R$ will show up every day for the rest of the course. The more seamlessly you can translate among these different ways of saying the same thing, the easier the course will be.
+The equivalent conditions of @fig-open-ball-tfae in $\R$ will show up every day for the rest of the course. The more seamlessly you can translate among these different ways of saying the same thing, the easier the course will be.
 
-> Becoming fluent in ([-@eq-open-ball-tfae]) is the cheat code for reading analysis proofs.
+> Becoming fluent in @fig-open-ball-tfae is the cheat code for reading analysis proofs.
 
-While using the word "ball" makes intuitive sense in $\R^3$ and to a lesser extent in $\R^2$, it may feel a little weird in $\R$; we'll just need to get used to that. And it gets even stranger when we think about other metric spaces.
+While using the word "ball" makes intuitive sense in $\R^3$ (and sort of in $\R^2$), it may feel a little weird in $\R$; we'll just need to get used to that. And it gets even stranger when we think about other metric spaces.
 
 :::{.exercise #exr-open-balls-in-trivial-ms}
 Let $X$ be a set with the trivial metric (defined in @exr-trivial-metric). Let $a\in X$, and describe the following.
@@ -73,15 +72,13 @@ Consider $\R^2$ with the "taxicab metric" $d_1$ defined in @exr-taxicab. Sketch 
 Consider $X=\{(x,y)\st y\geq0\}$ as a subspace of $\R^2$. Sketch $\bee_2(0,1)$ in the metric space $S$.
 :::
 
-An advantage to 
-
 :::{.exercise #exr-hausdorff}
 Suppose $X$ is a metric space with distance function $d$. Let $a,b$ be distinct points in $X$. Prove that there exists $\epsilon>0$ such that $\bee_\epsilon(x)$ and $\bee_\epsilon(y)$ are disjoint.
 :::
 
 ## Open Sets
 
-Intuitively we should think of "open" sets as ones that do not include their own boundary
+Now we transition from thinking about open balls to the more general concept of an "open set".
 
 :::{.definition #def-open-set}
 Let $X$ be a metric space with distance function $d$. A subset $S\subseteq X$ is called *open* if every point $a\in S$ has an open ball around it that lies entirely within $S$. That is, for all $a\in S$, there exists $r>0$ such that $\bee_r(a)\subseteq S$.
@@ -121,6 +118,8 @@ Let $X$ be a metric space with distance function $d$. A subset $S\subseteq X$ is
 Wherever you move the point $a$ inside $S$, it is possible to draw an open ball around $a$ that stays entirely within $S$ (although the radius will need to change). This means $S$ is open.
 :::
 
+Intuitively, an open set $S$ cannot include any of its boundary points because an open ball around a boundary point will contain points outside of $S$.
+
 :::{.exercise #exr-empty-and-whole-ms-open}
 Let $X$ be a metric space with distance function $d$. Prove that $X$ and $\varnothing$ are open subsets of $X$.
 :::
@@ -134,17 +133,12 @@ Let $X$ be a metric space with distance function $d$. Prove that $X$ and $\varno
 Prove that open balls are open.
 :::
 
-:::{.exercise #exr-open-negation}
-1. Write down what it means for a subset of a metric space to *not* be open.
-2. Write down a careful proof that $(-\infty,2]$ is not an open subset of $\R$.
-:::
-
-:::{.callout-caution}
-We are *not* going to call non-open sets "closed". The term "closed" will have a different definition that we'll get to later.
-:::
-
 :::{.exercise #exr-complement-of-point-is-open}
 Suppose $X$ is a metric space and let $a\in X$. Prove that $\{a\}^\cee$ is open.
+:::
+
+:::{.exercise #exr-open-infinite-interval-is-open}
+Prove that the interval $(-\infty,3)$ is open in $\R$.
 :::
 
 ## Review Questions {.unnumbered}

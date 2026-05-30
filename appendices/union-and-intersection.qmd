@@ -4,8 +4,6 @@ In set theory, we often need to think about not just one set, but a whole *colle
 
 Some examples that appear in the text are below.
 
-(Try to make these feel motivated.)
-
 :::{.example #exm-nit-collection}
 One distinguishing feature of the real numbers is, intuitively, if you keep zooming in on the number line, you are always zooming in *to a number*.  For example, consider the following collection of intervals:
 
@@ -19,17 +17,13 @@ $$\begin{aligned}
   &\vdots&
 \end{aligned}$$
 
-If the universe is $\R$, there is a number that will be in $U_i$ for all $i$: $\pi$. By contrast, in $\Q$, there is no number inside all of these sets---we'd be zooming in onto something that isn't there.
+If the universe is $\R$, there is a number that will be in $U_i$ for all $i$, the number $\pi$. By contrast, in $\Q$, there is no number inside all of these sets---we'd be zooming in onto something that isn't there.
 :::
 
 :::{.example #exm-open-set-union}
 In a metric space, an open set $S$ is a union of *a collection of* open balls.
 
-(Desmos image of a union of finitely many open balls)
-
 Often we think about putting an open ball around every point of $S$, each with a radius small enough so that the ball is a subset of $S$.
-
-(Desmos interactive: points appear at random inside an open square with balls around each; slider to include more and more points.)
 :::
 
 :::{.example #exm-bounded}

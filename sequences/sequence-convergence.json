@@ -1,0 +1,151 @@
+{
+    "hash": "13ecey0bep",
+    "parent_hash": "nenumrnfv5",
+    "title": "Sequence Convergence",
+    "created": "2025-09-06T16:57:27.794Z",
+    "versionCreatedAt": "2026-05-25T16:48:55.511Z",
+    "stateUrl": "https://www.desmos.com/calc-states/production/version/13ecey0bep/9e305fa0-5859-11f1-8e7d-c373ab829881",
+    "thumbUrl": "https://www.desmos.com/calc_thumbs/production/version/13ecey0bep/9e305fa0-5859-11f1-8e7d-c373ab829881.png",
+    "currentVersion": "9e305fa0-5859-11f1-8e7d-c373ab829881",
+    "type": "my-graph",
+    "access": "link",
+    "product": "graphing",
+    "state": {
+        "version": 11,
+        "randomSeed": "430fa18a99ab19fa91c977e583615806",
+        "graph": {
+            "viewport": {
+                "xmin": -2,
+                "ymin": -1.1580304456083803,
+                "xmax": 2,
+                "ymax": 1.6107044456083803
+            },
+            "showGrid": false,
+            "showXAxis": false,
+            "showYAxis": false,
+            "__v12ViewportLatexStash": {
+                "xmin": "-2",
+                "xmax": "2",
+                "ymin": "-1.1580304456083803",
+                "ymax": "1.6107044456083803"
+            }
+        },
+        "expressions": {
+            "list": [
+                {
+                    "type": "expression",
+                    "id": "8",
+                    "color": "#388c46",
+                    "latex": "f\\left(x\\right)=\\frac{2}{1.1^{x}}\\left(\\cos\\left(\\frac{x}{2}\\right),0.5\\sin\\left(\\frac{x}{2}\\right)\\right)"
+                },
+                {
+                    "type": "expression",
+                    "id": "9",
+                    "color": "#c74440",
+                    "latex": "M_{1}=60",
+                    "slider": {
+                        "hardMin": true,
+                        "hardMax": true,
+                        "min": "20",
+                        "max": "200",
+                        "step": "1"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "10",
+                    "color": "#2d70b3",
+                    "latex": "M_{2}=20",
+                    "slider": {
+                        "hardMin": true,
+                        "hardMax": true,
+                        "min": "1",
+                        "max": "50",
+                        "step": "1"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "1",
+                    "color": "#c74440",
+                    "latex": "n=\\left[1,2,...,M_{1}\\right]"
+                },
+                {
+                    "type": "expression",
+                    "id": "2",
+                    "color": "#2d70b3",
+                    "latex": "f\\left(n\\right)"
+                },
+                {
+                    "type": "expression",
+                    "id": "3",
+                    "color": "#388c46",
+                    "latex": "k=\\left[1,...,M_{2}\\right]"
+                },
+                {
+                    "type": "expression",
+                    "id": "11",
+                    "color": "#388c46",
+                    "latex": "o\\left(x\\right)=0.1\\left(\\cos\\left(\\frac{x}{2}\\right),\\sin\\left(\\frac{x}{2}\\right)\\right)"
+                },
+                {
+                    "type": "expression",
+                    "id": "4",
+                    "color": "#2d70b3",
+                    "latex": "f\\left(k\\right)+o\\left(k\\right)",
+                    "showLabel": true,
+                    "label": "`a_${k}`",
+                    "hidden": true
+                },
+                {
+                    "type": "expression",
+                    "id": "12",
+                    "color": "#2d70b3",
+                    "latex": "f\\left(M_{2}+1\\right)+o\\left(M_{2}+1\\right)",
+                    "showLabel": true,
+                    "label": "`...`",
+                    "hidden": true,
+                    "labelAngle": "\\frac{1+M_{2}}{2}-\\frac{\\pi}{2}"
+                },
+                {
+                    "type": "expression",
+                    "id": "5",
+                    "color": "#c74440",
+                    "latex": "\\left(0,0\\right)",
+                    "showLabel": true,
+                    "label": "`x`",
+                    "pointStyle": "OPEN",
+                    "dragMode": "NONE",
+                    "labelOrientation": "above",
+                    "labelSize": "1.2"
+                },
+                {
+                    "type": "expression",
+                    "id": "6",
+                    "color": "#c74440",
+                    "latex": "r<p"
+                },
+                {
+                    "type": "expression",
+                    "id": "7",
+                    "color": "#2d70b3",
+                    "latex": "p=0.5",
+                    "hidden": true
+                },
+                {
+                    "type": "expression",
+                    "id": "13",
+                    "color": "#000000",
+                    "latex": "\\left(0,-0.7\\right)",
+                    "showLabel": true,
+                    "label": "`ε=${p}`",
+                    "hidden": true,
+                    "labelSize": "1.2",
+                    "pointOpacity": "1"
+                }
+            ]
+        },
+        "includeFunctionParametersInRandomSeed": true,
+        "doNotMigrateMovablePointStyle": true
+    }
+}

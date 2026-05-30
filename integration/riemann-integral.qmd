@@ -1,0 +1,146 @@
+# The Riemann Integral
+
+## Highlights {.unnumbered}
+
+- Riemann integrability and the Riemann integral
+- Basic properties of Riemann integrable functions and the Riemann integral
+
+## Preparation
+
+Now that we've seen the potential pitfalls of the naive theory of integration built around the right integral, it's time to start building a new theory based around a more robust (and restrictive) definition of integrability. The first step towards robustness we'll take is to do is do away from the restriction that all of the subintervals of $[a,b]$ need to have the same length.
+
+:::{.definition #def-partition}
+Let $a<b$. A **partition** of $[a,b]$ is a set $P=\{x_0,x_1,\ldots,x_n\}$ of real numbers with
+$$
+a=x_0<x_1<\ldots<x_n=b.
+$$
+
+The intervals $[x_{i-1},x_i]$ are called the **subintervals** of $[a,b]$ determined by the partition $P$, and $\Delta x_i=x_i-x_{i-1}$ are called the **lengths** of these subintervals.
+:::
+
+:::{.exercise #exr-mesh}
+The length of the longest subinterval for a partition $P$ is sometimes called the **mesh** of $P$.
+
+1. Find the partition of $[1,3]$ with $12$ subintervals with the *smallest* mesh. How about with the *largest* mesh?
+2. In general, what is the minimum number of subintervals needed for there to exist a partition of $[a,b]$ with mesh of $\delta$? (Make sure your answer is an integer!)
+:::
+
+DESMOS with a partition on the number line?
+
+Unlike in the naive theory of integration, we do not require that all of the subintervals have the same length; when they do, we say the partition is **uniform**. And in the next definition, we make another break with the naive theory by allowing any choice of sampling points from each subinterval.
+
+:::{.definition #def-sampling-points}
+Given a partition $P=\{x_0,x_1,\ldots,x_n\}$ of an interval $[a,b]$, we say an $n$-tuple $\vec x^*=(x_1^*,\ldots,x_n^*)$ with $x_i^*\in[x_{i-1},x_i]$ for all $i$ is a **sampling vector** for $P$.
+:::
+
+DESMOS with a partition and sampling points on the number line?
+
+:::{.exercise #exr-pay-attention-to-partition-and-sampling-defs}
+Answer each true or false question, and explain in a sentence.
+
+1. **True/False:** If $P=\{x_0,x_1,\ldots,x_n\}$ is a partition of $[a,b]$, then it is possible that $x_i=x_{i+1}$ for some $i$.
+2. **True/False:** If $\vec x^*=(x_1^*,\ldots,x_n^*)$ is a sampling vector for some partition $P$, then it is possible that $x_i^*=x_{i+1}^*$ for some $i$.
+:::
+
+With the concepts of partition and sampling points sufficiently generalized, we now given the general definition for a Riemann sum.
+
+:::{.definition #def-riemann-sum}
+Suppose $a<b$ and let $f$ be a real-valued function whose domain includes $[a,b]$. We define the **Riemann sum** of $f$ over $[a,b]$ for a partition $P=\{x_0,x_1,\ldots,x_n\}$ of $[a,b]$ and sampling vector $\vec x^*=(x^*_1,\ldots,x^*_n)$ for $P$ to be
+$$
+\mathcal R(f,P,\vec x^*) = \sum_{i=1}^n f(x_i^*)\Delta x_i.
+$$
+:::
+
+In the naive theory of integration, when finding right Riemann sums for a function $f$ on the interval $[a,b]$, the only parameter we could change was the number of intervals $n$. With this more general defintion of Riemann sums, there are now lots of parameters to tweak!
+
+DESMOS
+
+:::{.exercise #exr-maximize-riemann-sum}
+Answer each of the following and draw a picture to support your answer (a full proof is not needed).
+
+1. Let $f(x)=\sin x$ and consider the partition $P=\left\{0,\frac{\pi}{6},\frac{2\pi}{6},\frac{3\pi}{6},\frac{4\pi}{6},\frac{5\pi}{6},\pi\right\}$ of $[0,\pi]$. What choice of sampling vector $\vec x^*$ maximizes $\mathcal R(f,P,\vec x^*)$?
+2. Let $f(x)=x^2$. What choice of partition $P$ on $[0,3]$ with mesh 2 and sampling vector $\vec x^*$ maximizes $\mathcal R(f,P,\vec x^*)$?
+3. Let $f(x)=\begin{cases} x & x<1 \\ 0 & x\geq 1 \end{cases}$, and let $P=\{0,1,2\}$. Is there a sampling vector $\vec x^*$ that maximizes $\mathcal R(f,P,\vec x^*)$? Why or why not?
+4. Let $P$ be any partition of $[0,1]$. Explain why there always exist sampling vectors $\vec x^*$ and $\vec x^{\text{☾}}$ such that
+$$
+\mathcal R(f,P,\vec x^*)=1 \qquad \mathcal R(f,P,\vec x^\text{☾})=0.
+$$
+:::
+
+Our next step will be to define Riemann integrability and the Riemann integral. Before writing it down, we give the "slogan" that will help motivate it.
+
+> Riemann integrability means that if the subintervals are all narrow enough, then any partition and sampling points gets us close to the true value of the integral.
+
+Applying this slogan to last part of @exr-maximize-riemann-sum shows that Dirichlet's function won't be Riemann integrable: even with very narrow subintervals, we can get two very different Riemann sums; thus not all choices get us close to any single "true value" (and indeed, we won't try to define one).
+
+## Upper and Lower Sums
+
+In what follows, suppose $a<b$ and that $f$ is a real-valued function whose domain includes $[a,b]$. We further assume that $f$ is bounded on $[a,b]$.
+
+Let $P=\{x_0,x_1,\ldots,x_n\}$ be a partition of $f$. Let
+$$
+m_i=\inf\{f(x)\st x\in[x_{i-1},x_i]\} \qquad M_i=\sup\{f(x)\st x\in[x_{i-1},x_i]\}
+$$
+
+Then we define the **lower sum** and **upper sum** of $f$ on $[a,b]$ with respect to $P$ to be
+$$
+\mathcal L(f,P) = \sum_{i=1}^n m_i\Delta x_i \qquad \mathcal U(f,P)=\sum_{i=1}^n M_i\Delta x_i.
+$$
+
+DESMOS - use John Rock's trick for finding the min and max
+
+Note that both are defined since $f$ is bounded.
+
+:::{.exercise #exr-us-ls-practice}
+Answer the following.
+
+1. Let $f(x)=x^2$, and let $P=\{1,2,3,4\}$. Find $\mathcal U(f,P)$ and $\mathcal L(f,P)$.
+2. Let $f(x)=\begin{cases} x & x<1 \\ 0 & x\geq 1 \end{cases}$, and let $P=\{0,1,2\}$. Find $\mathcal U(f,P)$ and $\mathcal L(f,P)$. Are there sampling vectors $\vec x^*, \vec x^\text{☾}$ so that $\mathcal R(f,P,\vec x^*)=\mathcal U(f,P)$ and $\mathcal R(f,P,\vec x^{\text{☾}})=\mathcal L(f,P)$? Explain.
+3. Prove that for any sampling vector $\vec x^*$ for a partition $P$,
+$$ \mathcal L(f,P) \leq \mathcal R(f,P,\vec x^*) \leq \mathcal U(f,P). $$
+:::
+
+We say a partition $Q$ is a **refinement** of a partition $P$ if $P\subseteq Q$.
+
+:::{.lemma #lem-refinement-tightens-bounds}
+Suppose $Q$ is a refinement of $P$. Then
+$$ \mathcal L(f,P) \leq \mathcal L(f,Q) \leq \mathcal U(f,Q) \leq U(f,P). $$
+:::
+
+PROOF OR EXERCISE?
+
+DESMOS?
+
+:::{.theorem #thm-compare-partitions}
+For any two partitions $P_1$ and $P_2$ of $[a,b]$, $\mathcal L(f,P_1)\leq \mathcal U(f,P_2)$.
+:::
+
+:::{.exercise #exr-prove-compare-partitions}
+Prove @thm-compare-partitions. Hint: consider the "common refinement" $Q=P_1\cup P_2$ and use @lem-refinement-tightens-bounds.
+:::
+
+
+
+:::{.definition #def-darboux-integral}
+#### Riemann Integrability
+
+Hi
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+A collapsed hint.
+:::
+
+## More sections
+
+More content
+
+## Review Questions {.unnumbered}
+
+1. Question 1
+2. Question 2
+
+[^1]: The definition we give here isn't the original one that mathematician Bernhard Riemann formulated, but instead an equivalent (and in my opinion, simpler) one formulated by Gaston Darboux.

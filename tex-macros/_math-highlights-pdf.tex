@@ -1,0 +1,42 @@
+\usepackage{xcolor}
+
+\definecolor{explainyellow}{HTML}{fff3bf}
+\definecolor{explainyellowborder}{HTML}{b7791f}
+\definecolor{explaingold}{HTML}{ffe8a3}
+\definecolor{explaingoldborder}{HTML}{b7791f}
+\definecolor{explainorange}{HTML}{ffddb3}
+\definecolor{explainorangeborder}{HTML}{c05621}
+\definecolor{explaingreen}{HTML}{d9f7d7}
+\definecolor{explaingreenborder}{HTML}{3f8f46}
+\definecolor{explainmint}{HTML}{d4f5e9}
+\definecolor{explainmintborder}{HTML}{2c7a7b}
+\definecolor{explainblue}{HTML}{dceeff}
+\definecolor{explainblueborder}{HTML}{2b6cb0}
+\definecolor{explainpurple}{HTML}{eadffd}
+\definecolor{explainpurpleborder}{HTML}{6b46c1}
+\definecolor{explainpink}{HTML}{ffdbe8}
+\definecolor{explainpinkborder}{HTML}{b83280}
+\definecolor{explainred}{HTML}{ffd6d6}
+\definecolor{explainredborder}{HTML}{c53030}
+\definecolor{explaingray}{HTML}{e8ecef}
+\definecolor{explaingrayborder}{HTML}{64748b}
+
+\newcommand{\mathhlbox}[3]{%
+  \mathchoice
+    {\begingroup\fboxsep=2pt\fboxrule=0.4pt\fcolorbox{#2}{#1}{$\displaystyle #3$}\endgroup}
+    {\begingroup\fboxsep=2pt\fboxrule=0.4pt\fcolorbox{#2}{#1}{$\textstyle #3$}\endgroup}
+    {\begingroup\fboxsep=1.4pt\fboxrule=0.35pt\fcolorbox{#2}{#1}{$\scriptstyle #3$}\endgroup}
+    {\begingroup\fboxsep=1pt\fboxrule=0.3pt\fcolorbox{#2}{#1}{$\scriptscriptstyle #3$}\endgroup}%
+}
+
+\newcommand{\mathhlyellow}[1]{\mathhlbox{explainyellow}{explainyellowborder}{#1}}
+\newcommand{\mathhlgold}[1]{\mathhlbox{explaingold}{explaingoldborder}{#1}}
+\newcommand{\mathhlorange}[1]{\mathhlbox{explainorange}{explainorangeborder}{#1}}
+\newcommand{\mathhlgreen}[1]{\mathhlbox{explaingreen}{explaingreenborder}{#1}}
+\newcommand{\mathhlmint}[1]{\mathhlbox{explainmint}{explainmintborder}{#1}}
+\newcommand{\mathhlblue}[1]{\mathhlbox{explainblue}{explainblueborder}{#1}}
+\newcommand{\mathhlpurple}[1]{\mathhlbox{explainpurple}{explainpurpleborder}{#1}}
+\newcommand{\mathhlpink}[1]{\mathhlbox{explainpink}{explainpinkborder}{#1}}
+\newcommand{\mathhlred}[1]{\mathhlbox{explainred}{explainredborder}{#1}}
+\newcommand{\mathhlgray}[1]{\mathhlbox{explaingray}{explaingrayborder}{#1}}
+\newcommand{\mathhlgrey}[1]{\mathhlbox{explaingray}{explaingrayborder}{#1}}

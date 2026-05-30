@@ -1,0 +1,105 @@
+# Sequences in $\R$ I: Arithmetic and Inequalities {#sec-sequences-in-r-i}
+
+## Highlights {.unnumbered}
+
+- How sequence convergence interacts with inequalities in $\R$
+- How sequence convergence interacts with arithmetic in $\R$
+- Squeeze Theorem for sequences
+
+## Preparation
+
+So far, most of the theorems we've proven about sequence convergence have dealt with sequences in any metric space. That's great, and it's meant that we've been able to focus on using just the tools common to all metric spaces (i.e. the metric space axioms from @def-metric-space and their consequences).
+
+We now change the focus to start seeing how sequence convergence behaves in our favorite metric space: $\R$. Theorems like @thm-sequence-bounded-above or @thm-sequence-arithmetic, for example, wouldn't make sense in an arbitrary metric space since $\leq$ and $+$ might not be defined. In this chapter and the next, we'll start to see how the concept of sequence convergence interacts with other properties of $\R$ that we've investigated like order, arithmetic, and least upper bounds.
+
+:::{.callout-tip}
+Since we are working in $\R$ in this chapter, we'll be writing $|b-a|$ instead of $d(a,b)$ when talking about distances. You may want to take another peek at @fig-open-ball-tfae.
+:::
+
+:::{.theorem #thm-sequence-bounded-above}
+Suppose $b\in\R$ and $(x_n)$ is a convergent sequence in $\R$. If $x_n\leq b$ for all $n\in\N$, then $\lim x_n\leq b$. And if $x_n\geq b$ for all $n\in\N$, then $\lim x_n\geq b$.
+:::
+
+:::{.proof}
+#### Start of the proof
+
+By way of contradiction, suppose $b\in\R$, $x_n\leq b$ for all $n\in\N$ and $x_n$ converges to some $a>b$. Then by the definition of convergence, there exists some $N\in\N$ such that for all $n>N$, $|x_n-a|<a-b.$[^1] But then $|x_{N+1}-a|<a-b$,[^2] so
+$$
+a-(a-b)<x_{N+1}<a+(a-b).
+$$ {#eq-xn-too-big}
+
+Therefore $b<x_{n+1}$, contrary to assumption.[^3]
+:::
+
+:::{.exercise #exr-sequence-bounded-above}
+In this exercise, you will finish the proof of @thm-sequence-bounded-above.
+
+1. There are three footnotes in the proof above with questions. Answer those questions.
+2. Finish the proof by addressing the second claim about when $x_n\geq b$ for all $n\in\N$.
+:::
+
+:::{.exercise #exr-sequence-bounded-above-strict}
+Is is also true that if $(x_n)$ converges and $x_n>b$ for all $n\in\N$, then $\lim x_n>b$? Prove or give a counterexample, and include a picture to support your answer.
+:::
+
+:::{.callout-tip}
+This section contains some proof techniques that will be valuable to us moving forward, so pay attention to not just to the results, but also to how each is proven!
+:::
+
+## Sequence Convergence and Arithmetic
+
+We now turn to prove how sequence convergence interacts with arithmetic. The theorem below shoudn't be surprising, but the proof techniques will be used frequently. Some parts will be proven here and others are left as exercises.
+
+:::{.theorem #thm-sequence-arithmetic}
+#### The Sequence Arithmetic Theorem
+
+Suppose $(x_n)$ and $(y_n)$ are sequences that converge to $a$ and $b$ respectively, and suppose $k\in\R$. Then
+
+1. $\lim kx_n=ka$
+2. $\lim x_n+y_n=a+b$
+3. $\lim x_n-y_n=a-b$
+4. $\lim x_ny_n=ab$
+5. If $b\neq0$ and $y_n\neq0$ for all $n$, then $\lim \frac{x_n}{y_n}=\frac{a}{b}$.
+:::
+
+:::{.proof}
+(4.) Suppose $\epsilon>0$. Since $(y_n)$ is convergent, it is bounded by @thm-convergent-implies-bounded, so there exists $M\in\R$ such that $|y_n|\leq M$ for all $n\in\N$.
+
+Since $\lim x_n=a$, there exists $N_1\in\N$ such that if $n>N_1$, $|x_n-a|<\frac{\epsilon}{2M}$.
+
+Since $\lim y_n=b$, there exists $N_2\in\N$ such that if $n>N_2$, $|y_n-b|<\frac{\epsilon}{2(|a|+1)}$.
+
+Let $N=\max\{N_1,N_2\}$ and suppose $n>N$ so that $n>N_1$ and $n>N_2$. Then
+
+$$
+\begin{aligned}
+|x_ny_n-ab| & \leq |x_ny_n - ay_n| + |ay_n - ab| \\
+& = |y_n| |x_n-a| + |a| |y_n-b| \\
+& \leq M |x_n-a| + |a| |y_n-b| \\
+& \leq M \frac{\epsilon}{2M} + |a| \frac{\epsilon}{2(|a|+1|)} \\
+& \leq \frac{\epsilon}{2} + \frac{|a|}{2(|a|+1)}\epsilon \\
+& < \epsilon
+\end{aligned}
+$$
+:::
+
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+A collapsed hint.
+:::
+
+## More sections
+
+More content
+
+## Review Questions {.unnumbered}
+
+1. Question 1
+2. Question 2
+
+[^1]: Explain how the definition of sequence convergence is being used here. What is $\epsilon$, and why am I, the proof-writer, allowed to pick its value?
+[^2]: Why do I talk about $N+1$ in this proof?
+[^3]: Where did ([-@eq-xn-too-big]) come from?

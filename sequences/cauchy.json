@@ -1,0 +1,234 @@
+{
+    "hash": "xxejb1qoon",
+    "parent_hash": "13ecey0bep",
+    "title": "Cauchy Sequence",
+    "created": "2026-05-18T17:08:59.805Z",
+    "versionCreatedAt": "2026-05-18T20:25:54.667Z",
+    "stateUrl": "https://www.desmos.com/calc-states/production/version/xxejb1qoon/c54c7cc0-52f7-11f1-ace1-db260577fda9",
+    "thumbUrl": "https://www.desmos.com/calc_thumbs/production/version/xxejb1qoon/c54c7cc0-52f7-11f1-ace1-db260577fda9.png",
+    "currentVersion": "c54c7cc0-52f7-11f1-ace1-db260577fda9",
+    "type": "my-graph",
+    "access": "link",
+    "product": "graphing",
+    "state": {
+        "version": 11,
+        "randomSeed": "430fa18a99ab19fa91c977e583615806",
+        "graph": {
+            "viewport": {
+                "xmin": -2.0,
+                "ymin": -1.466148,
+                "xmax": 2.0,
+                "ymax": 1.466148
+            },
+            "showGrid": false,
+            "showXAxis": false,
+            "showYAxis": false,
+            "__v12ViewportLatexStash": {
+                "xmin": "-2.0",
+                "xmax": "2.0",
+                "ymin": "-1.466148",
+                "ymax": "1.466148"
+            }
+        },
+        "expressions": {
+            "list": [
+                {
+                    "type": "folder",
+                    "id": "22",
+                    "title": "Hidden Stuff",
+                    "collapsed": true,
+                    "secret": true
+                },
+                {
+                    "type": "expression",
+                    "id": "8",
+                    "folderId": "22",
+                    "color": "#388c46",
+                    "latex": "f\\left(x\\right)=\\frac{2}{1.1^{x}}\\left(\\cos\\left(\\frac{x}{2}\\right),0.5\\sin\\left(\\frac{x}{2}\\right)\\right)"
+                },
+                {
+                    "type": "expression",
+                    "id": "23",
+                    "folderId": "22",
+                    "color": "#2d70b3",
+                    "latex": "M=60",
+                    "slider": {
+                        "hardMin": true,
+                        "hardMax": true,
+                        "min": "20",
+                        "max": "200",
+                        "step": "1"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "25",
+                    "folderId": "22",
+                    "color": "#6042a6",
+                    "latex": "M_{1}=24",
+                    "slider": {
+                        "hardMin": true,
+                        "hardMax": true,
+                        "min": "1",
+                        "max": "50",
+                        "step": "1"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "1",
+                    "folderId": "22",
+                    "color": "#c74440",
+                    "latex": "n=\\left[N+1,N+2...,M_{1}\\right]"
+                },
+                {
+                    "type": "expression",
+                    "id": "17",
+                    "folderId": "22",
+                    "color": "#2d70b3",
+                    "latex": "n_{1}=\\left[1,2,...,M_{1}\\right]"
+                },
+                {
+                    "type": "expression",
+                    "id": "16",
+                    "folderId": "22",
+                    "color": "#2d70b3",
+                    "latex": "f\\left(n_{1}\\right)+o\\left(n_{1}\\right)",
+                    "showLabel": true,
+                    "label": "`a_${n_1}`",
+                    "hidden": true,
+                    "points": false,
+                    "colorLatex": "l_{tblue}"
+                },
+                {
+                    "type": "expression",
+                    "id": "2",
+                    "folderId": "22",
+                    "color": "#2d70b3",
+                    "latex": "f\\left(n\\right)+o\\left(n\\right)",
+                    "showLabel": true,
+                    "label": "`a_${n}`",
+                    "hidden": true,
+                    "points": false
+                },
+                {
+                    "type": "expression",
+                    "id": "3",
+                    "folderId": "22",
+                    "color": "#388c46",
+                    "latex": "k=\\left[N+1,N+2,...,M\\right]"
+                },
+                {
+                    "type": "expression",
+                    "id": "18",
+                    "folderId": "22",
+                    "color": "#388c46",
+                    "latex": "k_{1}=\\left[1,...,M\\right]"
+                },
+                {
+                    "type": "expression",
+                    "id": "15",
+                    "folderId": "22",
+                    "color": "#2d70b3",
+                    "latex": "f\\left(k_{1}\\right)",
+                    "points": true,
+                    "colorLatex": "l_{tblue}"
+                },
+                {
+                    "type": "expression",
+                    "id": "4",
+                    "folderId": "22",
+                    "color": "#2d70b3",
+                    "latex": "f\\left(k\\right)",
+                    "points": true
+                },
+                {
+                    "type": "expression",
+                    "id": "12",
+                    "folderId": "22",
+                    "color": "#c74440",
+                    "latex": "tf\\left(l\\right)+\\left(1-t\\right)f\\left(m\\right)",
+                    "parametricDomain": {
+                        "min": "0",
+                        "max": "1"
+                    },
+                    "domain": {
+                        "min": "0",
+                        "max": "1"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "19",
+                    "folderId": "22",
+                    "color": "#c74440",
+                    "latex": "\\left(0,-0.75\\right)",
+                    "showLabel": true,
+                    "label": "`d\\left(a_{${m}},a_{${l}}\\right)=${d}`",
+                    "hidden": true,
+                    "labelOrientation": "right"
+                },
+                {
+                    "type": "expression",
+                    "id": "14",
+                    "folderId": "22",
+                    "color": "#c74440",
+                    "latex": "l_{tblue}=\\operatorname{rgb}\\left(180,200,256\\right)"
+                },
+                {
+                    "type": "expression",
+                    "id": "20",
+                    "folderId": "22",
+                    "color": "#000000",
+                    "latex": "d=\\left|f\\left(l\\right)-f\\left(m\\right)\\right|"
+                },
+                {
+                    "type": "expression",
+                    "id": "21",
+                    "folderId": "22",
+                    "color": "#c74440",
+                    "latex": "\\left(-0.75,-0.75\\right)",
+                    "showLabel": true,
+                    "label": "`N=${N}`",
+                    "hidden": true,
+                    "labelOrientation": "right"
+                },
+                {
+                    "type": "expression",
+                    "id": "26",
+                    "folderId": "22",
+                    "color": "#000000",
+                    "latex": "o\\left(x\\right)=0.1\\left(\\cos\\left(\\frac{x}{2}\\right),\\sin\\left(\\frac{x}{2}\\right)\\right)"
+                },
+                {
+                    "type": "expression",
+                    "id": "N",
+                    "color": "#c74440",
+                    "latex": "N=7",
+                    "slider": {
+                        "hardMin": true,
+                        "hardMax": true,
+                        "min": "1",
+                        "max": "M",
+                        "step": "1"
+                    }
+                },
+                {
+                    "type": "expression",
+                    "id": "m",
+                    "color": "#2d70b3",
+                    "latex": "l=15"
+                },
+                {
+                    "type": "expression",
+                    "id": "n",
+                    "color": "#000000",
+                    "latex": "m=22",
+                    "hidden": true
+                }
+            ]
+        },
+        "includeFunctionParametersInRandomSeed": true,
+        "doNotMigrateMovablePointStyle": true
+    }
+}

@@ -1,0 +1,201 @@
+# Cauchy Sequences
+
+## Highlights {.unnumbered}
+
+- Definition of a Cauchy sequence
+- Relationship between convergence and Cauchyness (in $\R$ versus in other metric spaces)
+
+## Preparation
+
+Recall that saying a sequence is convergent means that its terms stay arbitrarily close to some point (the limit of the sequence). In this section we consider a different condition on sequences named after[^1] Augistin-Louis Cauchy; namely the condition that terms of a sequence stay arbitrarily close *to each other*.
+
+:::{.definition #def-sequence}
+A sequence $(a_n)$ is a metric space $X$ is called a **Cauchy sequence** if for all $\epsilon>0$, there exists $N\in\N$ such that for all $m,n>N$, $d(a_m,a_n)<\epsilon$.
+:::
+
+:::{#des-cauchy-def .content-visible when-format="html"}
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+
+<div id="cauchy" class="calculator-container" style="width: 100%; height: 400px;"></div>
+
+<div class="slider-container">
+<div class="centered-slider">
+<label for="Nslider" class="left-label">$N$</label>
+<input id="Nslider" class="desmos-slider" type="range" min="1" max="60" step="1" value="10">
+</div><div class="centered-slider">
+<label for="mslider" class="left-label">$m$</label>
+<input id="mslider" class="desmos-slider" type="range" min="1" max="60" step="1" value="12">
+</div><div class="centered-slider">
+<label for="nslider" class="left-label">$n$</label>
+<input id="nslider" class="desmos-slider" type="range" min="1" max="60" step="1" value="16">
+</div>
+</div>
+
+<script>
+  var mSlider = document.getElementById('mslider');
+  var mValue = mSlider.value;
+  var nSlider = document.getElementById('nslider');
+  var nValue = nSlider.value;
+  var NSlider = document.getElementById('Nslider');
+  var NValue = NSlider.value;
+
+
+  var elt = document.getElementById('cauchy');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('cauchy.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  mSlider.addEventListener('input', function() {
+    mValue = parseInt(mSlider.value);
+    calculator.setExpression({ id: 'm', latex: `l=${mValue}` });
+  });
+  nSlider.addEventListener('input', function() {
+    nValue = parseInt(nSlider.value);
+    calculator.setExpression({ id: 'n', latex: `m=${nValue}` });
+  });
+  NSlider.addEventListener('input', function() {
+    NValue = parseInt(NSlider.value);
+    calculator.setExpression({ id: 'N', latex: `N=${NValue}` });
+  });
+</script>
+
+A Cauchy sequence.
+:::
+
+:::{#exercise #exr-cauchy-test-out}
+In the Cauchy sequence shown in @des-cauchy-def, suppose $\epsilon=0.4$. What is the smallest value of $N$ so that for all $m,n>N$, we have $d(a_n,a_m)<\epsilon$ as in the definition?
+:::
+
+Notice that we can talk about a sequence being Cauchy (or not) without having to make explicit reference to what the limit of the sequence is (or isn't). We'll see that this is especially useful in @sec-series when we talk about series since it will often let us conclude that a series converges without having to figure out exactly what it converges *to.*
+
+This next exercise is a good warmup for dealing with our new definition.
+
+:::{.exercise #exr-subsequence-of-cauchy-is-cauchy}
+Suppose $(a_n)$ is a Cauchy sequence in a metric space. Prove that every subsequence of $(a_n)$ is Cauchy.
+:::
+
+Let's consider the sequence of lower decimal approximations to $\pi$:
+
+$$
+3,3.1,3.14,3.141,3.1415,\ldots
+$$ {#eq-pi-lower-decimal-approx}
+
+It makes sense to talk about this sequence if our universe is $\R$ or if our universe is $\Q$, but we know that it is convergent in $\R$ but not in $\Q$. However, it is Cauchy in both universes.
+
+:::{.exercise #exr-pi-roundoffs-cauchy}
+Explain why the sequence of lower decimal approximations of $\pi$ in @eq-pi-lower-decimal-approx is Cauchy using the definition of Cauchyness. In particular, for a given $\epsilon>0$, what value of $N$ suffices to ensure that if $m,n>N$ then $d(a_m,a_n)<\epsilon$? Make sure your proof works whether the universe is $\Q$ or $\R$.
+:::
+
+The definitions of Cauchyness and convergence are related but not entirely equivalent, as the example above shows. The rest of this section deals with making this relationship precise.
+
+## Cauchy Sequences and Convergence
+
+We start out with the first basic relationship between 
+
+:::{.theorem #thm-convergence-implies-cauchyness}
+Let $(a_n)$ be a sequence in a metric space. If $(a_n)$ is convergent, then $(a_n)$ is Cauchy.
+:::
+
+:::{.exercise #exr-convergence-implies-cauchyness}
+Prove @thm-convergence-implies-cauchyness.
+:::
+
+:::{.callout-tip collapse="true" .hidden}
+
+#### Hint
+
+If you assume the sequence converges to a point $x$, and you're trying to prove a condition like $d(a_m,a_n)<\epsilon$, you have *three* points in your metric space to play with: $a_m,a_n,x$. Which property of metric spaces would you guess is going to be helpful here?
+:::
+
+So convergence implies Cauchyness, but we have already seen in @exr-pi-roundoffs-cauchy that not every Cauchy sequences converges, at least not in $\Q$. In some metric spaces, though, Cauchyness and convergence are in fact equivalent.
+
+:::{.definition #def-complete}
+A metric space $X$ is said to be **Cauchy complete** if every Cauchy sequence in $X$ converges (to a point in $X$).
+:::
+
+:::{.callout-note}
+The parenthetical "to a point in $X$" in the definition of "complete" isn't strictly necessary since when we talk about a metric space $X$, we think of it as the universe---there are no points outside of $X$ that we should be considering. However, when we think of $\Q$ as a metric space, we of course are typically aware of the fact that $\Q$ is a subspace of $\R$, so it is worth emphasizing to ourselves that when we consider a sequence like the one in @eq-pi-lower-decimal-approx in $\Q$ that converges in a larger metric space, it does not converge *to a point in $\Q$*.
+:::
+
+:::{.exercise #exr-incomplete-example}
+Prove that the interval $[0,1)$ is not Cauchy complete.
+:::
+
+Next we prove a few more properties of Cauchy sequences.
+
+:::{.theorem #thm-cauchy-properties}
+Suppose $(a_n)$ is a Cauchy sequence in a metric space. Then we have the following.
+1. $(a_n)$ is bounded.
+2. If $(a_n)$ has a convergent subsequence, then $(a_n)$ is also convergent.
+:::
+
+:::{.proof .hidden}
+
+#### Proof of Part 2
+
+Suppose $(a_n)$ is Cauchy and that $(a_{i_n})$ is a subsequence converging to $x$. Let $\epsilon>0$. Then there exists $N_1\in\N$ such that if $n>N_1$, then $d(a_{i_n},x)<\frac{\epsilon}{2}$. And there exists $N_2\in\N$ such that if $m,n>N_2$, then $d(a_m,a_n)<\frac{\epsilon}{2}$. Let $N=\max\{N_1,N_2\}$, and suppose $n>N$. Note that $i_{N+1}>N+1>N$ by @thm-extremely-useful. Then
+
+$$
+d(a_n,x)\leq d(a_n,a_{i_{N+1}}) + d(a_{N+1},x) < \frac{\epsilon}{2}+\frac{\epsilon}{2} = \epsilon
+$$
+:::
+
+:::{.corollary #cor-r-is-complete .lub-thread}
+$\R$ is a Cauchy complete metric space (that is, every Cauchy sequence in $\R$ converges).
+:::
+
+:::{.exercise #exr-cauchy-cauchy-properties}
+Prove @thm-cauchy-properties and @cor-r-is-complete.
+:::
+
+:::{.callout-tip collapse="true"}
+
+#### Hint
+
+@thm-extremely-useful might be extremely useful here. Also, note that in the corollary, we are proving something about $\R$ that is not true about $\Q$, so somehow we need to use @thm-ax-lub or one of its consequence.
+:::
+
+We won't prove it here, but it turns out $\R^n$ is complete for all $n$ as well.
+
+:::{.exercise #exr-closed-subset-of-complete-is-complete}
+Prove that every closed subset of a Cauchy complete metric space is Cauchy complete.
+:::
+
+## A Bit of Context
+
+Remember that part of what we are interested in learning about in the field of real analysis is which properties of the real number system logically depend on the Least Upper Bound Axiom. Hopefully by now the LUB Axiom feels like a reasonable place to start since we've been able to prove so many properties of $\R$ from it. However, it's not the only starting point. A few important properties that distinguish $\R$ from $\Q$ are
+
+1. LUB Axiom
+1. The Nested Interval Theorem (NIT)
+2. The Monotone Convergence Theorem (MCT)
+3. Bolzano-Weierstrass Theorem (BW)
+4. Cauchy completeness (CC)
+
+Our general progression was to start by assuming the LUB axiom, use LUB to prove NIT, then use NIT to prove MCT and BW, and then use BW to prove CC. However, it is also possible to start by treatning one of the *other four* theorems listed above as an axiom (possibly alongside the Archimedean Property) and *proving* the LUB Axiom (along with the others) from there. Ultimately, you get to the same place---that $\R$ is an ordered field satisfying all five of the properties.
+
+## Review Questions {.unnumbered}
+
+1. How does the example of lower decimal approximations of $\pi$ demonstrate that Cauchyness and convergence aren't equivalent in $\Q$?
+2. What is the relationship between Cauchyness and convergence? Which is stronger?
+3. What is special about the relationship between Cauchyness and convergence in $\R$? What do we call this property?
+
+[^1]: A (possibly apochryphal) piece of mathematical lore is that more theorems and definitions are named after Cauchy than any other mathematician.

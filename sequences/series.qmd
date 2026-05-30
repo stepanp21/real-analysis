@@ -1,4 +1,4 @@
-# Series Basics
+# Series Basics {#sec-series}
 
 In this section, we build on what we learned about sequences to talk about one of their most important use cases: series. Loosely speaking, we think of a series as an "infinite sum", and one of the primary questions we seek to address is when a series converges to a finite number and when it doesn't. Consider for example, the four infinite sums below:
 
