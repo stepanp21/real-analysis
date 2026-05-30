@@ -1,11 +1,11 @@
 {
-  ["counters"] = {
-    ["ax"] = 0
-  },
   ["values"] = {
     ["ax"] = {}
   },
   ["files"] = {
     ["ax"] = {}
+  },
+  ["counters"] = {
+    ["ax"] = 0
   }
 }

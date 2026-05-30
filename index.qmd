@@ -157,6 +157,6 @@ Thank you to the Desmos Studio Public Benefit Corporation for allowing me to use
 
 I also acknowledge additional support from an NC State University Libraries Alt-Textbook Project grant, and thank David Tully and Will Cross for their support and advice.
 
-Part of the organiation and presentation are inspired by *Closer and Closer* by Carol Schumacher and *Understanding Real Analysis* by Stephen Abbott.
+Part of the organiation and presentation are inspired by *Closer and Closer* by Carol Schumacher @schumacher2008closer and *Understanding Real Analysis* by Stephen Abbott @abbott2016understanding.
 
-Finally, I want to acknowledge John Rock, author of *Arbitrarily Close*, another real analysis textbook with dozens of wonderful linked Desmos interactives. John has been extremely generous in sharing his experiences in authoring in this format.
+Finally, I want to acknowledge John Rock, author of *Arbitrarily Close* @rock2025arbitrarily, another real analysis textbook with dozens of wonderful linked Desmos interactives. John has been extremely generous in sharing his experiences in authoring in this format.
