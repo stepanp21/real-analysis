@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../axioms-of-r/lub.html" rel="next">
-<link href="../intro.html" rel="prev">
+<link href="../intro-draft.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -165,7 +165,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../intro-draft.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -296,14 +296,14 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#highlights" id="toc-highlights" class="nav-link active" data-scroll-target="#highlights"><span class="header-section-number">2.1</span> Highlights</a></li>
-  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">2.2</span> Preparation</a></li>
-  <li><a href="#fields" id="toc-fields" class="nav-link" data-scroll-target="#fields"><span class="header-section-number">2.3</span> Fields</a></li>
-  <li><a href="#order-and-inequalities" id="toc-order-and-inequalities" class="nav-link" data-scroll-target="#order-and-inequalities"><span class="header-section-number">2.4</span> Order and Inequalities</a>
+  <li><a href="#highlights" id="toc-highlights" class="nav-link active" data-scroll-target="#highlights">Highlights</a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">2.1</span> Preparation</a></li>
+  <li><a href="#fields" id="toc-fields" class="nav-link" data-scroll-target="#fields"><span class="header-section-number">2.2</span> Fields</a></li>
+  <li><a href="#order-and-inequalities" id="toc-order-and-inequalities" class="nav-link" data-scroll-target="#order-and-inequalities"><span class="header-section-number">2.3</span> Order and Inequalities</a>
   <ul class="collapse">
-  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">2.4.1</span> Review Questions</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">2.3.1</span> Review Questions</a></li>
   </ul></li>
-  <li><a href="#sec-inequality-rules" id="toc-sec-inequality-rules" class="nav-link" data-scroll-target="#sec-inequality-rules"><span class="header-section-number">2.5</span> Inequality Rules</a></li>
+  <li><a href="#sec-inequality-rules" id="toc-sec-inequality-rules" class="nav-link" data-scroll-target="#sec-inequality-rules"><span class="header-section-number">2.4</span> Inequality Rules</a></li>
   </ul>
 </nav>
     </div>
@@ -329,15 +329,15 @@ window.Quarto = {
 </header>
 
 
-<section id="highlights" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="highlights"><span class="header-section-number">2.1</span> Highlights</h2>
+<section id="highlights" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="highlights">Highlights</h2>
 <ul>
 <li>Two of the three axioms we will assume about the real number system: the field axiom which gives us the rules of arithmetic, and the order axiom which gives us the rules for inequalities.</li>
 <li>We see examples of other number systems besides <span class="math inline">\(\R\)</span> that also satisfy one or both of these axioms. In particular <span class="math inline">\(\Q\)</span> also satisfies both.</li>
 </ul>
 </section>
-<section id="preparation" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="preparation"><span class="header-section-number">2.2</span> Preparation</h2>
+<section id="preparation" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">2.1</span> Preparation</h2>
 <p>As discussed in the introduction, our approach to real analysis will be to start by laying out a set of axioms that we <em>assume</em> are true about the real number system <span class="math inline">\(\R\)</span> and then <em>prove</em> everything else based upon this set of axioms.</p>
 <p>In order to properly take this approach, we need a set of axioms that:</p>
 <ul>
@@ -376,8 +376,8 @@ Note
 </ol>
 </div>
 </section>
-<section id="fields" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="fields"><span class="header-section-number">2.3</span> Fields</h2>
+<section id="fields" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="fields"><span class="header-section-number">2.2</span> Fields</h2>
 <p>For our purposes, a <strong>number system</strong> <span class="math inline">\(\mathbb{S}\)</span> is a set with two binary operations <span class="math inline">\(+\)</span> and <span class="math inline">\(\cdot.\)</span> This is a nonstandard term, but we won’t use it much beyond this section.</p>
 <div id="def-field" class="grouped-theorem grouped-theorem-definition">
 <p><span class="theorem-title"><strong>Definition 2.2</strong></span> A number system <span class="math inline">\(\mathbb{S}\)</span> is said to be a <strong>field</strong> if it satisfies the following properties.</p>
@@ -444,8 +444,8 @@ Hint
 </div>
 <p>So the field axiom alone fails miserably at the goal of distinguishing <span class="math inline">\(\R\)</span> from other number systems—it cannot even distinguish <span class="math inline">\(\R\)</span> from a number system with just two elements! So we need more axioms capturing more of the structure of <span class="math inline">\(\R.\)</span></p>
 </section>
-<section id="order-and-inequalities" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="order-and-inequalities"><span class="header-section-number">2.4</span> Order and Inequalities</h2>
+<section id="order-and-inequalities" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="order-and-inequalities"><span class="header-section-number">2.3</span> Order and Inequalities</h2>
 <p>Another important feature of the real number system is the behavior of inequalities and how they interact with arithmetic. This is captured by the next axiom.</p>
 <div id="def-ordered-field" class="grouped-theorem grouped-theorem-definition">
 <p><span class="theorem-title"><strong>Definition 2.7</strong></span> A field <span class="math inline">\(\mathbb{F}\)</span> is called an <strong>ordered field</strong> if it has a relation <span class="math inline">\(&gt;\)</span> with the following properties.</p>
@@ -471,7 +471,7 @@ Hint
 <div id="exr-one-greater-than-zero" class="grouped-theorem grouped-theorem-exercise">
 <p><span class="theorem-title"><strong>Exercise 2.10</strong></span> Prove <a href="axioms-of-r/field-and-order.html#thm-one-greater-than-zero">Theorem 2.9</a> using only the Field and Order Axioms.</p>
 </div>
-<p>You are probably familiar with the basics of how inequalities and arithmetic interact, and henceforth, we can use them at will without citation. In this class, being fluent with the rules for inequalities will be essential, though, so we collect a list of “inequality rules” (all of which could in principle be proven from <a href="axioms-of-r/field-and-order.html#ax-field">Axiom 2.3</a> and <a href="axioms-of-r/field-and-order.html#ax-ordered-field">Axiom 2.8</a>) in <a href="#sec-inequality-rules" class="quarto-xref"><span>Section 2.5</span></a>.</p>
+<p>You are probably familiar with the basics of how inequalities and arithmetic interact, and henceforth, we can use them at will without citation. In this class, being fluent with the rules for inequalities will be essential, though, so we collect a list of “inequality rules” (all of which could in principle be proven from <a href="axioms-of-r/field-and-order.html#ax-field">Axiom 2.3</a> and <a href="axioms-of-r/field-and-order.html#ax-ordered-field">Axiom 2.8</a>) in <a href="#sec-inequality-rules" class="quarto-xref"><span>Section 2.4</span></a>.</p>
 <p>Worth reflecting on now is where we stand on our stated goals in creating the axioms. The <a href="axioms-of-r/field-and-order.html#ax-ordered-field">Axiom 2.8</a> was successful in distinguishing <span class="math inline">\(\R\)</span> from <span class="math inline">\(\mathbb{F}_2\)</span> because there is no ordering on <span class="math inline">\(\mathbb{F}_2\)</span> satisfying <a href="axioms-of-r/field-and-order.html#def-ordered-field">Definition 2.7</a> (you will prove this in <a href="axioms-of-r/field-and-order.html#exr-z2-not-ordered">Exercise 2.11</a> below).</p>
 <p>However, we can note that <span class="math inline">\(\mathbb{Q}\)</span> is also an ordered field since it satisfies <a href="axioms-of-r/field-and-order.html#ax-ordered-field">Axiom 2.8</a>. This means that anything we can prove directly from <a href="axioms-of-r/field-and-order.html#ax-field">Axiom 2.3</a> and <a href="axioms-of-r/field-and-order.html#ax-ordered-field">Axiom 2.8</a> will apply just as well if our universe were <span class="math inline">\(\mathbb{Q}\)</span> as it would if our universe were <span class="math inline">\(\mathbb{R}.\)</span> In particular, we would have no hope of proving, say, the Intermediate Value Theorem, which is true in <span class="math inline">\(\mathbb{R}\)</span> but not in <span class="math inline">\(\mathbb{Q}.\)</span></p>
 <p>This all means that we need another assumption—an axiom that will distinguish the real number system from the rationals in a way that will allow us to prove everything else we’ll need in order to do calculus.</p>
@@ -515,8 +515,8 @@ Note
 <p>Now that you’ve finished this section, you can use whatever facts you want about arithmetic and order in <span class="math inline">\(\R\)</span> without citing theorems or axioms.</p>
 </div>
 </div>
-<section id="review-questions" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">2.4.1</span> Review Questions</h3>
+<section id="review-questions" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">2.3.1</span> Review Questions</h3>
 <ol type="1">
 <li>Give some examples of number systems that are fields. Give some examples of number systems that are not fields.</li>
 <li>Give some examples of fields that are ordered fields. Give some examples of fields that are not ordered fields.</li>
@@ -524,8 +524,8 @@ Note
 </ol>
 </section>
 </section>
-<section id="sec-inequality-rules" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="sec-inequality-rules"><span class="header-section-number">2.5</span> Inequality Rules</h2>
+<section id="sec-inequality-rules" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-inequality-rules"><span class="header-section-number">2.4</span> Inequality Rules</h2>
 <ul>
 <li><span class="math inline">\(a\)</span> is positive <span class="math inline">\(\Leftrightarrow\)</span> <span class="math inline">\(-a\)</span> is negative</li>
 <li><span class="math inline">\(1&gt;0\)</span></li>
@@ -953,7 +953,7 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../intro.html" class="pagination-link" aria-label="Introduction">
+      <a href="../intro-draft.html" class="pagination-link" aria-label="Introduction">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
