@@ -239,6 +239,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Assorted Topics (Provisional)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -247,13 +264,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -318,19 +335,19 @@ window.Quarto = {
 
 <p>One of the basic assumptions we make about the number system <span class="math inline">\(\N\)</span> that underwrites our ability to use mathematical induction is what’s known as the Well-Ordered Axiom.</p>
 <div id="ax-wop-n" class="grouped-theorem grouped-theorem-axiom">
-<p><span class="theorem-title"><strong>Axiom 4.1 (The Well-Ordering Axiom)</strong></span> Let <span class="math inline">\(S\)</span> be any nonempty subset of <span class="math inline">\(\N\)</span>. Then <span class="math inline">\(S\)</span> has a least element.</p>
+<p><span class="theorem-title"><strong>Axiom D.1 (The Well-Ordering Axiom)</strong></span> Let <span class="math inline">\(S\)</span> be any nonempty subset of <span class="math inline">\(\N\)</span>. Then <span class="math inline">\(S\)</span> has a least element.</p>
 </div>
 <p>We treat this as an axiom, which means we assume it without proof. While not true as written for <span class="math inline">\(\Z\)</span>, we can adapt it to integers with an additional assumption.</p>
 <div id="thm-wop-z" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 4.2</strong></span> Let <span class="math inline">\(S\)</span> be any nonempty subset of <span class="math inline">\(\Z\)</span> that is bounded below by an element of <span class="math inline">\(\Z\)</span>. Then <span class="math inline">\(S\)</span> has a least element.</p>
+<p><span class="theorem-title"><strong>Theorem D.2</strong></span> Let <span class="math inline">\(S\)</span> be any nonempty subset of <span class="math inline">\(\Z\)</span> that is bounded below by an element of <span class="math inline">\(\Z\)</span>. Then <span class="math inline">\(S\)</span> has a least element.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Suppose <span class="math inline">\(n\in\Z\)</span> is a lower bound on <span class="math inline">\(S\)</span>. Then define <span class="math display">\[T=\{1-n+s\st s\in S\}\]</span></p>
 <p>Then if <span class="math inline">\(t\in T\)</span>, <span class="math inline">\(t=1-n+s\)</span> for some <span class="math inline">\(s\in S\)</span>, <span class="math display">\[t=1-n+s\geq 1-n+n=1.\]</span></p>
-<p>Thus all elements of <span class="math inline">\(T\)</span> are positive integers, so <span class="math inline">\(T\subseteq\N\)</span>. So by <a href="appendices/wop.html#ax-wop-n">Axiom 4.1</a>, <span class="math inline">\(T\)</span> has a least element <span class="math inline">\(m\)</span>; that is <span class="math inline">\(m\in T\)</span> and <span class="math inline">\(m\leq t\)</span> for all <span class="math inline">\(t\in T\)</span>. Thus <span class="math inline">\(m=1-n+k\)</span> for some <span class="math inline">\(k\in S\)</span>, so <span class="math inline">\(m+n-1=k\in S\)</span>. And if <span class="math inline">\(s\in S,\)</span> then <span class="math inline">\(1-n+s\in T,\)</span> so <span class="math inline">\(m\leq1-n+s,\)</span> and therefore <span class="math inline">\(k=m+n-1\leq s.\)</span> Thus <span class="math inline">\(k\)</span> is the least element of <span class="math inline">\(S.\)</span></p>
+<p>Thus all elements of <span class="math inline">\(T\)</span> are positive integers, so <span class="math inline">\(T\subseteq\N\)</span>. So by <a href="appendices/wop.html#ax-wop-n">Axiom D.1</a>, <span class="math inline">\(T\)</span> has a least element <span class="math inline">\(m\)</span>; that is <span class="math inline">\(m\in T\)</span> and <span class="math inline">\(m\leq t\)</span> for all <span class="math inline">\(t\in T\)</span>. Thus <span class="math inline">\(m=1-n+k\)</span> for some <span class="math inline">\(k\in S\)</span>, so <span class="math inline">\(m+n-1=k\in S\)</span>. And if <span class="math inline">\(s\in S,\)</span> then <span class="math inline">\(1-n+s\in T,\)</span> so <span class="math inline">\(m\leq1-n+s,\)</span> and therefore <span class="math inline">\(k=m+n-1\leq s.\)</span> Thus <span class="math inline">\(k\)</span> is the least element of <span class="math inline">\(S.\)</span></p>
 </div>
 <div id="exr-wop-for-other-number-systems" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 4.3</strong></span> Would <a href="appendices/wop.html#thm-wop-z">Theorem 4.2</a> be true if we replaced <span class="math inline">\(\Z\)</span> with <span class="math inline">\(\Q\)</span>? or <span class="math inline">\(\R\)</span>? Give a proof or counterexample for each.</p>
+<p><span class="theorem-title"><strong>Exercise D.3</strong></span> Would <a href="appendices/wop.html#thm-wop-z">Theorem D.2</a> be true if we replaced <span class="math inline">\(\Z\)</span> with <span class="math inline">\(\Q\)</span>? or <span class="math inline">\(\R\)</span>? Give a proof or counterexample for each.</p>
 </div>
 
 

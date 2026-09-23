@@ -239,6 +239,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Assorted Topics (Provisional)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -247,13 +264,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -367,9 +384,9 @@ window.Quarto = {
 <div id="exr-infs-exist-2" class="grouped-theorem grouped-theorem-exercise">
 <p><span class="theorem-title"><strong>Exercise 4.4</strong></span> Try proving <a href="axioms-of-r/lub-props.html#thm-infs-exist">Theorem 4.3</a> another way. Consider the set <span class="math inline">\(U=\{x\st -x\in S\},\)</span> and show that <span class="math inline">\(-\sup U=\inf S.\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </div>
-<p>One more concept we’ll need in order to get started on this section is the idea of taking an infinite union or intersection, which will be important for understanding the Nested Interval Theorem.</p>
+<p>One more concept we’ll need in order to get started on this section is the idea of taking an infinite union or intersection, which will be important for understanding the Nested Interval Theorem. If you are rusty on unions and intersections, see <a href="../appendices/union-and-intersection.html#sec-union-intersection" class="quarto-xref"><span>Section B.2</span></a>.</p>
 <div id="exr-intersection-practice" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 4.5</strong></span> For each example below, (i) draw the sequence of intervals on a number line, (ii) decide whether the sequence of intervals satisfies the conditions of <a href="axioms-of-r/lub-props.html#thm-NIT">Theorem 4.6</a> below, and (iii) identify the intersection <span class="math inline">\(\displaystyle \bigcap_{i=1}^\infty [a_i,b_i].\)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><span class="theorem-title"><strong>Exercise 4.5</strong></span> For each example below, (i) draw the sequence of intervals on a number line, (ii) decide whether the sequence of intervals satisfies the conditions of <a href="axioms-of-r/lub-props.html#thm-NIT">Theorem 4.6</a> below, and (iii) identify the intersection <span class="math inline">\(\displaystyle \bigcap_{i=1}^\infty [a_i,b_i].\)</span></p>
 <ol type="1">
 <li><span class="math inline">\([a_i,b_i]=\left[-\frac{1}{i},\frac{1}{i}\right]\)</span> for <span class="math inline">\(i\in\N\)</span></li>
 <li><span class="math inline">\([a_i,b_i]=[-i,i]\)</span> for <span class="math inline">\(i\in\N\)</span></li>
@@ -383,13 +400,13 @@ window.Quarto = {
 <p>As a thought experiment, consider the following collection of intervals:</p>
 <p><span class="math display">\[
 \begin{aligned}
-  U_1&amp;=&amp;[3,4]\\
-  U_2&amp;=&amp;[3.1,3.2]\\
-  U_3&amp;=&amp;[3.14,3.15]\\
-  U_4&amp;=&amp;[3.141,3.142]\\
-  U_5&amp;=&amp;[3.1415,3.1416]\\
-  U_6&amp;=&amp;[3.14159,3.14160]\\
-  &amp;\vdots&amp;
+  U_1&amp;=[3,4]\\
+  U_2&amp;=[3.1,3.2]\\
+  U_3&amp;=[3.14,3.15]\\
+  U_4&amp;=[3.141,3.142]\\
+  U_5&amp;=[3.1415,3.1416]\\
+  U_6&amp;=[3.14159,3.14160]\\
+  &amp;\vdots
 \end{aligned}
 \]</span></p>
 <p>Specifically, <span class="math inline">\(U_i\)</span> is the closed interval between <span class="math inline">\(\pi\)</span> rounded up and down to <span class="math inline">\(i\)</span> significant figures.</p>
@@ -436,7 +453,7 @@ Desmos Applet&nbsp;4.1: A sequence of nested closed intervals.
 </figure>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em> (Setup Only). </span>Assuming the hypotheses of the theorem, we note that since <span class="math inline">\(U_{i+1}\subseteq U_i,\)</span> we have for all <span class="math inline">\(i\in\N\)</span> <span class="math display">\[a_i\leq a_{i+1} \leq b_{i+1}\leq b_i.\]</span></p>
-<p>In fact, from this, <span class="explain explained-highlight" style=" --explain-bg: #fff3bf; --explain-border: #b7791f;" tabindex="0" aria-describedby="explain-popover-1">one can prove that <span class="math inline">\(a_i\leq b_j\)</span> for any <span class="math inline">\(i,j\in\N.\)</span><span id="explain-popover-1" class="explain-popover">Here’s the proof. If <span class="math inline">\(i\leq j,\)</span> then we have <span class="math inline">\(a_i\leq a_{i+1}\leq\cdots\leq a_j\leq b_j,\)</span> and if <span class="math inline">\(i\geq j,\)</span> we have <span class="math inline">\(a_i\leq b_i\leq b_{i-1}\leq \cdots\leq b_j.\)</span></span></span></p>
+<p>In fact, from this, <span class="explain explained-highlight" tabindex="0" aria-describedby="explain-popover-1" style=" --explain-bg: #fff3bf; --explain-border: #b7791f;">one can prove that <span class="math inline">\(a_i\leq b_j\)</span> for any <span class="math inline">\(i,j\in\N.\)</span><span id="explain-popover-1" class="explain-popover">Here’s the proof. If <span class="math inline">\(i\leq j,\)</span> then we have <span class="math inline">\(a_i\leq a_{i+1}\leq\cdots\leq a_j\leq b_j,\)</span> and if <span class="math inline">\(i\geq j,\)</span> we have <span class="math inline">\(a_i\leq b_i\leq b_{i-1}\leq \cdots\leq b_j.\)</span></span></span></p>
 <p>…</p>
 </div>
 <div id="exr-finish-nit-proof" class="grouped-theorem grouped-theorem-exercise">
@@ -516,7 +533,7 @@ Desmos Applet&nbsp;4.2: A visualization of how the intervals <span class="math i
 <p>However, by our assumption, every real number is equal to <span class="math inline">\(f(n)\)</span> for some <span class="math inline">\(n\in\N,\)</span> so no real numbers are in the intersection, contradicting the Nested Interval Theorem.</p>
 </div>
 <p>We mention here that the proof above actually shows that <span class="math inline">\([0,1]\)</span> is uncountable, and can be adapted to prove the following.</p>
-<div id="thm-intervals-uncountable" class="grouped-theorem grouped-theorem-theorem">
+<div id="thm-intervals-uncountable" class="lub-thread grouped-theorem grouped-theorem-theorem">
 <p><span class="theorem-title"><strong>Theorem 4.9</strong></span> Any interval <span class="math inline">\([a,b]\subseteq\R\)</span> with <span class="math inline">\(a&lt;b\)</span> is uncountable.</p>
 </div>
 </section>
@@ -535,7 +552,6 @@ Desmos Applet&nbsp;4.2: A visualization of how the intervals <span class="math i
 <hr>
 <ol>
 <li id="fn1"><p>We will use this kind of technique frequently to obtain the second two cases of a theorem we want to prove (e.g.&nbsp;one for increasing functions and one for decreasing function, or one for sups and one for infs).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>If you are rusty on unions and intersections, see <a href="../appendices/union-and-intersection.html#sec-union-intersection" class="quarto-xref"><span>Section B.2</span></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

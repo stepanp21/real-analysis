@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Open Sets – An Illustrated Course in Real Analysis</title>
+<title>10&nbsp; Series Basics – An Illustrated Course in Real Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../metric-spaces/open-set-props.html" rel="next">
-<link href="../metric-spaces/r-as-a-metric-space.html" rel="prev">
+<link href="../references.html" rel="next">
+<link href="../metric-spaces/boundedness.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -132,7 +132,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../metric-spaces/metric-space-axioms.html">Metric Spaces</a></li><li class="breadcrumb-item"><a href="../metric-spaces/open-balls.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Open Sets</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sequences/series.html">Assorted Topics (Provisional)</a></li><li class="breadcrumb-item"><a href="../sequences/series.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Series Basics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -221,7 +221,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../metric-spaces/open-balls.html" class="sidebar-item-text sidebar-link active">
+  <a href="../metric-spaces/open-balls.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Open Sets</span></span></a>
   </div>
 </li>
@@ -250,7 +250,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
+  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
   </div>
 </li>
@@ -314,19 +314,19 @@ window.Quarto = {
    
   <ul>
   <li><a href="#highlights" id="toc-highlights" class="nav-link active" data-scroll-target="#highlights">Highlights</a></li>
-  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">7.1</span> Preparation</a></li>
-  <li><a href="#open-balls" id="toc-open-balls" class="nav-link" data-scroll-target="#open-balls"><span class="header-section-number">7.2</span> Open Balls</a></li>
-  <li><a href="#open-sets" id="toc-open-sets" class="nav-link" data-scroll-target="#open-sets"><span class="header-section-number">7.3</span> Open Sets</a></li>
-  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review Questions</a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">10.1</span> Preparation</a></li>
+  <li><a href="#working-with-partial-sums" id="toc-working-with-partial-sums" class="nav-link" data-scroll-target="#working-with-partial-sums"><span class="header-section-number">10.2</span> Working with Partial Sums</a></li>
+  <li><a href="#series-with-non-negative-terms" id="toc-series-with-non-negative-terms" class="nav-link" data-scroll-target="#series-with-non-negative-terms"><span class="header-section-number">10.3</span> Series With Non-Negative Terms</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">10.4</span> Review Questions</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../metric-spaces/metric-space-axioms.html">Metric Spaces</a></li><li class="breadcrumb-item"><a href="../metric-spaces/open-balls.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Open Sets</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sequences/series.html">Assorted Topics (Provisional)</a></li><li class="breadcrumb-item"><a href="../sequences/series.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Series Basics</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-open-balls" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Open Sets</span></span></h1>
+<h1 class="title"><span id="sec-series" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Series Basics</span></span></h1>
 </div>
 
 
@@ -346,137 +346,219 @@ window.Quarto = {
 <section id="highlights" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="highlights">Highlights</h2>
 <ul>
-<li>Definition of an open ball and open set</li>
-<li>Important equivalent condition to being an open set</li>
-<li>Examples of proving and applying openness</li>
+<li>Definitions series, partial sums, and series convergence</li>
+<li>Examples of series converging and diverging</li>
+<li>Special properties of series with all non-negative terms.</li>
 </ul>
 </section>
-<section id="preparation" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">7.1</span> Preparation</h2>
-<p>An important tool for describing “closeness” precisely in calculus is the open ball.</p>
-<div id="def-open-ball" class="grouped-theorem grouped-theorem-definition">
-<p><span class="theorem-title"><strong>Definition 7.1</strong></span> Suppose <span class="math inline">\(X\)</span> is a metric space with distance function <span class="math inline">\(d\)</span>. Let <span class="math inline">\(a\in X\)</span> and <span class="math inline">\(r&gt;0\)</span>. Then the <strong>open ball</strong> centered at<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span class="math inline">\(a\)</span> of radius <span class="math inline">\(r\)</span> is defined to be <span class="math display">\[\bee_r(a)=\{x\in X\st d(a,x)&lt;r\}.\]</span></p>
+<section id="preparation" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">10.1</span> Preparation</h2>
+<p>In this section, we build on what we learned about sequences to talk about one of their most important use cases: series. Loosely speaking, we think of a series as an “infinite sum”, and one of the primary questions we seek to address is when a series converges to a finite number and when it doesn’t. Consider for example, the four infinite sums below:</p>
+<p><span id="eq-first-examples"><span class="math display">\[\begin{array}{l}
+1+2+3+4+\cdots \\~\\
+1+(-1)+1+(-1)+\cdots \\~\\
+1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\cdots \\~\\
+%1+\left(-\frac{1}{2}\right)+\frac{1}{4}+\left(-\frac{1}{8}\right)+\cdots
+1+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\cdots
+\end{array} \tag{10.1}\]</span></span></p>
+<p>Some of these might strike you as obviously undefined or obviously convergent, but others may not. In what follows below, we’ll make a precise definition of what we mean by convergent so that we can prove theorems and talk coherently about examples.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Suppose <span class="math inline">\((a_n)\)</span> is a sequence in <span class="math inline">\(\mathbb{R}\)</span>. Then the <strong>series</strong> with terms <span class="math inline">\((a_n)\)</span> is the formal expression</p>
+<p><span class="math display">\[\sum_{i=1}^\infty a_i=a_1+a_2+\cdots\]</span></p>
+<p>By “formal expression” I mean that we are not considering this expression to represent a number; it’s just notation meant to express the <em>idea</em> of an infinite sum. Sometimes we abbreviate the notation as <span class="math inline">\(\sum a_i.\)</span></p>
+<div id="def-partial-sum" class="grouped-theorem grouped-theorem-definition">
+<p><span class="theorem-title"><strong>Definition 10.1 (Partial Sums)</strong></span> The <strong>sequence of partial sums</strong> of the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> is the sequence <span class="math inline">\((s_n)\)</span> defined by <span class="math display">\[ s_n=\sum_{i=1}^n a_i = a_1+\cdots+a_n.\]</span></p>
 </div>
-<p>Other textbooks sometimes call <span class="math inline">\(\bee_r(a)\)</span> an “<span class="math inline">\(r\)</span>-neighborhood” of <span class="math inline">\(a\)</span>.</p>
-<div id="exr-open-balls-sketch" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 7.2</strong></span> Describe and draw pictures of open balls in <span class="math inline">\(\R^3\)</span>, <span class="math inline">\(\R^2\)</span>, and <span class="math inline">\(\R\)</span>.</p>
+<p>This means that <span class="math display">\[\begin{array}{ccl}
+s_1&amp;=&amp;a_1\\
+s_2&amp;=&amp;a_1+a_2\\
+s_3&amp;=&amp;a_1+a+2+a_3\\
+&amp;\vdots&amp;
+\end{array}\]</span></p>
+<p>We now define convergence of series in terms of the partial sums.</p>
+<div id="def-series-convergence" class="grouped-theorem grouped-theorem-definition">
+<p><span class="theorem-title"><strong>Definition 10.2 (Series Convergence)</strong></span> The series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> is said to <strong>converge</strong> or <strong>diverge</strong> when its sequence of partial sums <span class="math inline">\((s_n)\)</span> does. If <span class="math inline">\(s_n\rightarrow S,\)</span> we call <span class="math inline">\(S\)</span> the <strong>sum</strong> of the series.</p>
 </div>
-<div id="exr-open-balls-in-r" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 7.3</strong></span> Answer the following questions about open balls in <span class="math inline">\(\R\)</span>.</p>
-<ol type="1">
-<li>Write <span class="math inline">\(\bee_r(c)\)</span> in interval notation.</li>
-<li>If <span class="math inline">\(a,b\in\R\)</span> with <span class="math inline">\(a&lt;b\)</span>, is the interval <span class="math inline">\((a,b)\)</span> an open ball? If so, what is its center and radius?</li>
-<li>Is <span class="math inline">\((0,\infty)\)</span> an open ball? If so, what is its center and radius?</li>
-</ol>
-</div>
-<p>The following exercise is meant to prepare you for the definition of an open set.</p>
-<div id="exr-neighborhood-within-subset-tf" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 7.4</strong></span> Say whether each statement below is true or false and give a brief justification.</p>
-<ol type="1">
-<li>“If <span class="math inline">\(S=(1,\infty)\)</span>, for each point <span class="math inline">\(a\in S\)</span> there is an open ball centered at <span class="math inline">\(a\)</span> that lies entirely inside of <span class="math inline">\(S\)</span>.”</li>
-<li>“If <span class="math inline">\(S=[1,\infty)\)</span>, for each point <span class="math inline">\(a\in S\)</span> there is an open ball centered at <span class="math inline">\(a\)</span> that lies entirely inside of <span class="math inline">\(S\)</span>.”</li>
-</ol>
-</div>
-</section>
-<section id="open-balls" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="open-balls"><span class="header-section-number">7.2</span> Open Balls</h2>
-<p>When we apply the definition of an open ball to <span class="math inline">\(\R\)</span>, we realize that it’s an object we’ve dealt with before; in particular <a href="metric-spaces/r-as-a-metric-space.html#thm-open-ball-in-r">Theorem 6.1</a> was really a statement about open balls on the real number line.</p>
-<p>Putting <a href="metric-spaces/r-as-a-metric-space.html#thm-open-ball-in-r">Theorem 6.1</a> together with the language of open balls, we now have many equivalent ways of saying the same thing:</p>
-<div id="fig-open-ball-tfae" class="tfae quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-open-ball-tfae-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="open-ball-equivalence-r.png" class="img-fluid figure-img" width="400">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-open-ball-tfae-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.1: Equivalent formulations for being an open ball in the metric space <span class="math inline">\(\R\)</span>.
-</figcaption>
-</figure>
-</div>
-<p>The equivalent conditions of <a href="#fig-open-ball-tfae" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> in <span class="math inline">\(\R\)</span> will show up every day for the rest of the course. The more seamlessly you can translate among these different ways of saying the same thing, the easier the course will be.</p>
-<blockquote class="blockquote">
-<p>Becoming fluent in <a href="#fig-open-ball-tfae" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> is the cheat code for reading analysis proofs.</p>
-</blockquote>
-<p>While using the word “ball” makes intuitive sense in <span class="math inline">\(\R^3\)</span> (and sort of in <span class="math inline">\(\R^2\)</span>), it may feel a little weird in <span class="math inline">\(\R\)</span>; we’ll just need to get used to that. And it gets even stranger when we think about other metric spaces.</p>
-<div id="exr-open-balls-in-trivial-ms" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 7.5</strong></span> Let <span class="math inline">\(X\)</span> be a set with the trivial metric (defined in <a href="metric-spaces/metric-space-axioms.html#exr-trivial-metric">Exercise 5.3</a>). Let <span class="math inline">\(a\in X\)</span>, and describe the following.</p>
-<ol type="1">
-<li><span class="math inline">\(\bee_2(a)\)</span></li>
-<li><span class="math inline">\(\bee_1(a)\)</span></li>
-<li><span class="math inline">\(\bee_{1/2}(a)\)</span></li>
-</ol>
-</div>
-<div id="exr-open-balls-in-taxicab" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 7.6</strong></span> Consider <span class="math inline">\(\R^2\)</span> with the “taxicab metric” <span class="math inline">\(d_1\)</span> defined in <a href="metric-spaces/metric-space-axioms.html#exr-taxicab">Exercise 5.11</a>. Sketch the open ball of radius 2 centered at the origin.</p>
-</div>
-<div id="exr-open-balls-in-subspace" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 7.7</strong></span> Consider <span class="math inline">\(S=\{(x,y)\st y\geq0\}\)</span> as a subspace of <span class="math inline">\(\R^2\)</span>. Sketch <span class="math inline">\(\bee_2(0,1)\)</span> in the metric space <span class="math inline">\(S\)</span>.</p>
-</div>
-<div id="exr-hausdorff" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 7.8</strong></span> Suppose <span class="math inline">\(X\)</span> is a metric space with distance function <span class="math inline">\(d\)</span>. Let <span class="math inline">\(a,b\)</span> be distinct points in <span class="math inline">\(X\)</span>. Prove that there exists <span class="math inline">\(\epsilon&gt;0\)</span> such that <span class="math inline">\(\bee_\epsilon(a)\)</span> and <span class="math inline">\(\bee_\epsilon(b)\)</span> are disjoint.</p>
+<p>In the case that <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> has sum <span class="math inline">\(S\)</span>, we sometimes abuse notation slightly and use the expression <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> to represent the number <span class="math inline">\(S\)</span>.</p>
+<p>As an example of the vocabulary in the action, the series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{2}{3^i}\)</span></p>
+<ul>
+<li>has <em>terms</em> given by the sequence <span class="math inline">\(\left(\frac{2}{3^i}\right)\)</span> or <span class="math inline">\(\frac{2}{3},\frac{2}{9},\frac{2}{27},\frac{2}{81},\cdots\)</span></li>
+<li>has <em>partial sums</em> <span class="math inline">\(\frac{2}{3},\frac{2}{3}+\frac{2}{9},\frac{2}{3}+\frac{2}{9}+\frac{2}{27},\ldots.\)</span> These simplifies to <span class="math inline">\(\frac{2}{3},\frac{8}{9},\frac{26}{27},\ldots\)</span> or <span class="math inline">\(\left(\frac{3^i-1}{3^i}\right).\)</span></li>
+<li><em>converges</em> with a <em>sum</em> of <span class="math inline">\(1.\)</span></li>
+</ul>
+<div id="exr-partial-sum-practice" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 10.3</strong></span> Write each of the four infinite sums in <a href="#eq-first-examples" class="quarto-xref">Equation&nbsp;<span>10.1</span></a> using series notation. Then write out the first 6 partial sums for each. Are there any you can tell right away converge or diverge?</p>
 </div>
 </section>
-<section id="open-sets" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="open-sets"><span class="header-section-number">7.3</span> Open Sets</h2>
-<p>Now we transition from thinking about open balls to the more general concept of an “open set”.</p>
-<div id="def-open-set" class="grouped-theorem grouped-theorem-definition">
-<p><span class="theorem-title"><strong>Definition 7.9</strong></span> Let <span class="math inline">\(X\)</span> be a metric space with distance function <span class="math inline">\(d\)</span>. A subset <span class="math inline">\(S\subseteq X\)</span> is called <em>open</em> if every point <span class="math inline">\(a\in S\)</span> has an open ball around it that lies entirely within <span class="math inline">\(S\)</span>. That is, for all <span class="math inline">\(a\in S\)</span>, there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math inline">\(\bee_r(a)\subseteq S\)</span>.</p>
+<section id="working-with-partial-sums" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="working-with-partial-sums"><span class="header-section-number">10.2</span> Working with Partial Sums</h2>
+<p>We start with an important class of series called <em>geometric series</em>.</p>
+<div id="exm-geometric" class="grouped-theorem grouped-theorem-example">
+<p><span class="theorem-title"><strong>Example 10.4 (Geometric Series)</strong></span> For <span class="math inline">\(a\neq 0\)</span> and any <span class="math inline">\(r\in\mathbb{R}\)</span>, a series of the form <span class="math display">\[\sum_{i=0}^\infty ar^n\]</span> is called a <strong>geometric series</strong>. This series converges to <span class="math inline">\(\frac{a}{1-r}\)</span> when <span class="math inline">\(|r|&lt;1\)</span> and diverges otherwise.</p>
 </div>
-<figure class="quarto-float quarto-float-des figure">
-<div aria-describedby="des-open-set-def-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
-<div id="calculator-open-set-def" class="calculator-container" style="width: 100%; height: 400px;">
-
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>To determine whether the series converges, we analyze its partial sums in cases.</p>
+<p>If <span class="math inline">\(|r|\neq1\)</span>, we can use some algebraic tricks to simplify the expression for the partial sum <span class="math inline">\(s_n\)</span>: <span class="math display">\[\begin{array}{rcl}
+  s_n&amp;=&amp;a+ar+ar^2+\cdots+ar^n\\
+  &amp;=&amp;a(1+r+r^2+\cdots+r^n)\\
+  &amp;=&amp;\displaystyle\frac{a(1-r^{n+1})}{1-r}
+\end{array}\]</span> If <span class="math inline">\(|r|&lt;1\)</span>, then <span class="math inline">\(r^{n+1}\rightarrow0\)</span>, so using what we know about sequences and arithmetic, we can say <span class="math inline">\(s_n\rightarrow\frac{a}{1-r}\)</span>.</p>
+<p>If <span class="math inline">\(|r|&gt;1\)</span>, then <span class="math inline">\((r^{n+1})\)</span> diverges. So if, by way of contradiction, we assume the partial sums <span class="math inline">\((s_n)\)</span> did converge to some value <span class="math inline">\(S\)</span>, then we could say that the sequence <span class="math inline">\(\left(1-s_n\frac{1-r}{a}\right)\)</span> converges to <span class="math inline">\(1-L\frac{1-r}{a}.\)</span> However <span class="math inline">\(1-s_n\frac{1-r}{a}=r^{n+1},\)</span> which we already said diverges.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>We leave the cases where <span class="math inline">\(r=\pm1\)</span> to the reader in <a href="sequences/series.html#exr-geometric-with-r-pm1">Exercise 10.5</a> below.</p>
 </div>
-<script>
-  var elt = document.getElementById('calculator-open-set-def');
-  var options = {
-    lockViewport: true,
-    expressions: false,
-    keypad: false
-  }
-  var calculator = Desmos.GraphingCalculator(elt,options);
-  
-
-    // Load the JSON state from file and apply it
-    fetch('open-set-def.json')
-      .then(response => response.json())
-      .then(payload => {
-        if (payload && payload.product === 'graphing-3d') {
-          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
-          return;
-        }
-        const state = payload && payload.state ? payload.state : payload;
-        calculator.setState(state);
-      })
-      .catch(error => {
-        console.error('Error loading Desmos state:', error);
-      });
-</script>
+<div id="exr-geometric-with-r-pm1" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 10.5</strong></span> Finish the proof of <a href="sequences/series.html#exm-geometric">Example 10.4</a> by proving that the geometric series diverges when <span class="math inline">\(r=1\)</span> and when <span class="math inline">\(r=-1.\)</span> (Hint: what are the partial sums in each of these cases?)</p>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-des" id="des-open-set-def-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Desmos Applet&nbsp;7.1: Wherever you move the point <span class="math inline">\(a\)</span> inside <span class="math inline">\(S\)</span>, it is possible to draw an open ball around <span class="math inline">\(a\)</span> that stays entirely within <span class="math inline">\(S\)</span> (although the radius will need to change). This means <span class="math inline">\(S\)</span> is open.
-</figcaption>
-</figure>
-<p>Intuitively, an open set <span class="math inline">\(S\)</span> cannot include any of its boundary points because an open ball around a boundary point will contain points outside of <span class="math inline">\(S\)</span>.</p>
-<div id="exr-empty-and-whole-ms-open" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 7.10</strong></span> Let <span class="math inline">\(X\)</span> be a metric space with distance function <span class="math inline">\(d\)</span>. Prove that <span class="math inline">\(X\)</span> and <span class="math inline">\(\varnothing\)</span> are open subsets of <span class="math inline">\(X\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div id="exr-open-balls-are-open" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 7.11</strong></span> Prove that open balls are open.</p>
+<div class="callout-title-container flex-fill">
+Note
 </div>
-<div id="exr-complement-of-point-is-open" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 7.12</strong></span> Suppose <span class="math inline">\(X\)</span> is a metric space and let <span class="math inline">\(a\in X\)</span>. Prove that <span class="math inline">\(\{a\}^\cee\)</span> is open.</p>
 </div>
-<div id="exr-open-infinite-interval-is-open" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 7.13</strong></span> Prove that the interval <span class="math inline">\((-\infty,3)\)</span> is open in <span class="math inline">\(\R\)</span>.</p>
+<div class="callout-body-container callout-body">
+<p>In the section on sequences, we insisted that the first term in our sequence corresponded to an index of 1. For series, it is often convenient to start with an index 0 (as in <a href="sequences/series.html#exm-geometric">Example 10.4</a>) or something else. And now that we are more comfortable with the concept of a sequence, there is less risk of confusion.</p>
+</div>
+</div>
+<div id="exr-telescoping-example" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 10.6 (A “Telescoping” Series)</strong></span> Show that the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{n(n+1)}\)</span> converges. It will be helfpul to note that <span class="math display">\[\frac{1}{n(n+1)}=\frac{1}{n}-\frac{1}{n+1}\]</span> and to write out the first several partial sums.</p>
+</div>
+<p>Both <a href="sequences/series.html#exm-geometric">Example 10.4</a> and <a href="sequences/series.html#exr-telescoping-example">Exercise 10.6</a> are somewhat unusual in that in both cases we can write down an explicit formula for the partial sum sequence. More often an explicit formula is unavailable and we need to rely on other means for determining and proving the con/divergence of a series.</p>
+<div id="thm-divergence-test" class="grouped-theorem grouped-theorem-theorem">
+<p><span class="theorem-title"><strong>Theorem 10.7 (Divergence Test)</strong></span> If a series converges, then its terms converge to <span class="math inline">\(0\)</span>.</p>
+</div>
+<div id="exr-divergence-test-proof" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 10.8</strong></span> &nbsp;</p>
+<ol type="1">
+<li>State the contrapositive of the Divergence Test.</li>
+<li>What (if anything) does the Divergence Test say about the con/divergence of the series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{n}{n+1}?\)</span></li>
+<li>What (if anything) does the Divergence Test say about the con/divergence series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{1}{n^2}?\)</span></li>
+<li>Prove the Divergence Test.</li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint for part 4 of <a href="sequences/series.html#exr-divergence-test-proof">Exercise 10.8</a>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Note that <span class="math inline">\(a_{n+1}=s_{n+1}-s_n.\)</span></p>
+</div>
+</div>
+</div>
+<div id="thm-series-order-arithmetic" class="grouped-theorem grouped-theorem-theorem">
+<p><span class="theorem-title"><strong>Theorem 10.9</strong></span> Suppose <span class="math inline">\(\sum a_n=S\)</span> and <span class="math inline">\(\sum b_n=T\)</span> are convergent series and that <span class="math inline">\(k\in\mathbb{R}.\)</span> Then</p>
+<ol type="1">
+<li><span class="math inline">\(\sum (a_n+b_n) = S+T\)</span></li>
+<li><span class="math inline">\(\sum (ka_n)=kS\)</span></li>
+<li>If <span class="math inline">\(a_n\leq b_n\)</span> for all <span class="math inline">\(n\)</span>, then <span class="math inline">\(S\leq T\)</span>.</li>
+</ol>
+</div>
+<p>Part of what parts 1 and 2 in <a href="sequences/series.html#thm-series-order-arithmetic">Theorem 10.9</a> is claiming is that these two series do in fact converge.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When an equation or proposition does not depend on the starting index of a series, we sometimes just write <span class="math inline">\(\sum a_n\)</span> as shorthand for <span class="math inline">\(\sum_{i=k}^\infty a_n\)</span> for some <span class="math inline">\(k\)</span>.</p>
+</div>
+</div>
+<div id="exr-series-order-arithmetic-proof" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 10.10</strong></span> Prove <a href="sequences/series.html#thm-series-order-arithmetic">Theorem 10.9</a>.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Leverage what we already know about sequence convergence to do these proofs!</p>
+</div>
+</div>
 </div>
 </section>
-<section id="review-questions" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="review-questions">Review Questions</h2>
+<section id="series-with-non-negative-terms" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="series-with-non-negative-terms"><span class="header-section-number">10.3</span> Series With Non-Negative Terms</h2>
+<p>Series with all non-negative terms have some special properties that we can quickly prove using what we know about sequences.</p>
+<div id="exr-positive-terms" class="lub-thread grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 10.11</strong></span> Suppose <span class="math inline">\(\displaystyle \sum_{i=1}^\infty a_i\)</span> is a series all of whose terms are non-negative. Prove the following.</p>
 <ol type="1">
-<li>What is the definition of an open ball in a metric space?</li>
-<li>What is the definition of an open set? Can you draw a picture representing this definition?</li>
-<li>What are the open balls in <span class="math inline">\(\R\)</span>?</li>
+<li>The sequence of partial sums is increasing.</li>
+<li>The series converges if and only if the sequence of partial sums is bounded.</li>
+<li>If the series diverges, then the sequence of partial sums limits to <span class="math inline">\(+\infty\)</span>.</li>
+</ol>
+</div>
+<p>The upshot of <a href="sequences/series.html#exr-positive-terms">Exercise 10.11</a> is that we can determine the con/divergence of a series just by knowing whether its sequence of partial sums is bounded or not. This can be very helpful for proving</p>
+<div id="exm-basel-series" class="grouped-theorem grouped-theorem-example">
+<p><span class="theorem-title"><strong>Example 10.12</strong></span> The series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{n^2}\)</span> converges.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\((s_n)\)</span> be the sequence of partials sums for <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{n^2}\)</span>.</p>
+<p>As we say in <a href="sequences/series.html#exr-telescoping-example">Exercise 10.6</a>, the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{n(n+1)}\)</span> converges. Let <span class="math inline">\((t_n)\)</span> be the sequence of partial sums for this series.</p>
+<p>Comparing the partials sums for these two series, we have <span class="math display">\[\begin{array}{ccccccc}
+s_n&amp;=&amp;1+&amp;\frac{1}{2\cdot2}+&amp;\frac{1}{3\cdot3}+&amp;\cdots&amp;+\frac{1}{n^2}\\
+t_n&amp;=&amp;&amp;\frac{1}{1\cdot2}+&amp;\frac{1}{2\cdot3}+&amp;\cdots&amp;+\frac{1}{n(n+1)}
+\end{array}\]</span></p>
+<p>Comparing term by term, we can see that <span class="math inline">\(1+t_n\geq s_n\)</span> for all <span class="math inline">\(n\)</span>. Since <span class="math inline">\((t_n)\)</span> has all positive terms and converges to some number <span class="math inline">\(T\)</span>, we can use part 2 of <a href="sequences/series.html#exr-positive-terms">Exercise 10.11</a> to say that that <span class="math inline">\((t_n)\)</span> and therefore <span class="math inline">\((s_n)\)</span> is bounded above. Thus, applying part 2 of <a href="sequences/series.html#exr-positive-terms">Exercise 10.11</a> again, we can say that <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{n^2}\)</span> converges.</p>
+</div>
+<p>Note that the above proof does not tell us what the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{n^2}\)</span> converges <em>to</em>. This is often the case for such proofs.</p>
+<p>The following theorem extends generalizes the logic of the proof of <a href="sequences/series.html#exm-basel-series">Example 10.12</a>.</p>
+<div id="thm-comparison-test" class="lub-thread grouped-theorem grouped-theorem-theorem">
+<p><span class="theorem-title"><strong>Theorem 10.13 (Comparison Test)</strong></span> Suppose <span class="math inline">\(\sum a_n\)</span> and <span class="math inline">\(\sum b_n\)</span> are series with all non-negative terms such that <span class="math inline">\(a_n\leq b_n\)</span> for all <span class="math inline">\(n\)</span>.</p>
+<ol type="1">
+<li>If <span class="math inline">\(\sum b_n\)</span> converges, then <span class="math inline">\(\sum a_n\)</span> converges.</li>
+<li>If <span class="math inline">\(\sum a_n\)</span> diverges, then <span class="math inline">\(\sum b_n\)</span> diverges.</li>
+</ol>
+</div>
+<div id="exm-harmonic-series" class="grouped-theorem grouped-theorem-example">
+<p><span class="theorem-title"><strong>Example 10.14 (Harmonic Series)</strong></span> The <em>harmonic series</em> <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{1}{n}\)</span> diverges.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Call the terms of this series <span class="math inline">\(c_n=\frac{1}{n}\)</span> and the partial sums <span class="math inline">\(s_n\)</span>. Note that <span class="math inline">\(c_n\rightarrow0\)</span>, so the Divergence Test cannot be used to prove divergence.</p>
+<p>Consider another series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty b_n\)</span> where the terms <span class="math inline">\(b_n\)</span> are defined by <span class="math display">\[\begin{array}{rcl}
+  b_1&amp;=&amp;1\\
+  b_2&amp;=&amp;\frac{1}{2}\\
+  b_3=b_4&amp;=&amp;\frac{1}{4}\\
+  b_5=\cdots=b_8&amp;=&amp;\frac{1}{8}\\
+  &amp;\vdots&amp;\\
+  b_{2^{n-1}+1}=\cdots=b_{2^n} &amp; = &amp; \frac{1}{2^n}\\
+  &amp;\vdots&amp;
+\end{array}\]</span></p>
+<p>Note consider the series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty b_n\)</span>. Calling the partial sums <span class="math inline">\(t_n\)</span>, we can consider the subsequence <span class="math inline">\(t_{2^n}\)</span>: <span class="math display">\[\begin{array}{rcll}
+  t_{2^1} &amp;=&amp; 1+\frac{1}{2}&amp;=\frac{3}{2}\\
+  t_{2^2-1} &amp;=&amp; 1+\frac{1}{2}+2\cdot\frac{1}{4}&amp;=\frac{4}{2}\\
+  t_{2^2-1} &amp;=&amp; 1+\frac{1}{2}+2\cdot\frac{1}{4}+4\cdot\frac{1}{8}&amp;=\frac{5}{2}\\
+  &amp;\vdots&amp;
+\end{array}\]</span> Thus <span class="math inline">\(t_{2^n}=\frac{n+2}{2}\)</span>, so <span class="math inline">\((t_n)\)</span> has a divergent subsequence and hence <span class="math inline">\(\displaystyle \sum_{i=1}^\infty b_n\)</span> diverges. Therefore since <span class="math inline">\(c_n\geq b_n\)</span> for all <span class="math inline">\(n\)</span> (and both series have all non-negative terms) <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{1}{n}\)</span> diverges as well by the Comparison Test.</p>
+</div>
+<div id="exr-comp-test-apply" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 10.15</strong></span> Prove <a href="sequences/series.html#thm-comparison-test">Theorem 10.13</a>.</p>
+</div>
+</section>
+<section id="review-questions" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">10.4</span> Review Questions</h2>
+<ol type="1">
+<li>How is series convergence defined?</li>
+<li>In basically all of the series convergence proofs from this chapter, the first step is rewriting the statement as a statement about the converge of what <em>sequence</em>?</li>
+<li>What are some special properties of series with all non-negative terms?</li>
 </ol>
 
 
@@ -484,7 +566,8 @@ Desmos Applet&nbsp;7.1: Wherever you move the point <span class="math inline">\(
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Sometimes we also say “around <span class="math inline">\(a\)</span>”.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>There are actually several theories of convergent series which are useful in different contexts. We’ll present the most standard version here.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>I am bending over backwards here to make precise the intuition that “Since <span class="math inline">\((r^{n+1})\)</span> diverges, so must an sequence involving it”. Unfortunately, that reasoning doesn’t always work—think about <span class="math inline">\((\sqrt{n+1} - \sqrt{n})\)</span> which converges despite being the sum of two divergent sequences—so a proof of the style shown here is appropriate.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -890,13 +973,13 @@ Desmos Applet&nbsp;7.1: Wherever you move the point <span class="math inline">\(
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../metric-spaces/r-as-a-metric-space.html" class="pagination-link" aria-label="$\mathbb{R}$ as a Metric Space">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="math inline">\(\mathbb{R}\)</span> as a Metric Space</span></span>
+      <a href="../metric-spaces/boundedness.html" class="pagination-link" aria-label="Boundedness">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Boundedness</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../metric-spaces/open-set-props.html" class="pagination-link" aria-label="Properties of Open Sets">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Properties of Open Sets</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

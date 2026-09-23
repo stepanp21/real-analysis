@@ -239,6 +239,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Assorted Topics (Provisional)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -247,13 +264,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -490,7 +507,7 @@ Desmos Applet&nbsp;5.2: Try to make the blue function as close as possible to th
 <p><span id="eq-rn-distance"><span class="math display">\[
 d((a_1,\ldots,a_n),(b_1,\ldots,b_n))=\sqrt{(b_1-a_1)^2+\cdots+(b_n-a_n)^2}.
 \tag{5.1}\]</span></span></p>
-<p>The proofs that this distance function satisfies Positivity, Positive-Definiteness, and Symmetry are straightforward generalizations of what you did in <a href="metric-spaces/metric-space-axioms.html#exr-distance-in-r2">Exercise 5.2</a>. The proof that the standard distance function satisfies the Triangle Inequality is much more involved, and we defer it to <a href="appendices/cauchy-schwartz.html#thm-cauchy-schwarz">Theorem 3.1</a> in <a href="../appendices/cauchy-schwartz.html" class="quarto-xref"><span>Appendix C</span></a>.</p>
+<p>The proofs that this distance function satisfies Positivity, Positive-Definiteness, and Symmetry are straightforward generalizations of what you did in <a href="metric-spaces/metric-space-axioms.html#exr-distance-in-r2">Exercise 5.2</a>. The proof that the standard distance function satisfies the Triangle Inequality is much more involved, and we defer it to <a href="appendices/cauchy-schwartz.html#thm-cauchy-schwarz">Theorem C.1</a> in <a href="../appendices/cauchy-schwartz.html" class="quarto-xref"><span>Appendix C</span></a>.</p>
 <p>More important to us at the moment, though, is how to define distances in <span class="math inline">\(\R.\)</span> If we apply the formula (<a href="#eq-rn-distance" class="quarto-xref"><span>5.1</span></a>) to the case where <span class="math inline">\(n=1\)</span> we get<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <span class="math inline">\(d(a,b)=\sqrt{(b-a)^2}.\)</span> This ends up simplifying to <span class="math inline">\(|b-a|,\)</span> which hopefully matches your guess in <a href="metric-spaces/metric-space-axioms.html#exr-metric-on-r-guess">Exercise 5.4</a>.</p>
 <p>Thus we define the <strong>standard distance function on <span class="math inline">\(\R\)</span></strong> to be <span class="math display">\[d(a,b)=|b-a|.\]</span></p>
 <blockquote class="blockquote">

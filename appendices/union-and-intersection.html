@@ -239,6 +239,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Assorted Topics (Provisional)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -247,13 +264,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
@@ -327,7 +344,7 @@ window.Quarto = {
 <p>In set theory, we often need to think about not just one set, but a whole <em>collection</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of sets.</p>
 <p>Some examples that appear in the text are below.</p>
 <div id="exm-nit-collection" class="grouped-theorem grouped-theorem-example">
-<p><span class="theorem-title"><strong>Example 2.1</strong></span> One distinguishing feature of the real numbers is, intuitively, if you keep zooming in on the number line, you are always zooming in <em>to a number</em>. For example, consider the following collection of intervals:</p>
+<p><span class="theorem-title"><strong>Example B.1</strong></span> One distinguishing feature of the real numbers is, intuitively, if you keep zooming in on the number line, you are always zooming in <em>to a number</em>. For example, consider the following collection of intervals:</p>
 <p><span class="math display">\[\begin{aligned}
   U_1&amp;=&amp;[3,4]\\
   U_2&amp;=&amp;[3.1,3.2]\\
@@ -340,11 +357,11 @@ window.Quarto = {
 <p>If the universe is <span class="math inline">\(\R\)</span>, there is a number that will be in <span class="math inline">\(U_i\)</span> for all <span class="math inline">\(i\)</span>, the number <span class="math inline">\(\pi\)</span>. By contrast, in <span class="math inline">\(\Q\)</span>, there is no number inside all of these sets—we’d be zooming in onto something that isn’t there.</p>
 </div>
 <div id="exm-open-set-union" class="grouped-theorem grouped-theorem-example">
-<p><span class="theorem-title"><strong>Example 2.2</strong></span> In a metric space, an open set <span class="math inline">\(S\)</span> is a union of <em>a collection of</em> open balls.</p>
+<p><span class="theorem-title"><strong>Example B.2</strong></span> In a metric space, an open set <span class="math inline">\(S\)</span> is a union of <em>a collection of</em> open balls.</p>
 <p>Often we think about putting an open ball around every point of <span class="math inline">\(S\)</span>, each with a radius small enough so that the ball is a subset of <span class="math inline">\(S\)</span>.</p>
 </div>
 <div id="exm-bounded" class="grouped-theorem grouped-theorem-example">
-<p><span class="theorem-title"><strong>Example 2.3</strong></span> To say that a subset of a metric space is <em>unbounded</em> means that it does not fit in any open ball. One technique for proving that a set <span class="math inline">\(V\)</span> is unbounded is to pick any point and consider the collection of balls of radii 1,2,3,… around that point and show that <span class="math inline">\(V\)</span> contains a point in the complement of each ball.</p>
+<p><span class="theorem-title"><strong>Example B.3</strong></span> To say that a subset of a metric space is <em>unbounded</em> means that it does not fit in any open ball. One technique for proving that a set <span class="math inline">\(V\)</span> is unbounded is to pick any point and consider the collection of balls of radii 1,2,3,… around that point and show that <span class="math inline">\(V\)</span> contains a point in the complement of each ball.</p>
 </div>
 <p>The examples above show some of the operations we might consider performing when we have a collection of sets—unions, intersections, and complements. We collect some basic facts and notation below.</p>
 <section id="indexing-sets" class="level2" data-number="B.1">
@@ -353,7 +370,7 @@ window.Quarto = {
 <p>More generally, if our sets are indexed by <span class="math inline">\(\Delta\)</span>, we would write <span class="math inline">\(U_\alpha\)</span> for a set in our collection with <span class="math inline">\(\alpha\in\Delta\)</span>, and we would write <span class="math inline">\(\left\{U_\alpha\right\}_{\alpha\in\Delta}\)</span> for the collection.</p>
 <p>When we have finitely many sets, it is typical to call them something like <span class="math inline">\(U_1,U_2,\ldots,U_n\)</span>; the collection would then be the set of sets <span class="math inline">\(\{U_1,U_2,\ldots,U_n\}\)</span>. In this case <span class="math inline">\(\Delta=\{1,2,\ldots,n\}\)</span> is the indexing set since there is one set in our collection for each element of <span class="math inline">\(\Delta\)</span>.</p>
 <p>Often, we want one set for each natural number. In this case, we can use an indexing set of <span class="math inline">\(\Delta=\N\)</span> and we once again call our sets <span class="math inline">\(U_1,U_2,\ldots\)</span>. To indicate the collection of sets, we can write <span class="math inline">\(\left\{U_i\right\}_{i\in\N}\)</span> or more commonly <span class="math inline">\(\left\{U_i\right\}_{i=1}^\infty\)</span>.</p>
-<p>Occasionally we want to put our sets in correspondence with some other set <span class="math inline">\(\Delta\)</span>. In <a href="appendices/union-and-intersection.html#exm-open-set-union">Example 2.2</a>, for example, we wanted one set (one open ball) for each point of <span class="math inline">\(S\)</span>. In this case we would make <span class="math inline">\(\Delta=S\)</span>. Then for each point <span class="math inline">\(x\in S\)</span>, there is a corresponding open ball <span class="math inline">\(B_x\)</span> centered around <span class="math inline">\(x\)</span>. In this case, we would write <span class="math inline">\(\left\{B_x\right\}_{x\in S}\)</span> for the collection.</p>
+<p>Occasionally we want to put our sets in correspondence with some other set <span class="math inline">\(\Delta\)</span>. In <a href="appendices/union-and-intersection.html#exm-open-set-union">Example B.2</a>, for example, we wanted one set (one open ball) for each point of <span class="math inline">\(S\)</span>. In this case we would make <span class="math inline">\(\Delta=S\)</span>. Then for each point <span class="math inline">\(x\in S\)</span>, there is a corresponding open ball <span class="math inline">\(B_x\)</span> centered around <span class="math inline">\(x\)</span>. In this case, we would write <span class="math inline">\(\left\{B_x\right\}_{x\in S}\)</span> for the collection.</p>
 </section>
 <section id="sec-union-intersection" class="level2" data-number="B.2">
 <h2 data-number="B.2" class="anchored" data-anchor-id="sec-union-intersection"><span class="header-section-number">B.2</span> Unions and Intersections</h2>
@@ -368,8 +385,8 @@ window.Quarto = {
   \bigcap_{\alpha\in\Delta} U_\alpha &amp;= \left\{x\st \text{$x\in U_\alpha$ for all $\alpha\in\Delta$}\right\}
 \end{aligned}\]</span></p>
 <p>In the common special case of where <span class="math inline">\(\Delta=\N,\)</span> we instead write <span class="math inline">\(\displaystyle \bigcup_{i=1}^\infty U_i\)</span> and <span class="math inline">\(\displaystyle \bigcap_{i=1}^\infty U_i.\)</span></p>
-<p>Relating this back to our examples, in <a href="appendices/union-and-intersection.html#exm-nit-collection">Example 2.1</a>, we are claiming that in the real numbers, <span class="math inline">\(\displaystyle \bigcap_{i=1}^\infty U_i\)</span> would be <span class="math inline">\(\{\pi\}\)</span> since <span class="math inline">\(\pi\)</span> and no other number is in <em>all</em> of these intervals, but if our universe were <span class="math inline">\(\Q\)</span>, this intersection would be <span class="math inline">\(\varnothing\)</span> since <em>no</em> rational number lives in all of these intervals.</p>
-<p>In <a href="appendices/union-and-intersection.html#exm-open-set-union">Example 2.2</a>, we are saying that <span class="math inline">\(S\)</span> is an open set if there exists a collection of open balls <span class="math inline">\(\left\{B_\alpha\right\}\)</span> such that <span class="math inline">\(\bigcup B_\alpha=S.\)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> And similarly, if <span class="math inline">\(S\)</span> is open, for each <span class="math inline">\(x\in S\)</span>, there exists an open ball <span class="math inline">\(B_x\)</span> centered at <span class="math inline">\(x\)</span> such that <span class="math inline">\(\displaystyle \bigcup_{x\in S} B_x =S\)</span>. If you can wrap your head around that, you are in good shape!</p>
+<p>Relating this back to our examples, in <a href="appendices/union-and-intersection.html#exm-nit-collection">Example B.1</a>, we are claiming that in the real numbers, <span class="math inline">\(\displaystyle \bigcap_{i=1}^\infty U_i\)</span> would be <span class="math inline">\(\{\pi\}\)</span> since <span class="math inline">\(\pi\)</span> and no other number is in <em>all</em> of these intervals, but if our universe were <span class="math inline">\(\Q\)</span>, this intersection would be <span class="math inline">\(\varnothing\)</span> since <em>no</em> rational number lives in all of these intervals.</p>
+<p>In <a href="appendices/union-and-intersection.html#exm-open-set-union">Example B.2</a>, we are saying that <span class="math inline">\(S\)</span> is an open set if there exists a collection of open balls <span class="math inline">\(\left\{B_\alpha\right\}\)</span> such that <span class="math inline">\(\bigcup B_\alpha=S.\)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> And similarly, if <span class="math inline">\(S\)</span> is open, for each <span class="math inline">\(x\in S\)</span>, there exists an open ball <span class="math inline">\(B_x\)</span> centered at <span class="math inline">\(x\)</span> such that <span class="math inline">\(\displaystyle \bigcup_{x\in S} B_x =S\)</span>. If you can wrap your head around that, you are in good shape!</p>
 </section>
 <section id="demorgans-laws" class="level2" data-number="B.3">
 <h2 data-number="B.3" class="anchored" data-anchor-id="demorgans-laws"><span class="header-section-number">B.3</span> DeMorgan’s Laws</h2>
@@ -381,7 +398,7 @@ window.Quarto = {
 \end{aligned}\]</span></p>
 <p>But these same basic rules apply to arbitrary collections of sets as well.</p>
 <div id="thm-demorgan" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 2.4</strong></span> For any collection of sets <span class="math inline">\(\left\{U_\alpha\right\}_{\alpha\in\Delta}\)</span>, we have</p>
+<p><span class="theorem-title"><strong>Theorem B.4</strong></span> For any collection of sets <span class="math inline">\(\left\{U_\alpha\right\}_{\alpha\in\Delta}\)</span>, we have</p>
 <p><span class="math display">\[\begin{aligned}
   \left(\bigcup_{\alpha\in\Delta} U_\alpha\right)^\cee &amp;= \bigcap_{\alpha\in\Delta} U_\alpha^\cee, \text{and} \\
   \left(\bigcap_{\alpha\in\Delta} U_\alpha\right)^\cee &amp;= \bigcup_{\alpha\in\Delta} U_\alpha^\cee.
@@ -391,7 +408,7 @@ window.Quarto = {
 <p><span class="proof-title"><em>Proof</em>. </span>For the first equation, note that <span class="math inline">\(x\in\left(\bigcup_{\alpha\in\Delta} U_\alpha\right)^\cee\)</span> means that <span class="math inline">\(x\)</span> is not in <span class="math inline">\(\bigcup_{\alpha\in\Delta} U_\alpha\)</span>, which is equivalent to saying <span class="math inline">\(x\)</span> is not in any of the <span class="math inline">\(U_\alpha\)</span>. This is in turn equivalent to saying <span class="math inline">\(x\in U_\alpha^\cee\)</span> for all <span class="math inline">\(\alpha\in\Delta\)</span>, meaning <span class="math inline">\(x\in\bigcap_{\alpha\in\Delta} U_\alpha^\cee\)</span>.</p>
 </div>
 <div id="exr-other-demorgan" class="grouped-theorem grouped-theorem-exercise">
-<p><span class="theorem-title"><strong>Exercise 2.5</strong></span> Prove that second equation from DeMorgan’s Laws is true.</p>
+<p><span class="theorem-title"><strong>Exercise B.5</strong></span> Prove that second equation from DeMorgan’s Laws is true.</p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
