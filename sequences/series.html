@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../references.html" rel="next">
+<link href="../minmax.html" rel="next">
 <link href="../metric-spaces/boundedness.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -254,6 +254,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../minmax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -362,7 +368,7 @@ window.Quarto = {
 1+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\cdots
 \end{array} \tag{10.1}\]</span></span></p>
 <p>Some of these might strike you as obviously undefined or obviously convergent, but others may not. In what follows below, we’ll make a precise definition of what we mean by convergent so that we can prove theorems and talk coherently about examples.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>Suppose <span class="math inline">\((a_n)\)</span> is a sequence in <span class="math inline">\(\mathbb{R}\)</span>. Then the <strong>series</strong> with terms <span class="math inline">\((a_n)\)</span> is the formal expression</p>
+<p>Suppose <span class="math inline">\((a_n)\)</span> is a sequence in <span class="math inline">\(\mathbb{R}.\)</span> Then the <strong>series</strong> with terms <span class="math inline">\((a_n)\)</span> is the formal expression</p>
 <p><span class="math display">\[\sum_{i=1}^\infty a_i=a_1+a_2+\cdots\]</span></p>
 <p>By “formal expression” I mean that we are not considering this expression to represent a number; it’s just notation meant to express the <em>idea</em> of an infinite sum. Sometimes we abbreviate the notation as <span class="math inline">\(\sum a_i.\)</span></p>
 <div id="def-partial-sum" class="grouped-theorem grouped-theorem-definition">
@@ -378,7 +384,7 @@ s_3&amp;=&amp;a_1+a_2+a_3\\
 <div id="def-series-convergence" class="grouped-theorem grouped-theorem-definition">
 <p><span class="theorem-title"><strong>Definition 10.2 (Series Convergence)</strong></span> The series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> is said to <strong>converge</strong> or <strong>diverge</strong> when its sequence of partial sums <span class="math inline">\((s_n)\)</span> does. If <span class="math inline">\(s_n\rightarrow S,\)</span> we call <span class="math inline">\(S\)</span> the <strong>sum</strong> of the series.</p>
 </div>
-<p>In the case that <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> has sum <span class="math inline">\(S\)</span>, we sometimes abuse notation slightly and use the expression <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> to represent the number <span class="math inline">\(S\)</span>.</p>
+<p>In the case that <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> has sum <span class="math inline">\(S,\)</span> we sometimes abuse notation slightly and use the expression <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> to represent the number <span class="math inline">\(S.\)</span></p>
 <p>As an example of the vocabulary in action, the series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{2}{3^i}\)</span></p>
 <ul>
 <li>has <em>terms</em> given by the sequence <span class="math inline">\(\left(\frac{2}{3^i}\right)\)</span> or <span class="math inline">\(\frac{2}{3},\frac{2}{9},\frac{2}{27},\frac{2}{81},\cdots\)</span></li>
@@ -393,16 +399,16 @@ s_3&amp;=&amp;a_1+a_2+a_3\\
 <h2 data-number="10.2" class="anchored" data-anchor-id="working-with-partial-sums"><span class="header-section-number">10.2</span> Working with Partial Sums</h2>
 <p>We start with an important class of series called <em>geometric series</em>.</p>
 <div id="exm-geometric" class="grouped-theorem grouped-theorem-example">
-<p><span class="theorem-title"><strong>Example 10.4 (Geometric Series)</strong></span> For <span class="math inline">\(a\neq 0\)</span> and any <span class="math inline">\(r\in\mathbb{R}\)</span>, a series of the form <span class="math display">\[\sum_{i=0}^\infty ar^i\]</span> is called a <strong>geometric series</strong>. This series converges to <span class="math inline">\(\frac{a}{1-r}\)</span> when <span class="math inline">\(|r|&lt;1\)</span> and diverges otherwise.</p>
+<p><span class="theorem-title"><strong>Example 10.4 (Geometric Series)</strong></span> For <span class="math inline">\(a\neq 0\)</span> and any <span class="math inline">\(r\in\mathbb{R},\)</span> a series of the form <span class="math display">\[\sum_{i=0}^\infty ar^i\]</span> is called a <strong>geometric series</strong>. This series converges to <span class="math inline">\(\frac{a}{1-r}\)</span> when <span class="math inline">\(|r|&lt;1\)</span> and diverges otherwise.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>To determine whether the series converges, we analyze its partial sums in cases.</p>
-<p>If <span class="math inline">\(|r|\neq1\)</span>, we can use some algebraic tricks to simplify the expression for the partial sum <span class="math inline">\(s_n\)</span>: <span class="math display">\[\begin{array}{rcl}
+<p>If <span class="math inline">\(|r|\neq1,\)</span> we can use some algebraic tricks to simplify the expression for the partial sum <span class="math inline">\(s_n:\)</span> <span class="math display">\[\begin{array}{rcl}
   s_n&amp;=&amp;a+ar+ar^2+\cdots+ar^n\\
   &amp;=&amp;a(1+r+r^2+\cdots+r^n)\\
   &amp;=&amp;\displaystyle\frac{a(1-r^{n+1})}{1-r}
-\end{array}\]</span> If <span class="math inline">\(|r|&lt;1\)</span>, then <span class="math inline">\(r^{n+1}\rightarrow0\)</span>, so using what we know about sequences and arithmetic, we can say <span class="math inline">\(s_n\rightarrow\frac{a}{1-r}\)</span>.</p>
-<p>If <span class="math inline">\(|r|&gt;1\)</span>, then <span class="math inline">\((r^{n+1})\)</span> diverges. So if, by way of contradiction, we assume the partial sums <span class="math inline">\((s_n)\)</span> did converge to some value <span class="math inline">\(S\)</span>, then we could say that the sequence <span class="math inline">\(\left(1-s_n\frac{1-r}{a}\right)\)</span> converges to <span class="math inline">\(1-S\frac{1-r}{a}.\)</span> However <span class="math inline">\(1-s_n\frac{1-r}{a}=r^{n+1},\)</span> which we already said diverges.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+\end{array}\]</span> If <span class="math inline">\(|r|&lt;1,\)</span> then <span class="math inline">\(r^{n+1}\rightarrow0,\)</span> so using what we know about sequences and arithmetic, we can say <span class="math inline">\(s_n\rightarrow\frac{a}{1-r}.\)</span></p>
+<p>If <span class="math inline">\(|r|&gt;1,\)</span> then <span class="math inline">\((r^{n+1})\)</span> diverges. So if, by way of contradiction, we assume the partial sums <span class="math inline">\((s_n)\)</span> did converge to some value <span class="math inline">\(S,\)</span> then we could say that the sequence <span class="math inline">\(\left(1-s_n\frac{1-r}{a}\right)\)</span> converges to <span class="math inline">\(1-S\frac{1-r}{a}.\)</span> However <span class="math inline">\(1-s_n\frac{1-r}{a}=r^{n+1},\)</span> which we already said diverges.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>We leave the cases where <span class="math inline">\(r=\pm1\)</span> to the reader in <a href="sequences/series.html#exr-geometric-with-r-pm1">Exercise 10.5</a> below.</p>
 </div>
 <div id="exr-geometric-with-r-pm1" class="grouped-theorem grouped-theorem-exercise">
@@ -427,7 +433,7 @@ Note
 <p>Both <a href="sequences/series.html#exm-geometric">Example 10.4</a> and <a href="sequences/series.html#exr-telescoping-example">Exercise 10.6</a> are somewhat unusual in that in both cases we can write down an explicit formula for the partial sum sequence. More often an explicit formula is unavailable and we need to rely on other means for determining and proving the con/divergence of a series.</p>
 <p>The so-called “convergence tests” for series that we learn in calculus give us tools for determining the con/divergence of a series by analyzing their <em>terms</em> rather than their <em>partial sums</em>.</p>
 <div id="thm-divergence-test" class="grouped-theorem grouped-theorem-theorem">
-<p><span class="theorem-title"><strong>Theorem 10.7 (Divergence Test)</strong></span> If a series converges, then its terms converge to <span class="math inline">\(0\)</span>.</p>
+<p><span class="theorem-title"><strong>Theorem 10.7 (Divergence Test)</strong></span> If a series converges, then its terms converge to <span class="math inline">\(0.\)</span></p>
 </div>
 <div id="exr-divergence-test-proof" class="grouped-theorem grouped-theorem-exercise">
 <p><span class="theorem-title"><strong>Exercise 10.8</strong></span> &nbsp;</p>
@@ -459,7 +465,7 @@ Hint for part 4 of <a href="sequences/series.html#exr-divergence-test-proof">Exe
 <ol type="1">
 <li><span class="math inline">\(\sum (a_n+b_n) = S+T\)</span></li>
 <li><span class="math inline">\(\sum (ka_n)=kS\)</span></li>
-<li>If <span class="math inline">\(a_n\leq b_n\)</span> for all <span class="math inline">\(n\)</span>, then <span class="math inline">\(S\leq T\)</span>.</li>
+<li>If <span class="math inline">\(a_n\leq b_n\)</span> for all <span class="math inline">\(n,\)</span> then <span class="math inline">\(S\leq T.\)</span></li>
 </ol>
 </div>
 <p>Note that part of what parts 1 and 2 in <a href="sequences/series.html#thm-series-order-arithmetic">Theorem 10.9</a> are claiming is that these two series do in fact converge.</p>
@@ -473,7 +479,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When an equation or proposition does not depend on the starting index of a series, we sometimes just write <span class="math inline">\(\sum a_n\)</span> as shorthand for <span class="math inline">\(\sum_{n=k}^\infty a_n\)</span> for some <span class="math inline">\(k\)</span>.</p>
+<p>When an equation or proposition does not depend on the starting index of a series, we sometimes just write <span class="math inline">\(\sum a_n\)</span> as shorthand for <span class="math inline">\(\sum_{n=k}^\infty a_n\)</span> for some <span class="math inline">\(k.\)</span></p>
 </div>
 </div>
 <div id="exr-series-order-arithmetic-proof" class="grouped-theorem grouped-theorem-exercise">
@@ -504,7 +510,7 @@ Hint
 <ol type="1">
 <li>The sequence of partial sums is increasing.</li>
 <li>The series converges if and only if the sequence of partial sums is bounded.</li>
-<li>If the series diverges, then the sequence of partial sums limits to <span class="math inline">\(+\infty\)</span>.</li>
+<li>If the series diverges, then the sequence of partial sums limits to <span class="math inline">\(+\infty.\)</span></li>
 </ol>
 </div>
 <p>The upshot of <a href="sequences/series.html#exr-positive-terms">Exercise 10.11</a> is that we can determine the con/divergence of a series just by knowing whether its sequence of partial sums is bounded or not.</p>
@@ -512,9 +518,9 @@ Hint
 <p><span class="theorem-title"><strong>Example 10.12</strong></span> The series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{i^2}\)</span> converges.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\((s_n)\)</span> be the sequence of partial sums for <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{i^2}\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\((s_n)\)</span> be the sequence of partial sums for <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{i^2}.\)</span></p>
 <p>In <a href="sequences/series.html#exr-telescoping-example">Exercise 10.6</a>, we worked with the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{i(i+1)}.\)</span> Let <span class="math inline">\((t_n)\)</span> be its sequence of partial sums.</p>
-<p>As we saw, the series converges to some number <span class="math inline">\(T.\)</span> Therefore by <a href="sequences/series.html#thm-series-order-arithmetic">Theorem 10.9</a>, the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{2}{i(i+1)}\)</span> converges to <span class="math inline">\(2T\)</span>; that is <span class="math inline">\(2t_n\rightarrow 2T\)</span>. Comparing the terms of the two series, we see that for all <span class="math inline">\(i,\)</span> <span class="math display">\[\frac{1}{i^2}\leq \frac{2}{i(i+1)}.\]</span> Adding up this expression for <span class="math inline">\(i=1,\ldots,n\)</span>, we have that <span class="math inline">\(s_n\leq 2t_n\)</span> for all <span class="math inline">\(n\)</span>. Since <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{2}{i(i+1)}\)</span> converges, <span class="math inline">\((2t_n)\)</span> is bounded above by <a href="sequences/series.html#exr-positive-terms">Exercise 10.11</a>. Therefore <span class="math inline">\((s_n)\)</span> is also bounded above and thus converges, again by <a href="sequences/series.html#exr-positive-terms">Exercise 10.11</a>.</p>
+<p>As we saw, the series converges to some number <span class="math inline">\(T.\)</span> Therefore by <a href="sequences/series.html#thm-series-order-arithmetic">Theorem 10.9</a>, the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{2}{i(i+1)}\)</span> converges to <span class="math inline">\(2T;\)</span> that is <span class="math inline">\(2t_n\rightarrow 2T.\)</span> Comparing the terms of the two series, we see that for all <span class="math inline">\(i,\)</span> <span class="math display">\[\frac{1}{i^2}\leq \frac{2}{i(i+1)}.\]</span> Adding up this expression for <span class="math inline">\(i=1,\ldots,n,\)</span> we have that <span class="math inline">\(s_n\leq 2t_n\)</span> for all <span class="math inline">\(n.\)</span> Since <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{2}{i(i+1)}\)</span> converges, <span class="math inline">\((2t_n)\)</span> is bounded above by <a href="sequences/series.html#exr-positive-terms">Exercise 10.11</a>. Therefore <span class="math inline">\((s_n)\)</span> is also bounded above and thus converges, again by <a href="sequences/series.html#exr-positive-terms">Exercise 10.11</a>.</p>
 </div>
 <p>Note that the above proof does not tell us what the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{i^2}\)</span> converges <em>to</em>. This is often the case for such proofs.</p>
 <p>The following theorem generalizes the logic of the proof of <a href="sequences/series.html#exm-basel-series">Example 10.12</a>.</p>
@@ -975,8 +981,8 @@ Hint
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../minmax.html" class="pagination-link" aria-label="The Min-Max Theorem">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
