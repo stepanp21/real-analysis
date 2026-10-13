@@ -317,7 +317,7 @@ window.Quarto = {
   <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">10.1</span> Preparation</a></li>
   <li><a href="#working-with-partial-sums" id="toc-working-with-partial-sums" class="nav-link" data-scroll-target="#working-with-partial-sums"><span class="header-section-number">10.2</span> Working with Partial Sums</a></li>
   <li><a href="#series-with-non-negative-terms" id="toc-series-with-non-negative-terms" class="nav-link" data-scroll-target="#series-with-non-negative-terms"><span class="header-section-number">10.3</span> Series With Non-Negative Terms</a></li>
-  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">10.4</span> Review Questions</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review Questions</a></li>
   </ul>
 </nav>
     </div>
@@ -346,7 +346,7 @@ window.Quarto = {
 <section id="highlights" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="highlights">Highlights</h2>
 <ul>
-<li>Definitions series, partial sums, and series convergence</li>
+<li>Definitions of series, partial sums, and series convergence</li>
 <li>Examples of series converging and diverging</li>
 <li>Special properties of series with all non-negative terms.</li>
 </ul>
@@ -379,10 +379,10 @@ s_3&amp;=&amp;a_1+a_2+a_3\\
 <p><span class="theorem-title"><strong>Definition 10.2 (Series Convergence)</strong></span> The series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> is said to <strong>converge</strong> or <strong>diverge</strong> when its sequence of partial sums <span class="math inline">\((s_n)\)</span> does. If <span class="math inline">\(s_n\rightarrow S,\)</span> we call <span class="math inline">\(S\)</span> the <strong>sum</strong> of the series.</p>
 </div>
 <p>In the case that <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> has sum <span class="math inline">\(S\)</span>, we sometimes abuse notation slightly and use the expression <span class="math inline">\(\displaystyle\sum_{i=1}^\infty a_i\)</span> to represent the number <span class="math inline">\(S\)</span>.</p>
-<p>As an example of the vocabulary in the action, the series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{2}{3^i}\)</span></p>
+<p>As an example of the vocabulary in action, the series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{2}{3^i}\)</span></p>
 <ul>
 <li>has <em>terms</em> given by the sequence <span class="math inline">\(\left(\frac{2}{3^i}\right)\)</span> or <span class="math inline">\(\frac{2}{3},\frac{2}{9},\frac{2}{27},\frac{2}{81},\cdots\)</span></li>
-<li>has <em>partial sums</em> <span class="math inline">\(\frac{2}{3},\frac{2}{3}+\frac{2}{9},\frac{2}{3}+\frac{2}{9}+\frac{2}{27},\ldots.\)</span> These simplifies to <span class="math inline">\(\frac{2}{3},\frac{8}{9},\frac{26}{27},\ldots\)</span> or <span class="math inline">\(\left(\frac{3^i-1}{3^i}\right).\)</span></li>
+<li>has <em>partial sums</em> <span class="math inline">\(\frac{2}{3},\frac{2}{3}+\frac{2}{9},\frac{2}{3}+\frac{2}{9}+\frac{2}{27},\ldots.\)</span> These simplify to <span class="math inline">\(\frac{2}{3},\frac{8}{9},\frac{26}{27},\ldots\)</span> or <span class="math inline">\(\left(\frac{3^n-1}{3^n}\right).\)</span></li>
 <li><em>converges</em> with a <em>sum</em> of <span class="math inline">\(1.\)</span></li>
 </ul>
 <div id="exr-partial-sum-practice" class="grouped-theorem grouped-theorem-exercise">
@@ -402,7 +402,7 @@ s_3&amp;=&amp;a_1+a_2+a_3\\
   &amp;=&amp;a(1+r+r^2+\cdots+r^n)\\
   &amp;=&amp;\displaystyle\frac{a(1-r^{n+1})}{1-r}
 \end{array}\]</span> If <span class="math inline">\(|r|&lt;1\)</span>, then <span class="math inline">\(r^{n+1}\rightarrow0\)</span>, so using what we know about sequences and arithmetic, we can say <span class="math inline">\(s_n\rightarrow\frac{a}{1-r}\)</span>.</p>
-<p>If <span class="math inline">\(|r|&gt;1\)</span>, then <span class="math inline">\((r^{n+1})\)</span> diverges. So if, by way of contradiction, we assume the partial sums <span class="math inline">\((s_n)\)</span> did converge to some value <span class="math inline">\(S\)</span>, then we could say that the sequence <span class="math inline">\(\left(1-s_n\frac{1-r}{a}\right)\)</span> converges to <span class="math inline">\(1-L\frac{1-r}{a}.\)</span> However <span class="math inline">\(1-s_n\frac{1-r}{a}=r^{n+1},\)</span> which we already said diverges.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>If <span class="math inline">\(|r|&gt;1\)</span>, then <span class="math inline">\((r^{n+1})\)</span> diverges. So if, by way of contradiction, we assume the partial sums <span class="math inline">\((s_n)\)</span> did converge to some value <span class="math inline">\(S\)</span>, then we could say that the sequence <span class="math inline">\(\left(1-s_n\frac{1-r}{a}\right)\)</span> converges to <span class="math inline">\(1-S\frac{1-r}{a}.\)</span> However <span class="math inline">\(1-s_n\frac{1-r}{a}=r^{n+1},\)</span> which we already said diverges.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>We leave the cases where <span class="math inline">\(r=\pm1\)</span> to the reader in <a href="sequences/series.html#exr-geometric-with-r-pm1">Exercise 10.5</a> below.</p>
 </div>
 <div id="exr-geometric-with-r-pm1" class="grouped-theorem grouped-theorem-exercise">
@@ -425,6 +425,7 @@ Note
 <p><span class="theorem-title"><strong>Exercise 10.6 (A “Telescoping” Series)</strong></span> Show that the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{i(i+1)}\)</span> converges. It will be helfpul to note that <span class="math display">\[\frac{1}{i(i+1)}=\frac{1}{i}-\frac{1}{i+1}\]</span> and to write out the first several partial sums.</p>
 </div>
 <p>Both <a href="sequences/series.html#exm-geometric">Example 10.4</a> and <a href="sequences/series.html#exr-telescoping-example">Exercise 10.6</a> are somewhat unusual in that in both cases we can write down an explicit formula for the partial sum sequence. More often an explicit formula is unavailable and we need to rely on other means for determining and proving the con/divergence of a series.</p>
+<p>The so-called “convergence tests” for series that we learn in calculus give us tools for determining the con/divergence of a series by analyzing their <em>terms</em> rather than their <em>partial sums</em>.</p>
 <div id="thm-divergence-test" class="grouped-theorem grouped-theorem-theorem">
 <p><span class="theorem-title"><strong>Theorem 10.7 (Divergence Test)</strong></span> If a series converges, then its terms converge to <span class="math inline">\(0\)</span>.</p>
 </div>
@@ -433,7 +434,7 @@ Note
 <ol type="1">
 <li>State the contrapositive of the Divergence Test.</li>
 <li>What (if anything) does the Divergence Test say about the con/divergence of the series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{i}{i+1}?\)</span></li>
-<li>What (if anything) does the Divergence Test say about the con/divergence series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{1}{i^2}?\)</span></li>
+<li>What (if anything) does the Divergence Test say about the con/divergence of the series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{1}{i^2}?\)</span></li>
 <li>Prove the Divergence Test.</li>
 </ol>
 </div>
@@ -461,7 +462,7 @@ Hint for part 4 of <a href="sequences/series.html#exr-divergence-test-proof">Exe
 <li>If <span class="math inline">\(a_n\leq b_n\)</span> for all <span class="math inline">\(n\)</span>, then <span class="math inline">\(S\leq T\)</span>.</li>
 </ol>
 </div>
-<p>Part of what parts 1 and 2 in <a href="sequences/series.html#thm-series-order-arithmetic">Theorem 10.9</a> is claiming is that these two series do in fact converge.</p>
+<p>Note that part of what parts 1 and 2 in <a href="sequences/series.html#thm-series-order-arithmetic">Theorem 10.9</a> are claiming is that these two series do in fact converge.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -506,17 +507,17 @@ Hint
 <li>If the series diverges, then the sequence of partial sums limits to <span class="math inline">\(+\infty\)</span>.</li>
 </ol>
 </div>
-<p>The upshot of <a href="sequences/series.html#exr-positive-terms">Exercise 10.11</a> is that we can determine the con/divergence of a series just by knowing whether its sequence of partial sums is bounded or not. This can be very helpful for proving</p>
+<p>The upshot of <a href="sequences/series.html#exr-positive-terms">Exercise 10.11</a> is that we can determine the con/divergence of a series just by knowing whether its sequence of partial sums is bounded or not.</p>
 <div id="exm-basel-series" class="grouped-theorem grouped-theorem-example">
 <p><span class="theorem-title"><strong>Example 10.12</strong></span> The series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{i^2}\)</span> converges.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\((s_n)\)</span> be the sequence of partials sums for <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{i^2}\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\((s_n)\)</span> be the sequence of partial sums for <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{i^2}\)</span>.</p>
 <p>In <a href="sequences/series.html#exr-telescoping-example">Exercise 10.6</a>, we worked with the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{i(i+1)}.\)</span> Let <span class="math inline">\((t_n)\)</span> be its sequence of partial sums.</p>
 <p>As we saw, the series converges to some number <span class="math inline">\(T.\)</span> Therefore by <a href="sequences/series.html#thm-series-order-arithmetic">Theorem 10.9</a>, the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{2}{i(i+1)}\)</span> converges to <span class="math inline">\(2T\)</span>; that is <span class="math inline">\(2t_n\rightarrow 2T\)</span>. Comparing the terms of the two series, we see that for all <span class="math inline">\(i,\)</span> <span class="math display">\[\frac{1}{i^2}\leq \frac{2}{i(i+1)}.\]</span> Adding up this expression for <span class="math inline">\(i=1,\ldots,n\)</span>, we have that <span class="math inline">\(s_n\leq 2t_n\)</span> for all <span class="math inline">\(n\)</span>. Since <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{2}{i(i+1)}\)</span> converges, <span class="math inline">\((2t_n)\)</span> is bounded above by <a href="sequences/series.html#exr-positive-terms">Exercise 10.11</a>. Therefore <span class="math inline">\((s_n)\)</span> is also bounded above and thus converges, again by <a href="sequences/series.html#exr-positive-terms">Exercise 10.11</a>.</p>
 </div>
 <p>Note that the above proof does not tell us what the series <span class="math inline">\(\displaystyle\sum_{i=1}^\infty \frac{1}{i^2}\)</span> converges <em>to</em>. This is often the case for such proofs.</p>
-<p>The following theorem extends generalizes the logic of the proof of <a href="sequences/series.html#exm-basel-series">Example 10.12</a>.</p>
+<p>The following theorem generalizes the logic of the proof of <a href="sequences/series.html#exm-basel-series">Example 10.12</a>.</p>
 <div id="thm-comparison-test" class="lub-thread grouped-theorem grouped-theorem-theorem">
 <p><span class="theorem-title"><strong>Theorem 10.13 (Comparison Test)</strong></span> Suppose <span class="math inline">\(\sum a_n\)</span> and <span class="math inline">\(\sum b_n\)</span> are series with all non-negative terms such that <span class="math inline">\(a_n\leq b_n\)</span> for all <span class="math inline">\(n.\)</span></p>
 <ol type="1">
@@ -528,7 +529,7 @@ Hint
 <p><span class="theorem-title"><strong>Example 10.14 (Harmonic Series)</strong></span> The <em>harmonic series</em> <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{1}{i}\)</span> diverges.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Call the terms of this series <span class="math inline">\(c_i=\frac{1}{i}\)</span> and the partial sums <span class="math inline">\(s_n,\)</span> Note that <span class="math inline">\(c_i\rightarrow0,\)</span> so the Divergence Test cannot be used to prove divergence.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Call the terms of this series <span class="math inline">\(c_i=\frac{1}{i}\)</span> and the partial sums <span class="math inline">\(s_n.\)</span> Note that <span class="math inline">\(c_i\rightarrow0,\)</span> so the Divergence Test cannot be used to prove divergence.</p>
 <p>Consider another series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty b_i\)</span> where the terms <span class="math inline">\(b_i\)</span> are defined by <span class="math display">\[\begin{array}{rcl}
   b_1&amp;=&amp;1\\
   b_2&amp;=&amp;\frac{1}{2}\\
@@ -538,10 +539,10 @@ Hint
   b_{2^{i-1}+1}=\cdots=b_{2^i} &amp; = &amp; \frac{1}{2^i}\\
   &amp;\vdots&amp;
 \end{array}\]</span></p>
-<p>Note consider the series <span class="math inline">\(\displaystyle \sum_{i=1}^\infty b_i.\)</span> Calling the partial sums <span class="math inline">\(t_n,\)</span> we can consider the subsequence <span class="math inline">\(t_{2^n}:\)</span> <span class="math display">\[\begin{array}{rcll}
+<p>Calling the partial sums <span class="math inline">\(t_n,\)</span> we can consider the subsequence <span class="math inline">\(t_{2^n}:\)</span> <span class="math display">\[\begin{array}{rcll}
   t_{2^1} &amp;=&amp; 1+\frac{1}{2}&amp;=\frac{3}{2}\\
-  t_{2^2-1} &amp;=&amp; 1+\frac{1}{2}+2\cdot\frac{1}{4}&amp;=\frac{4}{2}\\
-  t_{2^2-1} &amp;=&amp; 1+\frac{1}{2}+2\cdot\frac{1}{4}+4\cdot\frac{1}{8}&amp;=\frac{5}{2}\\
+  t_{2^2} &amp;=&amp; 1+\frac{1}{2}+2\cdot\frac{1}{4}&amp;=\frac{4}{2}\\
+  t_{2^3} &amp;=&amp; 1+\frac{1}{2}+2\cdot\frac{1}{4}+4\cdot\frac{1}{8}&amp;=\frac{5}{2}\\
   &amp;\vdots&amp;
 \end{array}\]</span> Thus <span class="math inline">\(t_{2^n}=\frac{n+2}{2},\)</span> so <span class="math inline">\((t_n)\)</span> has a divergent subsequence and hence <span class="math inline">\(\displaystyle \sum_{i=1}^\infty b_i\)</span> diverges. Therefore since <span class="math inline">\(c_i\geq b_i\)</span> for all <span class="math inline">\(i\)</span> (and both series have all non-negative terms) <span class="math inline">\(\displaystyle \sum_{i=1}^\infty \frac{1}{i}\)</span> diverges as well by the Comparison Test.</p>
 </div>
@@ -549,11 +550,11 @@ Hint
 <p><span class="theorem-title"><strong>Exercise 10.15</strong></span> Prove <a href="sequences/series.html#thm-comparison-test">Theorem 10.13</a>.</p>
 </div>
 </section>
-<section id="review-questions" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">10.4</span> Review Questions</h2>
+<section id="review-questions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="review-questions">Review Questions</h2>
 <ol type="1">
 <li>How is series convergence defined?</li>
-<li>In basically all of the series convergence proofs from this chapter, the first step is rewriting the statement as a statement about the converge of what <em>sequence</em>?</li>
+<li>In basically all of the series convergence proofs from this chapter, the first step is rewriting the statement as a statement about the convergence of what <em>sequence</em>?</li>
 <li>What are some special properties of series with all non-negative terms?</li>
 </ol>
 
@@ -563,7 +564,7 @@ Hint
 <hr>
 <ol>
 <li id="fn1"><p>There are actually several theories of convergent series which are useful in different contexts. We’ll present the most standard version here.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>I am bending over backwards here to make precise the intuition that “Since <span class="math inline">\((r^{n+1})\)</span> diverges, so must an sequence involving it”. Unfortunately, that reasoning doesn’t always work—think about <span class="math inline">\((\sqrt{n+1} - \sqrt{n})\)</span> which converges despite being the sum of two divergent sequences—so a proof of the style shown here is appropriate.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>I am bending over backwards here to make precise the intuition that “Since <span class="math inline">\((r^{n+1})\)</span> diverges, so must a sequence involving it”. Unfortunately, that reasoning doesn’t always work—think about <span class="math inline">\((\sqrt{n+1} - \sqrt{n})\)</span> which converges despite being the sum of two divergent sequences—so a proof of the style shown here is appropriate.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
