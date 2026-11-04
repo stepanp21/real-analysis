@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>12&nbsp; Naive integration – An Illustrated Course in Real Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../references.html" rel="next">
+<link href="../minmax.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+</head><body class="nav-sidebar floating quarto-light">$$
+\def\R{\mathbb R}
+\def\N{\mathbb N}
+\def\Q{\mathbb Q}
+\def\Z{\mathbb Z}
+\newcommand{\st}{~:~}
+\newcommand{\cee}{\mathsf{C}}
+\newcommand{\bee}{\mathrm{B}}
+\def\mathhlyellow#1{\bbox[##fff3bf,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlgold#1{\bbox[##ffe8a3,2px,border:1px solid ##b7791f]{#1}}
+\def\mathhlorange#1{\bbox[##ffddb3,2px,border:1px solid ##c05621]{#1}}
+\def\mathhlgreen#1{\bbox[##d9f7d7,2px,border:1px solid ##3f8f46]{#1}}
+\def\mathhlmint#1{\bbox[##d4f5e9,2px,border:1px solid ##2c7a7b]{#1}}
+\def\mathhlblue#1{\bbox[##dceeff,2px,border:1px solid ##2b6cb0]{#1}}
+\def\mathhlpurple#1{\bbox[##eadffd,2px,border:1px solid ##6b46c1]{#1}}
+\def\mathhlpink#1{\bbox[##ffdbe8,2px,border:1px solid ##b83280]{#1}}
+\def\mathhlred#1{\bbox[##ffd6d6,2px,border:1px solid ##c53030]{#1}}
+\def\mathhlgray#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
+\def\mathhlgrey#1{\bbox[##e8ecef,2px,border:1px solid ##64748b]{#1}}
+$$
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../integration/naive.html">Integration</a></li><li class="breadcrumb-item"><a href="../integration/naive.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Naive integration</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">An Illustrated Course in Real Analysis</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro-draft.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">The Real Numbers</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../axioms-of-r/field-and-order.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Field and Order Axioms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../axioms-of-r/lub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Least Upper Bound Axiom</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../axioms-of-r/lub-props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Consequences of the Least Upper Bound Axiom</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Metric Spaces</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../metric-spaces/metric-space-axioms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Metric Spaces and Distance Functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../metric-spaces/r-as-a-metric-space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="math inline">\(\mathbb{R}\)</span> as a Metric Space</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../metric-spaces/open-balls.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Open Sets</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../metric-spaces/open-set-props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Properties of Open Sets</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../metric-spaces/boundedness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Boundedness</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Assorted Topics (Provisional)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sequences/series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Series Basics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../minmax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Integration</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../integration/naive.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Naive integration</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/proof-writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Proof-Writing Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/union-and-intersection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Collections of Sets</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/cauchy-schwartz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The Cauchy-Schwarz Inequality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/wop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">The Well-Ordering Property</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/desmos-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Links to Desmos Web Apps</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#highlights" id="toc-highlights" class="nav-link active" data-scroll-target="#highlights">Highlights</a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">12.1</span> Preparation</a></li>
+  <li><a href="#the-domain-additivity-issue" id="toc-the-domain-additivity-issue" class="nav-link" data-scroll-target="#the-domain-additivity-issue"><span class="header-section-number">12.2</span> The Domain Additivity Issue</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review Questions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../integration/naive.html">Integration</a></li><li class="breadcrumb-item"><a href="../integration/naive.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Naive integration</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Naive integration</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="highlights" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="highlights">Highlights</h2>
+<ul>
+<li>A review of the naive Calc I definition of the integral</li>
+<li>Why basing a theory on the naive definition is insufficient.</li>
+</ul>
+</section>
+<section id="preparation" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">12.1</span> Preparation</h2>
+<p>Most calculus students strongly associate integrals with taking antiderivatives, and for good reason. Typically, the most efficient way to calculate the exact value of a definite integral is to employ the Fundamental Theorem of Calculus, which tells us how to use the antiderivative of the integrand. However, in order to understand how definite integrals can be applied in both abstract mathematics and in the real world, we should not lose sight of the definition of the definite integral in terms of Riemann sums.</p>
+<p>We will start with a review of how the definite integral is presented in a typical Calc I course, what we’ll call the “naive integral”. However, as we shall see, this definition fails to produce a self-contained theory of integration that behaves nicely.</p>
+<p>As a result, it will be impossible to prove the Fundamental Theorem of Calculus linking integration and differentiation using the naive definition of the integral. This serves to motivate the more robust definition of the Riemann integral in the next section. It will also be a reminder of what you know from calculus and a warmup for what’s to come.</p>
+<div id="def-right-sum" class="grouped-theorem grouped-theorem-definition">
+<p><span class="theorem-title"><strong>Definition 12.1</strong></span> Let <span class="math inline">\(a&lt;b\)</span>, and suppose <span class="math inline">\(f\)</span> is a real-valued function whose domain contains <span class="math inline">\([a,b].\)</span> Define the <strong>right Riemann Sum</strong> of <span class="math inline">\(f\)</span> on the interval <span class="math inline">\([a,b]\)</span> with <span class="math inline">\(n\)</span> subintervals to be <span id="eq-right-sum"><span class="math display">\[
+R_n(f)=\sum_{i=1}^n f(x_i)\Delta x \qquad \text{where $\Delta x=\frac{b-a}{n}$ and $x_i=a+i\Delta x$}
+\tag{12.1}\]</span></span></p>
+</div>
+<div id="exr-right-sum-example" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 12.2</strong></span> Let <span class="math inline">\(f:[1,3]\rightarrow\R\)</span> be defined by <span class="math inline">\(f(x)=\sqrt x.\)</span> Use a calculator to find <span class="math inline">\(R_{10}(f).\)</span></p>
+</div>
+<p>Note that we aren’t initially making any assumptions about the function <span class="math inline">\(f\)</span> being “nice” in any way. In particular, <span class="math inline">\(f\)</span> might be badly discontinuous as in the next example.</p>
+<div id="exr-right-sum-pathology" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 12.3</strong></span> Let <span class="math inline">\(f:[0,1]\rightarrow\R\)</span> be defined by <span class="math inline">\(f(x)=0\)</span> when <span class="math inline">\(x\)</span> is irrational and <span class="math inline">\(f(x)=1\)</span> when <span class="math inline">\(x\)</span> is rational. We call this function <strong>Dirichlet’s function</strong>. Sketch a graph of <span class="math inline">\(f\)</span> (as best you can), and find a formula for <span class="math inline">\(R_n(f).\)</span></p>
+</div>
+<p>In calculus, we are taught to think of right Riemann sums as approximations to the exact value of the integral. Visually, for non-negative-valued functions at least, we can represent this by representing the products <span class="math inline">\(f(x_i)\Delta x\)</span> as rectangles; as <span class="math inline">\(n\)</span> tends to <span class="math inline">\(\infty,\)</span> this set of rectangles seems to better and better approximate the region under the curve, as in the demo below that you are likely familiar with.</p>
+<figure class="quarto-float quarto-float-des figure">
+<div aria-describedby="des-right-sum-classic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+<div id="calculator-right-sum-classic" class="calculator-container" style="width: 100%; height: 400px;">
+
+</div>
+<div class="slider-container">
+<div class="centered-slider">
+<label for="n3-slider" class="left-label"><span class="math inline">\(n\)</span></label> <input id="n3-slider" class="desmos-slider" type="range" min="1" max="50" step="1" value="12">
+</div>
+<div class="centered-slider">
+<label for="i-slider" class="left-label"><span class="math inline">\(i\)</span></label> <input id="i-slider" class="desmos-slider" type="range" min="1" max="12" step="1" value="7">
+</div>
+</div>
+<script>
+  var n3Slider = document.getElementById('n3-slider');
+  var n3 = parseInt(n3Slider.value);
+
+  var iSlider = document.getElementById('i-slider');
+  var i = parseInt(iSlider.value);
+  
+  var elt = document.getElementById('calculator-right-sum-classic');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator3 = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('right-sum-classic.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator3.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  n3Slider.addEventListener('input', function() {
+    n3 = parseFloat(this.value);
+    calculator3.setExpression({id:'6', latex:`n=${n3}`});
+    iSlider.max = n3;
+  });
+
+  iSlider.addEventListener('input', function() {
+    i = parseFloat(this.value);
+    calculator3.setExpression({id:'12', latex:`i=${i}`});
+  });
+</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-des" id="des-right-sum-classic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Desmos Applet&nbsp;12.1: Visualizing the right Riemann sum as the sum of the areas of rectangles.
+</figcaption>
+</figure>
+<p>And thus we make the following definition.</p>
+<div id="def-naive-integral" class="grouped-theorem grouped-theorem-definition">
+<p><span class="theorem-title"><strong>Definition 12.4</strong></span> Let <span class="math inline">\(a&lt;b,\)</span> and suppose <span class="math inline">\(f\)</span> is a real-valued function whose domain contains <span class="math inline">\([a,b].\)</span> If the sequence <span class="math inline">\((R_n(f))\)</span> of right Riemann sums of <span class="math inline">\(f\)</span> over <span class="math inline">\([a,b]\)</span> converges to some real number <span class="math inline">\(I,\)</span> we say that <span class="math inline">\(f\)</span> is <strong>right-integrable</strong> on <span class="math inline">\([a,b].\)</span> In this case, we write <span class="math inline">\({\mathsf R}_a^b f\)</span> for <span class="math inline">\(I\)</span> and call this value the <strong>right integral</strong> of <span class="math inline">\(f\)</span> over <span class="math inline">\([a,b].\)</span></p>
+</div>
+<p>This definition does two things for us. First it tells us which functions get to be part of our theory—ones where the sequence of right Riemann sums converges. And second it tells us what the value of those integrals should be. While the second part is what we focus on when doing calculations, it’s the first part that’s important for being able to prove theorems; it lays out the baseline assumptions we can make about the functions being integrated.</p>
+<p>The problem with this definition is that those baseline assumptions are too weak to be able to derive theorems from. <a href="integration/naive.html#def-naive-integral">Definition 12.4</a> allows too many problematic functions into the theory without being able to properly handle them. The next example hints at the sort of thing that can go wrong.</p>
+<div id="exr-right-integral-pathology" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 12.5</strong></span> Show that Dirichlet’s function from <a href="integration/naive.html#exr-right-sum-pathology">Exercise 12.3</a> is right-integrable, and find its right integral. Does the value of the right integral make sense given the sketch you made? Explain.</p>
+</div>
+<p>As one more warmup question to reflect on, the following exercise provides another hint about an arbitrary and possibly-problematic choice we make in the definitions so far.</p>
+<div id="exr-why-called-right" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 12.6</strong></span> Why do you think we refer to the expression in <a href="integration/naive.html#def-right-sum">Definition 12.1</a> as the “right” Riemann sum? What would it mean to take the “left” Riemann sum?</p>
+</div>
+</section>
+<section id="the-domain-additivity-issue" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="the-domain-additivity-issue"><span class="header-section-number">12.2</span> The Domain Additivity Issue</h2>
+<p>We haven’t proven it yet, but it should be true that, for any function that’s part of our theory, the integral from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span> plus the integral from <span class="math inline">\(b\)</span> to <span class="math inline">\(c\)</span> of a function should be equal to the integral from <span class="math inline">\(a\)</span> to <span class="math inline">\(c.\)</span> This theorem should make intuitive sense if we are thinking about areas under the curve, but it is also one of the keys to proving the Fundamental Theorem of Calculus.</p>
+<p>Unfortunately, right-integrable functions do not necessarily obey the corresponding rule as you’ll show below.</p>
+<div id="exr-non-additivity-of-right-integral" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 12.7</strong></span> For Dirichlet’s function <span class="math inline">\(f\)</span> defined in <a href="integration/naive.html#exr-right-sum-pathology">Exercise 12.3</a>, show that <span class="math inline">\(f\)</span> is right-integrable over <span class="math inline">\(\left[0,\frac{1}{\sqrt2}\right]\)</span> and over <span class="math inline">\(\left[\frac{1}{\sqrt2},1\right]\)</span>. Find <span class="math inline">\(\mathsf R_0^{1/\sqrt2} f\)</span> and <span class="math inline">\(\mathsf R_{1/\sqrt2}^1 f,\)</span> and show that <span class="math display">\[
+\mathsf R_0^{1/\sqrt2} f+\mathsf R_{1/\sqrt2}^1 f\neq \mathsf R_0^1 f.
+\]</span></p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In your answer to <a href="integration/naive.html#exr-non-additivity-of-right-integral">Exercise 12.7</a>, you can feel free to use familiar facts about whether sums, products, etc. of rational and irrational numbers are rational or irrational without proof, but make sure your facts are actually true!</p>
+</div>
+</div>
+</div>
+<p>Because of this and related issues, we are forced to seek an alternative to what we’ll call the “naive theory of integration” that arises from <a href="integration/naive.html#def-naive-integral">Definition 12.4</a>.</p>
+<p>To gain a foothold on how to do this, we start by returning to <a href="integration/naive.html#exr-why-called-right">Exercise 12.6</a>, and trying to conceptualize what’s going on in the definition of right Riemann sums. When calculating <span class="math inline">\(R_n(f),\)</span> we should imagine dividing the interval <span class="math inline">\([a,b]\)</span> into <span class="math inline">\(n\)</span> (equal) subintervals, <span class="math inline">\([x_0,x_1],[x_1,x_2],\ldots,[x_{n-1},x_n].\)</span> Then each summand <span class="math inline">\(f(x_i)\Delta x\)</span> of <a href="#eq-right-sum" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> can be thought of as the width of the <span class="math inline">\(i\)</span>th subinterval (always <span class="math inline">\(\Delta x\)</span>) times the value of the function at a certain point in that subinterval; namely <span class="math inline">\(f(x_i)\)</span> is the value of the function at the <em>right</em> endpoint of the <span class="math inline">\(i\)</span>th interval <span class="math inline">\([x_{i-1},x_i].\)</span></p>
+<figure class="quarto-float quarto-float-des figure">
+<div aria-describedby="des-subintervals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+<div id="calculator-subintervals" class="calculator-container" style="width: 100%; height: 150px;">
+
+</div>
+<div class="slider-container">
+<label for="n-slider" class="left-label"><span class="math inline">\(n\)</span></label>
+<div class="centered-slider">
+<input id="n-slider" class="desmos-slider" type="range" min="1" max="20" step="1" value="5" list="values"> <datalist id="values"> <option value="1" label="1"></option> <option value="20" label="20"></option> </datalist>
+</div>
+</div>
+<script>
+  var nSlider = document.getElementById('n-slider');
+  var n = parseInt(nSlider.value);
+  
+  var elt = document.getElementById('calculator-subintervals');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('subintervals.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator.setState(state);
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  nSlider.addEventListener('input', function() {
+    n = parseFloat(this.value);
+    calculator.setExpression({id:'n-slider', latex:`n=${n}`});
+  });
+</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-des" id="des-subintervals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Desmos Applet&nbsp;12.2: The interval <span class="math inline">\([a,b]\)</span> partitioned into <span class="math inline">\(n\)</span> subintervals.
+</figcaption>
+</figure>
+<p>However, the choice to plug in the <em>right</em> endpoint of each interval is somewhat arbitrary. For a well-behaved function, we would expect that choosing the left endpoints, midpoints, or any other sample point <span class="math inline">\(x_i^*\)</span> from the <span class="math inline">\(i\)</span>th subinterval would be just as reasonable, and that <em>as long as the subintervals are all small enough</em>, adding up the products of the values <span class="math inline">\(f(x_i^*)\)</span> at these sample points with the widths <span class="math inline">\(\Delta x\)</span> will get us close to the true value of the integral.</p>
+<figure class="quarto-float quarto-float-des figure">
+<div aria-describedby="des-sample-points-uniform-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4f603473e10e40a1ba9b9bc2e52866d1"></script>
+<div id="calculator-sample-points-uniform" class="calculator-container" style="width: 100%; height: 250px;">
+
+</div>
+<div class="slider-container">
+<label for="n-slider-2" class="left-label"><span class="math inline">\(n\)</span></label>
+<div class="centered-slider">
+<input id="n-slider-2" class="desmos-slider" type="range" min="1" max="20" step="1" value="5" list="values-2"> <datalist id="values-2"> <option value="1" label="1"></option> <option value="20" label="20"></option> </datalist>
+</div>
+</div>
+<div class="radio-container">
+<div>
+<p><span style="margin-right:1.5rem;">Sampling Method:</span> <label style="margin-right: 1.5rem;"> <input type="radio" id="right" name="method" value="right"> Right </label> <label style="margin-right: 1.5rem;"> <input type="radio" id="left" name="method" value="left"> Left </label> <label style="margin-right: 1.5rem;"> <input type="radio" id="midpoint" name="method" value="midpoint"> Midpoint </label> <label style="margin-right: 1.5rem;"> <input type="radio" id="random" name="method" value="random"> Random </label></p>
+</div>
+</div>
+<script>
+  var nSlider2 = document.getElementById('n-slider-2');
+  var n2 = parseInt(nSlider2.value);
+  
+  var elt = document.getElementById('calculator-sample-points-uniform');
+  var options = {
+    lockViewport: true,
+    expressions: false,
+    keypad: false
+  }
+  var calculator2 = Desmos.GraphingCalculator(elt,options);
+  
+
+    // Load the JSON state from file and apply it
+    fetch('sample-points-uniform.json')
+      .then(response => response.json())
+      .then(payload => {
+        if (payload && payload.product === 'graphing-3d') {
+          console.error('Desmos JSON is for graphing-3d; use a 2D graphing calculator state.');
+          return;
+        }
+        const state = payload && payload.state ? payload.state : payload;
+        calculator2.setState(state);
+        document.getElementById('right').checked = true;
+        setSamplingMethod('right');
+      })
+      .catch(error => {
+        console.error('Error loading Desmos state:', error);
+      });
+
+  function setSamplingMethod(method) {
+    var folderMap = {
+      right: '12',
+      left: '17',
+      midpoint: '21',
+      random: '26'
+    };
+
+    console.log('setSamplingMethod', method, folderMap[method]);
+    Object.keys(folderMap).forEach(function(key) {
+      calculator2.setExpression({id: folderMap[key], hidden: key !== method});
+    });
+  }
+
+  var sampleMethodRadios = document.querySelectorAll('input[name="method"]');
+  sampleMethodRadios.forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      if (this.checked) {
+        setSamplingMethod(this.value);
+      }
+    });
+  });
+
+  nSlider2.addEventListener('input', function() {
+    n2 = parseFloat(this.value);
+    calculator2.setExpression({id:'n-slider', latex:`n=${n2}`});
+  });
+</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-des" id="des-sample-points-uniform-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Desmos Applet&nbsp;12.3: Different methods for choosing sample points from a partition of <span class="math inline">\([a,b]\)</span>.
+</figcaption>
+</figure>
+<div id="exr-left-and-right-agree" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 12.8</strong></span> &nbsp;</p>
+<ol type="1">
+<li>Write down a reasonable definition for the <strong>left Riemann sum</strong> <span class="math inline">\(L_n(f),\)</span> what it means for a function to be <strong>left-integrable</strong>, and the <strong>left integral</strong> <span class="math inline">\(\mathsf L_a^b f\)</span> of a real-valued function <span class="math inline">\(f\)</span> whose domain includes <span class="math inline">\([a,b].\)</span></li>
+<li>Prove that <span class="math inline">\(f\)</span> is right-integrable on <span class="math inline">\([a,b]\)</span> if and only if <span class="math inline">\(f\)</span> is left-integrable on <span class="math inline">\([a,b]\)</span> and that in this case, <span class="math inline">\(\mathsf R_a^b f=\mathsf L_a^b f.\)</span></li>
+</ol>
+</div>
+<div id="exr-sampling-irrationals" class="grouped-theorem grouped-theorem-exercise">
+<p><span class="theorem-title"><strong>Exercise 12.9</strong></span> For Dirichlet’s function <span class="math inline">\(f\)</span> defined in <a href="integration/naive.html#exr-right-sum-pathology">Exercise 12.3</a>, prove that for any <span class="math inline">\(n\in\N,\)</span> there exist sample points <span class="math inline">\(x_i^*\)</span> in the <span class="math inline">\(i\)</span>th subinterval such that <span class="math inline">\(\sum_{i=1}^n f(x_i^*)\Delta x=0.\)</span></p>
+</div>
+<p>The previous exercise shows that for Dirichlet’s function, the choice of sample points <em>does</em> matter. That dependence will be grounds for us to exclude this function from the more rigorous theory that we develop in the remainder of this chapter<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+</section>
+<section id="review-questions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="review-questions">Review Questions</h2>
+<ol type="1">
+<li>What does it mean for a function to be “right-integrable”? What is the definition of the “right integral” of such a function?</li>
+<li>Give an example of a familiar property of integrals that can fail if we adopt the naive theory of integration based on right integrability.</li>
+</ol>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>We will return to this idea later, but sophisticated theories of integration that go beyond the scope of this class <em>do</em> allow functions like this one and are able to handle them gracefully.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../minmax.html" class="pagination-link" aria-label="The Min-Max Theorem">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Min-Max Theorem</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
