@@ -14,7 +14,7 @@ book:
   date: "3/5/2026"
   chapters:
     - index.qmd
-    - intro.qmd
+    - intro-draft.qmd
     - part: "The Real Numbers"
       chapters:
         - axioms-of-r/field-and-order.qmd
@@ -27,17 +27,21 @@ book:
         - metric-spaces/open-balls.qmd
         - metric-spaces/open-set-props.qmd
         - metric-spaces/boundedness.qmd
+    - part: "Assorted Topics (Provisional)"
+      chapters:
+        - sequences/series.qmd
+        - minmax.qmd
     # - part: "Sequences"
     #   chapters:
     #     - sequences/sequence-basics.qmd
     #     - sequences/sequence-convergence.qmd
     #     - sequences/subsequences.qmd
-    #     - sequences/sequences-in-r-i.qmd
+    #     - sequences/sequences-in-r-i.qmdy
     #     - sequences/cauchy.qmd
     #     - sequences/series.qmd
-    # - part: "Integration"
-    #   chapters:
-    #     - integration/naive.qmd
+    - part: "Integration"
+      chapters:
+        - integration/naive.qmd
     #     - integration/riemann-integral.qmd
     #     - integration/integral-props.qmd
     # - constructing-r.qmd

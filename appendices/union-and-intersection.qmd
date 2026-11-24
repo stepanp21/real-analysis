@@ -1,6 +1,6 @@
 # Collections of Sets
 
-In set theory, we often need to think about not just one set, but a whole *collection*^[Really this is the same as a *set of sets*, but we use the word "collection" to help distinguish between the two levels of the heirarchy.] of sets.
+In set theory, we often need to think about not just one set, but a whole *collection*^[Really this is the same as a *set of sets*, but we use the word "collection" to help distinguish between the two levels of the hierarchy.] of sets.
 
 Some examples that appear in the text are below.
 
@@ -40,9 +40,9 @@ More generally, if our sets are indexed by $\Delta$, we would write $U_\alpha$ f
 
 When we have finitely many sets, it is typical to call them something like $U_1,U_2,\ldots,U_n$; the collection would then be the set of sets $\{U_1,U_2,\ldots,U_n\}$. In this case $\Delta=\{1,2,\ldots,n\}$ is the indexing set since there is one set in our collection for each element of $\Delta$.
 
-Often, we want one set for each natural number. In this case, we can use an indexing set of $\Delta=\N$ and we once again call our sets $U_1,U_2,\ldots$. To indicate the collection of sets, we can write $\left\{U_i\right\}_{i\in\N}$ or more commonly $\left\{U_i\right\}_{i=0}^\infty$.
+Often, we want one set for each natural number. In this case, we can use an indexing set of $\Delta=\N$ and we once again call our sets $U_1,U_2,\ldots$. To indicate the collection of sets, we can write $\left\{U_i\right\}_{i\in\N}$ or more commonly $\left\{U_i\right\}_{i=1}^\infty$.
 
-Occassionally we want to put our sets in correspondence with some other set $\Delta$. In @exm-open-set-union, for example, we wanted one set (one open ball) for each point of $S$. In this case we would make $\Delta=S$. Then for each point $x\in S$, there is a corresponding open ball $B_x$ centered around $x$. In this case, we would write $\left\{B_x\right\}_{x\in S}$ for the collection.
+Occasionally we want to put our sets in correspondence with some other set $\Delta$. In @exm-open-set-union, for example, we wanted one set (one open ball) for each point of $S$. In this case we would make $\Delta=S$. Then for each point $x\in S$, there is a corresponding open ball $B_x$ centered around $x$. In this case, we would write $\left\{B_x\right\}_{x\in S}$ for the collection.
 
 ## Unions and Intersections {#sec-union-intersection}
 

@@ -129,17 +129,40 @@ local function add_doc_to_map(doc, chapter_prefix, file_base)
   }
 end
 
+local function alphabetic_chapter_prefix(number)
+  local value = tonumber(number)
+  if not value or value < 1 or value % 1 ~= 0 then
+    return number
+  end
+
+  local letters = {}
+  while value > 0 do
+    local remainder = (value - 1) % 26
+    table.insert(letters, 1, string.char(string.byte("A") + remainder))
+    value = math.floor((value - 1) / 26)
+  end
+
+  return table.concat(letters)
+end
+
 local function precompute_book_map(meta)
   if not (meta.book and meta.book.render) then
     return false
   end
 
+  local in_appendices = false
   for _, entry in ipairs(meta.book.render) do
-    if tostring(stringify(entry.type)) == "chapter" and entry.file then
+    local entry_type = tostring(stringify(entry.type))
+    if entry_type == "appendix" then
+      in_appendices = true
+    elseif entry_type == "chapter" and entry.file then
       local chapter_file = stringify(entry.file)
       local chapter_prefix = ""
       if entry.number then
         chapter_prefix = stringify(entry.number)
+        if in_appendices then
+          chapter_prefix = alphabetic_chapter_prefix(chapter_prefix)
+        end
       end
 
       local source = read_source_file(chapter_file)

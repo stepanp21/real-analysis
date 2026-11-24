@@ -127,11 +127,11 @@ Let $n$ be the number of elements of $F.$ We will prove that $F$ has a greatest 
 
 As a base case, suppose $n=1.$ Then $F=\{x_1\}.$ In this case $x_1\geq x_1,$ so $x_1$ is an upper bound on $F.$ And any upper bound $b$ on $F$ must have $b\geq x_1,$ so $x_1$ is the least upper bound. And of course $x_1\in F.$
 
-Now suppose that $k\in\N$ and any set with $k$ elements has a greatest element. Now suppose $F=\{x_1,\ldots,x_k,x_{k+1}\}$ has $k+1$ elements. Define $E=\{x_1,\ldots,x_k\}$ so that $E$ has $k$ elements and therefore a greatest element $g.$ If $x_{k+1}\geq g,$ then let $b=x_{k+1},$ and otherwise, let $b=g.$ Either way, $b\geq x_{k+1}$ and $b\geq g\geq x_i$ for all $i=1,\ldots,n$ (so $b$ is an upper bound), and either way $b\in F.$ And if $u$ is any upper bound on $F,$ then $u\geq g$ and $u\geq x_{k+1},$ so $u\geq b.$ Thus, $b$ is the *least* upper bound of $F,$ and since $b\in F,$ $b$ is the greatest element.
+Now suppose that $k\in\N$ and any set with $k$ elements has a greatest element. Now suppose $F=\{x_1,\ldots,x_k,x_{k+1}\}$ has $k+1$ elements. Define $E=\{x_1,\ldots,x_k\}$ so that $E$ has $k$ elements and therefore a greatest element $g.$ If $x_{k+1}\geq g,$ then let $b=x_{k+1},$ and otherwise, let $b=g.$ Either way, $b\geq x_{k+1}$ and $b\geq g\geq x_i$ for all $i=1,\ldots,k$ (so $b$ is an upper bound), and either way $b\in F.$ And if $u$ is any upper bound on $F,$ then $u\geq g$ and $u\geq x_{k+1},$ so $u\geq b.$ Thus, $b$ is the *least* upper bound of $F,$ and since $b\in F,$ $b$ is the greatest element.
 :::
 
 :::{.callout-caution}
-We *cannot* write $\max S$ when $S$ is not known to be a nonempty finite set. Indeed, we have seen examples where $S$ has no greatest element.
+In this text we only write $\max S$ when $S$ is known to be a *nonempty finite* set. We have seen examples of infinite sets $S$ where $S$ has no greatest element.
 :::
 
 :::{.exercise #exr-min}
@@ -151,7 +151,7 @@ Let $a\in\R.$ Prove that there exists a unique $n\in\Z$ such that $n\leq a<n+1.$
 Note that you will need the Well-Ordered Property of $\Z$ in order to prove this (see @sec-wop).
 :::
 
-@exr-floors now allows us to use the "floor function"; for any $x\in \R$ we can define $\lfloor x\rfloor$ to be the greatest integer that is less than or equal to $x$; similarly, $\lceil x\rceil,$ the "ceiling", is the least integer that is greater than or equal to $x.$ In practice, students tend to overuse the floor function in real analysis proofs---most of the time you just need *an* integer that is greater $x,$ which is furnished by the Archimedian Property (@thm-arch-prop).
+@exr-floors now allows us to use the "floor function"; for any $x\in \R$ we can define $\lfloor x\rfloor$ to be the greatest integer that is less than or equal to $x$; similarly, $\lceil x\rceil,$ the "ceiling", is the least integer that is greater than or equal to $x.$ In practice, students tend to overuse the floor function in real analysis proofs---most of the time you just need *an* integer that is greater $x,$ which is furnished by the Archimedean Property (@thm-arch-prop).
 
 :::{.exercise #exr-rational-floor}
 Let $b\in\R$ and $q\in\N.$ Prove that there exists a unique $p\in\Z$ such that
@@ -181,7 +181,7 @@ If you are still stuck, use the following concrete example to help you wrap your
 :::
 
 :::{.exercise #exr-rational-between-any-two-reals}
-Let $c,d\in\R.$ Prove that there exists a rational number $x$ with $c<x<d.$
+Let $c,d\in\R$ with $c<d.$ Prove that there exists a rational number $x$ with $c<x<d.$
 :::
 
 :::{.callout-tip collapse="true"}
@@ -192,7 +192,7 @@ Once again, don't start from scratch. In both this exercise and @exr-rational-in
 :::
 
 :::{.exercise #exr-irrational-between-any-two-reals}
-Let $c,d\in\R.$ Prove that there exists an irrational number $x$ with $c<x<d.$
+Let $c,d\in\R$ with $c<d.$ Prove that there exists an irrational number $x$ with $c<x<d.$
 :::
 
 :::{.callout-tip collapse="true"}

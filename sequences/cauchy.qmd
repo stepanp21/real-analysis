@@ -123,7 +123,7 @@ Prove @thm-convergence-implies-cauchyness.
 
 #### Hint
 
-If you assume the sequence converges to a point $x$, and you're trying to prove a condition like $d(a_m,a_n)<\epsilon$, you have *three* points in your metric space to play with: $a_m,a_n,x$. Which property of metric spaces would you guess is going to be helpful here?
+If you assume the sequence converges to a point $x$, and you're trying to prove a condition like $d(a_m,a_n)<\epsilon,$ you have *three* points in your metric space to play with: $a_m,a_n,x.$ Which property of metric spaces would you guess is going to be helpful here?
 :::
 
 So convergence implies Cauchyness, but we have already seen in @exr-pi-roundoffs-cauchy that not every Cauchy sequences converges, at least not in $\Q$. In some metric spaces, though, Cauchyness and convergence are in fact equivalent.
@@ -133,7 +133,7 @@ A metric space $X$ is said to be **Cauchy complete** if every Cauchy sequence in
 :::
 
 :::{.callout-note}
-The parenthetical "to a point in $X$" in the definition of "complete" isn't strictly necessary since when we talk about a metric space $X$, we think of it as the universe---there are no points outside of $X$ that we should be considering. However, when we think of $\Q$ as a metric space, we of course are typically aware of the fact that $\Q$ is a subspace of $\R$, so it is worth emphasizing to ourselves that when we consider a sequence like the one in @eq-pi-lower-decimal-approx in $\Q$ that converges in a larger metric space, it does not converge *to a point in $\Q$*.
+The parenthetical "to a point in $X$" in the definition of "complete" isn't strictly necessary since when we talk about a metric space $X$, we think of it as the universe---there are no points outside of $X$ that we should be considering. However, when we think of $\Q$ as a metric space, we are typically aware of the fact that $\Q$ is a subspace of $\R$, so it is worth emphasizing to ourselves that when we consider a sequence like the one in @eq-pi-lower-decimal-approx in $\Q$ that converges in a larger metric space, it does not converge *to a point in $\Q.$*
 :::
 
 :::{.exercise #exr-incomplete-example}

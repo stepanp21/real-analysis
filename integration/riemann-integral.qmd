@@ -19,7 +19,7 @@ The intervals $[x_{i-1},x_i]$ are called the **subintervals** of $[a,b]$ determi
 :::
 
 :::{.exercise #exr-mesh}
-The length of the longest subinterval for a partition $P$ is sometimes called the **mesh** of $P$.
+The length of the longest subinterval for a partition $P$ is called the **mesh** of $P$.
 
 1. Find the partition of $[1,3]$ with $12$ subintervals with the *smallest* mesh. How about with the *largest* mesh?
 2. In general, what is the minimum number of subintervals needed for there to exist a partition of $[a,b]$ with mesh of $\delta$? (Make sure your answer is an integer!)
@@ -38,11 +38,11 @@ DESMOS with a partition and sampling points on the number line?
 :::{.exercise #exr-pay-attention-to-partition-and-sampling-defs}
 Answer each true or false question, and explain in a sentence.
 
-1. **True/False:** If $P=\{x_0,x_1,\ldots,x_n\}$ is a partition of $[a,b]$, then it is possible that $x_i=x_{i+1}$ for some $i$.
-2. **True/False:** If $\vec x^*=(x_1^*,\ldots,x_n^*)$ is a sampling vector for some partition $P$, then it is possible that $x_i^*=x_{i+1}^*$ for some $i$.
+1. **True/False:** If $P=\{x_0,x_1,\ldots,x_n\}$ is a partition of $[a,b]$ into $n$ subintervals, then it is possible that $x_i=x_{i+1}$ for some $i$.
+2. **True/False:** If $\vec x^*=(x_1^*,\ldots,x_n^*)$ is a sampling vector for some partition $P$ with $n$ subintervals, then it is possible that $x_i^*=x_{i+1}^*$ for some $i.$
 :::
 
-With the concepts of partition and sampling points sufficiently generalized, we now given the general definition for a Riemann sum.
+With the concepts of partition and sampling points sufficiently generalized, we now give the general definition for a Riemann sum.
 
 :::{.definition #def-riemann-sum}
 Suppose $a<b$ and let $f$ be a real-valued function whose domain includes $[a,b]$. We define the **Riemann sum** of $f$ over $[a,b]$ for a partition $P=\{x_0,x_1,\ldots,x_n\}$ of $[a,b]$ and sampling vector $\vec x^*=(x^*_1,\ldots,x^*_n)$ for $P$ to be
@@ -61,7 +61,7 @@ Answer each of the following and draw a picture to support your answer (a full p
 1. Let $f(x)=\sin x$ and consider the partition $P=\left\{0,\frac{\pi}{6},\frac{2\pi}{6},\frac{3\pi}{6},\frac{4\pi}{6},\frac{5\pi}{6},\pi\right\}$ of $[0,\pi]$. What choice of sampling vector $\vec x^*$ maximizes $\mathcal R(f,P,\vec x^*)$?
 2. Let $f(x)=x^2$. What choice of partition $P$ on $[0,3]$ with mesh 2 and sampling vector $\vec x^*$ maximizes $\mathcal R(f,P,\vec x^*)$?
 3. Let $f(x)=\begin{cases} x & x<1 \\ 0 & x\geq 1 \end{cases}$, and let $P=\{0,1,2\}$. Is there a sampling vector $\vec x^*$ that maximizes $\mathcal R(f,P,\vec x^*)$? Why or why not?
-4. Let $P$ be any partition of $[0,1]$. Explain why there always exist sampling vectors $\vec x^*$ and $\vec x^{\text{☾}}$ such that
+4. Let $P$ be any partition of $[0,1]$, and let $f$ be the Dirichlet function from @exr-right-sum-pathology. Explain why, for any partition $P$, there exist sampling vectors $\vec x^*$ and $\vec x^{\text{☾}}$ such that
 $$
 \mathcal R(f,P,\vec x^*)=1 \qquad \mathcal R(f,P,\vec x^\text{☾})=0.
 $$
@@ -77,7 +77,7 @@ Applying this slogan to last part of @exr-maximize-riemann-sum shows that Dirich
 
 In what follows, suppose $a<b$ and that $f$ is a real-valued function whose domain includes $[a,b]$. We further assume that $f$ is bounded on $[a,b]$.
 
-Let $P=\{x_0,x_1,\ldots,x_n\}$ be a partition of $f$. Let
+Let $P=\{x_0,x_1,\ldots,x_n\}$ be a partition of $f$. And let
 $$
 m_i=\inf\{f(x)\st x\in[x_{i-1},x_i]\} \qquad M_i=\sup\{f(x)\st x\in[x_{i-1},x_i]\}
 $$

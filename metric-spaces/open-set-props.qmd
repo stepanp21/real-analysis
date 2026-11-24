@@ -182,7 +182,7 @@ Hint: Will it be easier to work with the *definition* of openness, or Condition 
 
 #### Setup of proof of Part 2 of @thm-unions-and-intersections-of-open-sets
 
-Suppose $U_1,\ldots,U_n$ are open and let $U=\bigcap_{i=1}^n U_i$. We will prove $U$ is open using the definition of openness, so we start by supposing that $x\in U$. This means $x\in U_i$ for all $i=1,\ldots,n$. Therefore, applying the definition of openness to each $U_i$, there exists $r_i$ such that $\bee_{r_i}(x)\subseteq U_i\subseteq U$.
+Suppose $U_1,\ldots,U_n$ are open and let $U=\bigcap_{i=1}^n U_i$. We will prove $U$ is open using the definition of openness, so we start by supposing that $x\in U$. This means $x\in U_i$ for all $i=1,\ldots,n$. Therefore, applying the definition of openness to each $U_i$, there exists $r_i$ such that $\bee_{r_i}(x)\subseteq U_i$.
 :::
 
 :::{#des-open-set-int .content-visible when-format="html"}

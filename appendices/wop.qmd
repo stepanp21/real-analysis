@@ -24,7 +24,7 @@ $$T=\{1-n+s\st s\in S\}$$
 Then if $t\in T$, $t=1-n+s$ for some $s\in S$,
 $$t=1-n+s\geq 1-n+n=1.$$
 
-Thus all elements of $T$ are positive integers, so $T\subseteq\N$. So by @ax-wop-n, $T$ has a least element $m$; that is $m\in T$ and $m\leq t$ for all $t\in T$. Thus $m=1-n+k$ for some $k\in S$, so $m+n-1=k\in S$. And if $s\in S$, then $1-n+s\in T$, so $1-n+s\leq m$ and therefore $s\leq m+n-1=k$. Thus $k$ is the least element of $S$.
+Thus all elements of $T$ are positive integers, so $T\subseteq\N$. So by @ax-wop-n, $T$ has a least element $m$; that is $m\in T$ and $m\leq t$ for all $t\in T$. Thus $m=1-n+k$ for some $k\in S$, so $m+n-1=k\in S$. And if $s\in S,$ then $1-n+s\in T,$ so $m\leq1-n+s,$ and therefore $k=m+n-1\leq s.$ Thus $k$ is the least element of $S.$
 :::
 
 :::{.exercise #exr-wop-for-other-number-systems}

@@ -64,16 +64,16 @@ Let $X$ be a set with the trivial metric (defined in @exr-trivial-metric). Let $
 3. $\bee_{1/2}(a)$
 :::
 
-:::{.exercise #exr-open-balls-in-trivial-ms}
+:::{.exercise #exr-open-balls-in-taxicab}
 Consider $\R^2$ with the "taxicab metric" $d_1$ defined in @exr-taxicab. Sketch the open ball of radius 2 centered at the origin.
 :::
 
 :::{.exercise #exr-open-balls-in-subspace}
-Consider $X=\{(x,y)\st y\geq0\}$ as a subspace of $\R^2$. Sketch $\bee_2(0,1)$ in the metric space $S$.
+Consider $S=\{(x,y)\st y\geq0\}$ as a subspace of $\R^2$. Sketch $\bee_2(0,1)$ in the metric space $S$.
 :::
 
 :::{.exercise #exr-hausdorff}
-Suppose $X$ is a metric space with distance function $d$. Let $a,b$ be distinct points in $X$. Prove that there exists $\epsilon>0$ such that $\bee_\epsilon(x)$ and $\bee_\epsilon(y)$ are disjoint.
+Suppose $X$ is a metric space with distance function $d$. Let $a,b$ be distinct points in $X$. Prove that there exists $\epsilon>0$ such that $\bee_\epsilon(a)$ and $\bee_\epsilon(b)$ are disjoint.
 :::
 
 ## Open Sets

@@ -1,6 +1,6 @@
 # The Field and Order Axioms
 
-## Highlights
+## Highlights {.unnumbered}
 
 - Two of the three axioms we will assume about the real number system: the field axiom which gives us the rules of arithmetic, and the order axiom which gives us the rules for inequalities.
 - We see examples of other number systems besides $\R$ that also satisfy one or both of these axioms. In particular $\Q$ also satisfies both.
@@ -22,7 +22,7 @@ The second bullet point about distinguishing $\R$ from other number systems is r
 
 > For every $x>0$, there exists $y$ such that $y^2=x.$
 
-This is true if our universe is $\R$ but false our universe is $\Q.$ If our axioms for $\R$ do not distinguish it from $\Q$, we will have no hope of proving such a propositon. In short, I want a set of axioms that is true for $\R$ *but for no other number system*.
+This is true if our universe is $\R$ but false our universe is $\Q.$ If our axioms for $\R$ do not distinguish it from $\Q$, we will have no hope of proving such a proposition. In short, I want a set of axioms that is true for $\R$ *but for no other number system*.
 
 :::{.callout-note}
 I am using the term *number system* a bit loosely. For our purposes, though, it's fine to think of any set with binary operations corresponding to addition and multiplication---think $\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R},\mathbb{C}.$
@@ -38,8 +38,8 @@ For now, let's focus on thinking about which other familiar number systems satis
 Think about some familiar number systems that *aren't* the real numbers: $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, and $\mathbb{C}.$ You may rely on prior knowledge for this problem---no need to show all of your work.
 
 1. Which of these are fields? For those that are not, which properties do they fail to have? 
-2. Which of these are ordered fields? Which of these satisfy the two conditions of @def-ordered-field despite not actually being a field?
-3. **(Exploratory)** You should have found that one of the four number systems is a field and an ordered field. The Intermediate Value Theorem (for example) *is* true in $\R$, but it is *not* true in any of these other four number systems. With that information, do you think one would be able to prove the Intermediate Value Theorem in $\R$ if our *only* assumptions about $\R$ are the field and order axioms?
+2. Which of these are ordered fields? Which of these satisfy the three conditions of @def-ordered-field despite not actually being a field?
+3. **(Exploratory)** The Intermediate Value Theorem is true in $\R$, but it is *not* true in any of the other four number systems from this problem. You should have found that one of the four number systems is a field and an ordered field. With that information, do you think one would be able to prove the Intermediate Value Theorem in $\R$ if our *only* assumptions about $\R$ are the field and order axioms?
 
 :::
 
@@ -57,8 +57,8 @@ A number system $\mathbb{S}$ is said to be a **field** if it satisfies the follo
 5. Multiplication is commutative (for all $a,b\in\mathbb{S}$, $a\cdot b=b\cdot a$).
 6. Multiplication is associative (for all $a,b,c\in\mathbb{S}$, $(a\cdot b)\cdot c=a\cdot(b\cdot c)$).
 7. There is an element $1\in\mathbb{S}$ different from 0, called the *multiplicative identity* such that for all $a\in\mathbb{S}$, $a\cdot 1=a.$
-8. Every $a\in\mathbb{S}\setminus\{0\}$ has an *additive inverse* $a^{-1}$ with the property that $a+(a^{-1})=1.$
-9. The *distributive rule* holds (for all $a,b,c\in\mathbb{S}$, $a(b+c)=a\cdot b+a\cdot c$).
+8. Every $a\in\mathbb{S}\setminus\{0\}$ has an *multiplicative inverse* $a^{-1}$ with the property that $a\cdot(a^{-1})=1.$
+9. The *distributive rule* holds: for all $a,b,c\in\mathbb{S}$, $a(b+c)=a\cdot b+a\cdot c$.
 
 :::
 

@@ -21,7 +21,7 @@ As a first step, we will prove the Cauchy-Schwarz Inequality.
 
 Suppose $u_1,\ldots, u_n\in\R$ and $v_1,\ldots,v_n\in\R$. Then
 $$
-\left(\sum_{i=1}^n u_iv_i\right)^2 \leq \left(\sum_{i=1}^n u_i\right)\left(\sum_{i=1}^n v_i\right).
+\left(\sum_{i=1}^n u_iv_i\right)^2 \leq \left(\sum_{i=1}^n u_i^2\right)\left(\sum_{i=1}^n v_i^2\right).
 $$
 :::
 
@@ -36,7 +36,7 @@ $$
 p(t)=\sum_{i=1}^n t^2u_i^2 + 2tu_iv_i + v_i^2=t^2\left(\sum_{i=1}^n u_i^2\right)+2t\left(\sum_{i=1}^n u_iv_i\right) + \left(\sum_{i=1}^n v_i^2\right).
 $$
 
-Note that $p(t)$ is a quadratic function, so since it is never negative, its [discriminant]{.explain color="yellow" note="This is a throwback to Algebra I. Remember that the discriminant of a quadratic function $at^2+bt+c$ is $b^2-4ac$. A quadratic function take both positive and negative values if and only if $\Delta>0.$"} $\Delta$ is non-positive. That is
+Note that $p(t)$ is a quadratic function, so since it is never negative, its [discriminant]{.explain color="yellow" note="This is a throwback to Algebra I. Remember that the discriminant of a quadratic function $at^2+bt+c$ is $b^2-4ac$. A quadratic function takes both positive and negative values if and only if $\Delta>0.$"} $\Delta$ is non-positive. That is
 $$
 0\geq\Delta=\left(2\sum_{i=1}^n u_iv_i\right)^2-4\left(\sum_{i=1}^n u_i^2\right)\left(\sum_{i=1}^n v_i^2\right)
 $$
@@ -74,7 +74,7 @@ $$
 
 However, this last line is equal to
 $$
-\sum_{i=1}^n (u_i+v_i)^2=d(\mathbf a,\mathbf c),
+\sum_{i=1}^n (u_i+v_i)^2=d(\mathbf a,\mathbf c)^2,
 $$
 
 and so we have proven the theorem.

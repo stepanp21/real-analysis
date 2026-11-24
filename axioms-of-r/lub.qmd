@@ -4,7 +4,7 @@ resources:
 ---
 # The Least Upper Bound Axiom
 
-## Highlights
+## Highlights {.unnumbered}
 
 - The definition of the supremum of a set and the Least Upper Bound axiom of $\R$
 - The Archimedean Properties of $\R$
@@ -17,7 +17,7 @@ In this section, we will lay out an axiom for $\R$ that distinguishes it from ot
 Let $S\subseteq\R$ be a subset of the real numbers.
 
 1. We say $b\in\R$ is an **upper bound** of $S$ if for all $x\in S,$ $b\geq x.$ If $S$ has an upper bound, we say $S$ is **bounded above**.
-2. We say that $u\in\R$ the **least upper bound** or **supremum** of $S$ if for all upper bounds $b$ of $S,$ $u\leq b,$ and in this case we write 
+2. We say that $u\in\R$ the **least upper bound** or **supremum** of $S$ if $u$ is an upper bound and for all upper bounds $b$ of $S,$ $u\leq b.$ In this case we write 
 $$u=\sup S.$$
 3. If $u$ is the least upper bound $S$ and $u\in S,$ we say that $u$ is the **greatest element** of $S.$
 :::
@@ -90,7 +90,7 @@ We have a sense that the since $3$ has no square root in $\Q,$ there is somethin
 
 This connection goes in the opposite direction as well. If we *assume* the supremum of $S$ exists, then we at least have a candidate for a number whose square is $3$ (actually proving this is more complicated than you might expect---see @thm-sqrts-exist below).
 
-This is all motivation for the final axiom we'll assume about the real nubers: a guarantee of the existence of least upper bounds that will have the effect of ensuring that any $\R$ will not have any "holes" in this sense, the way that $\Q$ does.
+This is all motivation for the final axiom we'll assume about the real numbers: a guarantee of the existence of least upper bounds that will have the effect of ensuring that any $\R$ will not have any "holes" in this sense, the way that $\Q$ does.
 
 :::{.axiom #ax-lub .lub-thread}
 
@@ -115,7 +115,7 @@ Generally, when define a new quantity implicitly (i.e. without giving an *ex*pli
 :::
 
 :::{.theorem #thm-lub-unique}
-If a subset of $\R$ has a least upper bound, then it is unique.
+If a subset of $\R$ has a least upper bound, then the least upper bound is unique.
 :::
 
 :::{.proof}
@@ -136,7 +136,7 @@ Note that doing a proof by contradiction above was not really necessary. Another
 
 Next we have some basic consequences of @ax-lub. The next theorem and its corollary are both often referred to as the "Archimedean Property" of $\R.$
 
-:::{.theorem #thm-arch-prop}
+:::{.theorem #thm-arch-prop .lub-thread}
 
 #### Archimedean Property - Version 1
 
@@ -157,7 +157,7 @@ Fill in the blanks for the proof above. For the first blank, you'll need to nega
 By way of contradiction, suppose there exists $x\in\R$ such that for all $n\in\N,$ $n\leq x.$ That is, suppose $x$ is an upper bound on $\N.$ Then since $\N$ is nonempty and bounded above, $\N$ has a least upper bound $u=\sup(\N).$ But then  $u-\frac{1}{2}<u,$ so $u-\frac{1}{2}$ is not an upper bound, so there exists $m\in\N$ such that $m>u-\frac{1}{2}.$ But then $m+1>u+\frac{1}{2}>u,$ and since $m+1\in\N,$ we have contradicted $u$ being the least upper bound.
 :::
 
-:::{.corollary #cor-arch-prop}
+:::{.corollary #cor-arch-prop .lub-thread}
 
 #### Archimedean Property - Version 2
 
@@ -172,7 +172,7 @@ Prove @cor-arch-prop.
 
 #### Hint
 
-Remember that when we call a theorem a "Corollary", it means that you should use the preceeding theorem to prove it, and the proof will generally end up being quite short.
+Remember that when we call a theorem a "Corollary", it means that you should use the preceding theorem to prove it, and the proof will generally end up being quite short.
 :::
 
 :::{.exercise #exr-careful-sup-proof}
@@ -207,7 +207,7 @@ For any $a\geq 0,$ there exists a real number $x\geq 0$ such that $x^2=a.$
 :::
 
 :::{.proof}
-Suppose $a\geq 0.$ Define
+Since the case where $a=0$ is trivial (since $0^2=0$),suppose $a>0.$ Define
 $$S=\{y\st y^2\leq a\}$$
 
 We will show that $S$ is nonempty and bounded above so that we can claim $\sup S$ exists.
@@ -220,7 +220,7 @@ $$(a+1)^2=a^2+2a+1>a$$
 So if $y\in S,$ 
 $$y^2\leq a< (a+1)^2$$
 
-so $y<a+1.$ Thus $a+1$ is an upper bound on $S,$ so $S$ is bounded above, and $x=\sup S$ exists.
+so $y<a+1.$ Thus $a+1$ is an upper bound on $S,$ so $S$ is bounded above, and $x=\sup S$ exists, and since $0\in S,$ $x\geq 0.$
 
 By way of contradiction, suppose $x^2\neq a.$ There are two cases: $x^2<a$ and $x^2>a,$ and we will finish the proof by showing each leads to a contradiction.
 
@@ -228,16 +228,16 @@ By way of contradiction, suppose $x^2\neq a.$ There are two cases: $x^2<a$ and $
 $$
 \begin{aligned}
 (x+\epsilon)^2 & = x^2+2x\epsilon+\epsilon^2 \\
-& < x^2 + 2x\epsilon + \epsilon \\
+& \leq x^2 + 2x\epsilon + \epsilon \\
 & = x^2 + \epsilon(2x+1) \\
 & \leq x^2 + a - x^2 \\
 & = a.
 \end{aligned}
 $$
 
-Then $x+\epsilon>x$ but $x+\epsilon\leq a,$ so $x+\epsilon\in S.$ Thus $x$ is not an upper bound on $S,$ which is a contradiction.
+Then $x+\epsilon>x$ but $(x+\epsilon)^2\leq a,$ so $x+\epsilon\in S.$ Thus $x$ is not an upper bound on $S,$ which is a contradiction.
 
-**(Case 2: $x^2>a$)** Let $\epsilon=\min\left\{x,\frac{x^2-a}{2x} \right\}$ so that $\epsilon>0$ and $x-\epsilon>0.$ Then
+**(Case 2: $x^2>a$)** Here we know $x>0$, so let $\epsilon=\min\left\{x,\frac{x^2-a}{2x} \right\}$ so that $\epsilon>0$ and $x-\epsilon>0.$ Then
 
 $$
 \begin{aligned}
@@ -250,7 +250,7 @@ $$
 $$
 
 But since $(x-\epsilon)^2>a,$ this means that for any $y\in S,$ $y^2<a<(x-\epsilon)^2,$ so 
-$$y<|y|<|x-\epsilon|=x-\epsilon,$$
+$$y\leq|y|<|x-\epsilon|=x-\epsilon,$$
  
 so $x-\epsilon$ is an upper bound on $S$ less than $x,$ contradiction $x$ being the *least* upper bound.
 

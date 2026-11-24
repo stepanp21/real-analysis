@@ -95,14 +95,14 @@ Suppose $S_1$ and $S_2$ are bounded subsets of a metric space $X.$ Prove that $S
 
 ## Boundedness in $\R$
 
-As ever, what we really care about is how this concept applies to $\R$ and how the concepts defined thus far interact. We've already defined "bounded above" and "bounded below". The next theorem will connect these definitions to our new more general defintion of "bounded" for metric spaces.
+As ever, what we really care about is how this concept applies to $\R$ and how the concepts defined thus far interact. We've already defined "bounded above" and "bounded below". The next theorem will connect these definitions to our new more general definition of "bounded" for metric spaces.
 
 :::{.theorem #thm-boundedness-in-r .tfae}
 Suppose $S\subseteq\R.$ Then the following are equivalent.
 
 1. $S$ is bounded.
 2. $S$ has an upper bound and a lower bound.
-3. There exists $K>0$ such that for all $x\in X,$ $|x|<K.$
+3. There exists $K>0$ such that for all $x\in S,$ $|x|<K.$
 :::
 
 :::{.exercise #exr-boundedness-in-r}
@@ -140,7 +140,7 @@ Prove @thm-boundedness-in-r.
       });
 </script>
 
-An illustration of the three equivalent conditions for the boundedness of $S$ in $\R$: an open ball $\bee_r(a),$ the set of $x$ with $|x|<K,$ and an upper and lower bound, $u$ and $l,$ on $S.$ A hint for @exr-boundedness-in-r is to think about how to construct the variables for one construction from another.
+An illustration of the three equivalent conditions for the boundedness of $S$ in $\R$: an open ball $\bee_r(a),$ the set of $x$ with $|x|<K,$ and an upper and lower bound, $u$ and $l,$ on $S.$ A hint for @exr-boundedness-in-r is to think about how to construct the variables for one condition from another.
 :::
 
 :::{.exercise #exr-unbounded-subset-of-r}

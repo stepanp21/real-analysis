@@ -39,19 +39,19 @@ If a nonempty subset $S\subseteq\R$ has a lower bound, then $S$ has a greatest l
 :::
 
 :::{.proof}
-Suppose $S\subseteq\R$ is nonempty and bounded below. Then let $T$ be the *set of lower bounds* of $S.$ Note that $T$ is nonempty (since $S$ was bounded above) and bounded above (by any element of $S$). Thus $T$ has a least upper bound $l=\sup T.$
+Suppose $S\subseteq\R$ is nonempty and bounded below. Then let $T$ be the *set of lower bounds* of $S.$ Note that $T$ is nonempty (since $S$ was bounded below) and bounded above (by any element of $S$). Thus $T$ has a least upper bound $l=\sup T.$
 
 I claim that $l=\inf(S).$ First, we note that $l$ is in fact greater than any other lower bound of $S,$ since $l$ is an upper bound on $T.$ Also, since every element of $S$ is an upper bound on $T,$ we have $l\leq s$ for all $s\in S$ since $l$ is the *least* upper bound of $T.$
 :::
 
 :::{.exercise #exr-infs-exist-2}
-Try proving @thm-infs-exist another way. Consider the set $U=\{x\st -x\in S\},$ and show that $-\sup U=\inf S.$^[We will use this kind of technqiue frequently to obtain the second two cases of a theorem we want to prove (e.g. one for increasing functions and one for decreasing function, or one for sups and one for infs).]
+Try proving @thm-infs-exist another way. Consider the set $U=\{x\st -x\in S\},$ and show that $-\sup U=\inf S.$^[We will use this kind of technique frequently to obtain the second two cases of a theorem we want to prove (e.g. one for increasing functions and one for decreasing function, or one for sups and one for infs).]
 :::
 
-One more concept we'll need in order to get started on this section is the idea of taking an infinite union or intersection, which will be important for understanding the Nested Interval Theorem. 
+One more concept we'll need in order to get started on this section is the idea of taking an infinite union or intersection, which will be important for understanding the Nested Interval Theorem. If you are rusty on unions and intersections, see @sec-union-intersection.
 
 :::{.exercise #exr-intersection-practice}
-For each example below, (i) draw the sequence of intervals on a number line, (ii) decide whether the sequence of intervals satisfies the conditions of @thm-NIT below, and (iii) identify the intersection $\displaystyle \bigcap_{i=1}^\infty [a_i,b_i].$^[If you are rusty on unions and intersections, see @sec-union-intersection.]
+For each example below, (i) draw the sequence of intervals on a number line, (ii) decide whether the sequence of intervals satisfies the conditions of @thm-NIT below, and (iii) identify the intersection $\displaystyle \bigcap_{i=1}^\infty [a_i,b_i].$
 
 1. $[a_i,b_i]=\left[-\frac{1}{i},\frac{1}{i}\right]$ for $i\in\N$
 2. $[a_i,b_i]=[-i,i]$ for $i\in\N$
@@ -67,13 +67,13 @@ As a thought experiment, consider the following collection of intervals:
 
 $$
 \begin{aligned}
-  U_1&=&[3,4]\\ 
-  U_2&=&[3.1,3.2]\\ 
-  U_3&=&[3.14,3.15]\\ 
-  U_4&=&[3.141,3.142]\\ 
-  U_5&=&[3.1415,3.1416]\\
-  U_6&=&[3.14159,3.14160]\\
-  &\vdots&
+  U_1&=[3,4]\\ 
+  U_2&=[3.1,3.2]\\ 
+  U_3&=[3.14,3.15]\\ 
+  U_4&=[3.141,3.142]\\ 
+  U_5&=[3.1415,3.1416]\\
+  U_6&=[3.14159,3.14160]\\
+  &\vdots
 \end{aligned}
 $$
 
@@ -151,7 +151,7 @@ To prove a set is nonempty, you should exhibit an element that lives in the set,
 
 ## Uncountability of $\R$
 
-Recall that a set $S$ is called *countable* if there exists a surjective function $\N\rightarrow S.$ Intuitively, it means that there is some way of listing the elements of $S$ (possibly with repetition) so that every element of $S$ eventually appears on the list.
+Recall that a nonempty set $S$ is called *countable* if there exists a surjective function $\N\rightarrow S.$ Intuitively, it means that there is some way of listing the elements of $S$ (possibly with repetition) so that every element of $S$ eventually appears on the list.
 
 It is clear that $\N$ is countable, but somewhat less obvious are the facts that $\Z$ and $\Q$ are countable. However, $\R$ is uncountable; it has a strictly larger cardinality than $\N,$ $\Z,$ and $\Q.$ Intuitively, the number of real numbers is a "higher level of infinity" than the number of natural/integer/rational numbers.
 
@@ -165,7 +165,7 @@ $\R$ is uncountable.
 :::{.proof}
 By way of contradiction, suppose $\R$ is countable. Then there exists a surjective function $f:\N\rightarrow\R.$ We will use this function to construct a sequence of nonempty nested closed intervals $\{U_i\}$ and apply the Nested Interval Theorem to arrive at a contradiction. The idea will be to construct $U_{i+1}$ so that it excludes $f(i),$ and that way no value of $f$ will lie in all of the intervals.
 
-Let $a_1=0$ and $b_1=1.$ For each $i\geq 1,$ we recursively contruct $a_{i+1}$ and $b_{i+1}$ using the following procedure:
+Let $a_1=0$ and $b_1=1.$ For each $i\geq 1,$ we recursively construct $a_{i+1}$ and $b_{i+1}$ using the following procedure:
 
 - If $f(i)\notin [a_i,b_i],$ we let $a_{i+1}=a_i$ and $b_{i+1}=b_i$ (i.e. the interval remains unchanged).
 - If $f(i)\in\left[a_i,\frac{b_i+a_i}{2}\right]$ (that is, $f(i)$ is in the left half of the interval), let $a_{i+1}=\frac{2b_i+a_i}{3}$ and $b_{i+1}=b_i$ (so that $[a_{i+1},b_{i+1}]$ is the right third of the interval).
@@ -213,7 +213,7 @@ However, by our assumption, every real number is equal to $f(n)$ for some $n\in\
 
 We mention here that the proof above actually shows that $[0,1]$ is uncountable, and can be adapted to prove the following.
 
-:::{.theorem #thm-intervals-uncountable}
+:::{.theorem #thm-intervals-uncountable .lub-thread}
 Any interval $[a,b]\subseteq\R$ with $a<b$ is uncountable.
 :::
 

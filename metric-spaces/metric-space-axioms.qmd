@@ -165,7 +165,7 @@ $$d(x,y)=\begin{cases} 0 & x=y \\ 1 & x\neq y \end{cases}$$
 is a distance function for $S$ (i.e. that it satisfies the four properties). We call this the **trivial** metric for $S.$
 :::
 
-To talk about a metric space, we really ought to specify both the set $X$ and the distance funciton $d.$ For example, it's technically possible to equip $\R^2$ with the trivial metric from @exr-trivial-metric (although I'm hard-pressed to think of why this would be useful). A somewhat more practical alternative metric on $\R^2$ is the subject of @exr-taxicab, but we'll refer to the distance function from @exr-distance-in-r2 as the "standard" distance function for $\R^2.$
+To talk about a metric space, we really ought to specify both the set $X$ and the distance function $d.$ For example, it's technically possible to equip $\R^2$ with the trivial metric from @exr-trivial-metric (although I'm hard-pressed to think of why this would be useful). A somewhat more practical alternative metric on $\R^2$ is the subject of @exr-taxicab, but we'll refer to the distance function from @exr-distance-in-r2 as the "standard" distance function for $\R^2.$
 
 :::{.content-visible when-format="html"}
 Before reading further, take just a moment to reflect on the question raised in @des-distance-in-r.
@@ -196,7 +196,7 @@ Now that we see absolute values will be our main tool for talking about distance
 
 ## Absolute Values
 
-We can define the absolute value function for any $x\in\R$ via
+Since distances in $\R$ are measured using the absolute value function, we'll want to make sure we understand this function and its basic properties well before going much further. The absolute value function is defined for any $x\in\R$ via
 $$|x|=\begin{cases} x & x\geq 0 \\ -x & x<0 \end{cases}$$
 Make sure you understand how the second case matches what you know about absolute values before moving on!
 
@@ -257,7 +257,7 @@ Hint: this is a good candidate for mathematical induction. It's also a good exam
 
 :::{.exercise #exr-taxicab}
 Here we will consider $\R^2$ with a different distance function. Define
-$$d_1((x_1,y_1),(x_2,y_2))=|y_1-x_1|+|y_2-x_2|$$
+$$d_1((x_1,y_1),(x_2,y_2))=|x_2-x_1|+|y_2-y_1|$$
 Prove that $d_1$ does in fact satisfy the four conditions of being a metric space.
 :::
 
@@ -268,7 +268,7 @@ Show that $d_{\mathrm{inv}}$ is *not* a distance function.
 :::
 
 :::{.exercise #exr-subspaces}
-If $X$ is a metric space with distance function $d,$ and $S\subseteq X,$ then we can think of $S$ itself as a metric space using the same distance function restricted to $S.$ In this case we say $S$ is a **subspace** of $X.$
+If $X$ is a metric space with distance function $d,$ and $S\subseteq X$ is nonempty, then we can think of $S$ itself as a metric space using the same distance function restricted to $S.$ In this case we say $S$ is a **subspace** of $X.$
 
 1. If we treat $\Q$ as a subspace of $\R,$ prove that the distance between any two points in $\Q$ is a rational number.
 2. If we treat $\Z^2$ (the set of points in $\R^2$ both of whose entries are integers), as a subspace of $\R^2,$ is the distance between two points in $\Z^2$ always an integer? Explain.
